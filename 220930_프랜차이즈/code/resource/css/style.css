@@ -97,12 +97,42 @@ body {
     width: 1200px;
 }
 .box-pd{
-    padding: 120px 40px;
+    padding: 180px 40px;
+}
+
+.flex{
+    display: flex;
+}
+
+.inner{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.img_inner .main_text{
+    font-size: 24px;
+    padding: 40px;
+}
+
+.section7 .inner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.txt_box{
+    margin-bottom: 80px;
 }
 
 /* margin padding */
 .txt_mb{
+    margin-bottom: 20px;
+}
 
+.mb48{
+    margin-bottom: 48px;
 }
 
 /* font style */
@@ -136,12 +166,21 @@ body {
 }
 section .main_text{
     font-size: 32px;
-    line-height: 140%;
+    line-height: 160%;
+}
+
+section.last .main_text{
+    font-size: 36px;
 }
 
 .sub_text{
     font-weight: 500;
     font-size: 28px;
+}
+
+.tag_text{
+    font-size: 20px;
+    font-weight: 500;
 }
 
 /* color */
@@ -163,4 +202,406 @@ section .main_text{
 }
 .sec{
     color:#02B9F3;
+}
+.w1{
+    color:#fff;
+}
+
+.bg_dark{
+    background-color:#09213D;
+}
+
+.bg_wt{
+    background-color: #fff;   
+}
+
+.bg_gr{
+    background-color: #F7F9FB;   
+}
+
+.bg_dark .b1{
+    color:#fff;
+}
+
+.bg_dark .pri{
+    color:#B4EDFF;
+}
+
+/* btn_style */
+
+.btn_box.flex{
+    justify-content: center;
+}
+
+.btn_st1{
+    background-color: #2A57F7;
+    padding: 16px;
+    border-radius: 999px;
+    color:#fff;
+    border: none;
+    width: 50%;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.4s;
+}
+
+.btn_st1:hover{
+    background-color: #113cd4;
+}
+
+/* section7 */
+
+.section7{
+    background:url(../images/contents/surb_bg.png) 50% 50%/cover ;
+}
+
+.form_box{
+    width: 50%;
+}
+
+.form_inner{
+    background-color: #161435c0;
+}
+
+.form_inner{
+    padding: 80px 60px;
+}
+
+.form_main_text{
+    font-size: 24px;
+}
+
+/* -- section7 form --*/
+.form_group form {
+	width: 100%;
+}
+
+.form_group .input-group { 
+	position: relative; 
+	margin-bottom: 40px; 
+}
+
+.form_group input {
+    box-sizing: border-box;
+	font-size: 20px;
+	padding: 10px 10px 10px 5px;
+	-webkit-appearance: none;
+	display: block;
+	background: none;
+	color: #fff;
+	width: 100%;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #ececec73;
+}
+
+.form_group input:focus { outline: none; }
+
+
+/* Label */
+
+.form_group label {
+	color: #fff;
+	font-size: 18px;
+	position: absolute;
+	pointer-events: none;
+	left: 5px;
+	top: 10px;
+	transition: all 0.2s ease;
+}
+
+
+/* active */
+
+.form_group input:focus ~ label, input.used ~ label {
+	top: -20px;
+    transform: scale(.8);
+    left: -2px;
+	color: #B4EDFF;
+}
+
+
+/* Underline */
+
+.form_group .bar {
+	position: relative;
+	display: block;
+	width: 100%;
+}
+
+.form_group .bar:before, .form_group .bar:after {
+	content: '';
+	height: 1px; 
+	width: 0;
+	bottom: 0; 
+	position: absolute;
+	background: #B4EDFF; 
+	transition: all 0.2s ease;
+}
+
+.form_group .bar:before { left: 50%; }
+
+.form_group .bar:after { right: 50%; }
+
+
+/* active */
+
+.form_group input:focus ~ .bar:before, .form_group input:focus ~ .bar:after {
+    width: 50%;
+}
+
+
+/* Highlight */
+
+.form_group .highlight {
+	position: absolute;
+	height: 60%; 
+	width: 100px; 
+	top: 25%; 
+	left: 0;
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+
+/* active */
+
+.form_group input:focus ~ .highlight {
+	animation: inputHighlighter 0.3s ease;
+}
+
+
+/* Animations */
+
+@keyframes inputHighlighter {
+	from { background: #4a89dc; }
+	to 	{ width: 0; background: transparent; }
+}
+
+
+/* Button */
+
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: .3em 0 1em 0;
+  width: 100%;
+  vertical-align: middle;
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  letter-spacing: 1px;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid #3160B6;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.button:focus { outline: 0; }
+
+
+/* Button modifiers */
+
+.buttonBlue {
+  background: #4a89dc;
+  text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
+}
+
+.buttonBlue:hover { background: #357bd8; }
+
+
+/* Ripples */
+
+.ripples {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+
+
+/* Ripples circle */
+
+.ripplesCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.ripples.is-active .ripplesCircle {
+  animation: ripples .4s ease-in;
+}
+
+
+/* Ripples animation */
+
+@keyframes ripples {
+  0% { opacity: 0; }
+
+  25% { opacity: 1; }
+
+  100% {
+    width: 200%;
+    padding-bottom: 200%;
+    opacity: 0;
+  }
+}
+
+.agree_group{
+    margin-bottom: 56px;
+}
+
+/* Customize the label */
+.agree_group .label_box {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color:#fff;
+    font-weight: 300;
+  }
+
+.agree_group a.show_agree{
+    color:#fff;
+    text-decoration: underline;
+    margin-left: 12px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.agree_group a.show_agree:hover{
+    color:#B4EDFF;
+}
+
+  /* Hide the browser's default checkbox */
+.agree_group .label_box input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .agree_group  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #eee;
+    border-radius: 100%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .agree_group  .label_box:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .agree_group .label_box input:checked ~ .checkmark {
+    background-color: #2A57F7;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .agree_group .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .agree_group .label_box input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .agree_group .label_box .checkmark:after {
+    content: "";
+    width: 22px;
+    height:22px;
+    display: block;
+    background:url(../images/icons/ico_check.svg) 50% 50%/cover ;
+  }
+
+/*canvas img control */
+
+.container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 300px;
+  overflow: hidden;
+}
+
+section .container{
+    border-radius: 20px;
+    box-shadow: 0px 4px 40px rgba(120, 133, 172, 0.19);
+}
+
+.section5 .container{
+    box-shadow: none;
+}
+
+.section2 .container{
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.canvas:not(.canvas.is-loaded){
+    display: none;
+}
+
+.canvas.is-loaded {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+.section5 .img_box > .flex{
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.section5 .img_box > .flex > div.img_inner{
+    width: calc(50% - 10px);
+}
+
+.section5 .img_inner{
+    height: 520px;
+    background-color: #F7F9FB;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.img_inner.grid_bx1{
+    padding-right: 40px;
+}
+
+.img_inner.grid_bx3{
+    height: 400px;
 }
