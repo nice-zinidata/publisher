@@ -112,7 +112,6 @@ body {
 
 .img_inner .main_text{
     font-size: 24px;
-    padding: 40px;
 }
 
 .section7 .inner{
@@ -507,18 +506,21 @@ section.last .main_text{
     left: 0;
     height: 22px;
     width: 22px;
-    background-color: #eee;
+    border:1px solid #eee;
     border-radius: 100%;
+    box-sizing: border-box;
   }
   
   /* On mouse-over, add a grey background color */
   .agree_group  .label_box:hover input ~ .checkmark {
-    background-color: #ccc;
+    background-color: #2A57F7;
+    background:url(../images/icons/ico_check.svg) 50% 50%/cover ;
   }
   
   /* When the checkbox is checked, add a blue background */
   .agree_group .label_box input:checked ~ .checkmark {
     background-color: #2A57F7;
+    border:none;
   }
   
   /* Create the checkmark/indicator (hidden when not checked) */
@@ -531,7 +533,8 @@ section.last .main_text{
   /* Show the checkmark when checked */
   .agree_group .label_box input:checked ~ .checkmark:after {
     display: block;
-  }
+    background:url(../images/icons/ico_check.svg) 50% 50%/cover ;
+}
   
   /* Style the checkmark/indicator */
   .agree_group .label_box .checkmark:after {
@@ -539,7 +542,7 @@ section.last .main_text{
     width: 22px;
     height:22px;
     display: block;
-    background:url(../images/icons/ico_check.svg) 50% 50%/cover ;
+
   }
 
 /*canvas img control */
@@ -592,16 +595,96 @@ section .container{
 }
 
 .section5 .img_inner{
-    height: 520px;
+    /* height: 520px; */
     background-color: #F7F9FB;
     border-radius: 20px;
     overflow: hidden;
 }
 
+.img_inner{
+    padding: 40px;
+}
+
 .img_inner.grid_bx1{
-    padding-right: 40px;
+    padding-left: 0;
+    padding-bottom: 0;
+}
+
+.img_inner.grid_bx1 .main_text{
+    padding-left: 40px;
+}
+
+.img_inner.grid_bx1 .container{
+    border-radius: 0 14px 14px 0;
+}
+
+.img_inner.grid_bx1 .container::after{
+    content: "";
+    width: 100%;
+    position: absolute;
+    height: 28px;
+    background: #fff url(../images/contents/user.svg) 96% 50% /14% no-repeat;
 }
 
 .img_inner.grid_bx3{
     height: 400px;
+}
+
+.img_inner .main_text{
+    margin-bottom: 60px;
+}
+
+/* section6 */
+
+.section6 .flex{
+    justify-content: space-between;
+}
+
+.section6 .img_inner{
+    padding: 0;
+    width: 832px;
+    position: relative;
+}
+
+.section6 .img_inner::before{
+    content: "";
+    width: calc((100vw - 1200px)/2);
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top:0;
+    display: block;
+    background-color: #02B9F3;
+}
+
+.section6 .container{
+    border-radius: 0 20px 20px 0;
+}
+
+.ico_text{
+    margin-bottom: 60px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 160%;
+}
+
+.ico_text::before{
+    content: "";
+    width: 52px;
+    height: 52px;
+    display: block;
+    margin-bottom: 24px;
+    border-radius: 14px;
+}
+
+.ico_text1::before{
+    background: #DDE9FF url(../images/icons/ico_map.svg) 50% 50%/70% no-repeat;
+}
+
+.ico_text2::before{
+    background: #CEEEF2 url(../images/icons/ico_board.svg) 50% 50%/70% no-repeat;
+}
+
+.ico_text3::before{
+    background: #FFF1F1 url(../images/icons/ico_chart.svg) 50% 50%/70% no-repeat;
 }

@@ -637,4 +637,104 @@ function loadTexture(path) {
 
 canvas6();
 
+function canvas7() {    
+    var baseURL = "resource/images/frame/";
+
+    var canvas = document.querySelector("#canvas7");
+    var context = canvas.getContext("2d", { alpha: false });
+
+    var sprite = {
+        frame: 0,
+        lastFrame: -1,
+        totalFrames: 26, 
+        textures: []
+    };
+
+    var animation = new TimelineMax({
+        repeat: -1,
+        repeatDelay: 1,
+        yoyo: true,
+        paused: true,
+        onUpdate: drawSprite
+    })
+    .to(sprite, 10, { 
+        frame: sprite.totalFrames - 1, 
+        roundProps: "frame",
+        ease: Linear.easeNone
+    });
+
+    loadTextures(sprite.totalFrames)
+    .then(resizeCanvas)
+    .catch(function(reason) {
+    console.log(reason)
+      });
+
+    function drawSprite() {
+  
+    // No changes
+    if (sprite.frame === sprite.lastFrame) {
+        return;
+    }
+  
+    context.drawImage(sprite.textures[sprite.frame], 0, 0); 
+    sprite.lastFrame = sprite.frame;
+    }
+
+    function resizeCanvas(textures) {
+   
+    var texture = textures[0];  
+    sprite.textures = textures;
+  
+    canvas.width = texture.naturalWidth || texture.width;
+    canvas.height = texture.naturalHeight || texture.height;
+    canvas.classList.add("is-loaded");
+  
+    var aspectRatio = canvas.height / canvas.width;
+  
+    // Make it responsive 
+    TweenLite.set("#container7", {
+    paddingBottom: "calc(100% * " + aspectRatio + ")"
+  });
+
+  // We're ready to go!
+  animation.play(); 
+}
+
+function loadTextures(numTextures) {
+  
+  var promises = [];
+  
+  for (var i = 1; i <= numTextures; i++) {
+       
+    var index = i < 10 ? "0" + i : i;
+    
+    // loadTexture returns a promise. It resolves when image is loaded
+    promises.push(loadTexture(baseURL + "frame6_00" + index + ".jpg"));
+  }    
+  
+  // Resolves when all the promises are resolved
+    return Promise.all(promises);
+}
+
+function loadTexture(path) {
+  return new Promise(function(resolve, reject) {
+
+    var img = new Image();
+
+    img.onload = function() {
+      resolve(img);
+    }
+    
+    img.onerror = function() {
+      reject("Error loading " + path);
+    };  
+
+    img.src = path;
+  });
+}
+
+}//end of canvas5
+
+canvas7();
+
 });//end of document ready
