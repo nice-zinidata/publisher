@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <!-- min js -->
+  <script src="resource/js/jquery.min.js"></script>
+  <!-- 분석화면 js -->
+  <script src="resource/js/analysis.js"></script>
+  <!-- swiper slider js -->
+  <script src="resource/js/swiper-bundle.min.js"></script>
+
+  <!-- font css-->
+  <link rel="stylesheet" type="text/css" href="resource/css/pretendard.css">
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="resource/css/style2.css">
+  <!-- swiper slider -->
+  <link rel="stylesheet" href="resource/css/swiper.min.css" />
+  <!-- echart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+  <script>
+
+  </script>
+  <title>KFA 분석페이지</title>
+  <style>
+      .swiper {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        height: 80px;
+        background: #eee;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 80px;
+        object-fit: cover;
+      }
+    </style>
+  </style>
+</head>
+
+
+<body class="idx1">
+
+  <!-- KFA 추가 데이터출처 -->
+  <div class="float_data_from">
+    <a href="#">데이터 <br class="mb_br">출처</a>
+  </div>
+  <!-- KFA 추가 데이터출처 -->
+  
+  <!-- KFA 추가 기업용 서비스 연결 -->
+  <div class="float_link">
+    <a href="#">기업용 <br class="mb_br">서비스</a>
+  </div>
+  <!-- KFA 추가 기업용 서비스 연결 -->
+  
+  <!-- KFA 추가 모바일 배너 -->
+  <div class="mb_banner_box pd">
+    <a href="#">
+      <img src="resource/images/banner/mini1_banner1_tablet.png" alt="">
+    </a>
+  </div>
+  <!-- KFA 추가 모바일 배너 -->
+
+  <!-- 로딩 SVG 모달없이 흰 배경일때 -->
+  <div class="loader loader-style1" title="0" style="display: none;">
+    <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+      <path opacity="0.4" fill="#1F67FD"
+        d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+      s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+      c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z" />
+      <path fill="#1F67FD" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+      C22.32,8.481,24.301,9.057,26.013,10.047z">
+        <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20"
+          dur="0.8s" repeatCount="indefinite" />
+      </path>
+    </svg>
+  </div>
+  <!-- 로딩 SVG 모달없이 흰 배경일때 -->
+
+  <!-- 로딩 SVG 모달과 함께 -->
+  <div class="loader loader--style3" title="2" style="display: none;">
+    <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px" y="0px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+      <path fill="#1F67FD"
+        d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+        <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25"
+          dur="0.8s" repeatCount="indefinite">
+
+        </animateTransform>
+      </path>
+    </svg>
+  </div>
+  <!-- 로딩 SVG 모달과 함께 -->
+
+  <!-- snb START -->
+  <div class="snb_box">
+    <div class="snb_header cb">
+      <div id="menuToggle2">
+        <a href="#"></a>
+      </div>
+    </div>
+    <ul class="snb_ul snb1">
+      <li><a href="#">프랜차이즈협회 홈</a></li>
+      <li class="mb_menu"><a href="index.html">상권분석</a></li>
+      <li class="mb_menu"><a href="index.html">상권영상</a></li>
+      <li><a href="index.html">기업용 서비스</a></li>
+    </ul>
+    <ul class="snb_ul snb2">
+      <li>
+        <p>자매사이트</p>
+        <ul>
+          <li><a href="http://nicezinidata.com">나이스지니데이타</a></li>
+          <li><a href="https://www.posplatform.co.kr">POS 데이터 플랫폼</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <!-- snb END -->
+
+  <!--bottom_pop btp2 pd mobile START-->
+  <div class="bottom_pop btp2 pd mobile" style="display:none;">
+    <div class="pop_body">
+      <p class="s_txt">
+        <span class="loca">여의동</span>
+        <span class="bar">|</span>
+        <span class="kind">호프/맥주</span><span>상권 분석</span></p>
+    </div>
+    <div class="pop_foot">
+      <div class="button_box">
+        <button class="btn2">재선택</button>
+        <button class="btn1">보고서 보기</button>
+      </div>
+    </div>
+  </div>
+  <!--bottom_pop btp2 pd mobile END-->
+
+  <!--사이드바 모달 modal START-->
+  <div class="modal modal1"></div>
+  <!--modal END-->
+  <!--bottom popup시 모달 modal START-->
+  <div class="modal modal2"></div>
+  <!--modal END-->
+  <!--report popup 시 모달 modal START-->
+  <div class="modal blur_modal"></div>
+  <!--modal END-->
+
+
+  <!--sheet_02 START-->
+  <!--업종선택-->
+  <div class="sheet md_sheet sheet_02 ">
+    <div class="sheet_hd pd">
+      <div class="ico_box back">
+        <a href="#">
+        </a>
+      </div>
+      <div class="name_box">
+        업종 선택
+      </div>
+      <div class="close_box">
+        <a href="">
+        </a>
+      </div>
+    </div>
+    <div class="loca_crumble_box onlypc">
+      <ul class="loca_crumble">
+        <li class="on"><button>음식업</button></li>
+        <li><button>중분류</button></li>
+        <li><button>소분류</button></li>
+      </ul>
+    </div>
+    <div class="sheet_body pd">
+      <div class="box txt_bx">
+        <p class="main_txt">업종을 선택하여
+          <br />상권 분석을 시작해 보세요.</p>
+        <p class="sub_txt">
+          <span class="loca">여의동</span>
+          <span class="bar">|</span>
+          <span class="kind">업종선택</span>
+        </p>
+      </div>
+      <div class="box select_bx">
+        <div class="cate_kind">
+          <ul class="row r1">
+            <li class="on"><button>음식업</button></li>
+            <li><button>소매업</button></li>
+            <li><button>생활서비스</button></li>
+          </ul>
+          <ul class="cate2 cb on1" style="display: none;">
+            <li class="on"><button>간이주점</button></li>
+            <li><button>고기요리</button></li>
+            <li style="width: 100%; display: none;" class="cate3_top">
+              <ul class="cate3 cb">
+                <li class="on"><button>호프/맥주</button></li>
+                <li><button>민속주점</button></li>
+                <li><button>꼬치구이전문점</button></li>
+                <li><button>이자까야</button></li>
+                <li><button>소주방/포장마차</button></li>
+                <li><button>민속주점</button></li>
+                <li><button>꼬치구이전문점</button></li>
+                <li><button>이자까야</button></li>
+                <li><button>소주방/포장마차</button></li>
+                <li><button>민속주점</button></li>
+                <li><button>꼬치구이전문점</button></li>
+                <li><button>이자까야</button></li>
+                <li><button>소주방/포장마차</button></li>
+                <li><button>민속주점</button></li>
+                <li><button>꼬치구이전문점</button></li>
+                <li><button>이자까야</button></li>
+                <li><button>소주방/포장마차</button></li>
+              </ul>
+            </li>
+            <li><button>닭/오리요리</button></li>
+            <li><button>별식/퓨전요리</button></li>
+            <li><button>부페</button></li>
+            <li><button>분식</button></li>
+          </ul>
+          <ul class="row r2">
+            <li><button>여가오락</button></li>
+            <li><button>학문/교육</button></li>
+            <li><button>의약/의료</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--sheet_02 END-->
+  <!--업종선택-->
+
+  <!--sheet_01 START-->
+  <!--분석지역-->
+  <div class="sheet sheet_01 md_sheet">
+    <div class="sheet_hd pd">
+      <div class="ico_box back">
+        <a href="#">
+        </a>
+      </div>
+      <div class="name_box">
+        지역 선택
+      </div>
+      <div class="close_box">
+        <a href="">
+        </a>
+      </div>
+    </div>
+    <div class="sheet_body pd">
+      <div class="box txt_bx">
+        <p class="main_txt">분석하고자 하는<br />
+          지역을 선택해주세요.</p>
+        <p class="sub_txt">
+          <span class="loca">지역선택</span>
+        </p>
+      </div>
+      <div class="box select_bx">
+        <div class="cate_loca">
+          <div class="loca_crumble_box">
+            <ul class="loca_crumble">
+              <li class="on">
+                <button>시/도</button>
+              </li>
+              <li>
+                <button>시/군/구</button>
+              </li>
+              <li><button>읍/면/동</button>
+              </li>
+            </ul>
+          </div>
+          <div class="loca_list_bx">
+            <ul class="loca_list cb">
+              <li class="on"><a href="#">서울특별시</a></li>
+              <li><a href="#">대구광역시</a></li>
+              <li><a href="#">부산광역시</a></li>
+              <li><a href="#">인천광역시</a></li>
+              <li><a href="#">광주광역시</a></li>
+              <li><a href="#">대전광역시</a></li>
+              <li><a href="#">세종특별자치시</a></li>
+              <li><a href="#">울산광역시</a></li>
+              <li><a href="#">경기도</a></li>
+              <li><a href="#">강원도</a></li>
+              <li><a href="#">충청북도</a></li>
+              <li><a href="#">충청남도</a></li>
+              <li><a href="#">전라북도</a></li>
+              <li><a href="#">전라남도</a></li>
+              <li><a href="#">경상북도</a></li>
+              <li><a href="#">경상남도</a></li>
+              <li><a href="#">제주특별자치도</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--sheet_01 END-->
+  <!--분석지역-->
+
+  <!--only_pc pc_sheet_box PC일때 사이드 START-->
+  <div class="pc_sheet onlypc on" id="pc_sheet">
+    <a class="handle" href="#" id="handle"></a>
+    <div style="overflow: overlay;">
+      <div class="pc_hd">
+        <div class="tag_txt">
+          <p class="sub_txt">
+            <span>현 위치</span>
+          </p>
+          <div class="map_place_box">
+            <a href="#">
+              <input class="input" type="text" id="" name="show" placeholder="서울특별시 영등포구 여의동" readonly>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pc_bdy ticket">
+        <div class="tag_txt">
+          <p class="sub_txt">
+            <span>분석 지역 | 업종 선택</span>
+          </p>
+          <button class="reselect">    
+            다시선택
+          </button>
+        </div>
+        <!-- tag_txt -->
+        <div class="middle">
+          <ul>
+            <li><a href="#">분석 지역을 선택해주세요</a></li>
+            <li><a href="#">분석 업종을 선택해주세요</a></li>
+          </ul>
+        </div>
+        <!-- middle -->
+        <div class="button_box">
+          <button class="btn2" style="display: none;">다시선택</button>
+          <button class="btn1" style="width: 100%;">보고서 보기</button>
+        </div>
+        <!-- button_box -->
+        <div class="swiper_box">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a href="" style="display: inline-block;">
+                  <img src="resource/images/banner/mini1_banner1.png" alt="">
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="" style="display: inline-block;">
+                  <img src="resource/images/banner/mini1_banner2.png" alt="">
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="" style="display: inline-block;">
+                  <img src="resource/images/banner/mini1_banner3.png" alt="">
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="" style="display: inline-block;">
+                  <img src="resource/images/banner/mini1_banner4.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="swipe_hover">
+              <div class="swiper-button-next" style="left:unset; right: 3px; bottom:6px;"></div>
+              <div class="swiper-button-prev" style="left:3px; bottom:6px;"></div>
+              <div class="swiper-pagination" style="bottom:2px;" ></div>
+            </div>
+          </div>
+        </div>
+        <!-- swiper_box -->
+      </div>
+    </div>
+  </div>
+<!--only_pc pc_sheet_box PC일때 사이드 END-->
+
+  <!--top_section START-->
+  <div class="top_section">
+    <div class="menu_top pd">
+      <div class="menu_left">
+        <div class="logo_box">
+          <a href="index.html"></a>
+        </div>
+      </div>
+      <div class="menu_middle">
+        <ul class="top_gnb">
+          <li class="on"><a href="index.html">상권분석</a></li>
+          <li><a href="index1.html">상권영상</a></li>
+          <li><a href="index1.html">기업용 서비스</a></li>
+        </ul>
+      </div>
+      <div class="menu_right">
+        <div id="menuToggle">
+          <a href="#"></a>
+        </div>
+      </div>
+    </div>
+    <div class="float_top pd">
+      <div class="search">
+        <a href="#">
+          <div class="input">지역/업종 선택하여 상권 분석</div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!--top_section END-->
+
+  <!--map START-->
+  <div class="map_section">
+    <div class="float_loca mobile ">
+      영등포구 여의동
+    </div>
+  </div>
+  <!--map END -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+          type: "fraction",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        loop:true,
+        
+        
+      });
+  </script>
+</body>
+
+</html>

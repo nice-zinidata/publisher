@@ -184,17 +184,17 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 8px;
+    border-radius: 4px;
     font-family: 'Pretendard';
     cursor: pointer;
-    background-color: #1F67FD;
+    background-color: #253495;
     color:#fff;
     border:0;
     font-size: 16px;
 }
 
 .btn1:hover{
-    background-color: #1851c7;
+    background-color: #0554E5;
     transition: 0.4s ease;
 }
 
@@ -206,12 +206,12 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 8px;
+    border-radius: 4px;
     font-family: 'Pretendard';
     cursor: pointer;
-    background-color: #E8F1FF;
-    color:#2269DA;
-    border:0;
+    background-color: #fff;
+    border: 1px solid rgba(37, 52, 149, 0.6);
+    color:#253495;
     font-size: 16px;
 }
 
@@ -374,11 +374,11 @@ menu
     height: 100%;
 }
 
-.float_top input{
+.float_top .input{
     display: block;
     width: 100%;
     height: 100%;
-    padding: 0 20px 0 44px;
+    padding: 0 40px 0 44px;
     font-size: 16px;
     line-height: 48px;
     font-weight: 500;
@@ -386,6 +386,9 @@ menu
     background: none;
     border: none;
     font-family: 'Pretendard';
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
 }
 
 input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -560,11 +563,11 @@ bottom_pop
 }
 
 .bottom_pop.btp2 .btn2{
-    width: 76px;
+    width: calc(50% - 4px);
 }
 
 .bottom_pop.btp2 .btn1{
-    width: calc(100% - 84px);
+    width: calc(50% - 4px);
 }
 
 .pop_head a{
@@ -617,25 +620,6 @@ bottom_pop
     color: #6A788A;
 }
 
-.btp1 .btn1::before{
-    content: "";
-    width: 16px;
-    height: 16px;
-    background: url(../images/icons/ico_building_wh.svg) no-repeat 50% 50%/14px;
-    display: inline-block;
-    margin-bottom: -1px;
-    margin-right: 2px;
-}
-
-.btp2 .btn1::before{
-    content: "";
-    width: 16px;
-    height: 16px;
-    background: url(../images/icons/ico_paper_wh.svg) no-repeat 50% 50%/14px;
-    display: inline-block;
-    margin-bottom: -1px;
-    margin-right: 2px;
-}
 
 .nobefore::before{display:none !important;}
 
@@ -929,6 +913,7 @@ span.bar{
     position: absolute;
     top:calc(50% - 8px);
     right:-8px;
+    z-index: 2;
 }
 
 .analyse .loca_crumble li{
@@ -2253,7 +2238,7 @@ snb_box SIDE NAVIGATION
 }
 
 .snb_ul{
-    padding: 12px 24px;
+    padding: 32px 24px;
 
 }
 
@@ -2932,11 +2917,11 @@ mini footer
 }
 
 .ticket .middle ul li:nth-child(2){
-    border-radius: 0 0 8px 8px;
+    border-radius: 0 0 4px 4px;
 }
 
 .ticket .middle ul li:nth-child(1){
-    border-radius: 8px 8px 0 0;
+    border-radius: 4px 4px 0 0;
     border-bottom: 0;
 }
 
@@ -3714,6 +3699,7 @@ justify-content: flex-end;
     margin-bottom: 12px;
     background: none;
     border: none;
+    padding: 0;
 }
 
 .pc_sheet.onlypc .ticket .tag_txt .reselect::before {
@@ -3830,7 +3816,91 @@ justify-content: flex-end;
     left: 16px;
 }
 
-/* refer_hover end */
+/*KFA 추가 css-------------------------*/
+
+/* menu control */
+
+.menu_middle{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 40px;
+}
+.top_gnb{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.top_gnb li{
+    margin-right: 12px;
+}
+
+.top_gnb li a{
+    font-weight: 600;
+    display: inline-block;
+    padding: 22px 12px;
+    box-sizing: border-box;
+}
+
+.top_gnb li a:hover{
+    color: #0554E5;
+}
+
+.top_gnb li.on a{
+    color: #0554E5;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.top_gnb li.on a::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: #0554E5;
+}
+
+.snb1 .mb_menu{
+    display: none;
+}
+
+/* swiper control */
+
+.swiper_box{
+    margin-top: 40px;
+    position: relative;
+    position: relative;
+    border-radius: 4px;
+}
+.swiper-pagination{
+    text-align: right !important;
+    padding-right: 17px !important;
+    font-family: 'Pretendard' !important;
+    font-size: 8px;
+    color:#fff;
+}
+
+.swiper_box .swipe_hover{
+    right: 4px;
+    border-radius: 999px;
+    position: absolute;
+    width: 52px;
+    bottom:8px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index:2;
+    display: none;
+    
+}
+
+.swiper_box:hover .swipe_hover{
+    display: inline-block;
+    
+}
+
 
 /*****************************************************************
 --------------------    PC Media Quary START----------------------
@@ -3870,8 +3940,8 @@ justify-content: flex-end;
     }
 
     .menu_top .logo_box{
-        height: 30px;
-        width: 154px;
+        height: 18px;
+        width: 140px;
     }
 
     /*현 위치 알려주는 .float_loca 사라짐, map_place_box로 대체*/
@@ -3882,7 +3952,7 @@ justify-content: flex-end;
     /*border 조정*/
     .top_section{
         border-bottom: 1px solid rgba(190, 201, 218, 0.6);
-        box-shadow: 0px 2px 4px rgb(84 92 104 / 4%);
+        box-shadow: 0px 2px 4px rgb(84 92 104 / 2%);
     }
 
     /*tab_box 세로 변환*/
@@ -4012,10 +4082,9 @@ justify-content: flex-end;
     /*pc_sheet*/
 
     .pc_sheet{
-        /* overflow-y:auto; */
         position: absolute;
         top:61px;
-        left: -280px;
+        left: -360px;
         width: 360px;
         height: calc(100% - 61px);
         z-index: 1;
@@ -4024,16 +4093,16 @@ justify-content: flex-end;
         flex-direction: column;
         box-shadow: 4px 12px 12px rgb(84 92 104 / 8%);
         transition: 0.6s ease;
+        box-sizing: content-box;
     }
     
     .pc_sheet.on{
-        left: 81px;
+        left: 0;
         transition: 0.6s ease;
     }
 
     #handle{
-        left: 359px;
-        
+        left: 360px;
     }
 
 
@@ -4073,7 +4142,7 @@ justify-content: flex-end;
         display: block;
         width: 100%;
         height: 100%;
-        border-radius: 8px;
+        border-radius: 4px;
         background: rgba(231, 235, 243, 0.4);
     }
 
@@ -4259,7 +4328,7 @@ justify-content: flex-end;
     }
 
     .location .pc_bdy.ticket .middle ul li:nth-child(1).on{
-        border-radius: 8px 8px 0 0;
+        border-radius: 4px 4px 0 0;
     }
     .location .middle ul li.side_box{
         border-radius: 8px !important;
@@ -4297,15 +4366,16 @@ justify-content: flex-end;
 
     /*분석지역*/
     .sheet_01,.sheet_02 {
-        width: 311px;
+        width: 312px;
         height: fit-content;
-        left: 105px;
+        left: 24px;
         top: 294px;
         box-shadow: none;
         border: 1px solid #1F67FD;
         border-top:0;
-        border-radius: 0 0 8px 8px;
+        border-radius: 0 0 4px 4px;
         z-index: 4;
+        overflow: hidden;
     }
 
     .sheet_02{
@@ -4468,15 +4538,6 @@ justify-content: flex-end;
         padding-right: 8px;
     }
 
-    .pc_bdy .button_box .btn1::before {
-        content: "";
-        width: 16px;
-        height: 16px;
-        background: url(../images/icons/ico_paper_wh.svg) no-repeat 50% 50%/14px;
-        display: inline-block;
-        
-        margin-right: 4px;
-    }
     .pc_bdy .button_box .btn2::before {
         content: "";
         width: 16px;
@@ -4488,16 +4549,21 @@ justify-content: flex-end;
     }
 
     .sheet.side{
-        left: 424px;
-        top: 50%;
-        transform: translateY(-50%);
+        width: 360px;
+        position: absolute;
+        left: 344px;
+        top: 245px;
         border: 1px solid #8b95a8;
-        border-radius: 8px;
+        border-radius: 4px;
         overflow: visible;
     }
 
     .sheet.side .loca_crumble{
         border-top:0 ;
+    }
+
+    .sheet.side .loca_list_bx{
+        max-height: 183px !important;
     }
 
     .sheet.side::after{
@@ -4522,7 +4588,7 @@ justify-content: flex-end;
         max-height:280px;
     }
     .pc_bdy.ticket .middle ul li:nth-child(2).side_box.on{
-        border-radius: 0 0 8px 8px;
+        border-radius: 0 0 4px 4px;
         border: 1px solid #1F67FD;
     }
 
@@ -5406,6 +5472,76 @@ justify-content: flex-end;
     .subscribe .rpt_hd h2{
         text-align: center;
     }
+
+    /* KFA 1024 이상 PC */
+
+    .mb_br{
+        display: none;
+    }
+
+    /* KFA 추가 데이터 출처, 기업용서비스*/    
+    .float_data_from{
+        position: fixed;
+        right: 20px;
+        top:72px;
+        z-index: 2;
+        border: 1px solid rgba(190, 201, 218, 0.2);
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(2px);
+        box-shadow: 2px 2px 6px rgba(49, 61, 77, 0.2);
+    }
+    .float_data_from > a{
+        display:flex;
+        align-items: center;
+        padding: 8px 12px 8px 8px;
+        color:#191F28;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .float_data_from > a::before{
+        content: "";
+        display: inline-block;
+        margin-right: 4px;
+        width: 20px;
+        height: 20px;
+        background: url(../images/icons/ico_exclamark_gr.svg) 50% 50%/16px no-repeat;
+    }
+
+    .float_link{
+        position: fixed;
+        right: 20px;
+        bottom:20px;
+        z-index: 2;
+        border-radius: 6px;
+        background:#fff;
+        border: 1px solid #0554E5;
+        box-shadow: 2px 2px 6px rgba(49, 61, 77, 0.2);
+        display: flex;
+        flex-direction:column;
+    }
+    .float_link > a{
+        display:block;
+        text-align: center;
+        color:#191F28;
+        font-size: 14px;
+        font-weight: 600;
+        height: 114px;
+        width: 114px;
+        padding: 8px;
+    }
+    .float_link > a::before{
+        content: "";
+        display: block;
+        margin-right: 4px;
+        width: 100%;
+        height: 76px;
+        background: url(../images/icons/ico_building.svg) 50% 50%/72px no-repeat;
+    }
+
+    .mb_banner_box{
+        display: none;
+    }
 }
 
 /*****************************************************************
@@ -5419,6 +5555,7 @@ justify-content: flex-end;
         }
     .menu_top {
         height: 60px;
+        border-bottom: 1px solid rgba(190, 201, 218, 0.2);
     }
     .pd{
         padding-right:24px;
@@ -5569,6 +5706,110 @@ justify-content: flex-end;
         font-size: 22px;
     }
 
+    /*KFA 1023*/
+    /* menu */  
+      
+    .top_gnb li.on a::after{
+        display: none;
+    }
+    .menu_middle {
+        padding-left: 24px;
+    }
+
+    /* KFA 추가 데이터 출처, 기업용서비스*/    
+    .float_data_from{
+        position: fixed;
+        right: 20px;
+        top:144px;
+        z-index: 2;
+        border: 1px solid rgba(190, 201, 218, 0.2);
+        border-radius: 6px;
+        background:#fff;
+        box-shadow: 2px 2px 6px rgba(49, 61, 77, 0.2);
+    }
+    .float_data_from > a{
+        display:flex;
+        align-items: center;
+        padding: 6px 8px 6px 6px;
+        color:#191F28;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .float_data_from > a::before{
+        content: "";
+        display: inline-block;
+        margin-right: 0;
+        width: 14px;
+        height: 14px;
+        margin-right: 4px;
+        background: url(../images/icons/ico_exclamark_gr.svg) 50% 50%/cover no-repeat;
+    }
+
+    .float_link{
+        position: fixed;
+        right: 20px;
+        top:184px;
+        z-index: 2;
+        border-radius: 6px;
+        background: #fff;
+        border: 1px solid #66a2ff;
+        box-shadow: 2px 2px 6px rgba(49, 61, 77, 0.2);
+        display: flex;
+        flex-direction:column;
+    }
+    .float_link > a{
+        display:block;
+        text-align: center;
+        color:#191F28;
+        font-size: 14px;
+        font-weight: 600;
+        height: 94px;
+        width: 94px;
+        padding: 8px;
+    }
+    .float_link > a::before{
+        content: "";
+        display: block;
+        margin-right: 4px;
+        width: 100%;
+        height: 60px;
+        background: url(../images/icons/ico_building.svg) 50% 50%/60px no-repeat;
+    }
+
+    .mb_banner_box{
+        display: block;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        z-index: 2;
+        margin-bottom: 12px;
+    }
+
+    .mb_banner_box > a{
+        display: block;
+        position: relative;
+        width: 100%;
+        padding: 13% 0 0;
+    }
+    
+    .mbsize > a{
+        display: block;
+        position: relative;
+        width: 100%;
+        padding: 19% 0 0;
+    }
+    
+    .mb_banner_box > a > img{
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .mb_br{
+        display: none;
+    }
 }
 
 @media all and (max-width: 960px){
@@ -5651,9 +5892,15 @@ justify-content: flex-end;
     }
 
     .menu_top .logo_box {
-        height: 20px;
-        width: 140px;
+        height: 24px;
+        width: 120px;
     }
+
+    .top_gnb li a{
+        padding: 14px 12px;
+        font-size: 14px;
+    }
+
     .pop_float{
         width: 80%;
         left: 50%;
@@ -5766,6 +6013,96 @@ justify-content: flex-end;
         padding-left: 16px;
         padding-right: 16px;
     }
+
+    /* KFA 640 */
+
+    /*menu*/
+    .menu_middle{
+        padding-left: 12px;
+    }
+
+    .top_gnb li{
+        margin-right: 0;
+    }
+    
+    .float_top .input{
+        font-size: 14px;
+    }
+
+    /*float links*/
+
+    .float_data_from{
+        top: 134px;
+        border: 1px solid rgba(190, 201, 218, 1);
+    }
+    
+    .float_link{
+        top: 196px;
+    }
+
+    .float_data_from > a, .float_link > a{
+        font-size: 11px;
+        text-align: center;
+        line-height: 120%;
+    }
+
+    .float_data_from > a{
+        flex-direction: column;   
+        padding: 0;
+        height: 54px;
+        width: 44px;
+        justify-content: center;
+    }
+
+    .float_data_from > a::before{
+        margin-right: 0;
+        margin-bottom: 4px;
+        
+    }
+
+    .float_link > a::before{
+        height: 32px;
+        background: url(../images/icons/ico_building.svg) 50% 50%/32px no-repeat;
+    }
+
+    .mb_br{
+        display: block;
+    }
+
+    .float_link{
+        background-color: #fff;
+    }
+    .float_link > a {
+        display: flex;
+        text-align: center;
+        font-weight: 600;
+        height: 64px;
+        width: 44px;
+        padding: 0;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+
+}
+@media all and (max-width: 460px){
+    
+    /* KFA 460 */
+    .menu_middle{
+        display: none;
+    }
+    
+    .snb1 .mb_menu{
+    display: block;
+    }
+
+    /*img_banner*/
+    .mb_banner_box.pd{
+        padding: 0;
+        margin: 0;
+    }
+
 }
 @media all and (max-width: 380px){
     .board_tb td:nth-child(3), .board_tb th:nth-child(3){
@@ -6059,4 +6396,3 @@ justify-content: flex-end;
         background: rgba(255, 255, 255, 1);
     }
 }
-

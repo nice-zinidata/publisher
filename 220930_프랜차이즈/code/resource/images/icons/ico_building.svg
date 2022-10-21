@@ -1,0 +1,18 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M17 12C15.8954 12 15 12.8954 15 14V63C15 64.1046 15.8954 65 17 65H25V57C25 56.4477 25.4477 56 26 56H33C33.5523 56 34 56.4477 34 57V65H36H43H59C60.1046 65 61 64.1046 61 63V37C61 35.8954 60.1046 35 59 35H45V14C45 12.8954 44.1046 12 43 12H17Z" fill="#66A2FF"/>
+<rect x="24" y="18" width="4" height="4" fill="white"/>
+<rect x="32" y="18" width="4" height="4" fill="white"/>
+<rect x="24" y="26" width="4" height="4" fill="white"/>
+<rect x="32" y="26" width="4" height="4" fill="white"/>
+<rect x="24" y="34" width="4" height="4" fill="white"/>
+<rect x="32" y="34" width="4" height="4" fill="white"/>
+<rect x="24" y="42" width="4" height="4" fill="white"/>
+<rect x="32" y="42" width="4" height="4" fill="white"/>
+<rect x="42" y="42" width="4" height="4" fill="white"/>
+<rect x="50" y="42" width="4" height="4" fill="white"/>
+<rect x="42" y="50" width="4" height="4" fill="white"/>
+<rect x="50" y="50" width="4" height="4" fill="white"/>
+<circle cx="62.498" cy="59" r="9" fill="#2C4DDD"/>
+<path d="M62.5332 54V64.065" stroke="#FFE1E1" stroke-width="2"/>
+<path d="M67.5654 59.0325L57.5004 59.0325" stroke="#FFE1E1" stroke-width="2"/>
+</svg>
