@@ -392,7 +392,7 @@ $(document).ready(function(){
     
     //640 이하일때 이미지 변경
     function banner_change(){
-        if ($(window).width() <= 480) {
+        if ($(window).width() <= 640) {
             $('.mb_banner_box').addClass('mbsize');
             $('.mbsize img').attr({
                 src: "resource/images/banner/mini1_banner1_mo.png"
