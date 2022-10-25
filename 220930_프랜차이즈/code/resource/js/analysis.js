@@ -392,7 +392,7 @@ $(document).ready(function(){
     
     //640 이하일때 이미지 변경
     function banner_change(){
-        if ($(window).width() <= 420) {
+        if ($(window).width() <= 480) {
             $('.mb_banner_box').addClass('mbsize');
             $('.mbsize img').attr({
                 src: "resource/images/banner/mini1_banner1_mo.png"
@@ -411,4 +411,17 @@ $(document).ready(function(){
         banner_change();
     });
 
+    //데이터 출처 팝업
+    $('#data_from').on('click', function() {
+        $('#data_from_show').css('display','block');
+        $('.modal1').css('display','block');
+    });
+    $('#close_alert').on('click', function() {
+        $('#data_from_show').css('display','none');
+        $('.modal1').css('display','none');
+    });
+    $('#close_alrt_pop').on('click', function() {
+        $('#data_from_show').css('display','none');
+        $('.modal1').css('display','none');
+    });
 });
