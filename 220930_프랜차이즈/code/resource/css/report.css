@@ -298,6 +298,10 @@ html{
     box-shadow: 0 0 24px rgb(213 223 241 / 37%);
 }
 
+#report1 section#s6{
+    margin-bottom: 0;
+}
+
 #report1 section .title_area > h3{
     color:#191F28;
     font-size: 18px;
@@ -326,26 +330,12 @@ html{
     background: url(../images/icons/ico_rp4_full.svg) 50% 50%/cover;
 }
 #report1 section#s5 .title_area > h3::before{
-    background: url(../images/icons/ico_rp5_full.svg) 50% 50%/cover;
-}
-#report1 section#s6 .title_area > h3::before{
-    background: url(../images/icons/ico_rp6_full.svg) 50% 50%/cover;
-}
-#report1 section#s7 .title_area > h3::before{
-    background: url(../images/icons/ico_rp7_full.svg) 50% 50%/cover;
-}
-#report1 section#s8 .title_area > h3::before{
     background: url(../images/icons/ico_rp8_full.svg) 50% 50%/cover;
 }
-#report1 section#s9 .title_area > h3::before{
+#report1 section#s6 .title_area > h3::before{
     background: url(../images/icons/ico_rp9_full.svg) 50% 50%/cover;
 }
-#report1 section#s10 .title_area > h3::before{
-    background: url(../images/icons/ico_rp10_full.svg) 50% 50%/cover;
-}
-#report1 section#s11 .title_area > h3::before{
-    background: url(../images/icons/ico_rp11_full.svg) 50% 50%/cover;
-}
+
 
 #report1 section .title_area > p{
     color:#4E5867;
@@ -396,9 +386,14 @@ html{
 }
 
 #report1 .label_box{
-    width: fit-content;
+    width: 220px;
     border-radius: 5px;
     border: 1px solid rgba(190, 201, 218, 0.2);
+}
+
+#report1 .label_title_box{
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(190, 201, 218, 0.2);
 }
 
 #report1 .label_box > .label_title{
@@ -409,8 +404,33 @@ html{
     word-break: keep-all;
 }
 
+#report1 .label_box .lbt1{
+    font-size: 14px;
+    font-weight: 400;
+    color: #191F28;
+}
+
+#report1 .label_box .lbt2{
+    font-size: 14px;
+    font-weight: 400;
+    color: #191F28;
+}
+
+#report1 .label_box .lbt2 > span{
+    font-size: 24px;
+    font-weight: 700;
+}
+
+#report1 .label_box > .label_title_box{
+    width: 100%;
+    margin-bottom: 16px;
+    justify-content: space-between;
+}
+
 #report1 .label_box > ul > li{
     margin-bottom: 4px;
+    justify-content: space-between;
+    width: 100%;
 }
 
 #report1 .label_box > ul > li p{
@@ -420,7 +440,14 @@ html{
 
 #report1 .label_box > ul > li .label_p{
     justify-content: space-between;
-    width: 140px;
+    width: 100%;
+}
+
+#report1 .label_box > ul > li .label_p >p:nth-child(1):before{
+    content: "+";
+    display: inline-block;
+    color:#0554E5;
+    margin-right: 8px;
 }
 
 #report1 .label_box > ul > li p span.number{
@@ -561,7 +588,7 @@ justify-content: space-between;
     border: 1px solid #1f65fd4d;
 }
 
-#report1 .choice1 ul li:nth-child(1){
+#report1 .choice1 ul li{
     margin-right: 4px;
 }
 
@@ -695,6 +722,8 @@ justify-content: space-between;
 
 #report1 .choice1{
     margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
 #report1 #s11 .choice1{
@@ -1132,6 +1161,10 @@ span.up::before{
     margin-top: 0;
 }
 
+#report1 .rpt_hd p{
+    margin-bottom: 2px;
+}
+
 #report1 .onlymb.rpt_hd h2{
     font-size: 22px;
     font-weight: 600;
@@ -1170,11 +1203,10 @@ span.up::before{
 #report1 button.rpt_surb::before{
     content: "";
     display: inline-block;
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     background: url(../images/icons/ico_building.svg) 50% 50%/cover no-repeat;
-    margin-bottom: -6px;
-    margin-right: 2px;
+    margin-right: 6px;
 }
 
 #report1 .rp_header{
@@ -1204,6 +1236,11 @@ span.up::before{
     box-shadow: none;
 }
 
+#report1 .rp_header button.rpt_surb:hover{
+    background-color: #16123687;
+    transition: 0.4s;
+}
+
 #report1 .rp_header .logo_box{
     padding: 32px 24px;
     width: 240px;
@@ -1228,7 +1265,7 @@ span.up::before{
 
 .mb_rp_gnb > li{
     margin-right: 4px;
-    padding: 16px 8px;
+    padding: 15.5px 8px;
 }
 
 .mb_rp_gnb > li > a{
@@ -1319,6 +1356,7 @@ span.up::before{
     z-index: 9;
 }
 
+
 #report1 .banner_txt{
     width: 70%;
 }
@@ -1378,7 +1416,7 @@ span.up::before{
 }
 
 .table_show{
-    margin-top: 12px;
+    margin-top: 32px;
     width: 100%;
     transition: 0.4s ease-in;
 }
@@ -1420,10 +1458,6 @@ span.up::before{
 
 #report1 .table_show tr {
     border-bottom: 1px solid rgba(190, 201, 218, 0.2);
-}
-
-#report1 .table_show{
-    display: none;
 }
 
 #report1 .table_show.show{
@@ -1610,6 +1644,12 @@ alrt_pop
     border-radius: 4px;
 }
 
+.btn3:hover{
+    background-color: rgba(255, 255, 255, 0.712);
+    border:  1px solid #0553e5;
+    transition: 0.4s;
+}
+
 #report1 .rp_top .btn3{
     margin-right: 20px;
 }
@@ -1638,6 +1678,13 @@ alrt_pop
     #report1 #receipt2{
         width: calc(100% - 300px);
     }
+
+    #s1{
+
+    }
+
+    
+
 }
 
 /*pc형 분기점 1024*/
@@ -1777,6 +1824,8 @@ alrt_pop
 
     #report1 button.rpt_surb{
         font-size: 14px;
+        display: flex;
+        align-items: center;
     }
     #report1 #receipt1{
         width: calc(100% - 420px);
@@ -1890,6 +1939,7 @@ alrt_pop
         color: #191F28;
         background: #fcfcfd;
    }
+
     
     /*************
     슬라이드 pc시 버튼 추가 
@@ -1986,15 +2036,23 @@ alrt_pop
         display: none !important;
     }
     
+    #s3 table br,
+    #s4 table br{
+        display: none;
+    }
 
     /*************
     슬라이드 pc시 버튼 추가 
     @media all and (max-width: 1023px) 내에 추가
     END
     *************/
-
+    
 }
 @media all and (max-width: 680px){
+    
+    .table_show{
+        display: flex;
+    }
     #report1 #s1 .inner.flx{
         flex-direction: column;
     }   
@@ -2232,13 +2290,12 @@ alrt_pop
         width: 100%;
     }
     
-    #s6 .table_show tbody tr,
-    #s9 .table_show tbody tr{
-        width: 50%;
+    #s6 .table_show tbody tr{
+        width: 100%;
     }
 
     #report1 .table_show th{
-        width: 60px;
+        width: 50%;
     }
 
     /*************
@@ -2330,6 +2387,15 @@ alrt_pop
     .outcome_wrap::-webkit-scrollbar{
         display:none;
     }
+
+    #report1 button.rpt_surb{
+        padding: 4px 16px 4px 12px;
+    }
+
+    #report1 button.rpt_surb::before{
+        width: 28px;
+        height: 28px;
+    }
 }
 
 @media all and (max-width: 368px){
@@ -2411,8 +2477,8 @@ alrt_pop
         margin-right: 8px;
     }
 }
+
 @media all and (max-width: 316px){
-    
     #report1 .pd36{
         padding-left: 12px;
         padding-right: 12px;
@@ -2447,8 +2513,6 @@ alrt_pop
     #report1 .flx.outcome_box.last{
         margin-right: 12px;
     }
-}
-@media all and (max-width: 316px){
     #report1 .rpt_hd .sumsum {
         display: flex;
         justify-content: space-between;
@@ -2557,9 +2621,6 @@ alrt_pop
     #report1 .table_show th{
         font-size: 12px;
     }
-
-}
-@media all and (max-width: 320px){
     .alrt_pop p span{
         font-size: 12px;
     }
