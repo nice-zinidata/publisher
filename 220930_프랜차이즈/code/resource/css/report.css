@@ -550,11 +550,11 @@ justify-content: space-between;
 }
 
 #report1 span.blue{
-    color:#1F67FD;
+    color:#0554E5;
 }
 
 #report1 span.down{
-    color:#1F67FD;
+    color:#0554E5;
 }
 #report1 span.up{
     color:#E72508;
@@ -584,7 +584,7 @@ justify-content: space-between;
 }
 
 #report1 .choice1 ul li.on button{
-    color:#1F67FD;
+    color:#0554E5;
     border: 1px solid #1f65fd4d;
 }
 
@@ -985,7 +985,8 @@ span.up::before{
 
 .rp_sheet_hd.wh{
     width: 100%;
-    background-color:#366ddf;
+    background-color:#303d9b;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.096) ;
 }
 
 .rp_sheet_hd {
@@ -1032,7 +1033,7 @@ span.up::before{
 
 .rp_sheet_hd.wh{
     border-bottom: 0;
-    border-bottom: 1px solid #030c5e10;
+    /* border-bottom: 1px solid #ffffff18; */
 }
 
 .ico_box, .close_box {
@@ -1064,7 +1065,7 @@ span.up::before{
     top:40px;
     z-index: 10;
     overflow: hidden;
-    border-radius: 14px;
+    border-radius: 8px;
 }
 
 #report1 .report_div{
@@ -1080,8 +1081,7 @@ span.up::before{
 
 #report1 .rpt_hd{
     padding: 32px 16px;
-    /* background-color: #1549b5; */
-    background-color: #366ddf;
+    background-color: #303d9b;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
@@ -1097,9 +1097,9 @@ span.up::before{
     width: 33.3%;
     padding: 12px;
     margin-right: 8px;
-    background-color: rgb(80 128 227);
+    border: 1px solid rgba(221, 221, 221, 0.2);
     border-radius: 8px;
-    box-shadow: 0px 0px 8px rgb(34 87 193 / 37%);
+    
 }
 
 #report1 .rpt_hd .sumsum >li:last-child{
@@ -1174,7 +1174,7 @@ span.up::before{
 }
 
 #report1 .hd_title_txt{
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 60px;
     width: 100%;
     display: flex;
@@ -1196,8 +1196,7 @@ span.up::before{
     line-height: 20px;
     font-size: 12px;
     width: fit-content;
-    background: #103eafbd;
-    box-shadow: 0px 0px 12px rgb(34 87 193 / 60%);
+    background: #16123661;
 }
 
 #report1 button.rpt_surb::before{
@@ -1279,7 +1278,7 @@ span.up::before{
 }
 
 .mb_rp_gnb > li:last-child{
-    padding-right: 72px;
+    /* padding-right: 72px; */
 }
 
 .mb_rp_gnb_box{
@@ -1330,15 +1329,15 @@ span.up::before{
 }
 
 .mb_rp_gnb > li.on > a{
-    color:#1F67FD;
+    color:#0554E5;
 }
 
 .mb_rp_gnb > li.on{
-    border-bottom:2px solid #1F67FD;
+    border-bottom:2px solid #0554E5;
 }
 
 .mb_rp_gnb > li:last-child{
-    margin-right: 0;
+    /* margin-right: 0; */
 }
 
 .mb_rp_gnb_box::-webkit-scrollbar{
@@ -2050,6 +2049,50 @@ alrt_pop
 }
 @media all and (max-width: 680px){
     
+    
+    #report1 .rpt_hd .sumsum {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        flex-direction: column;
+    }
+    #report1 .rpt_hd .sumsum >li {
+        margin-right: 0;
+        width: calc(100% - 24px);
+        display: flex;
+        justify-content: space-between;
+        align-content: flex-end;
+        margin-bottom: 4px;
+    }
+    #report1 .rpt_hd .sumsum >li >p:nth-child(1){
+        margin-bottom: 0;
+    }
+
+    #report1 .rpt_hd .sumsum >li >p:nth-child(2)::before{
+        display: none;
+    }
+
+    #report1 .rpt_hd .sumsum >li >p:nth-child(1)::before {
+        content: "";
+        display: inline-block;
+        background-color: #fff;
+        width: 14px;
+        height: 14px;
+        margin-bottom: -2px;
+        border-radius: 100%;
+        margin-right: 8px;
+        background: url(../images/icons/ico_hd_2.svg) 50% 50%/cover;
+    }
+    #report1 .rpt_hd .sumsum >li:nth-child(1) >p:nth-child(1)::before {
+        background: url(../images/icons/ico_hd_1.svg) 50% 50%/cover;
+    }
+    #report1 .rpt_hd .sumsum >li:nth-child(2) >p:nth-child(1)::before {
+        background: url(../images/icons/ico_hd_3.svg) 50% 50%/cover;
+    }
+    #report1 .rpt_hd .sumsum >li:nth-child(3) >p:nth-child(1)::before {
+        background: url(../images/icons/ico_hd_2.svg) 50% 50%/cover;
+    }
+
     .table_show{
         display: flex;
     }
@@ -2067,10 +2110,10 @@ alrt_pop
     }
 
     #report1 #s1 .label_box > ul > li{
-        width: 48%;
+        width: 100%;
     }
     #report1 #s1 .label_box > ul > li .label_p{
-        width: 80%;
+        width: 100%;
     }
 
     #report1 #s7 .echart_box.flx{
@@ -2172,7 +2215,7 @@ alrt_pop
     }
 
     #report1 .rpt_hd .sumsum >li >p:nth-child(2) > span{
-        font-size: 16px;
+        font-size: 14px;
     }
 
     #report1 .onlymb.rpt_hd h2{
@@ -2415,6 +2458,7 @@ alrt_pop
     #report1 #banner_sc{
         background: #366ddf url(../images/banner/obj1.png) no-repeat 120% 50%/50%;        
     }
+    
 }
 @media all and (max-width: 360px){
 
@@ -2465,6 +2509,7 @@ alrt_pop
     .tbl-biz colgroup col:nth-child(1) {
         width: 10% !important;
     }
+
 }
 @media all and (max-width: 348px){
     #report1 section .title_area > p{
@@ -2477,7 +2522,11 @@ alrt_pop
         margin-right: 8px;
     }
 }
-
+@media all and (max-width: 320px){
+    .choice1{
+        flex-direction: column;
+    }
+}
 @media all and (max-width: 316px){
     #report1 .pd36{
         padding-left: 12px;

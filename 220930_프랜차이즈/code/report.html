@@ -33,7 +33,6 @@
         width: 100%;
         height: 100%;
         overflow: hidden;
-        
       }
 
       .swiper-slide {
@@ -71,596 +70,615 @@
 <body class="idx1">
 
 <!-- 리포트 -->
-<div id="report1" style="display: none;">
-  <div class="rp_sheet_hd wh onlymb" style="top:0;z-index: 11">
-    <div class="ico_box back">
-        <a href="javascript:;" onclick="reportClose();"></a>
-    </div>
-    <div class="name_box">
-        상권분석
-    </div>
-    <div id="menuToggle" class="close_box">
-        <a href="#"></a>
-    </div>
-</div>
-  <div class="wrap cb">
-      <div class="onlymb rpt_hd flx">
-          <div class="hd_title_txt">
-              <p class="logo_p">KFA 상권분석 보고서</p>
-              <h2><span class="h2_loca">개포1동</span> <span>샌드위치/브런치/샐러드</span></h2>
-              <button class="rpt_surb">기업용 서비스 문의</button>
-          </div>
-          <ul class="sumsum">
-              <li><p>주거지역</p><p><span>38</span>%</p></li>
-              <li><p>매출규모 (월)</p><p><span>1473</span>만원</p></li>
-              <li><p>최고매출</p><p><span>금요일</span></p></li>
-          </ul>
+<div id="report1" >
+    <div class="rp_sheet_hd wh onlymb" style="top:0;z-index: 11">
+      <div class="ico_box back">
+          <a href="javascript:;" onclick="reportClose();"></a>
       </div>
-      <div style="position: relative;" class="onlymb">
-          <div class="mb_rp_gnb_box">
-              <button class="left_navi_btn">뒤로가기</button>
-              <button class="right_navi_btn">앞으로가기</button>
-              <ul class="mb_rp_gnb onlymb">
+      <div class="name_box">
+          상권분석
+      </div>
+      <div id="menuToggle" class="close_box">
+          <a href="#"></a>
+      </div>
+  </div>
+    <div class="wrap cb">
+        <div class="onlymb rpt_hd flx">
+            <div class="hd_title_txt">
+                <p class="logo_p">KFA 상권분석 보고서</p>
+                <h2><span class="h2_loca">개포1동</span> <span>샌드위치/브런치/샐러드</span></h2>
+                <button class="rpt_surb">기업용 서비스 문의</button>
+            </div>
+            <ul class="sumsum">
+                <li><p>주거지역</p><p><span>38</span>%</p></li>
+                <li><p>매출규모 (월)</p><p><span>1473</span>만원</p></li>
+                <li><p>최고매출</p><p><span>금요일</span></p></li>
+            </ul>
+        </div>
+        <div style="position: relative;" class="onlymb">
+            <div class="mb_rp_gnb_box">
+                <button class="left_navi_btn">뒤로가기</button>
+                <button class="right_navi_btn">앞으로가기</button>
+                <ul class="mb_rp_gnb onlymb">
+                    <li class="on"><a href="#">업종 적합도 지수</a></li>
+                    <li><a href="#s1">밀집도</a></li>
+                    <li><a href="#s2">성장성</a></li>
+                    <li><a href="#s3">매출규모</a></li>
+                    <li><a href="#s4">변동성</a></li>
+                    <li><a href="#s5">고객/소비 패턴</a></li>
+                </ul>
+            </div>
+            <div class="filter" style="display: none;"><a href="#" id="mobile_filter">필터</a></div>
+        </div>
+        <div class="rp_header fl onlypc">
+            <div class="inner pd24">
+                <div class="logo_box">
+                    <a href="index.html"></a>
+                </div>
+                <ul class="rp_gnb">
                   <li class="on"><a href="#">업종 적합도 지수</a></li>
                   <li><a href="#s1">밀집도</a></li>
                   <li><a href="#s2">성장성</a></li>
                   <li><a href="#s3">매출규모</a></li>
                   <li><a href="#s4">변동성</a></li>
                   <li><a href="#s5">고객/소비 패턴</a></li>
-              </ul>
-          </div>
-          <div class="filter" style="display: none;"><a href="#" id="mobile_filter">필터</a></div>
-      </div>
-      <div class="rp_header fl onlypc">
-          <div class="inner pd24">
-              <div class="logo_box">
-                  <a href="index.html"></a>
-              </div>
-              <ul class="rp_gnb">
-                <li class="on"><a href="#">업종 적합도 지수</a></li>
-                <li><a href="#s1">밀집도</a></li>
-                <li><a href="#s2">성장성</a></li>
-                <li><a href="#s3">매출규모</a></li>
-                <li><a href="#s4">변동성</a></li>
-                <li><a href="#s5">고객/소비 패턴</a></li>
-              </ul>
-              <div class="last_btn_bx">
-                  <button class="rpt_surb">기업용 서비스 문의</button>
-              </div>
-          </div><!-- inner -->
-      </div><!-- rp_header -->
-      <div class="rp_body fr">
-          <div class="rp_top">
-              <div class="top_inner onlypc" style="width: 784px;">
-                  <div class="flx pd24">
-                      <h2><span class="h2_loca">개포1동&nbsp;</span>호프/맥주업종</h2>
-                      <!-- <h2>개포1동 호프/맥주 업종 분석</h2> -->
-                      <div class="flx">
-                          <div class="btn_box download">
-                              <button class="btn3">
-                                보고서 인쇄하기
-                              </button>
-                          </div>
-                          <div class="btn_box">
-                              <button class="right_btn close">
-                                  닫기
-                              </button>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="inner sc_box pd24">
-              <section id="s1" class="pd36">
-                  <div class="title_area flx">
-                      <h3><span class="pc">업종 적합도 지수</span></h3>
-                  </div>
-                  <div class="content_area">
-                      <div class="container contain1">
-                          <div class="inner">
-                              <div class="rpt_txt">
-                                  <p>
-                                    역삼1동의 갈비/삼겹살 업종 적합도 지수는 <span class="blue">734점(전체 1000점)</span> 입니다. 전월 대비 8점 증가했으며, 전년 동월대비 11점 감소했습니다.
-                                  </p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="container contain2">
-                          <div class="inner flx">
-                              <div class="echart_box">
-                                    <div id="rp_chart1" style="width: 100% !important; height:320px;"></div>
-                              </div>
-                              <div class="label_box pd24">
-                                  <div class="flx label_title_box">
-                                    <p class="label_title lbt1">총점</p>
-                                    <p class="label_title lbt2"><span>734</span> 점</p>
+                </ul>
+                <div class="last_btn_bx">
+                    <button class="rpt_surb">기업용 서비스 문의</button>
+                </div>
+            </div><!-- inner -->
+        </div><!-- rp_header -->
+        <div class="rp_body fr">
+            <div class="rp_top">
+                <div class="top_inner onlypc" style="width: 784px;">
+                    <div class="flx pd24">
+                        <h2><span class="h2_loca">개포1동&nbsp;</span>호프/맥주업종</h2>
+                        <!-- <h2>개포1동 호프/맥주 업종 분석</h2> -->
+                        <div class="flx">
+                            <div class="btn_box download">
+                                <button class="btn3">
+                                  보고서 인쇄하기
+                                </button>
+                            </div>
+                            <div class="btn_box">
+                                <button class="right_btn close">
+                                    닫기
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="inner sc_box pd24">
+                <section id="s1" class="pd36">
+                    <div class="title_area flx">
+                        <h3><span class="pc">업종 적합도 지수</span></h3>
+                    </div>
+                    <div class="content_area">
+                        <div class="container contain1">
+                            <div class="inner">
+                                <div class="rpt_txt">
+                                    <p>
+                                      역삼1동의 갈비/삼겹살 <span class="blue">업종 적합도 지수</span>는 <span class="blue">734점(전체 1000점)</span> 입니다. 전월 대비 <span class="blue">8점 증가</span> 했으며, 전년 동월대비 <span class="blue">11점 감소</span> 했습니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container contain2">
+                            <div class="inner flx">
+                                <div class="echart_box">
+                                      <div id="rp_chart1" style="width: 100% !important; height:320px;"></div>
+                                </div>
+                                <div class="label_box pd24">
+                                    <div class="flx label_title_box">
+                                      <p class="label_title lbt1">총점</p>
+                                      <p class="label_title lbt2"><span>734</span> 점</p>
+                                    </div>
+                                    <ul>
+                                        <li class="flx">
+                                            <div class="label_p flx">
+                                                <p>유사업종 밀집도</p>
+                                                <p><span class="number">76</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="flx">
+                                            <div class="label_p flx">
+                                                <p>해당업종 밀집도</p>
+                                                <p><span class="number">81</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="flx">
+                                            <div class="label_p flx">
+                                                <p>상권 성장성</p>
+                                                <p><span class="number">67</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="flx">
+                                            <div class="label_p flx">
+                                                <p>업종 성장성</p>
+                                                <p><span class="number">91</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="flx">
+                                            <div class="label_p flx">
+                                                <p>점포당 매출</p>
+                                                <p><span class="number">73</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="flx">
+                                            <div class="label_p flx">
+                                                <p>업력</p>
+                                                <p><span class="number">85</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="flx">
+                                            <div class="label_p flx">
+                                                <p>매출 변동성</p>
+                                                <p><span class="number">94</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="flx">
+                                            <div class="label_p flx">
+                                                <p>배후 주거인구</p>
+                                                <p><span class="number">84</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="flx">
+                                            <div class="label_p flx">
+                                                <p>배후 직장인구</p>
+                                                <p><span class="number">91</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="flx">
+                                            <div class="label_p flx">
+                                                <p>유동인구</p>
+                                                <p><span class="number">91</span></p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </section>
+                <section id="s2" class="pd36">
+                    <div class="title_area flx">
+                        <h3>밀집도</h3>
+                    </div>
+                    <div class="content_area">
+                        <div class="container contain1">
+                            <div class="inner">
+                                <div class="rpt_txt">
+                                    <p>
+                                        갈비/삼겹살 점포 수는 <span class="blue">72개</span>, 전 업종 점포 수는<span class="blue"> 3,513개</span> 입니다. 갈비/삼겹살의 <span class="blue">업종구성비는 2%</span>
+                                        이며, 전체 평균 업종구성비 대비 <span class="down">0.4%↓</span>낮습니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container contain2">
+                            <div class="inner">
+                                <div class="echart_box">
+                                    <div id="rp_chart2" style="height: 360px; margin: 0px auto; width: 100% !important; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" _echarts_instance_="ec_1666661077277"><div style="position: relative; width: 676px; height: 360px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="676" height="360" style="position: absolute; left: 0px; top: 0px; width: 676px; height: 360px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="s3" class="pd36">
+                    <div class="title_area flx">
+                        <h3>성장성</h3>
+                    </div>
+                    <div class="content_area">
+                        <div class="container contain1">
+                            <div class="inner">
+                                <div class="rpt_txt">
+                                    <p>
+                                      22년 3분기 전국/해당 상권 <span class="blue">총 시장규모는 8,653억원</span>이며 전 분기 대비 <span class="blue">1.1% 상승</span>했고, 전년 동분기 대비 <span class="blue">17.7% 상승</span>했습니다.
+                                    </p>
+                                </div>
+                                <div class="rpt_txt">
+                                    <p>
+                                      22년 3분기 전국/해당 업종 <span class="blue">총 시장규모는 8,653억원</span>이며 전 분기 대비 <span class="blue">1.1% 상승</span>했고, 전년 동분기 대비 <span class="blue">17.7% 상승</span>했습니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container contain2">
+                            <div class="inner">
+                                <div class="echart_box">
+                                  <div class="choice1">
+                                    <ul class="flx">
+                                        <li class="on"><button class="list7" data-gubun="admi">상권 성장성</button></li>
+                                        <li><button class="list7" data-gubun="mega">업종 성장성</button></li>
+                                    </ul>
+                                    <p style="text-align: right;font-size: 12px;margin-top: 20px;color: #4E5867;">[단위 :  억원/분기합산]</p>
                                   </div>
-                                  <ul>
-                                      <li class="flx">
-                                          <div class="label_p flx">
-                                              <p>유사업종 밀집도</p>
-                                              <p><span class="number">76</span></p>
-                                          </div>
-                                      </li>
-                                      <li class="flx">
-                                          <div class="label_p flx">
-                                              <p>해당업종 밀집도</p>
-                                              <p><span class="number">81</span></p>
-                                          </div>
-                                      </li>
-                                      <li class="flx">
-                                          <div class="label_p flx">
-                                              <p>상권 성장성</p>
-                                              <p><span class="number">67</span></p>
-                                          </div>
-                                      </li>
-                                      <li class="flx">
-                                          <div class="label_p flx">
-                                              <p>업종 성장성</p>
-                                              <p><span class="number">91</span></p>
-                                          </div>
-                                      </li>
-                                      <li class="flx">
-                                          <div class="label_p flx">
-                                              <p>점포당 매출</p>
-                                              <p><span class="number">73</span></p>
-                                          </div>
-                                      </li>
-                                      <li class="flx">
-                                          <div class="label_p flx">
-                                              <p>업력</p>
-                                              <p><span class="number">85</span></p>
-                                          </div>
-                                      </li>
-                                      <li class="flx">
-                                          <div class="label_p flx">
-                                              <p>매출 변동성</p>
-                                              <p><span class="number">94</span></p>
-                                          </div>
-                                      </li>
-                                      <li class="flx">
-                                          <div class="label_p flx">
-                                              <p>배후 주거인구</p>
-                                              <p><span class="number">84</span></p>
-                                          </div>
-                                      </li>
-                                      <li class="flx">
-                                          <div class="label_p flx">
-                                              <p>배후 직장인구</p>
-                                              <p><span class="number">91</span></p>
-                                          </div>
-                                      </li>
-                                      <li class="flx">
-                                          <div class="label_p flx">
-                                              <p>유동인구</p>
-                                              <p><span class="number">91</span></p>
-                                          </div>
-                                      </li>
-                                  </ul>
-                              </div>
-                          </div>
-                          
-                      </div>
-                  </div>
-              </section>
-              <section id="s2" class="pd36">
-                  <div class="title_area flx">
-                      <h3>밀집도</h3>
-                  </div>
-                  <div class="content_area">
-                      <div class="container contain1">
-                          <div class="inner">
-                              <div class="rpt_txt">
-                                  <p>
-                                    갈비/삼겹살 점포 수는 72개이며, 전 업종 점포 수는 3,513개 입니다. 갈비/삼겹살의 업종구성비는 2%이며, 전체 평균 업종구성비 대비 0.4%낮습니다.
-                                  </p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="container contain2">
-                          <div class="inner">
-                              <div class="echart_box">
-                                  <div id="rp_chart2" style="height: 360px; margin: 0px auto; width: 100% !important; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" _echarts_instance_="ec_1666661077277"><div style="position: relative; width: 676px; height: 360px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="676" height="360" style="position: absolute; left: 0px; top: 0px; width: 676px; height: 360px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </section>
-              <section id="s3" class="pd36">
-                  <div class="title_area flx">
-                      <h3>성장성</h3>
-                  </div>
-                  <div class="content_area">
-                      <div class="container contain1">
-                          <div class="inner">
-                              <div class="rpt_txt">
-                                  <p>
-                                    22년 3분기 전국/해당 상권 총 시장규모는 8,653억원이며 전 분기 대비 1.1% 상승했고, 전년 동분기 대비 17.7% 상승했습니다.
-                                  </p>
-                                  <!-- <p>
-                                    22년 3분기 전국/해당 업종 총 시장규모는 8,653억원이며 전 분기 대비 1.1% 상승했고, 전년 동분기 대비 17.7% 상승했습니다.
-                                  </p> -->
-                              </div>
-                          </div>
-                      </div>
-                      <div class="container contain2">
-                          <div class="inner">
-                              <div class="echart_box">
-                                <div class="choice1">
-                                  <ul class="flx">
-                                      <li class="on"><button class="list7" data-gubun="admi">상권 성장성</button></li>
-                                      <li><button class="list7" data-gubun="mega">업종 성장성</button></li>
-                                  </ul>
-                                  <p style="text-align: right;font-size: 12px;margin-top: 20px;color: #4E5867;">[단위 :  억원/분기합산]</p>
+                                    <div id="rp_chart3" style="height: 360px; margin: 0px auto; width: 100% !important; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" _echarts_instance_="ec_1666661077278"><div style="position: relative; width: 676px; height: 360px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="676" height="360" style="position: absolute; left: 0px; top: 0px; width: 676px; height: 360px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
                                 </div>
-                                  <div id="rp_chart3" style="height: 360px; margin: 0px auto; width: 100% !important; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" _echarts_instance_="ec_1666661077278"><div style="position: relative; width: 676px; height: 360px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="676" height="360" style="position: absolute; left: 0px; top: 0px; width: 676px; height: 360px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
-                              </div>
-                          </div>
-                          <div class="table_put_box">
-                              <table class="table_show">
-                                  <caption></caption>
-                                  <thead>
-                                      <tr>
-                                          <th scope="col"><span><i></i></span></th>
-                                          <th scope="col"><span><i>21년 1Q</i></span></th>
-                                          <th scope="col"><span><i>21년 2Q</i></span></th>
-                                          <th scope="col"><span><i>21년 3Q</i></span></th>
-                                          <th scope="col"><span><i>21년 4Q</i></span></th>
-                                          <th scope="col"><span><i>22년 1Q</i></span></th>
-                                          <th scope="col"><span><i>22년 2Q</i></span></th>
-                                          <th scope="col"><span><i>22년 3Q</i></span></th>
-                                      
-                                      </tr>
-                                  </thead>
-                                  <tbody>
-                                      <tr>
-                                          <td><b>상권<br/>총매출</b></td>
-                                      
-                                          <td>20,803억원</td>
-                                      
-                                          <td>13,914억원</td>
-                                      
-                                          <td>10,326억원</td>
-                                      
-                                          <td>14,602억원</td>
-                                      
-                                          <td>24,155억원</td>
-                                      
-                                          <td>24,092억원</td>
-
-                                          <td>24,092억원</td>
-                                      
-                                      </tr>
-                                  </tbody>
-                              </table>
-                          </div>
-                      </div>
-                  </div>
-              </section>
-              <section id="s4" class="pd36">
-                  <div class="title_area flx">
-                      <h3>매출규모</h3>
-                  </div>
-                  <div class="content_area">
-                      <div class="container contain1">
-                          <div class="inner">
-                              <div class="rpt_txt">
-                                  <p>
-                                    22년 07월 기준 해당지역/업종 총 시장규모는 1,473만원/월 이며, 전월 대비 402만원 증가(37.5%↑)했습니다.
-                                  </p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="container contain2">
-                          <div class="inner">
-                              <div class="echart_box">
-                                <div class="choice1">
-                                  <ul class="flx">
-                                      <li class="on"><button class="list7" data-gubun="admi">총 매출규모</button></li>
-                                      <li><button class="list7" data-gubun="mega">점포당 매출</button></li>
-                                  </ul>
-                                  <p style="text-align: right;font-size: 12px;margin-top: 20px;color: #4E5867;">[단위 :  만원/월]</p>
+                            </div>
+                            <div class="table_put_box">
+                                <table class="table_show">
+                                    <caption></caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"><span><i></i></span></th>
+                                            <th scope="col"><span><i>21년 1Q</i></span></th>
+                                            <th scope="col"><span><i>21년 2Q</i></span></th>
+                                            <th scope="col"><span><i>21년 3Q</i></span></th>
+                                            <th scope="col"><span><i>21년 4Q</i></span></th>
+                                            <th scope="col"><span><i>22년 1Q</i></span></th>
+                                            <th scope="col"><span><i>22년 2Q</i></span></th>
+                                            <th scope="col"><span><i>22년 3Q</i></span></th>
+                                        
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><b>상권<br/>총매출</b></td>
+                                        
+                                            <td>20,803억원</td>
+                                        
+                                            <td>13,914억원</td>
+                                        
+                                            <td>10,326억원</td>
+                                        
+                                            <td>14,602억원</td>
+                                        
+                                            <td>24,155억원</td>
+                                        
+                                            <td>24,092억원</td>
+  
+                                            <td>24,092억원</td>
+                                        
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="s4" class="pd36">
+                    <div class="title_area flx">
+                        <h3>매출규모</h3>
+                    </div>
+                    <div class="content_area">
+                        <div class="container contain1">
+                            <div class="inner">
+                                <div class="rpt_txt">
+                                    <p>
+                                      22년 07월 기준 해당지역/업종 <span class="blue">총 시장규모는 1,473만원/월</span> 이며, 전월 대비 <span class="up">402만원 증가(37.5%↑)</span>했습니다.
+                                    </p>
                                 </div>
-                                  <div id="rp_chart4" style="height: 360px; margin: 0px auto; width: 100% !important; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" _echarts_instance_="ec_1666661077279"><div style="position: relative; width: 676px; height: 360px; padding: 0px; margin: 0px; border-width: 0px;">
+                                <div class="rpt_txt">
+                                    <p>
+                                      22년 07월 기준 해당지역/업종 <span class="blue">점포당 매출 규모는 1,473만원/월</span> 이며, 전월 대비 <span class="up">402만원 증가(37.5%↑)</span>했습니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container contain2">
+                            <div class="inner">
+                                <div class="echart_box">
+                                  <div class="choice1">
+                                    <ul class="flx">
+                                        <li class="on"><button class="list7" data-gubun="admi">총 매출규모</button></li>
+                                        <li><button class="list7" data-gubun="mega">점포당 매출</button></li>
+                                    </ul>
+                                    <p style="text-align: right;font-size: 12px;margin-top: 20px;color: #4E5867;">[단위 :  만원/월]</p>
                                   </div>
-                              </div>
-                          </div>
-                          <div class="table_put_box">
-                              <table class="table_show">
-                                  <caption></caption>
-                                  <thead>
-                                      <tr>
-                                          <th scope="col"><span><i></i></span></th>
-
-                                          <th scope="col"><span><i>22년 1월</i></span></th>
-                                      
-                                          <th scope="col"><span><i>22년 02월</i></span></th>
-                                      
-                                          <th scope="col"><span><i>22년 03월</i></span></th>
-                                      
-                                          <th scope="col"><span><i>22년 04월</i></span></th>
-                                      
-                                          <th scope="col"><span><i>22년 05월</i></span></th>
-                                      
-                                          <th scope="col"><span><i>22년 06월</i></span></th>
-                                      
-                                          <th scope="col"><span><i>22년 07월</i></span></th>
-                                      
-                                      </tr>
-                                  </thead>
-                                  <tbody>
-                                      <tr>
-                                      <td>지역/업종<br/>총매출</td>
-                                      
-                                          <td>2,600만원</td>
-                                      
-                                          <td>1,988만원</td>
-                                      
-                                          <td>1,291만원</td>
-                                      
-                                          <td>1,622만원</td>
-                                      
-                                          <td>2,416만원</td>
-                                      
-                                          <td>3,011만원</td>
-                                          
-                                          <td>3,011만원</td>
-                                      
-                                      </tr>
-                                  </tbody>
-                              </table>
-                          </div>
-                      </div>
-                  </div>
-              </section>
-              <section id="s5" class="pd36">
-                  <div class="title_area flx">
-                      <h3>변동성</h3>
-                  </div>
-                  <div class="content_area">
-                      <div class="container contain1">
-                          <div class="inner">
-                              <div class="rpt_txt">
-                                  <p>
-                                    최근 1년 점포당 평균매출은 5,641만원이며 표준편차는 1,853만원으로 전년 대비 32.9% 상승했습니다.
-                                    이는 전국 행정읍/면/동 평균 매출 변동성인 25.4% 대비 7.5%p 높은 수치입니다.
-                                  </p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="container contain2">
-                          <div class="inner">
-                              <div class="choice1">
-                                  <ul class="flx">
-                                      <li class="on"><button>매출 변동성</button></li>
-                                      <li><button>점포 수 변동성</button></li>
-                                  </ul>
-                                  <p style="text-align: right;font-size: 12px;margin-top: 20px;color: #4E5867;">[단위 :  만원/월]</p>
-                              </div>
-                              <div class="echart_box">
-                                  <div id="rp_chart5" style="height: 360px; margin: 0px auto; width: 100% !important; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" _echarts_instance_="ec_1666661077283"><div style="position: relative; width: 100px; height: 360px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="100" height="360" style="position: absolute; left: 0px; top: 0px; width: 100px; height: 360px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div>
+                                    <div id="rp_chart4" style="height: 360px; margin: 0px auto; width: 100% !important; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" _echarts_instance_="ec_1666661077279"><div style="position: relative; width: 676px; height: 360px; padding: 0px; margin: 0px; border-width: 0px;">
+                                    </div>
                                 </div>
-                              </div>
-                          </div>
-                          <div class="table_put_box">
-                              <table class="table_show tbmb">
-                                  <colgroup>
-                                      <col style="width:auto">
-                                      <col style="width:auto">
-                                      <col style="width:auto">
-                                      <col style="width:auto">
-                                  </colgroup>
-                                  <caption></caption>
+                            </div>
+                            <div class="table_put_box">
+                                <table class="table_show">
+                                    <caption></caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"><span><i></i></span></th>
+  
+                                            <th scope="col"><span><i>22년 1월</i></span></th>
+                                        
+                                            <th scope="col"><span><i>22년 02월</i></span></th>
+                                        
+                                            <th scope="col"><span><i>22년 03월</i></span></th>
+                                        
+                                            <th scope="col"><span><i>22년 04월</i></span></th>
+                                        
+                                            <th scope="col"><span><i>22년 05월</i></span></th>
+                                        
+                                            <th scope="col"><span><i>22년 06월</i></span></th>
+                                        
+                                            <th scope="col"><span><i>22년 07월</i></span></th>
+                                        
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <td>지역/업종<br/>총매출</td>
+                                        
+                                            <td>2,600만원</td>
+                                        
+                                            <td>1,988만원</td>
+                                        
+                                            <td>1,291만원</td>
+                                        
+                                            <td>1,622만원</td>
+                                        
+                                            <td>2,416만원</td>
+                                        
+                                            <td>3,011만원</td>
+                                            
+                                            <td>3,011만원</td>
+                                        
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="s5" class="pd36">
+                    <div class="title_area flx">
+                        <h3>변동성</h3>
+                    </div>
+                    <div class="content_area">
+                        <div class="container contain1">
+                            <div class="inner">
+                                <div class="rpt_txt">
+                                    <p>
+                                      최근 1년 점포당 평균매출은 <span class="blue">5,641만원</span>이며 <span class="blue">표준편차는 1,853만원</span>으로 전년 대비 <span class="blue">32.9% 상승</span>했습니다.
+                                      이는 전국 행정읍/면/동 <span class="blue">평균 매출 변동성인 25.4%</span> 대비 <span class="up">7.5%p↑ 높은 수치</span> 입니다.
+                                    </p>
+                                </div>
+                                <div class="rpt_txt">
+                                    <p>
+                                        최근 1년 운영점포수는 <span class="blue">41개</span>이며 <span class="blue">표준편차는 1,853만원</span>으로 전년 대비 <span class="blue">32.9% 상승</span>했습니다.
+                                      이는 전국 행정읍/면/동 <span class="blue">평균 점포 수 변동성인 25.4%</span> 대비 <span class="down">7.5%p↓ 낮은 수치</span> 입니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container contain2">
+                            <div class="inner">
+                                <div class="choice1">
+                                    <ul class="flx">
+                                        <li class="on"><button>매출 변동성</button></li>
+                                        <li><button>점포 수 변동성</button></li>
+                                    </ul>
+                                    <p style="text-align: right;font-size: 12px;margin-top: 20px;color: #4E5867;">[단위 :  만원/월]</p>
+                                </div>
+                                <div class="echart_box">
+                                    <div id="rp_chart5" style="height: 360px; margin: 0px auto; width: 100% !important; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" _echarts_instance_="ec_1666661077283"><div style="position: relative; width: 100px; height: 360px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="100" height="360" style="position: absolute; left: 0px; top: 0px; width: 100px; height: 360px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="table_put_box">
+                                <table class="table_show tbmb">
+                                    <colgroup>
+                                        <col style="width:auto">
+                                        <col style="width:auto">
+                                        <col style="width:auto">
+                                        <col style="width:auto">
+                                    </colgroup>
+                                    <caption></caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"><span><i>구분</i></span></th>
+                                        
+                                            <th scope="col"><span><i>최근 1년 평균 점포수</i></span></th>
+                                        
+                                            <th scope="col"><span><i>표준편차</i></span></th>
+                                        
+                                            <th scope="col"><span><i>점포수 변동성</i></span></th>
+                                        
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <td>점포 수 변동성</td>
+                                        
+                                            <td>71.8개소</td>
+                                        
+                                            <td>2.13개소</td>
+                                        
+                                            <td>3.0%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+  
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="s6" class="pd36">
+                    <div class="title_area flx">
+                        <h3>고객/소비 패턴</h3>
+                    </div>
+                    <div class="content_area">
+                        <div class="container contain1">
+                            <div class="inner">
+                                <div class="rpt_txt">
+                                    <p>
+                                      해당 지역/업종의 주요 고객층은 <span class="blue">60대 이상 남성>50대 남성>40대 남성 순</span>입니다.
+                                    </p>
+                                </div>
+                                <div class="rpt_txt">
+                                    <p>
+                                      매출 건수 기준 <span class="blue">최고 시간대는 12시~15시</span>이며 <span class="blue">전체 매출 건의 48.2%</span>입니다. 매출 금액 기준 <span class="blue">최고 시간대는 18시~21시</span>이며 <span class="blue">전체 매출 금액의 31.1%</span>입니다.
+                                    </p>
+
+                                </div>
+                                <div class="rpt_txt">
+                                    <p>
+                                      월/화/수 평균은 <span class="blue">16.4%</span>, 목/금 평균은 <span class="blue">16.9%</span>, 토/일 평균은 <span class="blue"></span>8.6%입니다. 매출이 <span class="blue">가장 높은 날은 화요일</span>이며, <span class="blue">가장 낮은 날은 일요일</span>입니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container contain2">
+                            <div class="inner">
+                                <div class="choice1">
+                                    <ul class="flx">
+                                        <li class="on"><button>성/연령대별</button></li>
+                                        <li><button>요일별</button></li>
+                                        <li><button>시간대별</button></li>
+                                    </ul>
+                                    <p style="text-align: right;font-size: 12px;margin-top: 20px;color: #4E5867;">[단위 :  %]</p>
+                                </div>
+                                <div class="echart_box">
+                                    <div id="rp_chart6" style="height: 360px; margin: 0px auto; width: 100% !important; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" _echarts_instance_="ec_1666661077285"><div style="position: relative; width: 676px; height: 360px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="676" height="360" style="position: absolute; left: 0px; top: 0px; width: 676px; height: 360px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
+                                    <div id="rp_chart7" style="height: 360px; margin: 0px auto; display: block; width: 100% !important; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" _echarts_instance_="ec_1666661077286"><div style="position: relative; width: 100px; height: 360px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="100" height="360" style="position: absolute; left: 0px; top: 0px; width: 100px; height: 360px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
+                                    <div id="rp_chart8" style="height: 360px; margin: 0px auto; display: block; width: 100% !important; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" _echarts_instance_="ec_1666661077286"><div style="position: relative; width: 100px; height: 360px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="100" height="360" style="position: absolute; left: 0px; top: 0px; width: 100px; height: 360px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
+                                </div>
+                            </div>
+                            <div class="table_put_box">
+  
+                                <!-- 고객비중 테이블 -->
+                                <table class="table_show tbmb">
+                                    <caption>해당 지역 호프/맥주 업종의 성/연령대별 고객비중입니다. '20대','30대','40대','50대','60대이상'의 남성, 여성 비중은 각각 5.5%, 23.1%, 16.0%, 10.7%, 9.1%와 6.9%, 13.2%, 8.3%, 5.6%, 1.5%입니다.</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"><span><i>고객비중</i></span></th>
+                                        
+                                            <th scope="col"><span><i>20대이하</i></span></th>
+                                        
+                                            <th scope="col"><span><i>30대</i></span></th>
+                                        
+                                            <th scope="col"><span><i>40대</i></span></th>
+                                        
+                                            <th scope="col"><span><i>50대</i></span></th>
+                                        
+                                            <th scope="col"><span><i>60대이상</i></span></th>
+                                        
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <td>남성</td>
+                                        
+                                            <td>5.5%</td>
+                                        
+                                            <td>23.1%</td>
+                                        
+                                            <td>16.0%</td>
+                                        
+                                            <td>10.7%</td>
+                                        
+                                            <td>9.1%</td>
+                                        
+                                        </tr>
+                                        <tr>
+                                        <td>여성</td>
+                                        
+                                            <td>6.9%</td>
+                                        
+                                            <td>13.2%</td>
+                                        
+                                            <td>8.3%</td>
+                                        
+                                            <td>5.6%</td>
+                                        
+                                            <td>1.5%</td>
+                                        
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- 고객비중 테이블 -->
+  
+                                <!-- 요일별 테이블 -->
+                                <table class="table_show">
+                                  <caption>해당 상권 내 호프/맥주 업종의 총 시장규모입니다. 호프/맥주 업종의 21년 12월,22년 01월,22년 02월,22년 03월,22년 04월,22년 05월의 각각 월별 시장규모는 20803만원,13914만원,10326만원,14602만원,24155만원,24092입니다.</caption>
                                   <thead>
                                       <tr>
-                                          <th scope="col"><span><i>구분</i></span></th>
-                                      
-                                          <th scope="col"><span><i>최근 1년 평균 점포수</i></span></th>
-                                      
-                                          <th scope="col"><span><i>표준편차</i></span></th>
-                                      
-                                          <th scope="col"><span><i>점포수 변동성</i></span></th>
+                                          <th scope="col"><span><i>요일별</i></span></th>
+                                          <th scope="col"><span><i>월</i></span></th>
+                                          <th scope="col"><span><i>화</i></span></th>
+                                          <th scope="col"><span><i>수</i></span></th>
+                                          <th scope="col"><span><i>목</i></span></th>
+                                          <th scope="col"><span><i>금</i></span></th>
+                                          <th scope="col"><span><i>토</i></span></th>
+                                          <th scope="col"><span><i>일</i></span></th>
                                       
                                       </tr>
                                   </thead>
                                   <tbody>
                                       <tr>
-                                      <td>점포 수 변동성</td>
+                                          <td>매출비중</td>
                                       
-                                          <td>71.8개소</td>
+                                          <td>20%</td>
                                       
-                                          <td>2.13개소</td>
+                                          <td>13%</td>
                                       
-                                          <td>3.0%</td>
+                                          <td>10%</td>
+                                      
+                                          <td>14%</td>
+                                      
+                                          <td>24%</td>
+                                      
+                                          <td>24%</td>
+  
+                                          <td>24%</td>
                                       </tr>
                                   </tbody>
                               </table>
-
-                          </div>
-                      </div>
-                  </div>
-              </section>
-              <section id="s6" class="pd36">
-                  <div class="title_area flx">
-                      <h3>고객/소비 패턴</h3>
-                  </div>
-                  <div class="content_area">
-                      <div class="container contain1">
-                          <div class="inner">
-                              <div class="rpt_txt">
-                                  <p>
-                                    해당 지역/업종의 주요 고객층은 60대 이상 남성>50대 남성>40대 남성 순입니다.
-                                  </p>
-                                  <p style="display: none;">
-                                    매출 건수 기준 최고 시간대는 12시~15시이며 전체 매출 건의 48.2%입니다. 매출 금액 기준 최고 시간대는 18시~21시이며 전체 매출 금액의 31.1%입니다.
-                                  </p>
-                                  <p style="display: none;">
-                                    월/화/수 평균은 16.4%, 목/금 평균은 16.9%, 토/일 평균은 8.6%입니다. 매출이 가장 높은 날은 화요일이며, 가장 낮은 날은 일요일입니다.
-                                  </p>
-                                  
-                              </div>
-                          </div>
-                      </div>
-                      <div class="container contain2">
-                          <div class="inner">
-                              <div class="choice1">
-                                  <ul class="flx">
-                                      <li class="on"><button>성/연령대별</button></li>
-                                      <li><button>요일별</button></li>
-                                      <li><button>시간대별</button></li>
-                                  </ul>
-                                  <p style="text-align: right;font-size: 12px;margin-top: 20px;color: #4E5867;">[단위 :  %]</p>
-                              </div>
-                              <div class="echart_box">
-                                  <div id="rp_chart6" style="height: 360px; margin: 0px auto; width: 100% !important; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" _echarts_instance_="ec_1666661077285"><div style="position: relative; width: 676px; height: 360px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="676" height="360" style="position: absolute; left: 0px; top: 0px; width: 676px; height: 360px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
-                                  <div id="rp_chart7" style="height: 360px; margin: 0px auto; display: block; width: 100% !important; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" _echarts_instance_="ec_1666661077286"><div style="position: relative; width: 100px; height: 360px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="100" height="360" style="position: absolute; left: 0px; top: 0px; width: 100px; height: 360px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
-                                  <div id="rp_chart8" style="height: 360px; margin: 0px auto; display: block; width: 100% !important; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" _echarts_instance_="ec_1666661077286"><div style="position: relative; width: 100px; height: 360px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="100" height="360" style="position: absolute; left: 0px; top: 0px; width: 100px; height: 360px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
-                              </div>
-                          </div>
-                          <div class="table_put_box">
-
-                              <!-- 고객비중 테이블 -->
-                              <table class="table_show tbmb">
-                                  <caption>해당 지역 호프/맥주 업종의 성/연령대별 고객비중입니다. '20대','30대','40대','50대','60대이상'의 남성, 여성 비중은 각각 5.5%, 23.1%, 16.0%, 10.7%, 9.1%와 6.9%, 13.2%, 8.3%, 5.6%, 1.5%입니다.</caption>
-                                  <thead>
-                                      <tr>
-                                          <th scope="col"><span><i>고객비중</i></span></th>
-                                      
-                                          <th scope="col"><span><i>20대이하</i></span></th>
-                                      
-                                          <th scope="col"><span><i>30대</i></span></th>
-                                      
-                                          <th scope="col"><span><i>40대</i></span></th>
-                                      
-                                          <th scope="col"><span><i>50대</i></span></th>
-                                      
-                                          <th scope="col"><span><i>60대이상</i></span></th>
-                                      
-                                      </tr>
-                                  </thead>
-                                  <tbody>
-                                      <tr>
-                                      <td>남성</td>
-                                      
-                                          <td>5.5%</td>
-                                      
-                                          <td>23.1%</td>
-                                      
-                                          <td>16.0%</td>
-                                      
-                                          <td>10.7%</td>
-                                      
-                                          <td>9.1%</td>
-                                      
-                                      </tr>
-                                      <tr>
-                                      <td>여성</td>
-                                      
-                                          <td>6.9%</td>
-                                      
-                                          <td>13.2%</td>
-                                      
-                                          <td>8.3%</td>
-                                      
-                                          <td>5.6%</td>
-                                      
-                                          <td>1.5%</td>
-                                      
-                                      </tr>
-                                  </tbody>
-                              </table>
-                              <!-- 고객비중 테이블 -->
-
                               <!-- 요일별 테이블 -->
-                              <table class="table_show">
-                                <caption>해당 상권 내 호프/맥주 업종의 총 시장규모입니다. 호프/맥주 업종의 21년 12월,22년 01월,22년 02월,22년 03월,22년 04월,22년 05월의 각각 월별 시장규모는 20803만원,13914만원,10326만원,14602만원,24155만원,24092입니다.</caption>
-                                <thead>
-                                    <tr>
-                                        <th scope="col"><span><i>요일별</i></span></th>
-                                        <th scope="col"><span><i>월</i></span></th>
-                                        <th scope="col"><span><i>화</i></span></th>
-                                        <th scope="col"><span><i>수</i></span></th>
-                                        <th scope="col"><span><i>목</i></span></th>
-                                        <th scope="col"><span><i>금</i></span></th>
-                                        <th scope="col"><span><i>토</i></span></th>
-                                        <th scope="col"><span><i>일</i></span></th>
-                                    
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>매출비중</td>
-                                    
-                                        <td>20%</td>
-                                    
-                                        <td>13%</td>
-                                    
-                                        <td>10%</td>
-                                    
-                                        <td>14%</td>
-                                    
-                                        <td>24%</td>
-                                    
-                                        <td>24%</td>
-
-                                        <td>24%</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <!-- 요일별 테이블 -->
-
+  
+                              <!-- 시간별 테이블 -->
+                            <table class="table_show">
+                              <caption>해당 상권 내 호프/맥주 업종의 총 시장규모입니다. 호프/맥주 업종의 21년 12월,22년 01월,22년 02월,22년 03월,22년 04월,22년 05월의 각각 월별 시장규모는 20803만원,13914만원,10326만원,14602만원,24155만원,24092입니다.</caption>
+                              <thead>
+                                  <tr>
+                                      <th scope="col"><span><i>요일별</i></span></th>
+                                      <th scope="col"><span><i>06~09시</i></span></th>
+                                      <th scope="col"><span><i>09~12시</i></span></th>
+                                      <th scope="col"><span><i>12~15시</i></span></th>
+                                      <th scope="col"><span><i>15~18시</i></span></th>
+                                      <th scope="col"><span><i>18~21시</i></span></th>
+                                      <th scope="col"><span><i>21~24시</i></span></th>
+                                      <th scope="col"><span><i>24~06시</i></span></th>
+                                  
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td>매출비중</td>
+                                  
+                                      <td>20%</td>
+                                  
+                                      <td>13%</td>
+                                  
+                                      <td>10%</td>
+                                  
+                                      <td>14%</td>
+                                  
+                                      <td>24%</td>
+                                  
+                                      <td>24%</td>
+  
+                                      <td>24%</td>
+                                  </tr>
+                              </tbody>
+                          </table>
                             <!-- 시간별 테이블 -->
-                          <table class="table_show">
-                            <caption>해당 상권 내 호프/맥주 업종의 총 시장규모입니다. 호프/맥주 업종의 21년 12월,22년 01월,22년 02월,22년 03월,22년 04월,22년 05월의 각각 월별 시장규모는 20803만원,13914만원,10326만원,14602만원,24155만원,24092입니다.</caption>
-                            <thead>
-                                <tr>
-                                    <th scope="col"><span><i>요일별</i></span></th>
-                                    <th scope="col"><span><i>06~09시</i></span></th>
-                                    <th scope="col"><span><i>09~12시</i></span></th>
-                                    <th scope="col"><span><i>12~15시</i></span></th>
-                                    <th scope="col"><span><i>15~18시</i></span></th>
-                                    <th scope="col"><span><i>18~21시</i></span></th>
-                                    <th scope="col"><span><i>21~24시</i></span></th>
-                                    <th scope="col"><span><i>24~06시</i></span></th>
-                                
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>매출비중</td>
-                                
-                                    <td>20%</td>
-                                
-                                    <td>13%</td>
-                                
-                                    <td>10%</td>
-                                
-                                    <td>14%</td>
-                                
-                                    <td>24%</td>
-                                
-                                    <td>24%</td>
-
-                                    <td>24%</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                          <!-- 시간별 테이블 -->
-
-                          </div>
-                      </div>
-                  </div>
-              </section>
-          </div><!-- inner -->
-      </div><!-- rp_body -->
-      <div class="rp_footer">
-          <div class="inner">
-
-          </div><!-- inner -->
-      </div><!-- rp_body -->
-  </div><!-- wrap -->
-</div>
-<!-- 리포트 -->
+  
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div><!-- inner -->
+        </div><!-- rp_body -->
+        <div class="rp_footer">
+            <div class="inner">
+  
+            </div><!-- inner -->
+        </div><!-- rp_body -->
+    </div><!-- wrap -->
+  </div>
+  <!-- 리포트 -->
+  
 
   <!-- 데이터 출처 팝업 -->
   <div class="alrt_pop" id="data_from_show">
@@ -672,12 +690,7 @@
     </div>
     <div class="alrt_bdy">
         <img src="resource/images/logo/zini_logo.svg" alt="">
-        <p>본 서비스의 데이터는 NICE지니데이타에서 제공하고 있습니다. </p>
-        <ul class="under_term">
-            <li>이용자는 통계정보를 자유롭게 사용할 수 있으나, 임의로 왜곡할 수 없습니다.</li>
-            <li>재배포를 할 경우 반드시 출처를 밝혀야 합니다.</li>
-            <li>상업적 목적으로 이용하려 할 경우 반드시 당사와 사전 협의가 필요합니다.</li>
-        </ul>
+        <p>나이스지니데이타 데이터 출처라는 문구문구<br>여기에 들어갈 예정예정예정</p>
     </div>
     <div class="alrt_ft">
         <div class="button_box">
@@ -766,6 +779,8 @@
     </div>
     <ul class="snb_ul snb1">
       <li><a href="#">프랜차이즈협회 홈</a></li>
+      <li class="mb_menu"><a href="index.html">상권분석</a></li>
+      <li class="mb_menu"><a href="index.html">상권영상</a></li>
       <li><a href="index.html">기업용 서비스</a></li>
     </ul>
     <ul class="snb_ul snb2">
@@ -782,7 +797,7 @@
 
 
   <!--사이드바 모달 modal START-->
-  <div class="modal modal1"></div>
+  <div class="modal modal1" style="display: block;"></div>
   <!--modal END-->
   <!--bottom popup시 모달 modal START-->
   <div class="modal modal2"></div>
@@ -1030,11 +1045,6 @@
         </div>
       </div>
     </div>
-    <ul class="top_gnb gnb460 pd">
-        <li class="on"><a href="index.html">상권분석</a></li>
-        <li><a href="index1.html">상권영상</a></li>
-        <li><a href="index1.html">기업용 서비스</a></li>
-      </ul>
     <div class="float_top pd">
       <div class="search">
         <a href="#" id="search1">
@@ -1126,7 +1136,29 @@
   ]
 
 }
-rp_chart1.setOption(option);
+
+function start1() {
+        var fontSize = option.radar.axisName.fontSize;
+        var radius = option.radar.radius;
+
+        if (window.innerWidth >= 1024) {
+             fontSize = '12';
+        } else if (window.innerWidth <= 280) {
+             fontSize = '10';
+            radius = '80';
+        } else if (window.innerWidth <= 360) {
+             fontSize = '11';
+            radius = '100';
+        } else if (window.innerWidth < 1024) {
+        }
+
+        option.radar.axisName.fontSize = fontSize;        
+        option.radar.radius = radius;
+
+        rp_chart1.setOption(option);
+        rp_chart1.resize();
+}
+    start1();
 
     var chart2_label_array = '전국, 서울특별시, 강남구, 개포1동확장';
     //var chart2_data_array = '0.4,0.4,0.2,0.3';
@@ -1295,7 +1327,7 @@ rp_chart1.setOption(option);
 
 
  
-    var chart03_label_array = "22년 1월,22년 2월,22년 03월,22년 04월,22년 05월,22년 06월,22년 07월";
+    var chart03_label_array = "21년 1분기,21년 2분기,21년 3분기,21년 4분기,22년 1분기,22년 2분기,22년 3분기";
     var chart03_data_array = '2362,2254,1725,2247,3081,3535,3535';
     chart03_label_array = chart03_label_array.split(',');
     chart03_data_array = chart03_data_array.split(',');
@@ -1410,11 +1442,13 @@ rp_chart1.setOption(option);
             grid_l = '4';
             grid_r = '4';
             labelSize = '10';
+            left= 'center';
         } else if (window.innerWidth <= 360) {
             fontSize = '11';
             grid_l = '0';
             grid_r = '0';
             labelSize = '10';
+            left= 'center';
         } else if (window.innerWidth < 1024) {
             grid_l = '2';
             grid_r = '2';
@@ -1548,11 +1582,13 @@ rp_chart1.setOption(option);
             grid_l = '4';
             grid_r = '4';
             labelSize = '10';
+            left= 'center';
         } else if (window.innerWidth <= 360) {
             fontSize = '11';
             grid_l = '0';
             grid_r = '0';
             labelSize = '10';
+            left= 'center';
         } else if (window.innerWidth < 1024) {
             grid_l = '2';
             grid_r = '2';
@@ -1644,7 +1680,7 @@ rp_chart1.setOption(option);
                 name: '총 매출규모',
                 type: 'bar',
                 showBackground: false,
-                data: [622840, 798532, 1043010, 1199073, 1195593, 1198454],
+                data: [622840, 798532, 1043010, 1199073, 1195593, 1198454,1198454],
                 markLine: {
                     lineStyle: {
                         color: '#2CC7DC',
@@ -1719,11 +1755,13 @@ rp_chart1.setOption(option);
                 grid_l = '6';
                 grid_r = '6';
                 labelSize = '10';
+                left= 'center';
             } else if (window.innerWidth <= 360) {
                 fontSize = '11';
                 grid_l = '6';
                 grid_r = '6';
                 labelSize = '10';
+                left= 'center';
             } else if (window.innerWidth < 1024) {
                 grid_l = '6';
                 grid_r = '6';
@@ -1887,16 +1925,19 @@ rp_chart1.setOption(option);
                 grid_l = '60';
                 grid_r = '10';
                 labelSize = '10';
+                left= 'center';
             } else if (window.innerWidth <= 360) {
                 fontSize = '11';
                 grid_l = '56';
                 grid_r = '10';
                 labelSize = '10';
+                left= 'center';
             } else if (window.innerWidth < 1024) {
                 left= 'center';
                 grid_l = '54';
                 grid_r = '10';
                 labelSize = '12';
+                left= 'center';
             }
             option.yAxis.show = show;
 
@@ -1921,14 +1962,14 @@ rp_chart1.setOption(option);
             },
             color: '#1154db',
             title: {
-                text: '요일별 매출',
+                text: '요일 비중',
                 show: false
             },
             tooltip: {
                 trigger: 'item',
                 formatter: function (params) {
                     return params.name + '<br/>' +
-                        params.marker + ' <b>' + params.value + '</b> %';
+                        params.marker + ' <b>' + params.value + '</b> 만원';
                 },
                 fontSize: 10,
                 /* axisPointer: {
@@ -1943,7 +1984,7 @@ rp_chart1.setOption(option);
                 show: true,
             },
             legend: {
-                data: ['요일별 매출'],
+                data: ['요일 비중'],
                 bottom: 'bottom',
                 left:'center',
             },
@@ -1981,10 +2022,10 @@ rp_chart1.setOption(option);
                 }
             },
             series: [{
-                name: '총 매출규모',
+                name: '요일 비중',
                 type: 'bar',
                 showBackground: false,
-                data: [15.1,19.4, 14.7, 16.1, 17.6, 10.3, 6.9],
+                data: [25.7, 25.7, 25.7, 14.6, 25.7, 7.7,8.3],
                 markLine: {
                     lineStyle: {
                         color: '#2CC7DC',
@@ -2059,11 +2100,13 @@ rp_chart1.setOption(option);
                 grid_l = '6';
                 grid_r = '6';
                 labelSize = '10';
+                left= 'center';
             } else if (window.innerWidth <= 360) {
                 fontSize = '11';
                 grid_l = '6';
                 grid_r = '6';
                 labelSize = '10';
+                left= 'center';
             } else if (window.innerWidth < 1024) {
                 grid_l = '6';
                 grid_r = '6';
@@ -2253,11 +2296,13 @@ rp_chart1.setOption(option);
                 grid_l = '24';
                 grid_r = '24';
                 labelSize = '10';
+                left= 'center';
             } else if (window.innerWidth <= 360) {
                 fontSize = '11';
                 grid_l = '24';
                 grid_r = '24';
                 labelSize = '10';
+                left= 'center';
             } else if (window.innerWidth < 1024) {
                 grid_l = '24';
                 grid_r = '24';
@@ -2277,6 +2322,16 @@ rp_chart1.setOption(option);
         }
         start8();
 
+    window.onresize = function() {
+        start1();        
+        start2();        
+        start3();        
+        start4();        
+        start5();        
+        start6();        
+        start7();        
+        start8();        
+    };
 
 </script>
 <!-- echart 스크립트 -->

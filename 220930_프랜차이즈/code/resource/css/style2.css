@@ -3973,9 +3973,10 @@ justify-content: flex-end;
 .alrt_pop p {
     font-size: 16px;
     line-height: 160%;
-    font-weight: 400;
+    font-weight: 500;
     color: #323d4e;
     text-align: center;
+    word-break: keep-all;
 }
 
 .sheet_hd {
@@ -4028,6 +4029,27 @@ justify-content: flex-end;
     margin-bottom: 12px;
 }
 
+.under_term{
+    margin-top: 12px;
+}
+
+.under_term li{
+    font-size: 13px;
+    line-height: 160%;
+    font-weight: 400;
+    color: #323d4e;
+    text-align: center;
+    word-break: keep-all;
+}
+
+#data_from_show #close_alert{
+    display: block !important;
+}
+
+#data_from_show #close_alert a{
+    right: 0;
+    top: 0;
+}
 
 /*****************************************************************
 --------------------    PC Media Quary START----------------------
@@ -5682,6 +5704,10 @@ justify-content: flex-end;
     .mb_banner_box{
         display: none;
     }
+
+    .gnb460{
+        display: none;
+    }
 }
 
 /*****************************************************************
@@ -5948,6 +5974,10 @@ justify-content: flex-end;
     }
 
     .mb_br{
+        display: none;
+    }
+
+    .gnb460{
         display: none;
     }
 }
@@ -6231,7 +6261,6 @@ justify-content: flex-end;
         justify-content: center;
     }
     
-    /* KFA 480 */
     /* alrt_pop */
     .alrt_pop{
         width: 100%;
@@ -6253,6 +6282,7 @@ justify-content: flex-end;
         padding-right: 16px;
     }
 
+
 }
 @media all and (max-width: 460px){
     
@@ -6271,16 +6301,60 @@ justify-content: flex-end;
         margin: 0;
     }
 
+    .gnb460{
+        display: flex;
+        border-bottom:1px solid rgba(190, 201, 218, 0.2);
+    }
     
+    .gnb460 li{
+        margin-right: 24px;
+    }
+    .gnb460 li:last-child(){
+        margin-right: 0;
+    }
+    .gnb460 li a{
+        border-bottom: 3px solid #fff;
+        padding: 10px 2px;
+    }
+    .gnb460 li.on a{
+        border-bottom: 3px solid #0554E5;
+    }
     .menu_top{
         height: 48px;
+        border-bottom:none;
     }
     .float_data_from{
-        top: 134px;
+        top: 174px;
     }
     
     .float_link{
-        top: 198px;
+        top: 238px;
+    }
+
+    
+    .alrt_pop .alrt_bdy{
+        align-items:flex-start;
+    }
+
+    .alrt_pop p{
+        text-align: left;
+    }
+    .under_term li{
+        text-align: left;
+        position: relative;
+        padding-left: 16px;
+    }
+    .under_term li::before{
+        position: absolute;
+        top:calc(50% - 2px);
+        left: 0;
+        content: "";
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        border-radius: 999px;
+        margin-right: 6px;
+        background-color: rgb(185, 184, 185);
     }
 }
 @media all and (max-width: 380px){
@@ -6457,6 +6531,14 @@ justify-content: flex-end;
     }
     .float_link{
         right: 12px;
+    }
+
+    .gnb460 li{
+        margin-right: 12px;
+    }
+    
+    .gnb460 li a{
+        font-size: 14px;
     }
 }
 @media all and (max-width: 280px){

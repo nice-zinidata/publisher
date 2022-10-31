@@ -395,13 +395,13 @@ $(document).ready(function(){
         if ($(window).width() <= 640) {
             $('.mb_banner_box').addClass('mbsize');
             $('.mbsize img').attr({
-                src: "resource/images/banner/mini1_banner1_mo.png"
+                src: "resource/images/banner/mini1_banner2_mo.png"
             });
         }else {
             
             $('.mb_banner_box').removeClass('mbsize');
             $('.mb_banner_box img').attr({
-                src: "resource/images/banner/mini1_banner1_tablet.png"
+                src: "resource/images/banner/mini1_banner2_tablet.png"
             });
         }
     }
@@ -424,4 +424,5 @@ $(document).ready(function(){
         $('#data_from_show').css('display','none');
         $('.modal1').css('display','none');
     });
+
 });

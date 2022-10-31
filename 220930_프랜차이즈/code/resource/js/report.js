@@ -67,21 +67,6 @@ nav.find('.sc_box').on('click', function() {
 });
 
 
-//.top_inner 사이즈
-var bx_width = $('.rp_body').width();
-$('.top_inner').css({ 'width': bx_width });
-
-//데이터 표로 보기 버튼
-$('.tb_show').on('click', function() {
-    $(this).parents().children('.table_show').toggleClass('show');
-});
-
-//모바일시 필터 보기
-$('#mobile_filter').on('click', function() {
-    $('.modal1').css('display','block');
-    $('#bt_filter').css('display','block');
-});
-
 
 
 
