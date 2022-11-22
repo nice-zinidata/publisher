@@ -1,0 +1,2286 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <!-- min js -->
+  <script src="resource/js/jquery.min.js"></script>
+  <!-- 분석화면 js -->
+  <script src="resource/js/report.js"></script>
+  <script src="resource/js/analysis.js"></script>
+  <!-- swiper slider js -->
+  <script src="resource/js/swiper-bundle.min.js"></script>
+
+  <!-- font css-->
+  <link rel="stylesheet" type="text/css" href="resource/css/pretendard.css">
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="resource/css/report.css">
+  <link rel="stylesheet" type="text/css" href="resource/css/style2.css">
+  <!-- swiper slider -->
+  <link rel="stylesheet" href="resource/css/swiper.min.css" />
+  <!-- echart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+  <script>
+
+  </script>
+  <title>KFA 분석페이지</title>
+  <style>
+      .swiper {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        height: 80px;
+        background: #eee;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 80px;
+        object-fit: cover;
+      }
+
+    </style>
+  </style>
+</head>
+
+
+<body class="idx1">
+
+<!-- 리포트 -->
+<div id="report1" style="display: none;">
+  <div class="rp_sheet_hd wh onlymb" style="top:0;z-index: 11">
+    <div class="ico_box back">
+        <a href="javascript:;" onclick="reportClose();"></a>
+    </div>
+    <div class="name_box">
+        상권분석
+    </div>
+    <div id="menuToggle" class="close_box">
+        <a href="#"></a>
+    </div>
+</div>
+  <div class="wrap cb">
+      <div class="onlymb rpt_hd flx">
+          <div class="hd_title_txt">
+              <p class="logo_p">KFA 상권분석 보고서</p>
+              <h2><span class="h2_loca">개포1동</span> <span>샌드위치/브런치/샐러드</span></h2>
+              <button class="rpt_surb">기업용 서비스 문의</button>
+          </div>
+          <ul class="sumsum">
+              <li><p>주거지역</p><p><span>38</span>%</p></li>
+              <li><p>매출규모 (월)</p><p><span>1473</span>만원</p></li>
+              <li><p>최고매출</p><p><span>금요일</span></p></li>
+          </ul>
+      </div>
+      <div style="position: relative;" class="onlymb">
+          <div class="mb_rp_gnb_box">
+              <button class="left_navi_btn">뒤로가기</button>
+              <button class="right_navi_btn">앞으로가기</button>
+              <ul class="mb_rp_gnb onlymb">
+                  <li class="on"><a href="#">업종 적합도 지수</a></li>
+                  <li><a href="#s1">밀집도</a></li>
+                  <li><a href="#s2">성장성</a></li>
+                  <li><a href="#s3">매출규모</a></li>
+                  <li><a href="#s4">변동성</a></li>
+                  <li><a href="#s5">고객/소비 패턴</a></li>
+              </ul>
+          </div>
+          <div class="filter" style="display: none;"><a href="#" id="mobile_filter">필터</a></div>
+      </div>
+      <div class="rp_header fl onlypc">
+          <div class="inner pd24">
+              <div class="logo_box">
+                  <a href="index.html"></a>
+              </div>
+              <ul class="rp_gnb">
+                <li class="on"><a href="#">업종 적합도 지수</a></li>
+                <li><a href="#s1">밀집도</a></li>
+                <li><a href="#s2">성장성</a></li>
+                <li><a href="#s3">매출규모</a></li>
+                <li><a href="#s4">변동성</a></li>
+                <li><a href="#s5">고객/소비 패턴</a></li>
+              </ul>
+              <div class="last_btn_bx">
+                  <button class="rpt_surb">기업용 서비스 문의</button>
+              </div>
+          </div><!-- inner -->
+      </div><!-- rp_header -->
+      <div class="rp_body fr">
+          <div class="rp_top">
+              <div class="top_inner onlypc" style="width: 784px;">
+                  <div class="flx pd24">
+                      <h2><span class="h2_loca">개포1동&nbsp;</span>호프/맥주업종</h2>
+                      <!-- <h2>개포1동 호프/맥주 업종 분석</h2> -->
+                      <div class="flx">
+                          <div class="btn_box download">
+                              <button class="btn3">
+                                보고서 인쇄하기
+                              </button>
+                          </div>
+                          <div class="btn_box">
+                              <button class="right_btn close">
+                                  닫기
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="inner sc_box pd24">
+              <section id="s1" class="pd36">
+                  <div class="title_area flx">
+                      <h3><span class="pc">업종 적합도 지수</span></h3>
+                  </div>
+                  <div class="content_area">
+                      <div class="container contain1">
+                          <div class="inner">
+                              <div class="rpt_txt">
+                                  <p>
+                                    역삼1동의 갈비/삼겹살 업종 적합도 지수는 <span class="blue">734점(전체 1000점)</span> 입니다. 전월 대비 8점 증가했으며, 전년 동월대비 11점 감소했습니다.
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="container contain2">
+                          <div class="inner flx">
+                              <div class="echart_box">
+                                    <div id="rp_chart1" style="width: 100% !important; height:320px;"></div>
+                              </div>
+                              <div class="label_box pd24">
+                                  <div class="flx label_title_box">
+                                    <p class="label_title lbt1">총점</p>
+                                    <p class="label_title lbt2"><span>734</span> 점</p>
+                                  </div>
+                                  <ul>
+                                      <li class="flx">
+                                          <div class="label_p flx">
+                                              <p>유사업종 밀집도</p>
+                                              <p><span class="number">76</span></p>
+                                          </div>
+                                      </li>
+                                      <li class="flx">
+                                          <div class="label_p flx">
+                                              <p>해당업종 밀집도</p>
+                                              <p><span class="number">81</span></p>
+                                          </div>
+                                      </li>
+                                      <li class="flx">
+                                          <div class="label_p flx">
+                                              <p>상권 성장성</p>
+                                              <p><span class="number">67</span></p>
+                                          </div>
+                                      </li>
+                                      <li class="flx">
+                                          <div class="label_p flx">
+                                              <p>업종 성장성</p>
+                                              <p><span class="number">91</span></p>
+                                          </div>
+                                      </li>
+                                      <li class="flx">
+                                          <div class="label_p flx">
+                                              <p>점포당 매출</p>
+                                              <p><span class="number">73</span></p>
+                                          </div>
+                                      </li>
+                                      <li class="flx">
+                                          <div class="label_p flx">
+                                              <p>업력</p>
+                                              <p><span class="number">85</span></p>
+                                          </div>
+                                      </li>
+                                      <li class="flx">
+                                          <div class="label_p flx">
+                                              <p>매출 변동성</p>
+                                              <p><span class="number">94</span></p>
+                                          </div>
+                                      </li>
+                                      <li class="flx">
+                                          <div class="label_p flx">
+                                              <p>배후 주거인구</p>
+                                              <p><span class="number">84</span></p>
+                                          </div>
+                                      </li>
+                                      <li class="flx">
+                                          <div class="label_p flx">
+                                              <p>배후 직장인구</p>
+                                              <p><span class="number">91</span></p>
+                                          </div>
+                                      </li>
+                                      <li class="flx">
+                                          <div class="label_p flx">
+                                              <p>유동인구</p>
+                                              <p><span class="number">91</span></p>
+                                          </div>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                          
+                      </div>
+                  </div>
+              </section>
+              <section id="s2" class="pd36">
+                  <div class="title_area flx">
+                      <h3>밀집도</h3>
+                  </div>
+                  <div class="content_area">
+                      <div class="container contain1">
+                          <div class="inner">
+                              <div class="rpt_txt">
+                                  <p>
+                                    갈비/삼겹살 점포 수는 72개이며, 전 업종 점포 수는 3,513개 입니다. 갈비/삼겹살의 업종구성비는 2%이며, 전체 평균 업종구성비 대비 0.4%낮습니다.
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="container contain2">
+                          <div class="inner">
+                              <div class="echart_box">
+                                  <div id="rp_chart2" style="height: 360px; margin: 0px auto; width: 100% !important; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" _echarts_instance_="ec_1666661077277"><div style="position: relative; width: 676px; height: 360px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="676" height="360" style="position: absolute; left: 0px; top: 0px; width: 676px; height: 360px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </section>
+              <section id="s3" class="pd36">
+                  <div class="title_area flx">
+                      <h3>성장성</h3>
+                  </div>
+                  <div class="content_area">
+                      <div class="container contain1">
+                          <div class="inner">
+                              <div class="rpt_txt">
+                                  <p>
+                                    22년 3분기 전국/해당 상권 총 시장규모는 8,653억원이며 전 분기 대비 1.1% 상승했고, 전년 동분기 대비 17.7% 상승했습니다.
+                                  </p>
+                                  <!-- <p>
+                                    22년 3분기 전국/해당 업종 총 시장규모는 8,653억원이며 전 분기 대비 1.1% 상승했고, 전년 동분기 대비 17.7% 상승했습니다.
+                                  </p> -->
+                              </div>
+                          </div>
+                      </div>
+                      <div class="container contain2">
+                          <div class="inner">
+                              <div class="echart_box">
+                                <div class="choice1">
+                                  <ul class="flx">
+                                      <li class="on"><button class="list7" data-gubun="admi">상권 성장성</button></li>
+                                      <li><button class="list7" data-gubun="mega">업종 성장성</button></li>
+                                  </ul>
+                                  <p style="text-align: right;font-size: 12px;margin-top: 20px;color: #4E5867;">[단위 :  억원/분기합산]</p>
+                                </div>
+                                  <div id="rp_chart3" style="height: 360px; margin: 0px auto; width: 100% !important; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" _echarts_instance_="ec_1666661077278"><div style="position: relative; width: 676px; height: 360px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="676" height="360" style="position: absolute; left: 0px; top: 0px; width: 676px; height: 360px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
+                              </div>
+                          </div>
+                          <div class="table_put_box">
+                              <table class="table_show">
+                                  <caption></caption>
+                                  <thead>
+                                      <tr>
+                                          <th scope="col"><span><i></i></span></th>
+                                          <th scope="col"><span><i>21년 1Q</i></span></th>
+                                          <th scope="col"><span><i>21년 2Q</i></span></th>
+                                          <th scope="col"><span><i>21년 3Q</i></span></th>
+                                          <th scope="col"><span><i>21년 4Q</i></span></th>
+                                          <th scope="col"><span><i>22년 1Q</i></span></th>
+                                          <th scope="col"><span><i>22년 2Q</i></span></th>
+                                          <th scope="col"><span><i>22년 3Q</i></span></th>
+                                      
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                          <td><b>상권<br/>총매출</b></td>
+                                      
+                                          <td>20,803억원</td>
+                                      
+                                          <td>13,914억원</td>
+                                      
+                                          <td>10,326억원</td>
+                                      
+                                          <td>14,602억원</td>
+                                      
+                                          <td>24,155억원</td>
+                                      
+                                          <td>24,092억원</td>
+
+                                          <td>24,092억원</td>
+                                      
+                                      </tr>
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                  </div>
+              </section>
+              <section id="s4" class="pd36">
+                  <div class="title_area flx">
+                      <h3>매출규모</h3>
+                  </div>
+                  <div class="content_area">
+                      <div class="container contain1">
+                          <div class="inner">
+                              <div class="rpt_txt">
+                                  <p>
+                                    22년 07월 기준 해당지역/업종 총 시장규모는 1,473만원/월 이며, 전월 대비 402만원 증가(37.5%↑)했습니다.
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="container contain2">
+                          <div class="inner">
+                              <div class="echart_box">
+                                <div class="choice1">
+                                  <ul class="flx">
+                                      <li class="on"><button class="list7" data-gubun="admi">총 매출규모</button></li>
+                                      <li><button class="list7" data-gubun="mega">점포당 매출</button></li>
+                                  </ul>
+                                  <p style="text-align: right;font-size: 12px;margin-top: 20px;color: #4E5867;">[단위 :  만원/월]</p>
+                                </div>
+                                  <div id="rp_chart4" style="height: 360px; margin: 0px auto; width: 100% !important; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" _echarts_instance_="ec_1666661077279"><div style="position: relative; width: 676px; height: 360px; padding: 0px; margin: 0px; border-width: 0px;">
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="table_put_box">
+                              <table class="table_show">
+                                  <caption></caption>
+                                  <thead>
+                                      <tr>
+                                          <th scope="col"><span><i></i></span></th>
+
+                                          <th scope="col"><span><i>22년 1월</i></span></th>
+                                      
+                                          <th scope="col"><span><i>22년 02월</i></span></th>
+                                      
+                                          <th scope="col"><span><i>22년 03월</i></span></th>
+                                      
+                                          <th scope="col"><span><i>22년 04월</i></span></th>
+                                      
+                                          <th scope="col"><span><i>22년 05월</i></span></th>
+                                      
+                                          <th scope="col"><span><i>22년 06월</i></span></th>
+                                      
+                                          <th scope="col"><span><i>22년 07월</i></span></th>
+                                      
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                      <td>지역/업종<br/>총매출</td>
+                                      
+                                          <td>2,600만원</td>
+                                      
+                                          <td>1,988만원</td>
+                                      
+                                          <td>1,291만원</td>
+                                      
+                                          <td>1,622만원</td>
+                                      
+                                          <td>2,416만원</td>
+                                      
+                                          <td>3,011만원</td>
+                                          
+                                          <td>3,011만원</td>
+                                      
+                                      </tr>
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                  </div>
+              </section>
+              <section id="s5" class="pd36">
+                  <div class="title_area flx">
+                      <h3>변동성</h3>
+                  </div>
+                  <div class="content_area">
+                      <div class="container contain1">
+                          <div class="inner">
+                              <div class="rpt_txt">
+                                  <p>
+                                    최근 1년 점포당 평균매출은 5,641만원이며 표준편차는 1,853만원으로 전년 대비 32.9% 상승했습니다.
+                                    이는 전국 행정읍/면/동 평균 매출 변동성인 25.4% 대비 7.5%p 높은 수치입니다.
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="container contain2">
+                          <div class="inner">
+                              <div class="choice1">
+                                  <ul class="flx">
+                                      <li class="on"><button>매출 변동성</button></li>
+                                      <li><button>점포 수 변동성</button></li>
+                                  </ul>
+                                  <p style="text-align: right;font-size: 12px;margin-top: 20px;color: #4E5867;">[단위 :  만원/월]</p>
+                              </div>
+                              <div class="echart_box">
+                                  <div id="rp_chart5" style="height: 360px; margin: 0px auto; width: 100% !important; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" _echarts_instance_="ec_1666661077283"><div style="position: relative; width: 100px; height: 360px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="100" height="360" style="position: absolute; left: 0px; top: 0px; width: 100px; height: 360px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="table_put_box">
+                              <table class="table_show tbmb">
+                                  <colgroup>
+                                      <col style="width:auto">
+                                      <col style="width:auto">
+                                      <col style="width:auto">
+                                      <col style="width:auto">
+                                  </colgroup>
+                                  <caption></caption>
+                                  <thead>
+                                      <tr>
+                                          <th scope="col"><span><i>구분</i></span></th>
+                                      
+                                          <th scope="col"><span><i>최근 1년 평균 점포수</i></span></th>
+                                      
+                                          <th scope="col"><span><i>표준편차</i></span></th>
+                                      
+                                          <th scope="col"><span><i>점포수 변동성</i></span></th>
+                                      
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                      <td>점포 수 변동성</td>
+                                      
+                                          <td>71.8개소</td>
+                                      
+                                          <td>2.13개소</td>
+                                      
+                                          <td>3.0%</td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+
+                          </div>
+                      </div>
+                  </div>
+              </section>
+              <section id="s6" class="pd36">
+                  <div class="title_area flx">
+                      <h3>고객/소비 패턴</h3>
+                  </div>
+                  <div class="content_area">
+                      <div class="container contain1">
+                          <div class="inner">
+                              <div class="rpt_txt">
+                                  <p>
+                                    해당 지역/업종의 주요 고객층은 60대 이상 남성>50대 남성>40대 남성 순입니다.
+                                  </p>
+                                  <p style="display: none;">
+                                    매출 건수 기준 최고 시간대는 12시~15시이며 전체 매출 건의 48.2%입니다. 매출 금액 기준 최고 시간대는 18시~21시이며 전체 매출 금액의 31.1%입니다.
+                                  </p>
+                                  <p style="display: none;">
+                                    월/화/수 평균은 16.4%, 목/금 평균은 16.9%, 토/일 평균은 8.6%입니다. 매출이 가장 높은 날은 화요일이며, 가장 낮은 날은 일요일입니다.
+                                  </p>
+                                  
+                              </div>
+                          </div>
+                      </div>
+                      <div class="container contain2">
+                          <div class="inner">
+                              <div class="choice1">
+                                  <ul class="flx">
+                                      <li class="on"><button>성/연령대별</button></li>
+                                      <li><button>요일별</button></li>
+                                      <li><button>시간대별</button></li>
+                                  </ul>
+                                  <p style="text-align: right;font-size: 12px;margin-top: 20px;color: #4E5867;">[단위 :  %]</p>
+                              </div>
+                              <div class="echart_box">
+                                  <div id="rp_chart6" style="height: 360px; margin: 0px auto; width: 100% !important; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" _echarts_instance_="ec_1666661077285"><div style="position: relative; width: 676px; height: 360px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="676" height="360" style="position: absolute; left: 0px; top: 0px; width: 676px; height: 360px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
+                                  <div id="rp_chart7" style="height: 360px; margin: 0px auto; display: block; width: 100% !important; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" _echarts_instance_="ec_1666661077286"><div style="position: relative; width: 100px; height: 360px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="100" height="360" style="position: absolute; left: 0px; top: 0px; width: 100px; height: 360px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
+                                  <div id="rp_chart8" style="height: 360px; margin: 0px auto; display: block; width: 100% !important; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" _echarts_instance_="ec_1666661077286"><div style="position: relative; width: 100px; height: 360px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="100" height="360" style="position: absolute; left: 0px; top: 0px; width: 100px; height: 360px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
+                              </div>
+                          </div>
+                          <div class="table_put_box">
+
+                              <!-- 고객비중 테이블 -->
+                              <table class="table_show tbmb">
+                                  <caption>해당 지역 호프/맥주 업종의 성/연령대별 고객비중입니다. '20대','30대','40대','50대','60대이상'의 남성, 여성 비중은 각각 5.5%, 23.1%, 16.0%, 10.7%, 9.1%와 6.9%, 13.2%, 8.3%, 5.6%, 1.5%입니다.</caption>
+                                  <thead>
+                                      <tr>
+                                          <th scope="col"><span><i>고객비중</i></span></th>
+                                      
+                                          <th scope="col"><span><i>20대이하</i></span></th>
+                                      
+                                          <th scope="col"><span><i>30대</i></span></th>
+                                      
+                                          <th scope="col"><span><i>40대</i></span></th>
+                                      
+                                          <th scope="col"><span><i>50대</i></span></th>
+                                      
+                                          <th scope="col"><span><i>60대이상</i></span></th>
+                                      
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                      <td>남성</td>
+                                      
+                                          <td>5.5%</td>
+                                      
+                                          <td>23.1%</td>
+                                      
+                                          <td>16.0%</td>
+                                      
+                                          <td>10.7%</td>
+                                      
+                                          <td>9.1%</td>
+                                      
+                                      </tr>
+                                      <tr>
+                                      <td>여성</td>
+                                      
+                                          <td>6.9%</td>
+                                      
+                                          <td>13.2%</td>
+                                      
+                                          <td>8.3%</td>
+                                      
+                                          <td>5.6%</td>
+                                      
+                                          <td>1.5%</td>
+                                      
+                                      </tr>
+                                  </tbody>
+                              </table>
+                              <!-- 고객비중 테이블 -->
+
+                              <!-- 요일별 테이블 -->
+                              <table class="table_show">
+                                <caption>해당 상권 내 호프/맥주 업종의 총 시장규모입니다. 호프/맥주 업종의 21년 12월,22년 01월,22년 02월,22년 03월,22년 04월,22년 05월의 각각 월별 시장규모는 20803만원,13914만원,10326만원,14602만원,24155만원,24092입니다.</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col"><span><i>요일별</i></span></th>
+                                        <th scope="col"><span><i>월</i></span></th>
+                                        <th scope="col"><span><i>화</i></span></th>
+                                        <th scope="col"><span><i>수</i></span></th>
+                                        <th scope="col"><span><i>목</i></span></th>
+                                        <th scope="col"><span><i>금</i></span></th>
+                                        <th scope="col"><span><i>토</i></span></th>
+                                        <th scope="col"><span><i>일</i></span></th>
+                                    
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>매출비중</td>
+                                    
+                                        <td>20%</td>
+                                    
+                                        <td>13%</td>
+                                    
+                                        <td>10%</td>
+                                    
+                                        <td>14%</td>
+                                    
+                                        <td>24%</td>
+                                    
+                                        <td>24%</td>
+
+                                        <td>24%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- 요일별 테이블 -->
+
+                            <!-- 시간별 테이블 -->
+                          <table class="table_show">
+                            <caption>해당 상권 내 호프/맥주 업종의 총 시장규모입니다. 호프/맥주 업종의 21년 12월,22년 01월,22년 02월,22년 03월,22년 04월,22년 05월의 각각 월별 시장규모는 20803만원,13914만원,10326만원,14602만원,24155만원,24092입니다.</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col"><span><i>요일별</i></span></th>
+                                    <th scope="col"><span><i>06~09시</i></span></th>
+                                    <th scope="col"><span><i>09~12시</i></span></th>
+                                    <th scope="col"><span><i>12~15시</i></span></th>
+                                    <th scope="col"><span><i>15~18시</i></span></th>
+                                    <th scope="col"><span><i>18~21시</i></span></th>
+                                    <th scope="col"><span><i>21~24시</i></span></th>
+                                    <th scope="col"><span><i>24~06시</i></span></th>
+                                
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>매출비중</td>
+                                
+                                    <td>20%</td>
+                                
+                                    <td>13%</td>
+                                
+                                    <td>10%</td>
+                                
+                                    <td>14%</td>
+                                
+                                    <td>24%</td>
+                                
+                                    <td>24%</td>
+
+                                    <td>24%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                          <!-- 시간별 테이블 -->
+
+                          </div>
+                      </div>
+                  </div>
+              </section>
+          </div><!-- inner -->
+      </div><!-- rp_body -->
+      <div class="rp_footer">
+          <div class="inner">
+
+          </div><!-- inner -->
+      </div><!-- rp_body -->
+  </div><!-- wrap -->
+</div>
+<!-- 리포트 -->
+
+  <!-- 데이터 출처 팝업 -->
+  <div class="alrt_pop" id="data_from_show">
+    <div class="alrt_hd">
+        <h4>데이터 출처</h4>
+        <div id="close_alert">
+            <a href="#"></a>
+          </div>
+    </div>
+    <div class="alrt_bdy">
+        <img src="resource/images/logo/zini_logo.svg" alt="">
+        <p>본 서비스의 데이터는 NICE지니데이타에서 제공하고 있습니다. </p>
+        <ul class="under_term">
+            <li>이용자는 통계정보를 자유롭게 사용할 수 있으나, 임의로 왜곡할 수 없습니다.</li>
+            <li>재배포를 할 경우 반드시 출처를 밝혀야 합니다.</li>
+            <li>상업적 목적으로 이용하려 할 경우 반드시 당사와 사전 협의가 필요합니다.</li>
+        </ul>
+    </div>
+    <div class="alrt_ft">
+        <div class="button_box">
+            <button class="btn2" id="close_alrt_pop">취소</button>
+            <button class="btn1">데의터 문의</button>
+          </div>
+    </div>
+</div>
+  
+
+<!--bottom_pop btp2 pd mobile START-->
+<div class="bottom_pop btp2 pd mobile" style="display:none;">
+  <div class="pop_body">
+    <p class="s_txt">
+      <span class="loca">여의동</span>
+      <span class="bar">|</span>
+      <span class="kind">호프/맥주</span><span>상권 분석</span></p>
+  </div>
+  <div class="pop_foot">
+    <div class="button_box">
+      <button class="btn2">재선택</button>
+      <button class="btn1" >보고서 보기</button>
+    </div>
+  </div>
+</div>
+<!--bottom_pop btp2 pd mobile END-->
+
+  <!-- KFA 추가 데이터출처 -->
+  <div class="float_data_from">
+    <a href="#" id="data_from">데이터 <br class="mb_br">출처</a>
+  </div>
+  <!-- KFA 추가 데이터출처 -->
+  
+  <!-- KFA 추가 기업용 서비스 연결 -->
+  <div class="float_link">
+    <a href="#">기업용 <br class="mb_br">서비스</a>
+  </div>
+  <!-- KFA 추가 기업용 서비스 연결 -->
+  
+  <!-- KFA 추가 모바일 배너 -->
+  <div class="mb_banner_box pd">
+    <a href="#">
+      <img src="resource/images/banner/mini1_banner2_tablet.png" alt="">
+    </a>
+  </div>
+  <!-- KFA 추가 모바일 배너 -->
+
+  <!-- 로딩 SVG 모달없이 흰 배경일때 -->
+  <div class="loader loader-style1" title="0" style="display: none;">
+    <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+      <path opacity="0.4" fill="#1F67FD"
+        d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+      s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+      c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z" />
+      <path fill="#1F67FD" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+      C22.32,8.481,24.301,9.057,26.013,10.047z">
+        <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20"
+          dur="0.8s" repeatCount="indefinite" />
+      </path>
+    </svg>
+  </div>
+  <!-- 로딩 SVG 모달없이 흰 배경일때 -->
+
+  <!-- 로딩 SVG 모달과 함께 -->
+  <div class="loader loader--style3" title="2" style="display: none;">
+    <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px" y="0px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+      <path fill="#1F67FD"
+        d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+        <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25"
+          dur="0.8s" repeatCount="indefinite">
+
+        </animateTransform>
+      </path>
+    </svg>
+  </div>
+  <!-- 로딩 SVG 모달과 함께 -->
+
+  <!-- snb START -->
+  <div class="snb_box">
+    <div class="snb_header cb">
+      <div id="menuToggle2">
+        <a href="#"></a>
+      </div>
+    </div>
+    <ul class="snb_ul snb1">
+      <li><a href="#">프랜차이즈협회 홈</a></li>
+      <li><a href="index.html">기업용 서비스</a></li>
+    </ul>
+    <ul class="snb_ul snb2">
+      <li>
+        <p>자매사이트</p>
+        <ul>
+          <li><a href="http://nicezinidata.com">나이스지니데이타</a></li>
+          <li><a href="https://www.posplatform.co.kr">POS 데이터 플랫폼</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <!-- snb END -->
+
+
+  <!--사이드바 모달 modal START-->
+  <div class="modal modal1"></div>
+  <!--modal END-->
+  <!--bottom popup시 모달 modal START-->
+  <div class="modal modal2"></div>
+  <!--modal END-->
+  <!--report popup 시 모달 modal START-->
+  <div class="modal blur_modal"></div>
+  <!--modal END-->
+
+
+  <!--sheet_02 START-->
+  <!--업종선택-->
+  <div class="sheet md_sheet sheet_02 ">
+    <div class="sheet_hd pd">
+      <div class="ico_box back">
+        <a href="#">
+        </a>
+      </div>
+      <div class="name_box">
+        업종 선택
+      </div>
+      <div class="close_box">
+        <a href="">
+        </a>
+      </div>
+    </div>
+    <div class="loca_crumble_box onlypc">
+      <ul class="loca_crumble">
+        <li class="on"><button>음식업</button></li>
+        <li><button>중분류</button></li>
+        <li><button>소분류</button></li>
+      </ul>
+    </div>
+    <div class="sheet_body pd">
+      <div class="box txt_bx">
+        <p class="main_txt">업종을 선택하여
+          <br />상권 분석을 시작해 보세요.</p>
+        <p class="sub_txt">
+          <span class="loca">여의동</span>
+          <span class="bar">|</span>
+          <span class="kind">업종선택</span>
+        </p>
+      </div>
+      <div class="box select_bx">
+        <div class="cate_kind">
+          <ul class="row r1">
+            <li class="on"><button>음식업</button></li>
+            <li><button>소매업</button></li>
+            <li><button>생활서비스</button></li>
+          </ul>
+          <ul class="cate2 cb on1" style="display: none;">
+            <li class="on"><button>간이주점</button></li>
+            <li><button>고기요리</button></li>
+            <li style="width: 100%; display: none;" class="cate3_top">
+              <ul class="cate3 cb">
+                <li class="on"><button>호프/맥주</button></li>
+                <li><button>민속주점</button></li>
+                <li><button>꼬치구이전문점</button></li>
+                <li><button>이자까야</button></li>
+                <li><button>소주방/포장마차</button></li>
+                <li><button>민속주점</button></li>
+                <li><button>꼬치구이전문점</button></li>
+                <li><button>이자까야</button></li>
+                <li><button>소주방/포장마차</button></li>
+                <li><button>민속주점</button></li>
+                <li><button>꼬치구이전문점</button></li>
+                <li><button>이자까야</button></li>
+                <li><button>소주방/포장마차</button></li>
+                <li><button>민속주점</button></li>
+                <li><button>꼬치구이전문점</button></li>
+                <li><button>이자까야</button></li>
+                <li><button>소주방/포장마차</button></li>
+              </ul>
+            </li>
+            <li><button>닭/오리요리</button></li>
+            <li><button>별식/퓨전요리</button></li>
+            <li><button>부페</button></li>
+            <li><button>분식</button></li>
+          </ul>
+          <ul class="row r2">
+            <li><button>여가오락</button></li>
+            <li><button>학문/교육</button></li>
+            <li><button>의약/의료</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--sheet_02 END-->
+  <!--업종선택-->
+
+  <!--sheet_01 START-->
+  <!--분석지역-->
+  <div class="sheet sheet_01 md_sheet">
+    <div class="sheet_hd pd">
+      <div class="ico_box back">
+        <a href="#">
+        </a>
+      </div>
+      <div class="name_box">
+        지역 선택
+      </div>
+      <div class="close_box">
+        <a href="">
+        </a>
+      </div>
+    </div>
+    <div class="sheet_body pd">
+      <div class="box txt_bx">
+        <p class="main_txt">분석하고자 하는<br />
+          지역을 선택해주세요.</p>
+        <p class="sub_txt">
+          <span class="loca">지역선택</span>
+        </p>
+      </div>
+      <div class="box select_bx">
+        <div class="cate_loca">
+          <div class="loca_crumble_box">
+            <ul class="loca_crumble">
+              <li class="on">
+                <button>시/도</button>
+              </li>
+              <li>
+                <button>시/군/구</button>
+              </li>
+              <li><button>읍/면/동</button>
+              </li>
+            </ul>
+          </div>
+          <div class="loca_list_bx">
+            <ul class="loca_list cb">
+              <li class="on"><a href="#">서울특별시</a></li>
+              <li><a href="#">대구광역시</a></li>
+              <li><a href="#">부산광역시</a></li>
+              <li><a href="#">인천광역시</a></li>
+              <li><a href="#">광주광역시</a></li>
+              <li><a href="#">대전광역시</a></li>
+              <li><a href="#">세종특별자치시</a></li>
+              <li><a href="#">울산광역시</a></li>
+              <li><a href="#">경기도</a></li>
+              <li><a href="#">강원도</a></li>
+              <li><a href="#">충청북도</a></li>
+              <li><a href="#">충청남도</a></li>
+              <li><a href="#">전라북도</a></li>
+              <li><a href="#">전라남도</a></li>
+              <li><a href="#">경상북도</a></li>
+              <li><a href="#">경상남도</a></li>
+              <li><a href="#">제주특별자치도</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--sheet_01 END-->
+  <!--분석지역-->
+
+  <!--only_pc pc_sheet_box PC일때 사이드 START-->
+  <div class="pc_sheet onlypc on" id="pc_sheet">
+    <a class="handle" href="#" id="handle"></a>
+    <div style="overflow: overlay;">
+      <div class="pc_hd">
+        <div class="tag_txt">
+          <p class="sub_txt">
+            <span>현 위치</span>
+          </p>
+          <div class="map_place_box">
+            <a href="#">
+              <input class="input" type="text" id="" name="show" placeholder="서울특별시 영등포구 여의동" readonly>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pc_bdy ticket">
+        <div class="tag_txt">
+          <p class="sub_txt">
+            <span>분석 지역 | 업종 선택</span>
+          </p>
+          <button class="reselect">    
+            다시선택
+          </button>
+        </div>
+        <!-- tag_txt -->
+        <div class="middle">
+          <ul>
+            <li><a href="#">분석 지역을 선택해주세요</a></li>
+            <li><a href="#">분석 업종을 선택해주세요</a></li>
+          </ul>
+        </div>
+        <!-- middle -->
+        <div class="button_box">
+          <button class="btn2" style="display: none;">다시선택</button>
+          <button class="btn1" style="width: 100%;">보고서 보기</button>
+        </div>
+        <!-- button_box -->
+        <div class="swiper_box">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a href="" style="display: inline-block;">
+                  <img src="resource/images/banner/mini1_banner2.png" alt="">
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="" style="display: inline-block;">
+                  <img src="resource/images/banner/mini1_banner3.png" alt="">
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="" style="display: inline-block;">
+                  <img src="resource/images/banner/mini1_banner4.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="swipe_hover">
+              <div class="swiper-button-next" style="left:unset; right: 3px; bottom:6px;"></div>
+              <div class="swiper-button-prev" style="left:3px; bottom:6px;"></div>
+              <div class="swiper-pagination" style="bottom:2px;" ></div>
+            </div>
+          </div>
+        </div>
+        <!-- swiper_box -->
+      </div>
+    </div>
+  </div>
+<!--only_pc pc_sheet_box PC일때 사이드 END-->
+
+  <!--top_section START-->
+  <div class="top_section">
+    <div class="menu_top pd">
+      <div class="menu_left">
+        <div class="logo_box">
+          <a href="index.html"></a>
+        </div>
+      </div>
+      <div class="menu_middle">
+        <ul class="top_gnb">
+          <li class="on"><a href="index.html">상권분석</a></li>
+          <li><a href="index1.html">상권영상</a></li>
+          <li><a href="index1.html">기업용 서비스</a></li>
+        </ul>
+      </div>
+      <div class="menu_right">
+        <div id="menuToggle">
+          <a href="#"></a>
+        </div>
+      </div>
+    </div>
+    <ul class="top_gnb gnb460 pd">
+        <li class="on"><a href="index.html">상권분석</a></li>
+        <li><a href="index1.html">상권영상</a></li>
+        <li><a href="index1.html">기업용 서비스</a></li>
+      </ul>
+    <div class="float_top pd">
+      <div class="search">
+        <a href="#" id="search1">
+          <div class="input">지역/업종 선택하여 상권 분석</div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!--top_section END-->
+
+  <!--map START-->
+  <div class="map_section">
+    <div class="float_loca mobile ">
+      영등포구 여의동
+    </div>
+  </div>
+  <!--map END -->
+
+  <!-- 배너슬라이드 스크립트-->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+          type: "fraction",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        loop:true,
+        
+        
+      });
+  </script>
+  <!-- 배너슬라이드 스크립트-->
+
+
+  <!-- echart 스크립트 -->
+  <script>
+    var chartDom = document.getElementById('rp_chart1');
+    var rp_chart1 = echarts.init(chartDom);
+
+    var option;
+
+    var option = {
+    radar: {
+      color: '#0554E5',
+      center: ['50%', '54%'],
+      radius: 110,
+      indicator: [
+        { name: '유사업종'+ '\n' +'밀집도' , max: 100 },
+        { name: '해당업종'+ '\n' +'밀집도' , max: 100 },
+        { name: '상권'+ '\n' +'성장성', max: 100 },
+        { name: '업종'+ '\n' +'성장성', max: 100 },
+        { name: '점포당'+ '\n' +'매출', max: 100 },
+        { name: '업력', max: 100 },
+        { name: '매출'+ '\n' +'변동성', max: 100 },
+        { name: '배후'+ '\n' +'주거인구', max: 100 },
+        { name: '배후'+ '\n' +'직장인구', max: 100 },
+        { name: '유동'+ '\n' +'인구', max: 100 }
+      ],
+      axisName: {
+        color: '#474747',
+        fontSize: '12',
+        fontFamily: 'Pretendard',
+      }
+    },
+    series: [
+      {
+        name: 'Budget vs spending',
+        areaStyle: {
+        color: 'rgba(57, 76, 203, 0.2)',
+          },
+        type: 'radar',
+        data: [
+        {
+          value: [76, 81, 62, 67, 91, 73, 85, 54, 84, 91],
+          symbolSize: 6,
+          lineStyle: {
+            color:'#394CCB'
+          },
+        }
+      ]
+    }
+  ]
+
+}
+rp_chart1.setOption(option);
+
+    var chart2_label_array = '전국, 서울특별시, 강남구, 개포1동확장';
+    //var chart2_data_array = '0.4,0.4,0.2,0.3';
+    chart2_label_array = chart2_label_array.split(',');
+    //chart2_data_array = chart2_data_array.split(',');
+    var rp_chart2 = echarts.init(document.getElementById('rp_chart2'));
+    option = {
+        grid: {
+            bottom: '16%',
+            left: '8%',
+            right: '8%'
+        },
+        title: {
+            text: '2선택업종의 밀집도',
+            show: false
+        },
+
+        tooltip: {
+            trigger: 'item',
+            formatter: function (params) {
+                return params.name + '<br/>' +
+                    params.marker + ' <b>' + params.value + '</b> %';
+            },
+            fontSize: 10,
+            /* axisPointer: {
+              type: 'cross',
+              crossStyle: {
+                color: '#999'
+              }
+            } */
+        },
+        legend: {
+            bottom: 'bottom',
+            left: 'center',
+            data: [{
+                name: "전업종 중 해당업종 비율",
+                itemStyle: {
+                    color: '#1154db'
+                }
+            }, ],
+        },
+        label: {
+            show: true,
+            position: 'outside',
+            align: 'center',
+            color: '#1154db',
+            formatter: '{c}',
+            textPadding: '12',
+            fontWeight: '600',
+            borderRadius: '12',
+            fontSize: '13',
+            fontFamily: 'Pretendard',
+        },
+        xAxis: {
+            type: 'category',
+            data: chart2_label_array,
+            axisLine: {
+                lineStyle: {
+                    //color: '#9e9e9e'
+                }
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#000',
+                    fontSize: 12,
+                }
+            },
+            axisTick: {
+                show: false
+            }
+        },
+        yAxis: {
+            show: false,
+            type: 'value',
+            splitLine: { // y축 수치선
+                show: false
+            },
+            axisLine: {
+                show: true,
+                lineStyle: {
+                    //color: '#9e9e9e'
+                }
+            }
+        },
+        series: [{
+            name: '전업종 중 해당업종 비율',
+            type: 'bar',
+            showBackground: false,
+            data: [{
+                    value: 0.4,
+                    itemStyle: {
+                        color: '#5D8EEE'
+                    }
+                },
+                {
+                    value: 0.4,
+                    itemStyle: {
+                        color: '#5D8EEE'
+                    }
+                },
+                {
+                    value: 0.2,
+                    itemStyle: {
+                        color: '#5D8EEE'
+                    }
+                },
+                {
+                    value: 0.3,
+                    itemStyle: {
+                        color: '#1154db'
+                    }
+                },
+            ],
+            itemStyle: {
+                emphasis: {},
+
+                normal: {
+                    barBorderRadius: [4, 4, 0, 0],
+                }
+            },
+            barWidth: '35%',
+            animationDuration: 1500,
+            animationEasing: "elasticOut",
+        }]
+    };
+
+    function start2() {
+        var show = option.yAxis.show;
+        var left = option.legend.left;
+        var labelSize = option.label.fontSize;
+        var grid_l = option.grid.left;
+        var grid_r = option.grid.right;
+        var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
+
+        if (window.innerWidth >= 1024) {
+            show = 'true';
+            fontSize = '12';
+            labelSize = '12';
+        } else if (window.innerWidth <= 280) {
+            fontSize = '9';
+            grid_l = '4';
+            grid_r = '4';
+            labelSize = '10';
+        } else if (window.innerWidth <= 360) {
+            fontSize = '11';
+            grid_l = '0';
+            grid_r = '0';
+            labelSize = '10';
+        } else if (window.innerWidth < 1024) {
+            grid_l = '2';
+            grid_r = '2';
+            labelSize = '12';
+        }
+        option.yAxis.show = show;
+        option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+        option.label.fontSize = labelSize;
+        option.grid.left = grid_l;
+        option.grid.right = grid_r;
+        option.legend.left = left;
+
+        rp_chart2.setOption(option);
+        rp_chart2.resize();
+    }
+    start2();
+
+
+ 
+    var chart03_label_array = "22년 1월,22년 2월,22년 03월,22년 04월,22년 05월,22년 06월,22년 07월";
+    var chart03_data_array = '2362,2254,1725,2247,3081,3535,3535';
+    chart03_label_array = chart03_label_array.split(',');
+    chart03_data_array = chart03_data_array.split(',');
+
+    var rp_chart3 = echarts.init(document.getElementById('rp_chart3'));
+    option = {
+        grid: {
+            bottom: '16%',
+            left: '8%',
+            right: '8%'
+        },
+        title: {
+            text: '매출규모',
+            show: false
+        },
+        color: '#1154db',
+        tooltip: {
+            trigger: 'item',
+            formatter: function (params) {
+                return params.name + '<br/>' +
+                    params.marker + ' <b>' + echarts.format.addCommas(params.value) + '</b> 만원/월';
+            },
+            fontSize: 10,
+            /* axisPointer: {
+              type: 'cross',
+              crossStyle: {
+                color: '#999'
+              }
+            } */
+        },
+        legend: {
+            data: ['상권 총매출'],
+            bottom: 'bottom',
+        },
+        label: {
+            show: true,
+            position: 'outside',
+            align: 'center',
+            color: '#1154db',
+            textPadding: '12',
+            fontWeight: '600',
+            borderRadius: '12',
+            fontSize: '13',
+            fontFamily: 'Pretendard',
+            formatter: function (params) {
+                var returnVal = echarts.format.addCommas(params.value);
+
+                return returnVal;
+            }
+        },
+        xAxis: {
+            type: 'category',
+
+            data: chart03_label_array,
+            axisLine: {
+                lineStyle: {}
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#000',
+                }
+            },
+            axisTick: {
+                show: false
+            }
+        },
+        yAxis: {
+            type: 'value',
+            splitLine: { // y축 수치선
+                show: false
+            },
+            axisLine: {
+                show: true,
+                lineStyle: {
+                    //color: '#9e9e9e'
+                }
+            },
+        },
+        series: [{
+            name: '상권 총매출',
+            type: 'bar',
+            showBackground: false,
+            data: chart03_data_array,
+            itemStyle: {
+                emphasis: {},
+                normal: {
+                    barBorderRadius: [4, 4, 0, 0],
+                }
+            },
+            barWidth: '43%',
+            animationDuration: 1500,
+            animationEasing: "elasticOut",
+        }]
+    };
+
+    function start3() {
+        var show = option.yAxis.show;
+        var left = option.legend.left;
+        var labelSize = option.label.fontSize;
+        var grid_l = option.grid.left;
+        var grid_r = option.grid.right;
+        var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
+
+        if (window.innerWidth >= 1024) {
+            show = 'true';
+            fontSize = '12';
+            labelSize = '12';
+            left= 'center';
+        } else if (window.innerWidth <= 280) {
+            fontSize = '9';
+            grid_l = '4';
+            grid_r = '4';
+            labelSize = '10';
+        } else if (window.innerWidth <= 360) {
+            fontSize = '11';
+            grid_l = '0';
+            grid_r = '0';
+            labelSize = '10';
+        } else if (window.innerWidth < 1024) {
+            grid_l = '2';
+            grid_r = '2';
+            labelSize = '12';
+            left= 'center';
+        }
+        option.yAxis.show = show;
+        option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+        option.label.fontSize = labelSize;
+        option.grid.left = grid_l;
+        option.grid.right = grid_r;
+        option.legend.left = left;
+
+        rp_chart3.setOption(option);
+        rp_chart3.resize();
+    }
+    start3();
+ 
+    var chart04_label_array = "22년 1월,22년 2월,22년 03월,22년 04월,22년 05월,22년 06월,22년 07월";
+    var chart04_data_array = '2361,2256,1725,2247,3081,3535,3535';
+    chart04_label_array = chart04_label_array.split(',');
+    chart04_data_array = chart04_data_array.split(',');
+
+    var rp_chart4 = echarts.init(document.getElementById('rp_chart4'));
+    option = {
+        grid: {
+            bottom: '16%',
+            left: '8%',
+            right: '8%'
+        },
+        title: {
+            text: '매출규모',
+            show: false
+        },
+        color: '#1154db',
+        tooltip: {
+            trigger: 'item',
+            formatter: function (params) {
+                return params.name + '<br/>' +
+                    params.marker + ' <b>' + echarts.format.addCommas(params.value) + '</b> 만원/월';
+            },
+            fontSize: 10,
+            /* axisPointer: {
+              type: 'cross',
+              crossStyle: {
+                color: '#999'
+              }
+            } */
+        },
+        legend: {
+            data: ['지역/업종 총 매출'],
+            bottom: 'bottom',
+        },
+        label: {
+            show: true,
+            position: 'outside',
+            align: 'center',
+            color: '#1154db',
+            textPadding: '12',
+            fontWeight: '600',
+            borderRadius: '12',
+            fontSize: '13',
+            fontFamily: 'Pretendard',
+            formatter: function (params) {
+                var returnVal = echarts.format.addCommas(params.value);
+
+                return returnVal;
+            }
+        },
+        xAxis: {
+            type: 'category',
+
+            data: chart04_label_array,
+            axisLine: {
+                lineStyle: {}
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#000',
+                }
+            },
+            axisTick: {
+                show: false
+            }
+        },
+        yAxis: {
+            type: 'value',
+            splitLine: { // y축 수치선
+                show: false
+            },
+            axisLine: {
+                show: true,
+                lineStyle: {
+                    //color: '#9e9e9e'
+                }
+            },
+        },
+        series: [{
+            name: '지역/업종 총 매출',
+            type: 'bar',
+            showBackground: false,
+            data: chart04_data_array,
+            itemStyle: {
+                emphasis: {},
+                normal: {
+                    barBorderRadius: [4, 4, 0, 0],
+                }
+            },
+            barWidth: '43%',
+            animationDuration: 1500,
+            animationEasing: "elasticOut",
+        }]
+    };
+
+    function start4() {
+        var show = option.yAxis.show;
+        var left = option.legend.left;
+        var labelSize = option.label.fontSize;
+        var grid_l = option.grid.left;
+        var grid_r = option.grid.right;
+        var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
+
+        if (window.innerWidth >= 1024) {
+            show = 'true';
+            fontSize = '12';
+            labelSize = '12';
+            left= 'center';
+        } else if (window.innerWidth <= 280) {
+            fontSize = '9';
+            grid_l = '4';
+            grid_r = '4';
+            labelSize = '10';
+        } else if (window.innerWidth <= 360) {
+            fontSize = '11';
+            grid_l = '0';
+            grid_r = '0';
+            labelSize = '10';
+        } else if (window.innerWidth < 1024) {
+            grid_l = '2';
+            grid_r = '2';
+            labelSize = '12';
+            left= 'center';
+        }
+        option.yAxis.show = show;
+        option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+        option.label.fontSize = labelSize;
+        option.grid.left = grid_l;
+        option.grid.right = grid_r;
+        option.legend.left = left;
+
+        rp_chart4.setOption(option);
+        rp_chart4.resize();
+    }
+    start4();
+
+
+    var rp_chart5 = echarts.init(document.getElementById('rp_chart5'));
+        option = {
+            grid: {
+                bottom: '16%',
+                left: '10%',
+                right: '8%'
+            },
+            color: '#1154db',
+            title: {
+                text: '총 매출규모',
+                show: false
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: function (params) {
+                    return params.name + '<br/>' +
+                        params.marker + ' <b>' + params.value + '</b> 만원';
+                },
+                fontSize: 10,
+                /* axisPointer: {
+                	type: 'cross',
+                	crossStyle: {
+                		color: '#999'
+                	}
+                } */
+            },
+            label: {
+                fontSize: '14',
+                show: true,
+            },
+            legend: {
+                data: ['총 매출규모'],
+                bottom: 'bottom',
+                left:'center',
+            },
+            xAxis: {
+                type: 'category',
+                data: ['22년 1월', '22년 2월', '22년 3월', '22년 4월', '22년 5월', '22년 6월', '22년 7월'],
+                axisLine: {
+                    lineStyle: {
+                        //color: '#9e9e9e'
+                    }
+                },
+                axisLabel: {
+                    show: true,
+                    textStyle: {
+                        color: '#000',
+                        //fontSize: 9
+                    }
+                },
+                axisTick: {
+                    show: false
+                },
+                yAxisIndex: 2,
+            },
+            yAxis: {
+                show: false,
+                type: 'value',
+                splitLine: { // y축 수치선
+                    show: false
+                },
+                axisLine: {
+                    show: true,
+                    lineStyle: {
+                        //color: '#9e9e9e'
+                    }
+                }
+            },
+            series: [{
+                name: '총 매출규모',
+                type: 'bar',
+                showBackground: false,
+                data: [622840, 798532, 1043010, 1199073, 1195593, 1198454],
+                markLine: {
+                    lineStyle: {
+                        color: '#2CC7DC',
+                    },
+                    trigger: false,
+                    data: [{
+                            type: 'max',
+                            formatter: 'max',
+                            name: '최고매출',
+                            symbol: 'circle',
+                            symbolSize: 6,
+                            label: {
+                                position: 'end',
+                            }
+                        },
+                        {
+                            type: 'min',
+                            formatter: 'min',
+                            name: '최저매출',
+                            symbol: 'circle',
+                            symbolSize: 6,
+                            label: {
+                                position: 'end',
+                            }
+                        }
+                    ],
+
+                },
+                itemStyle: {
+                    emphasis: {},
+                    normal: {
+                        barBorderRadius: [4, 4, 0, 0],
+                        label: {
+                            show: true,
+                            position: 'outside',
+                            align: 'center',
+                            color: '#1154db',
+                            textPadding: '12',
+                            fontWeight: '600',
+                            borderRadius: '12',
+                            //fontSize:'14',
+                            fontFamily: 'Pretendard',
+                            formatter: function (params) {
+                                var returnVal = echarts.format.addCommas(params.value);
+
+                                return returnVal;
+                            }
+                        },
+                    }
+                },
+                barWidth: '45%',
+                animationDuration: 1500,
+                animationEasing: "elasticOut",
+            }]
+        };
+
+        function start5() {
+            var show = option.yAxis.show;
+            var grid_l = option.grid.left;
+            var grid_r = option.grid.right;
+            var labelSize = option.label.fontSize;
+            var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
+            var left = option.legend.left;
+
+            if (window.innerWidth >= 1024) {
+                show = 'true';
+                fontSize = '12';
+                labelSize = '12';
+                left= 'center';
+            } else if (window.innerWidth <= 280) {
+                fontSize = '9';
+                grid_l = '6';
+                grid_r = '6';
+                labelSize = '10';
+            } else if (window.innerWidth <= 360) {
+                fontSize = '11';
+                grid_l = '6';
+                grid_r = '6';
+                labelSize = '10';
+            } else if (window.innerWidth < 1024) {
+                grid_l = '6';
+                grid_r = '6';
+                labelSize = '12';
+                left= 'center';
+            }
+            option.yAxis.show = show;
+
+            option.grid.left = grid_l;
+            option.grid.right = grid_r;
+            option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+            option.label.fontSize = labelSize;
+            option.legend.left = left;
+
+            rp_chart5.setOption(option);
+            rp_chart5.resize();
+            
+        }
+        start5();
+
+        var rp_chart6 = echarts.init(document.getElementById('rp_chart6'));
+        option = {
+            grid: {
+                bottom: '16%',
+                left: '8%',
+                right: '8%'
+            },
+            title: {
+                text: '고객비중-성/연령대별',
+                show: false
+            },
+            legend: {
+                data: ['남성', '여성'],
+                bottom: 'bottom',
+            },
+            label: {
+                show: true,
+            },
+            tooltip: {
+                trigger: 'axis',
+                formatter: function (params) {
+                    return params[0].axisValue + '<br/>' +
+                        params[0].marker + ' ' + params[0].seriesName + ' ' + Math.abs(params[0].value) + '%' +
+                        '<br/>' +
+                        params[1].marker + ' ' + params[1].seriesName + ' ' + Math.abs(params[1].value) + '%' +
+                        '<br/>';
+                },
+                fontSize: 10,
+                /* axisPointer: {
+                	type: 'cross',
+                	crossStyle: {
+                		color: '#999'
+                	}
+                } */
+            },
+            xAxis: {
+                type: 'value',
+                boundaryGap: [0, 0.01],
+                splitLine: {
+                    show: false
+                },
+                axisLine: {
+                    show: true,
+                    lineStyle: {
+                        //color: '#9e9e9e'
+                    }
+                },
+                axisLabel: {
+                    show: true,
+                    textStyle: {
+                        color: '#000',
+                        //fontSize: 9
+                    },
+                    formatter: function (d) {
+                        return Math.abs(d);
+                    }
+                },
+            },
+            yAxis: {
+                show: true,
+                type: 'category',
+                data: [
+                    '20대', '30대', '40대', '50대', '60대이상',
+                ],
+                axisLabel: {
+                    interval: 0,
+                    fontSize: 11,
+                },
+                inverse: true,
+                grid: {
+                    left: '10%',
+                    right: '10%',
+                    bottom: '3%',
+                    containLabel: false,
+                },
+            },
+            series: [{
+                color: '#1154db',
+                name: '남성',
+                type: 'bar',
+                data: [-5.1, -19.9, -19.0, -14.1, -4.7],
+                stack: 'total',
+                label: {
+                    //show: true,
+                    position: 'inside',
+                    formatter: function (d) {
+                        return Math.abs(d.value);
+                    },
+                    //fontSize:'14',
+                    fontWeight: '600',
+                },
+                emphasis: {
+                    focus: 'series'
+                },
+                itemStyle: {
+                    emphasis: {},
+                    normal: {
+                        barBorderRadius: [4, 0, 0, 4]
+                    }
+                },
+                barWidth: '45%'
+            }, {
+                color: '#FFA09A',
+                name: "여성",
+                type: 'bar',
+                data: [5.9, 14.8, 6.6, 6.3, 3.6],
+                stack: 'total',
+                label: {
+                    //show: true,
+                    position: 'inside',
+                    //fontSize:'14',
+                    fontWeight: '600',
+                },
+                emphasis: {
+                    focus: 'series'
+                },
+                itemStyle: {
+                    emphasis: {},
+                    normal: {
+                        barBorderRadius: [0, 4, 4, 0]
+                    }
+                },
+                barWidth: '45%'
+            }]
+        };
+
+        function start6() {
+            var show = option.yAxis.show;
+            var left = option.legend.left;
+            var grid_l = option.grid.left;
+            var grid_r = option.grid.right;
+            var labelSize = option.label.fontSize;
+            var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
+
+            if (window.innerWidth >= 1024) {
+                left= 'center';
+                fontSize = '12';
+                labelSize = '12';
+            } else if (window.innerWidth <= 280) {
+                fontSize = '9';
+                grid_l = '60';
+                grid_r = '10';
+                labelSize = '10';
+            } else if (window.innerWidth <= 360) {
+                fontSize = '11';
+                grid_l = '56';
+                grid_r = '10';
+                labelSize = '10';
+            } else if (window.innerWidth < 1024) {
+                left= 'center';
+                grid_l = '54';
+                grid_r = '10';
+                labelSize = '12';
+            }
+            option.yAxis.show = show;
+
+            option.grid.left = grid_l;
+            option.grid.right = grid_r;
+            option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+            option.label.fontSize = labelSize;
+            option.legend.left = left;
+
+            rp_chart6.setOption(option);
+            rp_chart6.resize();
+        }
+        start6();
+
+
+        var rp_chart7 = echarts.init(document.getElementById('rp_chart7'));
+        option = {
+            grid: {
+                bottom: '16%',
+                left: '8%',
+                right: '8%'
+            },
+            color: '#1154db',
+            title: {
+                text: '요일별 매출',
+                show: false
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: function (params) {
+                    return params.name + '<br/>' +
+                        params.marker + ' <b>' + params.value + '</b> %';
+                },
+                fontSize: 10,
+                /* axisPointer: {
+                	type: 'cross',
+                	crossStyle: {
+                		color: '#999'
+                	}
+                } */
+            },
+            label: {
+                fontSize: '14',
+                show: true,
+            },
+            legend: {
+                data: ['요일별 매출'],
+                bottom: 'bottom',
+                left:'center',
+            },
+            xAxis: {
+                type: 'category',
+                data: ['월', '화', '수', '목', '금', '토', '일'],
+                axisLine: {
+                    lineStyle: {
+                        //color: '#9e9e9e'
+                    }
+                },
+                axisLabel: {
+                    show: true,
+                    textStyle: {
+                        color: '#000',
+                        //fontSize: 9
+                    }
+                },
+                axisTick: {
+                    show: false
+                },
+                yAxisIndex: 2,
+            },
+            yAxis: {
+                show: false,
+                type: 'value',
+                splitLine: { // y축 수치선
+                    show: false
+                },
+                axisLine: {
+                    show: true,
+                    lineStyle: {
+                        //color: '#9e9e9e'
+                    }
+                }
+            },
+            series: [{
+                name: '총 매출규모',
+                type: 'bar',
+                showBackground: false,
+                data: [15.1,19.4, 14.7, 16.1, 17.6, 10.3, 6.9],
+                markLine: {
+                    lineStyle: {
+                        color: '#2CC7DC',
+                    },
+                    trigger: false,
+                    data: [{
+                            type: 'max',
+                            formatter: 'max',
+                            name: '최고매출',
+                            symbol: 'circle',
+                            symbolSize: 6,
+                            label: {
+                                position: 'end',
+                            }
+                        },
+                        {
+                            type: 'min',
+                            formatter: 'min',
+                            name: '최저매출',
+                            symbol: 'circle',
+                            symbolSize: 6,
+                            label: {
+                                position: 'end',
+                            }
+                        }
+                    ],
+
+                },
+                itemStyle: {
+                    emphasis: {},
+                    normal: {
+                        barBorderRadius: [4, 4, 0, 0],
+                        label: {
+                            show: true,
+                            position: 'outside',
+                            align: 'center',
+                            color: '#1154db',
+                            textPadding: '12',
+                            fontWeight: '600',
+                            borderRadius: '12',
+                            //fontSize:'14',
+                            fontFamily: 'Pretendard',
+                            formatter: function (params) {
+                                var returnVal = echarts.format.addCommas(params.value);
+
+                                return returnVal;
+                            }
+                        },
+                    }
+                },
+                barWidth: '45%',
+                animationDuration: 1500,
+                animationEasing: "elasticOut",
+            }]
+        };
+
+        function start7() {
+            var show = option.yAxis.show;
+            var grid_l = option.grid.left;
+            var grid_r = option.grid.right;
+            var labelSize = option.label.fontSize;
+            var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
+            var left = option.legend.left;
+
+            if (window.innerWidth >= 1024) {
+                show = 'true';
+                fontSize = '12';
+                labelSize = '12';
+                left= 'center';
+            } else if (window.innerWidth <= 280) {
+                fontSize = '9';
+                grid_l = '6';
+                grid_r = '6';
+                labelSize = '10';
+            } else if (window.innerWidth <= 360) {
+                fontSize = '11';
+                grid_l = '6';
+                grid_r = '6';
+                labelSize = '10';
+            } else if (window.innerWidth < 1024) {
+                grid_l = '6';
+                grid_r = '6';
+                labelSize = '12';
+                left= 'center';
+            }
+            option.yAxis.show = show;
+
+            option.grid.left = grid_l;
+            option.grid.right = grid_r;
+            option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+            option.label.fontSize = labelSize;
+            option.legend.left = left;
+
+            rp_chart7.setOption(option);
+            rp_chart7.resize();
+            
+        }
+        start7();
+
+        var rp_chart8 = echarts.init(document.getElementById('rp_chart8'));
+        option = {
+            grid: {
+                bottom: '16%',
+                left: '8%',
+                right: '8%'
+            },
+            label: {
+                show: true,
+            },
+            title: {
+                text: '시간대별 매출비중',
+                show: false
+            },
+            legend: {
+                data: ['건수 비중', '금액 비중'],
+                bottom: 'bottom',
+            },
+            tooltip: {
+                trigger: 'axis',
+                fontSize: 10,
+                /* axisPointer: {
+                	type: 'cross',
+                	crossStyle: {
+                		color: '#999'
+                	}
+                } */
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: ['06~09시', '09~12시', '12~15시', '15~18시', '18~21시', '21~24시', '24~06시'],
+                axisLabel: {
+                    show: true,
+                    textStyle: {
+                        color: '#000',
+                        //fontSize: 9
+                    }
+                },
+            },
+            yAxis: {
+                type: 'value',
+                axisLabel: {
+                    formatter: '{value}'
+                },
+                splitLine: {
+                    show: false
+                },
+                axisLine: {
+                    show: true,
+                    lineStyle: {
+                        //color: '#9e9e9e'
+                    }
+                }
+            },
+            series: [{
+                name: "건수 비중",
+                type: 'line',
+                symbolSize: 10,
+                data: [0.0, 0.0, 0.5, 2.6, 48.5, 44.3, 4.1],
+                emphasis: {
+                    focus: 'series'
+                },
+                areaStyle: {
+                    color: new echarts.graphic.LinearGradient(0, 1, [{
+                            offset: 0,
+                            color: '#2dc7dc00'
+                        },
+                        {
+                            offset: 1,
+                            color: '#fff'
+                        }
+                    ])
+                },
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: true,
+                            position: 'outside',
+                            align: 'center',
+                            //color: '#006991',
+                            textPadding: '12',
+                            fontWeight: '600',
+                            borderRadius: '12',
+                            //fontSize:'14',
+                            lineHeight: '14',
+                            borderRadius: '10',
+                            border: '20',
+                            formatter: function (params) {
+                                var returnVal = echarts.format.addCommas(params.value);
+
+                                return returnVal;
+                            },
+                            //backgroundColor: '#F6F8FCe4',
+                            borderRadius: 4,
+                            padding: 4,
+                        }
+                    }
+                },
+                color: '#2CC7DC',
+            }, {
+                name: "금액 비중",
+                color: '#1154db',
+                type: 'line',
+                symbolSize: 10,
+                areaStyle: {
+                    color: new echarts.graphic.LinearGradient(0, 1, [{
+                            offset: 0,
+                            color: '#1154db00'
+                        },
+                        {
+                            offset: 1,
+                            color: '#fff'
+                        }
+                    ])
+                },
+                data: [0.0, 0.0, 0.3, 1.8, 52.7, 42.6, 2.7],
+                emphasis: {
+                    focus: 'series'
+                },
+                itemStyle: {
+                    normal: {
+                        barBorderRadius: [50, 50, 50, 50],
+                        label: {
+                            show: true,
+                            position: 'outside',
+                            align: 'center',
+                            //color: '#1154db',
+                            textPadding: '12',
+                            fontWeight: '600',
+                            borderRadius: '12',
+                            //fontSize:'14',
+                            lineHeight: '14',
+                            borderRadius: '10',
+                            border: '20',
+                            formatter: function (params) {
+                                var returnVal = echarts.format.addCommas(params.value);
+
+                                return returnVal;
+                            },
+                            //backgroundColor: '#F6F8FCe4',
+                            borderRadius: 4,
+                            padding: 4,
+                        }
+                    }
+                },
+                barWidth: '35%'
+            }]
+        }
+
+        function start8() {
+            var show = option.yAxis.show;
+            var left = option.legend.left;
+            var grid_l = option.grid.left;
+            var grid_l = option.grid.left;
+            var grid_r = option.grid.right;
+            var labelSize = option.label.fontSize;
+            var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
+
+            if (window.innerWidth >= 1024) {
+                show = 'true';
+                fontSize = '12';
+                labelSize = '12';
+                left= 'center';
+            } else if (window.innerWidth <= 280) {
+                fontSize = '9';
+                grid_l = '24';
+                grid_r = '24';
+                labelSize = '10';
+            } else if (window.innerWidth <= 360) {
+                fontSize = '11';
+                grid_l = '24';
+                grid_r = '24';
+                labelSize = '10';
+            } else if (window.innerWidth < 1024) {
+                grid_l = '24';
+                grid_r = '24';
+                labelSize = '12';
+                left= 'center';
+            }
+            option.yAxis.show = show;
+
+            option.grid.left = grid_l;
+            option.grid.right = grid_r;
+            option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+            option.label.fontSize = labelSize;
+            option.legend.left = left;
+
+            rp_chart8.setOption(option);
+            rp_chart8.resize();
+        }
+        start8();
+
+
+</script>
+<!-- echart 스크립트 -->
+
+</body>
+
+</html>
