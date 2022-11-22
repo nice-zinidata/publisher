@@ -154,6 +154,7 @@ table {
 
 a {
     text-decoration: none;
+    transition: 0.4s;
 }
 
 a,
@@ -208,7 +209,7 @@ hover style
 **/
 
 a:hover {
-    color: var(--pri1) !important;
+    color: var(--pri2) !important;
 }
 
 
@@ -985,6 +986,21 @@ icon style
 basic style 
 *********************/
 
+.mb8{
+    margin-bottom: 8px;
+}
+.mb12{
+    margin-bottom: 12px;
+}
+
+.mb16{
+    margin-bottom: 16px;
+}
+
+.mb20{
+    margin-bottom: 20px;
+}
+
 .flx {
     display: flex;
 }
@@ -1100,7 +1116,7 @@ button
 }
 
 .btn1:hover {
-    background-color: #0554E5;
+    background-color:var(--mono2);
     transition: 0.4s ease;
 }
 
@@ -1115,16 +1131,15 @@ button
     border-radius: 4px;
     font-family: 'Pretendard';
     cursor: pointer;
-    background-color: #fff;
-    border: 1px solid rgba(37, 52, 149, 0.6);
-    color: #253495;
+    background-color:#EFF1F5;
+    border: none;
+    color: var(--mono1);
     font-size: 16px;
 }
 
-.pc_bdy .button_box .btn2:hover {
-    border: 1px solid #7ca6ff;
-    color: #1F67FD;
+.button_box .btn2:hover {
     transition: 0.4s ease;
+    background-color: var(--mono6);
 }
 
 .btn3{
@@ -1138,9 +1153,20 @@ button
     border-radius: 4px;
 }
 
-/*
-button
-*/
+.btn_reset{
+    width: max-content;
+    border: none;
+    height: 20px;
+    text-align: center;
+    background-color: #fff;
+    color:var( --mono3);
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+.btn_reset::before{
+    margin-right: 4px;
+}
 
 
 /******************** 
@@ -1321,8 +1347,8 @@ menu
 .user_navi .btn3::before{
     content: "";
     display: inline-block;
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     margin-right: 8px;
     background: url(../images/icons/ico_olive_user.svg) 50% 50%/cover;
     transition: 0.4s;
@@ -1344,16 +1370,17 @@ menu
 }
 
 /* 왼쪽 사이드 gnb css */
-
+/*tab_box 세로 변환*/
 .tab_box {
     background-color: #fff;
-}
-
-.tab_box ul {
-    display: flex;
-    border-bottom: 1px solid #bec9da47;
-    justify-content: space-between;
-    height: 36px;
+    position: absolute;
+    left: 0;
+    height: calc(100vh - 61px);
+    top: 61px;
+    z-index: 4;
+    overflow-y:auto;
+    overflow-y:overlay;
+    border-right: 1px solid rgba(190, 201, 218, 0.6);
 }
 
 .tab_box ul li {
@@ -1387,20 +1414,10 @@ menu
     transition: 0.4s;
 }
 
-/*tab_box 세로 변환*/
-.tab_box {
-    position: absolute;
-    left: 0;
-    height: calc(100vh);
-    top: 61px;
-    z-index: 4;
-}
-
 .tab_box>ul {
     flex-direction: column;
-    height: inherit;
+    height: fit-content;
     justify-content: flex-start;
-    border-right: 1px solid rgba(190, 201, 218, 0.6);
     position: relative;
     width: 72px;
 }
@@ -1439,7 +1456,6 @@ menu
     margin: 0 auto;
     margin-top: 12px;
     margin-bottom: 12px;
-    background: url(../images/icons/ico_list1_on.svg) 50% 50%/cover;
     transition: 0.4s;
 }
 
@@ -1464,7 +1480,7 @@ menu
 }
 
 .tab_box>ul>li:nth-child(6)>a::before {
-    background: url(../images/icons/ico_heart_line_g.svg) 50% 50%/cover;
+    background: url(../images/icons/ico_heart_line_b.svg) 50% 50%/cover;
 }
 
 .tab_box>ul>li:nth-child(1).on>a::before,
@@ -2980,50 +2996,121 @@ show_map
 }
 
 /***********
-select
+form
 ***********/
 
+/* Customize the label (the container) */
+.container {
+    display: flex;
+    position: relative;
+    padding-left: 28px;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: 500;
+    color: var(--mono1);
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 4px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: var(--mono1);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    content: "✓";
+    position: absolute;
+    display: block;
+    font-family: "Pretendard";
+    font-size: 16px;
+    padding: 1px 2px;
+    color:#fff;
+  }
+
+/*input*/
+input[type="text"]{
+    border: 1px solid var(--mono6);
+    width: 36%;
+    border-radius: 4px;
+    height: 36px;
+}
+
+/*select*/
 
 select::-ms-expand {
     display: none;
 }
 
-
 select.select {
+    font-family: 'Pretendard';
     -o-appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 }
-
-.select {
-    height: 32px;
+select.select{
+    height: 36px;
     padding: 0 30px 0 10px;
-    border-radius: 8px;
+    border-radius: 4px;
     outline: 0 none;
-    border: 1px solid rgba(190, 201, 218, 0.6);
+    border: 1px solid var(--mono6);
     position: relative;
-    color: #6c6c6c;
-    background: #fff url(../images/icons/ico_arrow_bk.svg) no-repeat 90% 50%/10px auto;
-    color: #191F28;
+    color: var(--mono1);
+    background: #fff url(../images/icons/ico_arrow_s_b.svg) no-repeat 90% 50%/20px auto;
     font-weight: 500;
-    width: 100px;
+    width: 100%;
     text-align: left;
     font-size: 14px;
-    margin-right: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-select.select {
-    width: 90px;
-    font-size: 14px !important;
-    color: #191F28 !important;
-    font-weight: 500 !important;
-    font-family: 'Pretendard';
+.full_box select.select{
+    background: #fff url(../images/icons/ico_arrow_s_b.svg) no-repeat 98% 50%/20px auto;
 }
 
 option {
+    font-family: 'Pretendard';
     font-size: 14px !important;
-    color: #191F28 !important;
+    color: var(--mono1) !important;
     font-weight: 500 !important;
 }
 
@@ -3907,88 +3994,6 @@ input#auth_no {
     border: 1px solid #ff8680 !important;
 }
 
-/* Customize the label (the container) */
-
-.chk ul li {
-    margin-bottom: 16px;
-}
-
-.chk {
-    margin-bottom: 16px;
-}
-
-.chk_box {
-    display: block;
-    position: relative;
-    padding-left: 28px;
-    cursor: pointer;
-    font-size: 16px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-/* Hide the browser's default checkbox */
-.chk_box input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-/* Create a custom checkbox */
-.checkmark {
-    position: absolute;
-    top: calc(50% - 10px);
-    left: 0;
-    height: 20px;
-    width: 20px;
-    background-color: #eee;
-    border-radius: 3px;
-}
-
-/* On mouse-over, add a grey background color */
-.chk_box:hover input~.checkmark {
-    /* background-color: #ccc; */
-    border-radius: 3px;
-}
-
-/* When the checkbox is checked, add a blue background */
-.chk_box input:checked~.checkmark {
-    background-color: #1F67FD;
-    border-radius: 3px;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-/* Show the checkmark when checked */
-.chk_box input:checked~.checkmark:after {
-    display: block;
-    content: "";
-    width: 20px;
-    height: 20px;
-    background: url(../images/icons/ico_check_wh.svg) 50% 50% /18px;
-    left: calc(50% - 10px);
-    top: calc(50% - 10px);
-}
-
-.chk label {
-    color: #404040;
-    font-size: 15px;
-    line-height: 20px;
-}
-
-.chk label strong {
-    font-weight: 500;
-}
-
 a.view {
     display: block;
     text-decoration: underline;
@@ -4856,13 +4861,343 @@ alert_pop
     background: url(../images/icons/ico_refresh_bl.svg) no-repeat 50% 50%/14px;
     display: inline-block;
     margin-right: 2px;
-    margin-bottom: -3px;
+}
+
+.pc_sheet .ico_again_line_g{
+    display: flex;
+    border: none;
+    background:none;
+}
+
+.pc_hd_top h3::before{
+    content: "";
+    width: 40px;
+    height: 40px;
+    margin-bottom: 12px;
+    background:#FFF url(../images/icons/ico_chart_full_c.svg) no-repeat 50% 50%/24px;
+    display: block;
+    box-shadow: 0px 2px 5px rgba(38, 51, 77, 0.08);
+    border-radius: 4px;
+}
+
+.pc_sheet .pc_hd_top{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.pc_sheet .pc_hd_top h3{
+    font-size: 18px;
+    color:var(--mono1);
+    font-weight: 700;
 }
 
 .s_txt_sub {
     color: #6A788A;
     font-size: 14px;
     margin-top: 8px;
+}
+
+
+/*pc_bdy_ul*/
+
+.pc_body_ul{
+    display: flex;
+    width: 100%;
+    position: relative;
+    
+}
+.pc_body_ul::after{
+    content: "";
+    display: block;
+    width: calc(100% + 32px);
+    height: 1px;
+    left: -16px;
+    bottom:-1px;
+    position: absolute;
+    background-color:var(--mono6);
+}
+.pc_body_ul > li:nth-child(1){
+    margin-right: 16px;
+}
+
+.pc_body_ul > li > a{
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    color: var(--mono3);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.pc_body_ul > li.on > a{
+    color: var(--mono1);
+    border-bottom: 2px solid var(--mono1);
+}
+
+
+/*select_main*/
+
+.select_main_box{
+    position: relative;
+}
+
+.select_main{
+    display: block;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding: 16px 44px;
+    height: 52px;
+    text-align: left;
+    background-color: #fff;
+    border: 2px solid var(--sec4);
+    border-radius: 4px;
+    color:var(--mono1);
+    font-size: 14px;
+    font-weight:700;
+    box-shadow: 0px 2px 5px rgba(38, 51, 77, 0.08);
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+
+.select_main:hover,
+.select_main.on{
+    box-shadow: 0px 0px 8px rgba(202, 228, 139, 0.4);
+    color:var(--mono1) !important;
+    border:2px solid var(--sec3);
+}
+
+.select_main span.gr{
+    margin-left: 4px;
+    margin-right: 4px;
+    color:var(--mono4);
+    font-size: 14px;
+    font-weight:400;
+}
+
+.select_main::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: url(../images/icons/ico_search_line_b.svg) 50% 50%/cover;
+}
+
+.select_main::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: url(../images/icons/ico_arrow_s_b.svg) 50% 50%/cover;
+}
+
+.select_main_show{
+    background: #fff;
+    border:1px solid #666F7E;
+    border-radius: 4px;
+    width: 100%;
+    position: absolute;
+    top:60px;
+    box-shadow: 0px 2px 5px rgba(38, 51, 77, 0.2);
+    z-index: 2;
+    display: none;
+}
+
+.select_main_show.on{
+    display: block;
+}
+
+.select_main_show .show_header ul{
+    border-bottom: 1px solid #E1E4EA;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.select_main_show .show_header li a{
+    height: 40px;
+    font-size: 14px;
+    color:var(--mono3);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.select_main_show .show_header li.on a{
+    color:var(--mono1);
+    border-bottom:2px solid var(--mono1);
+}
+
+.select_main_show .show_header li:hover a{
+    color:var(--mono1) !important;
+}
+
+.select_main_show .show_body{
+    padding:20px 12px;
+}
+
+.show_body .full_box > select.select{
+    width: 100%;
+}
+
+.show_body .three_box{
+    display: flex;
+    justify-content: space-between;
+}
+
+.show_body .three_box > select.select{
+    width: calc(33.3% - 4px);
+}
+
+.show_body .hascheck_box{
+    display: flex;
+    justify-content: space-between;
+}
+
+.show_body .has_txt_input{
+    width: 78%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.show_body .has_txt_input input[type="text"]{
+    width: calc(50% - 14px);
+    padding: 10px;
+    box-sizing: border-box;
+}
+.show_body .hascheck_box > select.select{
+    width: calc(100% - 120px);
+}
+
+ul.shop_list{
+    height: 253px;
+    overflow-y: auto;
+    overflow-y: overlay;
+}
+
+ul.shop_list li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    padding-left: 32px;
+    position: relative;
+}
+
+ul.shop_list li:hover{
+    background-color: var(--mono7);
+    border-radius: 4px;
+}
+
+ul.shop_list li:hover{
+    background-color: var(--mono7);
+    border-radius: 4px;
+}
+
+ul.shop_list li > .list_a{
+    display: block;
+    width: calc(100% - 40px);
+    position: relative;
+}
+
+ul.shop_list li > .list_a::before{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 4px;
+    top:calc(50% - 2px);
+    left: -16px;
+    height: 4px;
+    border-radius: 100%;
+    background-color:var(--mono6);
+}
+
+ul.shop_list li:hover > .list_a::before{
+    background-color:var(--pri1);
+}
+
+ul.shop_list li > .list_a p:nth-child(1){
+    color: var(--mono1);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+ul.shop_list li > .list_a p:nth-child(2){
+    color: var(--mono3);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+ul.shop_list li:hover p:nth-child(1){
+    color:var(--pri1) !important;
+}
+
+
+ul.shop_list li .heart_a{
+    content: "";
+    display: block;
+    position: absolute;
+    right: 12px;
+    top:calc(50% - 20px);
+    width: 20px;
+    height: 20px;
+    padding: 20px;
+    background: url(../images/icons/ico_heart_line_g.svg) 50% 50%/20px no-repeat;
+    transition: 0.4s;
+}
+
+ul.shop_list li .heart_a:hover,
+ul.shop_list li .heart_a.on{
+    background: url(../images/icons/ico_heart_full_c.svg) 50% 50%/20px no-repeat;
+}
+
+.pic_of_two{
+    width: fit-content;
+    background-color: #EFF1F5;
+    box-sizing: content-box;
+    padding: 2px;
+    border-radius: 999px;
+}
+
+.pic_of_two li a{
+    display: flex;
+    font-size: 14px;
+    font-weight: 600;
+    color:var(--mono3);
+    border-radius: 999px;
+    padding: 8px 14px;
+}
+
+.pic_of_two li.on a{
+    background: #fff;
+    box-shadow: 0px 6px 10px rgba(38, 51, 77, 0.08);
+    color:var(--mono1);
+    border-radius: 999px;
+}
+
+.pic_of_two li:hover a{
+    color: var(--mono1) !important;
+}
+
+.select_main_show .show_foot{
+    padding: 12px;
+    padding-top: 0;
+}
+
+.select_main_show .show_foot button{
+    height:40px;
+    font-size: 14px;
 }
 
 /* refer_hover start */
@@ -5295,16 +5630,21 @@ alert_pop
         padding: 16px;
     }
 
+    .pc_sheet .pc_hd{
+        padding: 24px 16px;
+    }
+    
+    .pc_sheet .pc_bdy{
+        padding-top:0;
+        padding-bottom:0;
+    }
+
     .pc_sheet .sub_txt {
         font-size: 14px;
         color: #4E5867;
         font-weight: 600;
         margin-bottom: 12px;
         margin-left: 4px;
-    }
-
-    .pc_sheet .pc_hd {
-        border-bottom: 1px solid rgba(190, 201, 218, 0.2);
     }
 
     ul.cate2 {
@@ -7633,14 +7973,6 @@ alert_pop
 
     .sheet_03 .slide_tag.kind_sli .tag {
         padding: 6px 8px 6px 6px;
-    }
-
-    .select {
-        width: calc(100% - 4px);
-    }
-
-    select.select {
-        width: 80px;
     }
 
     .sheet_body.absolute .mini_select_box {

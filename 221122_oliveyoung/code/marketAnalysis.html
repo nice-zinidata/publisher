@@ -9,7 +9,6 @@
   <!-- min js -->
   <script src="resource/js/jquery.min.js"></script>
   <!-- 분석화면 js -->
-  <script src="resource/js/report.js"></script>
   <script src="resource/js/analysis.js"></script>
 
   <!-- font css-->
@@ -32,7 +31,7 @@
 </head>
 
 
-<body class="idx1">
+<body>
 
 <!-- 리포트 -->
 <div id="report1" style="display: none;">
@@ -712,21 +711,136 @@
   <!--modal END-->
 
   <!--only_pc pc_sheet_box PC일때 사이드 START-->
-  <div class="pc_sheet onlypc on" id="pc_sheet">
+  <div class="pc_sheet onlypc on">
     <a class="handle" href="#" id="handle"></a>
-    <div style="overflow: overlay;">
+    <div>
       <div class="pc_hd">
-        <div class="tag_txt">
-          <p class="sub_txt">
-            <span>현 위치</span>
-          </p>
-          <div class="map_place_box">
-            <a href="#">
-              <input class="input" type="text" id="" name="show" placeholder="서울특별시 영등포구 여의동" readonly>
-            </a>
-          </div>
+        <div class="pc_hd_top mb8">
+            <h3>
+                매출분석
+            </h3>
+          <button class="ico16 ico_again_line_g btn_reset">
+            초기화
+          </button>
         </div>
-      </div>
+        <div class="select_main_box on">
+            <a class="select_main">지역<span class="gr">|</span>매장 선택</a>
+            <div class="select_main_show" >
+                <div class="show_header">
+                    <ul class="flx">
+                        <li><a href="#">지역 선택</a></li>
+                        <li class="on"><a href="#">매장 선택</a></li>
+                    </ul>
+                </div>    
+                <div class="show_body body_loca" style="display: none;">
+                    <div class="in_box mb20">
+                        <ul class="flx pic_of_two">
+                            <li class="on"><a href="#">도로명 주소</a></li>
+                            <li><a href="#">지번 주소</a></li>
+                        </ul>
+                    </div>
+                    <div class="in_box three_box mb8">
+                        <select class="select" name="" id="">
+                            <option value="">시/도</option>    
+                        </select>
+                        <select class="select" name="" id="">
+                            <option value="">시/군/구</option>    
+                        </select>
+                        <select class="select" name="" id="">
+                            <option value="">도로명</option>    
+                        </select>
+                    </div>
+                    <div class="in_box full_box">
+                        <select class="select" name="" id="">
+                            <option value="">건물번호 선택</option>    
+                        </select>
+                    </div>
+                    <div class="in_box hascheck_box" style="display: none;">
+                        <label class="container">산
+                            <input type="checkbox" checked="checked">
+                            <span class="checkmark"></span>
+                          </label>
+                          <div class="has_txt_input">
+                            <input type="text" id="txt_input1" name="txt_input1">
+                            <span>-</span>
+                              <input type="text" id="txt_input2" name="txt_input2">
+                          </div>
+                    </div>
+                </div>
+                <div class="show_body body_shop">
+                    <div class="in_box three_box mb20">
+                        <select class="select" name="" id="">
+                            <option value="">시/도</option>    
+                        </select>
+                        <select class="select" name="" id="">
+                            <option value="">시/군/구</option>    
+                        </select>
+                        <select class="select" name="" id="">
+                            <option value="">읍/면/동</option>    
+                        </select>
+                    </div>
+                    <div class="in_box list_box">
+                        <ul class="shop_list">
+                            <li>
+                                <a class="list_a" href="#">
+                                    <p>신촌대로점</p>
+                                    <p>서울특별시 서대문구 신촌로 121 1층</p>
+                                </a>
+                                <a class="heart_a on">
+                                </a>
+                            </li>
+                            <li>
+                                <a class="list_a" href="#">
+                                    <p>신촌역점</p>
+                                    <p>서울특별시 서대문구 신촌로 79</p>
+                                </a>
+                                <a class="heart_a">
+                                </a>
+                            </li>
+                            <li>
+                                <a class="list_a" href="#">
+                                    <p>올리브영 신촌 타운</p>
+                                    <p>서울특별시 서대문구 신촌로 79</p>
+                                </a>
+                                <a class="heart_a">
+                                </a>
+                            </li>
+                            <li>
+                                <a class="list_a" href="#">
+                                    <p>신촌대로점</p>
+                                    <p>서울특별시 서대문구 신촌로 121 1층</p>
+                                </a>
+                                <a class="heart_a">
+                                </a>
+                            </li>
+                            <li>
+                                <a class="list_a" href="#">
+                                    <p>신촌대로점</p>
+                                    <p>서울특별시 서대문구 신촌로 121 1층</p>
+                                </a>
+                                <a class="heart_a">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="show_foot">
+                    <div class="button_box">
+                        <button class="btn2">취소</button>
+                        <button class="btn1">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div><!--pc head-->
+      <div>
+        <div class="pc_bdy">
+            <ul class="pc_body_ul">
+                <li class="on"><a href="#">입지 예상 매출</a></li>
+                <li><a href="#">매출 성장성 예측</a></li>
+            </ul>
+        </div>
+      </div><!--pc body-->
     </div>
   </div>
 <!--only_pc pc_sheet_box PC일때 사이드 END-->
@@ -781,6 +895,17 @@
     </div>
   </div>
   <!--top_section END-->
+
+  <div class="tab_box onlypc">
+    <ul>
+        <li class="on"><a>매출</a></li>
+        <li><a>고객</a></li>
+        <li><a>금융</a></li>
+        <li><a>지역</a></li>
+        <li><a>오늘드림</a></li>
+        <li><a>관심지역</a></li>
+    </ul>
+</div>
 
   <!--map START-->
   <div class="map_section">
