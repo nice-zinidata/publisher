@@ -27,7 +27,7 @@ $(document).ready(function(){
     //지역 | 매장 선택
     $( '.select_main' ).click( function() {
         $(this).toggleClass('on');
-        $('.select_main_show').toggleClass('on');
+        $(this).parents().children('.select_main_show').toggleClass('on');
       } );
     
       //유저 navigation 버튼 (오른쪽 최상단 클릭)
@@ -121,4 +121,159 @@ $(document).ready(function(){
       $('.pop5').addClass('show');
     });
 
+
+//레인지 피커 시작
+
+      const sliders = document.querySelectorAll('.dual-range-slider')
+	sliders.forEach(slider => {
+		const minRange = slider.querySelector('.min-range')
+		const maxRange = slider.querySelector('.max-range')
+		const children = slider.childNodes[1].childNodes
+
+		minRange.addEventListener('input', () => {
+			// Make sure the sliders don't cross eachother
+			const minValue = Math.min(minRange.value, maxRange.value)
+			minRange.value = minValue
+
+			// Set width of slider elements
+			const value = minValue / parseInt(minRange.max) * 100
+			children[1].style.width = value + '%'
+			children[5].style.left = value + '%'
+			children[7].style.left = value + '%'
+			// children[11].style.left = value + '%'
+			// children[11].childNodes[1].innerHTML = minValue // Set bubble text
+
+
+			// If the thumb handles are on top of eachother,
+			// give the most recently changed thumb handle height priority
+			if (Math.abs(minRange.value - maxRange.value) === 0) {
+				children[7].style.zIndex = 1
+				children[9].style.zIndex = 0
+				minRange.style.zIndex = 1
+				maxRange.style.zIndex = 0
+			} else {
+				children[7].style.zIndex = 3
+				children[9].style.zIndex = 3
+				minRange.style.zIndex = 3
+				maxRange.style.zIndex = 3
+			}
+		})
+
+		maxRange.addEventListener('input', () => {
+			// Make sure the sliders don't cross eachother
+			const maxValue = Math.max(minRange.value, maxRange.value)
+			maxRange.value = maxValue
+
+			// Set width of slider elements
+			let value = maxValue / parseInt(maxRange.max) * 100
+			children[3].style.width = 100 - value + '%'
+			children[5].style.right = 100 - value + '%'
+			children[9].style.left = value + '%'
+			// children[13].style.left = value + '%'
+			// children[13].childNodes[1].innerHTML = maxValue // Set bubble text
+
+			// If the thumb handles are on top of eachother,
+			// give the most recently changed thumb handle height priority
+			if (Math.abs(minRange.value - maxRange.value) === 0) {
+				children[9].style.zIndex = 1
+				children[7].style.zIndex = 0
+				maxRange.style.zIndex = 1
+				minRange.style.zIndex = 0
+			} else {
+				children[9].style.zIndex = 3
+				children[7].style.zIndex = 3
+				maxRange.style.zIndex = 3
+				minRange.style.zIndex = 3
+			}
+		})
+
+        minRange.addEventListener('input', () => {
+            const resultElement = document.getElementById('ageFilterResult')
+            console.log(minRange.value);
+            if(minRange.value == 0 ){
+                minAge = '15살 미만'
+                financeMinAge = ''
+            }else if(minRange.value == 14.28){
+                minAge = '15'
+                financeMinAge = '15'
+            }else if(minRange.value == 28.56){
+                minAge = '20'
+                financeMinAge = '20'
+            }else if(minRange.value == 42.84){
+                minAge = '30'
+                financeMinAge = '30'
+            }else if(minRange.value == 57.12){
+                minAge = '40'
+                financeMinAge = '40'
+            }else if(minRange.value == 71.40){
+                minAge = '50'
+                financeMinAge = '50'
+            }else if(minRange.value == 85.68){
+                minAge = '60'
+                financeMinAge = '60'
+            }else{
+                minAge = '70살 초과'
+                financeMinAge = '70'
+            }
+            if(minAge == maxAge){
+                resultElement.innerText = minAge;
+            }else{
+                resultElement.innerText = minAge + '~' + maxAge;
+            }
+
+        })
+        maxRange.addEventListener('input', () => {
+            const resultElement = document.getElementById('ageFilterResult')
+            if(maxRange.value == 0 ){
+                maxAge = '15살 미만'
+                financeMaxAge = ''
+            }else if(maxRange.value == 14.28){
+                maxAge = '20살'
+                financeMaxAge = '15'
+            }else if(maxRange.value == 28.56){
+                maxAge = '30살'
+                financeMaxAge = '20'
+            }else if(maxRange.value == 42.84){
+                maxAge = '40살'
+                financeMaxAge = '30'
+            }else if(maxRange.value == 57.12){
+                maxAge = '50살'
+                financeMaxAge = '40'
+            }else if(maxRange.value == 71.40){
+                maxAge = '60살'
+                financeMaxAge = '50'
+            }else if(maxRange.value == 85.68){
+                maxAge = '70살'
+                financeMaxAge = '60'
+            }else{
+                maxAge = '70살 초과'
+                financeMaxAge = '70'
+            }
+            if(minAge == maxAge){
+                resultElement.innerText = minAge
+            }else{
+                resultElement.innerText = minAge + '~' + maxAge;
+            }
+
+        })
+    })
+
+
+	const normalizeToSentiment = (value) => {
+		// Value is between 0 and 100
+		return roundTo(value / 50 - 1, 1)
+	}
+
+
+	/**
+	 * Rounds a decimal number to a certain amount of decimals
+	 * 
+	 * @param {Number} number The number to round
+	 * @param {Number} decimals The amount of decimals to round to
+	 */
+	function roundTo(number, decimals) {
+		return Math.round((number + Number.EPSILON) * 10 ** decimals) / 10 ** decimals
+	}
+
+  //레인지 피커 끝
 });
