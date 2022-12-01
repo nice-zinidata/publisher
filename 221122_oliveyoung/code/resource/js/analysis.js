@@ -59,6 +59,9 @@ $(document).ready(function(){
       $(this).parents('.select_main_show').removeClass('on');
       $(this).parents('.select_main_box').children('.select_main').removeClass('on');
 
+      //탭 리포트 보일시에 .loca_input.again위치 조정 class
+      $('.loca_input').addClass('reloc');
+      $('.loca_input.again').addClass('reloc');
       } );
 
     // 최상단 탭(매출, 고객, 금융, 지역, 오늘드림, 관심지역) 클릭시 각 탭 열리고 닫힘

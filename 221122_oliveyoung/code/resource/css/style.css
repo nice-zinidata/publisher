@@ -223,11 +223,24 @@ a:hover {
 icon style
 */
 
+.ico42::before {
+    content: "";
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+}
 .ico32::before {
     content: "";
     display: inline-block;
     width: 32px;
     height: 32px;
+}
+
+.ico36::before {
+    content: "";
+    display: inline-block;
+    width: 36px;
+    height: 36px;
 }
 
 .ico24::before {
@@ -1020,6 +1033,9 @@ icon style
 .olive_pic::before {
     background: url(../images/icons/olive_pic.svg) 50% 50%/cover;
 }
+.olive_pic.on::before {
+    background: url(../images/icons/olive_pic_on.svg) 50% 50%/cover;
+}
 
 .ruler::before {
     background: url(../images/icons/ruler.svg) 50% 50%/cover;
@@ -1272,6 +1288,22 @@ button
 
 .btn_reset:hover::before{
     background: url(../images/icons/ico_again_line_b.svg) 50% 50%/cover;
+}
+
+.btn6 {
+    width: inherit;
+    height: 40px;
+    text-align: center;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    font-family: 'Pretendard';
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid var(--mono7);
+    color: var(--mono1);
+    font-size: 14px;
 }
 
 .button_box.full > button{
@@ -1748,31 +1780,65 @@ map
 
 .map_section {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: url(../images/bg_temp.png) 50% 50%/cover;
     position: relative;
 }
 
-.map_section .loca_input {
-    color: #fff;
-    background: rgba(34, 34, 34, 0.78);
+.loca_input {
+    color: var(--mono1);
+    background: rgba(255, 255, 255, 0.86);
     font-size: 15px;
-    left: 50%;
+    font-weight: 600;
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 12px 16px 12px 12px;
     position: absolute;
-    left: 50%;
-    top: 80px;
-    background: rgba(34, 34, 34, 0.78);
-    box-shadow: 0px 2px 5px rgba(38, 51, 77, 0.03);
+    top: 68px;
     backdrop-filter: blur(6px);
-    border-radius: 30px;
+    height: fit-content;
+    transform: translateX(-50%);
+    border: none;
+    border-radius: 8px;
+    transition: 0.4s ease-in-out;
+    left: 526px;
+    box-shadow: 0px 2px 5px rgb(38 51 77 / 8%);
 }
 
-.map_section .ico16::before{
+.loca_input.ico16::before{
     margin-right: 6px;
+}
+
+.loca_input.again{
+    top:unset;
+    bottom:20px;
+    left: calc(50% + 216px);
+    color:#fff;
+    background: rgba(34, 34, 34, 0.78);
+    box-shadow: 0px 2px 5px rgba(38, 51, 77, 0.03);
+    border-radius: 999px;
+    font-weight: 400;
+}
+
+.loca_input.again:hover{
+    background: rgba(34, 34, 34, 1);
+}
+
+.loca_input.reloc{
+    left: 926px;
+}
+
+.loca_input.again.reloc{
+    left: calc(50% + 396px);
+}
+
+.loca_input.noloc{
+    left: 164px;
+}
+
+.loca_input.again.noloc{
+    left: calc(50% + 36px);
 }
 
 /******************** 
@@ -1992,7 +2058,7 @@ a.handle.on {
 
 a.handle.tab_right_handle {
     left: 720px;
-    top: 12px;
+    top: 8px;
     width: 32px;
     height: 40px;
     box-shadow: 0px 2px 5px rgba(38, 51, 77, 0.2);
@@ -2500,7 +2566,7 @@ ul.shop_list li:hover {
     border-radius: 4px;
 }
 
-ul.shop_list li:hover {
+ul.shop_list li.on {
     background-color: var(--mono7);
     border-radius: 4px;
 }
@@ -2551,7 +2617,8 @@ ul.shop_list li>.list_a p:nth-child(2) {
     line-height: 120%;
 }
 
-ul.shop_list li:hover p:nth-child(1) {
+ul.shop_list li:hover p:nth-child(1),
+ul.shop_list li.on p:nth-child(1) {
     color: var(--pri2) !important;
 }
 
@@ -2960,12 +3027,14 @@ ul.shop_list li .heart_a.on {
     
 }
 
-.alrt_pop .reference {
+.alrt_pop .reference,
+.map_pop .reference {
     font-size: 13px;
     color:var(--mono3);
 }
 
-.alrt_pop p .reference {
+.alrt_pop p .reference,
+.map_pop .reference {
     line-height: 120%;
 }
 
@@ -3156,6 +3225,16 @@ ul.shop_list li .heart_a.on {
     left: 2px;
 }
 
+.min_box .container input:checked~.checkmark:after {
+    display: none;
+}
+
+.min_box .checkmark {
+    width: 12px;
+    height: 12px;
+    border-radius: 5px;
+}
+
 .min_box li:nth-child(1) .container input:checked~.checkmark {
     background-color: #EE6737;
 }
@@ -3180,13 +3259,25 @@ ul.shop_list li .heart_a.on {
     background-color: var(--mono1);
 }
 
+.min_box.has_border .checkmark{
+    width: 14px;
+    height: 14px;
+}
+
 .min_box.has_border li.mb8:last-child{
     margin-bottom: 0;
+}
+
+.min_box.has_border .container input:checked~.checkmark:after {
+    display: block;
 }
 
 .min_box.has_border{
     box-shadow: none;
 }
+
+
+
 
 .btn_allin {
     display: flex;
@@ -3490,6 +3581,10 @@ CSS
 .mini_rpt_2-2 .pc_hd_back{
     background:url(../images/contents/mini_rpt_2_img.svg) 50% 0%/contain no-repeat;
 }
+.mini_rpt_3-1 .pc_hd_back,
+.mini_rpt_3-2 .pc_hd_back{
+    background:url(../images/contents/mini_rpt_3_img.svg) 50% 0%/contain no-repeat;
+}
 .mini_rpt_4-1 .pc_hd_back,
 .mini_rpt_4-2 .pc_hd_back{
     background:url(../images/contents/mini_rpt_4_img.svg) 50% 0%/contain no-repeat;
@@ -3609,6 +3704,8 @@ CSS
 
 .mini_rpt_1-1 .pc_hd,
 .mini_rpt_1-2 .pc_hd,
+.mini_rpt_3-1 .pc_hd,
+.mini_rpt_3-2 .pc_hd,
 .mini_rpt_5-1 .pc_hd,
 .mini_rpt_5-2 .pc_hd,
 .mini_rpt_2-1 .pc_hd,
@@ -4250,18 +4347,233 @@ a.link:hover, a.link:focus {
 	font-size: 0.75em;
 }
 
-/************ DELETE AFTER ************/
-.sub_show_1.on,
-.sub_show_2.on,
-.sub_show_3.on,
-.sub_show_4.on{
+/********map_pop**********/
+
+.map_pop{
+    position: absolute;
+    min-width: 320px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid var(--mono5);
+    box-shadow: 0px 6px 12px rgb(38 51 77 / 20%);
+}
+
+.map_pop.shop{
+    min-width: 280px;
+}
+
+.map_pop .map_pop_header{
+    padding: 16px;
+    border-bottom: 1px solid var(--mono7);    
+}
+
+.map_pop.shop .map_pop_header{
+    padding-bottom:0;
+    border-bottom: none;    
+}
+
+.map_pop .map_pop_header p{
+    padding-right: 20px;
+    line-height: 18px;
+    color: var(--mono1);
+    font-size: 15px;
+    font-weight: 700;
+    padding-left: 28px;
+}
+
+.map_pop .map_pop_header p span.reference{
+    font-weight: 500;
+}
+
+.map_pop .map_pop_header .ico16{
+    position: relative;
+}
+
+.map_pop .map_pop_header .ico16::before{
+    position: absolute;
+    top:calc(50% - 8px);
+    left: 0;
+}
+
+.map_pop p.reference{
+    margin-left: 25px;
+    width: calc(100% - 25px);
+}
+
+.map_pop .radio_base label{
+    padding: 0;
+}
+
+.pad{
+    padding:12px;
+}
+
+.radio_base .pad{
+    border-radius: 8px;
+}
+
+.map_pop_body.pad{
+    padding-bottom: 0;
+}
+
+.pad.on{
+    background-color: var(--mono7);
+}
+
+.map_pop .radio_base span{
+    font-size: 14px;
+    font-weight: 700;
+    color:var(--mono1);
+}
+
+.map_pop .radio_base [type="radio"]{
+    margin-right: 12px;
+}
+
+.map_pop .button_box button{
+    height:40px;
+    font-size: 14px;
+    transition: 0.4s;
+}
+
+.map_pop .button_box .btn6{
+    font-size: 0;
+    width: 40px;
+}
+
+.map_pop .ico_heart_line_g:hover::before{
+    background: url(../images/icons/ico_heart_full_c.svg) 50% 50%/cover;
+}
+
+.map_pop .button_box .btn1{
+    width: calc(100% - 44px)
+}
+
+.map_pop .btn_align_box{
+    margin-top: 12px;
+    justify-content: space-between;
+}
+
+.map_pop .btn_align_box .btn_align{
+    display: flex;
+}
+.map_pop .btn_align_box .btn_align button{
+    width: calc(50% - 4px);
+    height: 32px;
+}
+.map_pop .btn_align_box .btn_align button.w100{
+    width: 100%;
+}
+.map_pop .btn_align_box .btn_align button.w100::before{
+    margin-bottom: -2px;
+    margin-right: 4px;
+}
+
+.map_pop::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-top: 10px solid #fff;
+    border-right: 10px solid transparent;
+    left: calc(50% - 10px);
+    z-index: 1;
+}
+
+.map_pop::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-top: 10px solid var(--mono5);
+    border-right: 10px solid transparent;
+    left: calc(50% - 10px);
+    z-index: 0;
+    bottom: -21px;
+}
+
+.map_pop .map_pop_footer .ico14::before{
+    margin-right: 4px;
+}
+
+
+.map_pic{
+    position: absolute;
+    width: 42px;
+    height: 42px;
+}
+
+.ico_pic{
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    box-shadow: 0px 2px 6px rgb(38 51 77 / 50%);
+}
+
+.map_pop.small{
+    width: 240px;
+    min-width: 240px;
+}
+
+.map_pop.small .map_pop_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.map_pop.small .button_box button{
+    margin-bottom: 8px;
+}
+.map_pop.small .button_box button:last-child{
+    margin-bottom: 0;
+}
+
+.map_pop.small .button_box{
+    flex-wrap: wrap;
+}
+.map_pop.small .button_box .btn1.w100,
+.map_pop.small .button_box .btn2.w100{
+    width: 100%;
+}
+
+.map_pop.small::after,
+.map_pop.small::before{
     display: none;
 }
 
-.sub_show_1.on{
-    display: block;
+.map_pop.small .map_pop_header{
+    padding: 10px 16px;
 }
-/************ DELETE AFTER ************/
+
+.show_value{
+    position: absolute;
+    padding: 10px 12px;
+    color: #fff;
+    background: rgba(34, 34, 34, 0.78);
+    box-shadow: 0px 2px 5px rgb(38 51 77 / 3%);
+    backdrop-filter: blur(6px);
+    border-radius: 30px;
+    font-size: 15px;
+}
+.show_value::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 6px solid transparent;
+    border-left: 6px solid transparent;
+    border-top: 6px solid rgba(34, 34, 34, 0.78);
+    border-right: 6px solid transparent;
+    left: calc(50% - 6px);
+    bottom: -12px;
+}
 
 @media all and (max-height: 920px){
     .sub .select_main_show .show_body{

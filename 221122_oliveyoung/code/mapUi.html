@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <!-- min js -->
+    <script src="resource/js/jquery.min.js"></script>
+    <!-- 분석화면 js -->
+    <script src="resource/js/analysis.js"></script>
+
+    <!-- font css-->
+    <link rel="stylesheet" type="text/css" href="resource/css/pretendard.css">
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="resource/css/style.css">
+
+
+    <!-- echart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+    <script>
+
+    </script>
+    <title>올리브영 상권분석</title>
+</head>
+
+<body>
+    <!--map START-->
+    <div class="map_section">
+        <div class="show_value" style="
+        top: 630px;
+        left: 888px;
+        z-index: 2;
+        ">
+            354명
+        </div>
+        <div class="select_area_color" style="
+        width: 200px;
+        height: 200px;
+        background: #fd583fa1;
+        border: 2px solid #FD593F;
+        position: absolute;
+        top: 569px;
+        left: 822px;
+        border-radius: 999px;
+        ">
+
+        </div>
+
+        <!--현 지도에서 검색-->
+        <div class="loca_input again ico16 ico_again_line_wh" style="display:flex; margin-left: 240px;">
+            현 지도에서 검색
+        </div>
+
+        <!--현 지역 보여주기 - 매장일때 display:flex 로!-->
+        <div class="loca_input ico16 ico_shop_full_c" style="display:flex; margin-left: 120px;">
+            신촌역점
+        </div>
+        
+
+        <!--현 지역 보여주기 - 지역일때 display:flex 로!-->
+        <div class="loca_input ico16 ico_location_full_c">
+            신촌로 127
+        </div>
+
+        <!--지도영역 picker 모음 / 올영샵, 선택지역-->
+        <div class="map_pic ico42 olive_pic on" style="left: 520px; top:270px;">
+        </div>
+        <div class="map_pic ico42 olive_pic" style="left: 580px; top:270px;">
+        </div>
+        <div class="map_pic ico42 loca_pic" style="left: 600px; top:320px;">
+        </div>
+
+        <div class="map_pic ico32 ico_pic ico_pic_place1" style="left: 400px; top:380px;"></div>
+        <div class="map_pic ico32 ico_pic ico_pic_place2" style="left: 400px; top:420px;"></div>
+        <div class="map_pic ico32 ico_pic ico_pic_place3" style="left: 400px; top:460px;"></div>
+        <div class="map_pic ico32 ico_pic ico_pic_place4" style="left: 400px; top:500px;"></div>
+        <div class="map_pic ico32 ico_pic ico_pic_place5" style="left: 400px; top:540px;"></div>
+        <div class="map_pic ico32 ico_pic ico_pic_place6" style="left: 400px; top:580px;"></div>
+        <div class="map_pic ico32 ico_pic ico_pic_place7" style="left: 400px; top:620px;"></div>
+        <div class="map_pic ico32 ico_pic ico_pic_place8" style="left: 400px; top:660px;"></div>
+        <div class="map_pic ico32 ico_pic ico_pic_place9" style="left: 400px; top:700px;"></div>
+        <div class="map_pic ico32 ico_pic ico_pic_place10" style="left: 400px; top:740px;"></div>
+
+        <!--map pop 출점후보지 상세보고서 일때-->
+        <div class="map_pop" style="left: 40px; top:140px;">
+            <div class="map_pop_header cb">
+                <p class="fl ico16 ico_location_full_c">광희동-E-24</p>
+                <div class="close_map_pop fr">
+                    <a class="ico20 ico_close_line_g" href="#"></a>
+                </div>
+            </div>
+            <div class="map_pop_body pad">
+                <div class="radio_base">
+                    <div class="pad w100 on">
+                        <label for="which_report1">
+                            <input type="radio" id="which_report1" name="which_report">
+                            <span>출점후보지 상세보고서</span>
+                        </label>
+                    </div>
+                    <div class="pad w100">
+                        <label for="which_report2">
+                            <input type="radio" id="which_report2" name="which_report" checked="">
+                            <span>상권 상세보고서</span>
+                        </label>
+                        <p class="reference">반경을 추가하여 상권 상세보고서 생성</p>
+                        <div class="btn_align_box" style="display: none;">
+                            <div class="btn_align mb4">
+                                <button class="btn4">400m</button>
+                                <button class="btn4">500m</button>
+                            </div>
+                            <div class="btn_align mb8">
+                                <button class="btn4">1000m</button>
+                                <button class="btn4">1500m</button>
+                            </div>
+                            <div class="btn_align">
+                                <button class="btn4 ico14 ico_pencil_line_b w100">직접그리기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="map_pop_footer pad">
+                <div class="button_box">
+                    <button class="btn6 ico20 ico_heart_line_g">
+                        관심구역
+                    </button>
+                    <button class="btn1 ico14 ico_board_line_wh">
+                        상세보고서 생성
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--map pop-->
+
+        <!--map pop 출점지 상세보고서 일때-->
+        <div class="map_pop" style="left: 40px; top:400px;">
+            <div class="map_pop_header cb">
+                <p class="fl ico16 ico_location_full_c">광희동-E-24</p>
+                <div class="close_map_pop fr">
+                    <a class="ico20 ico_close_line_g" href="#"></a>
+                </div>
+            </div>
+            <div class="map_pop_body pad">
+                <div class="radio_base">
+                    <div class="pad w100">
+                        <label for="which_report1">
+                            <input type="radio" id="which_report1" name="which_report">
+                            <span>출점후보지 상세보고서</span>
+                        </label>
+                    </div>
+                    <div class="pad w100 on">
+                        <label for="which_report2">
+                            <input type="radio" id="which_report2" name="which_report" checked="">
+                            <span>상권 상세보고서</span>
+                        </label>
+                        <p class="reference">반경을 추가하여 상권 상세보고서 생성</p>
+                        <div class="btn_align_box">
+                            <div class="btn_align mb4">
+                                <button class="btn4">400m</button>
+                                <button class="btn4">500m</button>
+                            </div>
+                            <div class="btn_align mb8">
+                                <button class="btn4">1000m</button>
+                                <button class="btn4">1500m</button>
+                            </div>
+                            <div class="btn_align">
+                                <button class="btn4 ico14 ico_pencil_line_b w100">직접그리기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="map_pop_footer pad">
+                <div class="button_box">
+                    <button class="btn6 ico20 ico_heart_line_g">
+                        관심구역
+                    </button>
+                    <button class="btn1 ico14 ico_board_line_wh">
+                        상세보고서 생성
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--map pop-->
+
+        <!--map pop 상권상세보고서 일때-->
+        <div class="map_pop shop" style="left: 400px; top:140px;">
+            <div class="map_pop_header cb">
+                <p class="fl ico16 ico_shop_full_c">신촌역점<br /><span class="reference">서울특별시 서대문구 신촌로 79</span></p>
+                <div class="close_map_pop fr">
+                    <a class="ico20 ico_close_line_g" href="#"></a>
+                </div>
+            </div>
+            <div class="map_pop_footer pad">
+                <div class="button_box">
+                    <button class="btn6 ico20 ico_heart_line_g">
+                        관심구역
+                    </button>
+                    <button class="btn1 ico14 ico_board_line_wh">
+                        상세보고서 생성
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--map pop-->
+
+        <!--map pop 상권상세보고서 일때-->
+        <div class="map_pop small" style="left: 800px; top:140px;">
+            <div class="map_pop_header">
+                <p class="ico16 ico_pencil_line_b">직접그리기</p>
+                <div class="close_map_pop">
+                    <a class="ico20 ico_close_line_g" href="#"></a>
+                </div>
+            </div>
+            <div class="map_pop_footer pad">
+                <div class="button_box">
+                    <button class="btn2 w100">
+                        다시그리기
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--map pop-->
+
+        <!--map pop 직접그리기-->
+        <div class="map_pop small" style="left: 800px; top:140px;">
+            <div class="map_pop_header">
+                <p class="ico16 ico_pencil_line_b">직접그리기</p>
+                <div class="close_map_pop">
+                    <a class="ico20 ico_close_line_g" href="#"></a>
+                </div>
+            </div>
+            <div class="map_pop_body pad">
+                <p>
+                    <span class="reference">
+                        ESC를 눌러 마침
+                    </span>
+                </p>
+            </div>
+            <div class="map_pop_footer pad">
+                <div class="button_box">
+
+                    <!-- <button class="btn1 w100">
+                        선택한영역 보고서생성
+                    </button> -->
+                    <button class="btn2 w100">
+                        다시그리기
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--map pop-->
+        <!--map pop 직접그리기-->
+        <div class="map_pop small" style="left: 800px; top:340px;">
+            <div class="map_pop_header">
+                <p class="ico16 ico_pencil_line_b">직접그리기</p>
+                <div class="close_map_pop">
+                    <a class="ico20 ico_close_line_g" href="#"></a>
+                </div>
+            </div>
+            <div class="map_pop_body pad">
+                <p>
+                    <span class="reference">
+                        현재 선택하신 영역을 확정할까요?
+                    </span>
+                </p>
+            </div>
+            <div class="map_pop_footer pad">
+                <div class="button_box">
+
+                    <button class="btn1 w100">
+                        선택영역 상세보고서생성
+                    </button>
+                    <button class="btn2 w100">
+                        다시그리기
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--map pop-->
+
+    </div>
+    <!--map END -->
+</body>
+
+</html>
