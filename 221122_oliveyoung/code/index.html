@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <!-- min js -->
+    <script src="resource/js/jquery.min.js"></script>
+    <!-- 분석화면 js -->
+    <script src="resource/js/analysis.js"></script>
+
+    <!-- font css-->
+    <link rel="stylesheet" type="text/css" href="resource/css/pretendard.css">
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="resource/css/style.css">
+
+
+    <!-- echart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+    <script>
+
+    </script>
+    <title>올리브영 상권분석</title>
+</head>
+
+<body>
+    <div class="top_section">
+        <div class="menu_top pd main_layout">
+            <div class="menu_left">
+                <div class="logo_box">
+                    <a href="index.html"></a>
+                </div>
+            </div>
+            <div class="menu_middle">
+                <ul class="top_gnb">
+                    <li><a href="index1.html">상권분석</a></li>
+                    <li><a href="index.html">상권통계</a></li>
+                </ul>
+            </div>
+            <div class="menu_right">
+                <div class="user_navi">
+                    <button class="btn3" id="showUserNavi">
+                        김올영님
+                    </button>
+                    <div class="user_navi_ul">
+                        <div class="user_navi_head">
+                            <div class="txt">
+                                <p>김올영님</p>
+                                <p>가맹 영업 2팀</p>
+                            </div>
+                        </div>
+                        <ul>
+                            <li><a class="ico16 ico_gear_line_b" href="#">권한관리</a></li>
+                            <li><a class="ico16 ico_user_line_b" href="#">마이페이지</a></li>
+                            <li><a class="ico16 ico_ask_line_b" href="#">도움말</a></li>
+                            <li><a class="ico16 ico_out_line_b" href="#">로그아웃</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main_wrap">
+        <!--top_section START-->
+        <div class="main_section_wrap pd main_layout">
+            <div class="main_section lft_sec">
+                <div class="sec_wrap">
+                    <div class="box_div mb12">
+                        <div class="box_div_inner">
+                            <div class="user_navi_head login_main">
+                                <div class="user_big_gra mb12">
+                                    <div class="user_big">
+                                    </div>
+                                </div>
+                                <div class="txt">
+                                    <p>김올영님</p>
+                                    <p>가맹 영업 2팀</p>
+                                </div>
+                            </div>
+                            <div class="button_box_area user_box_area">
+                                <div class="button_box full mb12">
+                                    <button class="btn1 ico14 ico_user_line_wh h40">마이페이지</button>
+                                </div>
+                                <div class="button_box full_two">
+                                    <button class="btn3 h30 flx aboutmy">
+                                        <p class="ico14 ico_document_line_b"><span class="reference">보관된보고서</span></p>
+                                        <p><strong>4</strong></p>
+                                    </button>
+                                    <button class="btn3 h30 flx aboutmy">
+                                        <p class="ico14 ico_heart_line_g"><span class="reference">관심영역</span></p>
+                                        <p><strong>4</strong></p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box_div minheight">
+                        <div class="box_div_header">
+                            <button class="quick_btn">
+                                <p class="ico20 ico_heart_full_c rel_ico">관심영역 바로가기</p>
+                                <div class="ico20 ico_arrow_line_b"></div>
+                            </button>
+                        </div>
+                        <div class="box_div_inner">
+                            <div class="box_div_body">
+                                <div class="box_div_title_m mb12">
+                                    <p class="tt_txt">관심지역 상권 성장률</p>
+                                </div>
+                                <div class="select_main_box sub list_select">
+                                    <a class="select_main ">서대문구 신촌로 79</a>
+                                    <div class="select_main_show sub_show sub_show_1">
+                                        <div class="show_header">
+                                            <h5>관심구역 선택</h5>
+                                        </div>
+                                        <div class="show_body">
+                                            <div class="in_box list_box">
+                                                
+                                                <ul class="shop_list">
+                                                    <li>
+                                                        <a class="list_a" href="#">
+                                                            <p>신촌대로점</p>
+                                                            <p>서울특별시 서대문구 신촌로 121 1층</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="list_a" href="#">
+                                                            <p>신촌역점</p>
+                                                            <p>서울특별시 서대문구 신촌로 79</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="list_a" href="#">
+                                                            <p>올리브영 신촌 타운</p>
+                                                            <p>서울특별시 서대문구 신촌로 79</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="list_a" href="#">
+                                                            <p>신촌대로점</p>
+                                                            <p>서울특별시 서대문구 신촌로 121 1층</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="list_a" href="#">
+                                                            <p>신촌대로점</p>
+                                                            <p>서울특별시 서대문구 신촌로 121 1층</p>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="echart_box">
+                                    <div id="main_chart1" class="chart mb24" style="height: 240px"></div>
+                                </div>
+                                <div class="table_box">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:24%">
+                                            <col style="width:auto">
+                                            <col style="width:auto">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col"></th>
+                                                <th scope="col">향후 6개월</th>
+                                                <th scope="col">향후 1년</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>전체업종</td>
+                                                <td>10.0%</td>
+                                                <td>7.4%</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>화장품업종</td>
+                                                <td>10.0%</td>
+                                                <td>7.4%</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--main_section left_sec END-->
+            <div class="main_section mid_sec">
+                <div class="sec_wrap">
+                    <div class="box_div_section mb40">
+                        <div class="main_goto_box mb16">
+                            <button class="main_goto goto1">
+                                <p>상권분석 바로가기</p>
+                            </button>
+                            <button class="main_goto goto2">
+                                <p>상권통계 바로가기</p>
+                            </button>
+                        </div>
+                        <div class="main_quick_box">
+                            <button class="quick_btn box_div">
+                                <p class="ico20 ico_chart_full_c rel_ico">매출</p>
+                                <div class="ico20 ico_arrow_line_g"></div>
+                            </button>
+                            <button class="quick_btn box_div">
+                                <p class="ico20 ico_customer_full_c rel_ico">고객</p>
+                                <div class="ico20 ico_arrow_line_g"></div>
+                            </button>
+                            <button class="quick_btn box_div">
+                                <p class="ico20 ico_finance_full_c rel_ico">금융</p>
+                                <div class="ico20 ico_arrow_line_g"></div>
+                            </button>
+                            <button class="quick_btn box_div">
+                                <p class="ico20 ico_map_full_c rel_ico">지역</p>
+                                <div class="ico20 ico_arrow_line_g"></div>
+                            </button>
+                            <button class="quick_btn box_div">
+                                <p class="ico20 ico_gift_full_c rel_ico">오늘드림</p>
+                                <div class="ico20 ico_arrow_line_g"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box_div_section mb40">
+                        <div class="box_div_title_r mb12">
+                            <p class="ico20 ico_graph_line_b">성장률 동향</p>
+
+                            <div class="select_main_box sub list_select">
+                                <a class="select_main ">지역 <span class="reference">:</span> 전국</a>
+                                <div class="select_main_show sub_show sub_show_1">
+                                    <div class="show_header">
+                                        <h5>지역선택</h5>
+                                    </div>
+                                    <div class="show_body">
+                                        <div class="in_box list_box">
+                                            <ul class="shop_list">
+                                               <li><a class="list_a" href="#"><p>전국</p></a></li> 
+                                               <li><a class="list_a" href="#"><p>서울특별시</p></a></li> 
+                                               <li><a class="list_a" href="#"><p>부산광역시</p></a></li> 
+                                               <li><a class="list_a" href="#"><p>대구광역시</p></a></li> 
+                                               <li><a class="list_a" href="#"><p>인천광역시</p></a></li> 
+                                               <li><a class="list_a" href="#"><p>광주광역시</p></a></li> 
+                                               <li><a class="list_a" href="#"><p>대전광역시</p></a></li> 
+                                               <li><a class="list_a" href="#"><p>울산광역시</p></a></li> 
+                                               <li><a class="list_a" href="#"><p>세종특별자치시</p></a></li> 
+                                               <li><a class="list_a" href="#"><p>경기도</p></a></li> 
+                                               <li><a class="list_a" href="#"><p>강원도</p></a></li> 
+                                               <li><a class="list_a" href="#"><p>충청북도</p></a></li> 
+                                               <li><a class="list_a" href="#"><p>충청남도</p></a></li> 
+                                               <li><a class="list_a" href="#"><p>전라북도</p></a></li> 
+                                               <li><a class="list_a" href="#"><p>전라남도</p></a></li> 
+                                               <li><a class="list_a" href="#"><p>경상북도</p></a></li> 
+                                               <li><a class="list_a" href="#"><p>경상남도</p></a></li> 
+                                               <li><a class="list_a" href="#"><p>제주특별자치도</p></a></li> 
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="box_div_wrap has2">
+                            <div class="box_div">
+                                <div class="box_div_inner">
+                                    <div class="box_div_body">
+                                        <div class="box_div_title_m">
+                                            <p class="tt_txt">올리브영 vs 화장품업종 전월대비 성장률</p>
+                                            <p class="reference">전국 | 최근 6개월 | 단위:%</p>
+                                        </div>
+                                        <div class="echart_box">
+                                            <div id="main_chart2" class="chart"
+                                                style="height: 260px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;"
+                                                _echarts_instance_="ec_1670201044967">
+                                                <div
+                                                    style="position: relative; width: 236px; height: 220px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;">
+                                                    <canvas data-zr-dom-id="zr_0" width="472" height="440"
+                                                        style="position: absolute; left: 0px; top: 0px; width: 236px; height: 220px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas>
+                                                </div>
+                                                <div class=""></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box_div">
+                                <div class="box_div_inner">
+                                    <div class="box_div_body">
+                                        <div class="box_div_title_m">
+                                            <p class="tt_txt">유관업종 전월대비 성장률</p>
+                                            <p class="reference">전국 | 최근 6개월 | 단위:%</p>
+                                        </div>
+                                        <div class="echart_box">
+                                            <div id="main_chart3" class="chart"
+                                                style="height: 260px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;"
+                                                _echarts_instance_="ec_1670201044967">
+                                                <div
+                                                    style="position: relative; width: 236px; height: 220px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;">
+                                                    <canvas data-zr-dom-id="zr_0" width="472" height="440"
+                                                        style="position: absolute; left: 0px; top: 0px; width: 236px; height: 220px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas>
+                                                </div>
+                                                <div class=""></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box_div_section">
+                        <div class="box_div_title_r mb12">
+                            <p class="ico20 ico_graph_line_b">점유율 동향</p>
+                            <div class="select_main_box sub">
+                                <a class="select_main ">필터 선택</a>
+                                <div class="select_main_show sub_show sub_show_1">
+                                    <div class="show_header">
+                                        <h5>기준 필터</h5>
+                                        <button class="ico16 ico_again_line_g btn_reset">
+                                            초기화
+                                        </button>
+                                    </div>
+                                    <div class="show_body">
+                                        <div class="show_section mb20">
+                                            <div class="show_body_title_box flx mb8">
+                                                <p class="show_body_title">분석 기준</p>
+                                                <p class="show_body_sub">건수 기준</p>
+                                            </div>
+                                            <div class="radio_base has_border cb">
+                                                <div class="fl">
+                                                    <label for="number_or_percent1">
+                                                        <input type="radio" id="number_or_percent1"
+                                                            name="number_or_percent" checked="">
+                                                        <span>건수</span>
+                                                    </label>
+                                                </div>
+                                                <div class="fl">
+                                                    <label for="number_or_percent2">
+                                                        <input type="radio" id="number_or_percent2"
+                                                            name="number_or_percent">
+                                                        <span>점유율</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="show_section">
+                                            <div class="show_body_title_box flx mb8">
+                                                <p class="show_body_title">분석 시점</p>
+                                                <p class="show_body_sub">최신 월 기준</p>
+                                            </div>
+                                            <div class="radio_base has_border cb">
+                                                <div class="fl">
+                                                    <label for="date_choice1">
+                                                        <input type="radio" id="date_choice1"
+                                                            name="date_choice" checked="">
+                                                        <span>최신 월</span>
+                                                    </label>
+                                                </div>
+                                                <div class="fl">
+                                                    <label for="date_choice2">
+                                                        <input type="radio" id="date_choice2"
+                                                            name="date_choice">
+                                                        <span>최신 분기</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="show_foot">
+                                        <div class="button_box">
+                                            <button class="btn2">취소</button>
+                                            <button class="btn1">필터 적용</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box_div_wrap">
+                            <div class="box_div">
+                                <div class="box_div_inner">
+                                    <div class="box_div_body">
+                                        <div class="box_div_title_m mb12">
+                                            <p class="tt_txt">올리브영 vs 화장품업종 전월대비 성장률</p>
+                                            <p class="reference">전국 | 최근 6개월 | 단위:%</p>
+                                        </div>
+                                        <div class="echart_box">
+                                            <div id="main_chart4" class="chart"
+                                                style="height: 196px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;"
+                                                _echarts_instance_="ec_1670201044967">
+                                                <div
+                                                    style="position: relative; width: 236px; height: 220px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;">
+                                                    <canvas data-zr-dom-id="zr_0" width="472" height="440"
+                                                        style="position: absolute; left: 0px; top: 0px; width: 236px; height: 220px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas>
+                                                </div>
+                                                <div class=""></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--main_section mid_sec END-->
+            <div class="main_section rght_sec">
+                <div class="sec_wrap card_box_wrap">
+                    <div class="box_div card_box">
+                        <div class="box_div_inner">
+                            <div class="box_div_body">
+                                <div class="box_div_title_m">
+                                    <p class="tt_txt ico16 ico_shop_full_c">올리브영 성장률</p>
+                                    <p class="reference">2022.11 <span class="light">|</span> 전지역</p>
+                                </div>
+                                <div class="box_div_title_m">
+                                    <p class="number txtright"><strong>22.2</strong>%</p>
+                                    <p class="reference txtright">전월대비<span class="up"> 4.8% ↑</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box_div card_box">
+                        <div class="box_div_inner">
+                            <div class="box_div_body">
+                                <div class="box_div_title_m">
+                                    <p class="tt_txt ico16 ico_makeup_full_c">화장품업종 성장률</p>
+                                    <p class="reference">2022.11 <span class="light">|</span> 전지역</p>
+                                </div>
+                                <div class="box_div_title_m">
+                                    <p class="number txtright"><strong>22.2</strong>%</p>
+                                    <p class="reference txtright">전월대비<span class="up"> 4.8% ↑</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box_div card_box">
+                        <div class="box_div_inner">
+                            <div class="box_div_body">
+                                <div class="box_div_title_m">
+                                    <p class="tt_txt ico16 ico_mart_full_c">편의점업종 성장률</p>
+                                    <p class="reference">2022.11 <span class="light">|</span> 전지역</p>
+                                </div>
+                                <div class="box_div_title_m">
+                                    <p class="number txtright"><strong>22.2</strong>%</p>
+                                    <p class="reference txtright">전월대비<span class="up"> 4.8% ↑</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box_div card_box">
+                        <div class="box_div_inner">
+                            <div class="box_div_body">
+                                <div class="box_div_title_m">
+                                    <p class="tt_txt ico16 ico_coffee_full_c">커피전문점 성장률</p>
+                                    <p class="reference">2022.11 <span class="light">|</span> 전지역</p>
+                                </div>
+                                <div class="box_div_title_m">
+                                    <p class="number txtright"><strong>22.2</strong>%</p>
+                                    <p class="reference txtright">전월대비<span class="down"> 4.8% ↓</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box_div card_box">
+                        <div class="box_div_inner">
+                            <div class="box_div_body">
+                                <div class="box_div_title_m">
+                                    <p class="tt_txt ico16 ico_stuff_full_c">종합생활용품 성장률</p>
+                                    <p class="reference">2022.11 <span class="light">|</span> 전지역</p>
+                                </div>
+                                <div class="box_div_title_m">
+                                    <p class="number txtright"><strong>22.2</strong>%</p>
+                                    <p class="reference txtright">전월대비<span class="up"> 4.8% ↑</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--main_section right_sec END-->
+        </div>
+        <!--main_section_wrap END-->
+    </div>
+
+    <script>
+        //main_chart1
+        var chart2_label_array = '향후 6개월, 향후 1년';
+        chart2_label_array = chart2_label_array.split(',');
+        var main_chart1 = echarts.init(document.getElementById('main_chart1'));
+        option = {
+
+            grid: {
+                bottom: '16%',
+                top: '10%',
+                left: '0%',
+                right: '0%',
+                containLabel: true
+            },
+            title: {
+                text: '관심지역 상권 성장률',
+                show: false
+            },
+
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend: {
+                show: true,
+                bottom: 'bottom',
+                left: 'center',
+                data: [{
+                        name: "전체업종",
+                        itemStyle: {
+                            color: '#F9A629'
+                        }
+                    },
+                    {
+                        name: "화장품업종",
+                        itemStyle: {
+                            color: '#C2E371'
+                        }
+                    },
+                ],
+            },
+            label: [],
+            xAxis: {
+                type: 'category',
+                data: chart2_label_array,
+                axisLine: {
+                    lineStyle: {
+                        //color: '#9e9e9e'
+                    }
+                },
+                axisLabel: {
+                    show: true,
+                    textStyle: {
+                        color: '#000',
+                        fontSize: 12,
+                    }
+                },
+                axisTick: {
+                    show: false
+                }
+            },
+            yAxis: {
+                show: false,
+                type: 'value',
+                splitLine: { // y축 수치선
+                    show: false
+                },
+                axisLabel: {
+                    show: false,
+                },
+
+            },
+            series: [{
+                    name: '전체업종',
+                    type: 'bar',
+                    data: [10.2, 20.5],
+                    barWidth: '24%',
+                    itemStyle: {
+                        color: '#F9A629',
+                        barBorderRadius: [4, 4, 0, 0],
+                    },
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        align: 'center',
+                        color: '#F9A629',
+                        formatter: '{c}',
+                        textPadding: '12',
+                        fontWeight: '600',
+                        borderRadius: '12',
+                        fontSize: '12',
+                        fontFamily: 'Pretendard',
+                    },
+                },
+                {
+                    name: '화장품업종',
+                    type: 'bar',
+                    data: [10.4, 20.4],
+                    barWidth: '24%',
+                    itemStyle: {
+                        color: '#C2E371',
+                        barBorderRadius: [4, 4, 0, 0],
+                    },
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        align: 'center',
+                        color: '#84A92C',
+                        formatter: '{c}',
+                        textPadding: '12',
+                        fontWeight: '600',
+                        borderRadius: '12',
+                        fontSize: '12',
+                        fontFamily: 'Pretendard',
+                    },
+                }
+            ]
+        };
+
+        function main1() {
+            var show = option.yAxis.show;
+            var left = option.legend.left;
+            var labelSize = option.label.fontSize;
+            var grid_l = option.grid.left;
+            var grid_r = option.grid.right;
+            var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
+
+            if (window.innerWidth >= 1024) {
+                show = 'false';
+                fontSize = '12';
+                labelSize = '12';
+            } else if (window.innerWidth <= 280) {
+                fontSize = '9';
+                grid_l = '4';
+                grid_r = '4';
+                labelSize = '10';
+            } else if (window.innerWidth <= 360) {
+                fontSize = '11';
+                grid_l = '0';
+                grid_r = '0';
+                labelSize = '10';
+            } else if (window.innerWidth < 1024) {
+                grid_l = '2';
+                grid_r = '2';
+                labelSize = '12';
+                show = 'false';
+            }
+            option.yAxis.show = show;
+            option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+            option.label.fontSize = labelSize;
+            option.grid.left = grid_l;
+            option.grid.right = grid_r;
+            option.legend.left = left;
+
+            main_chart1.setOption(option);
+            main_chart1.resize();
+        }
+        main1();
+
+        //main_chart2
+        var chart2_label_array = '2017, 2018, 2019, 2020,2021,2022';
+        chart2_label_array = chart2_label_array.split(',');
+        var main_chart2 = echarts.init(document.getElementById('main_chart2'));
+        option = {
+            grid: {
+                top: '40px',
+                bottom: '80px',
+                left: '30px',
+                right: '30px'
+            },
+            label: {
+                show: true,
+            },
+            title: {
+                text: '올리브영 VS 화장품 업종 전월대비 성장률',
+                show: false
+            },
+            legend: {
+                data: ['올리브영', '화장품업종'],
+                bottom: 'bottom',
+            },
+            tooltip: {
+                trigger: 'axis',
+                fontSize: 10,
+                /* axisPointer: {
+                	type: 'cross',
+                	crossStyle: {
+                		color: '#999'
+                	}
+                } */
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: ['22.06', '22.07', '22.08', '22.09', '22.10', '22.11'],
+                axisLabel: {
+                    show: true,
+                    textStyle: {
+                        color: '#000',
+                        //fontSize: 9
+                    }
+                },
+            },
+            yAxis: {
+                type: 'value',
+                splitLine: { // y축 수치선
+                    show: false
+                },
+                axisLabel: {
+                    show: false,
+                },
+                axisLine: {
+                    show: false,
+                    lineStyle: {
+                        //color: '#9e9e9e'
+                    }
+                }
+            },
+            series: [{
+                name: "올리브영",
+                color: '#C2E371',
+                type: 'line',
+                symbolSize: 8,
+                data: [20, 20, 60, 50, 70, 80, 90],
+                emphasis: {
+                    focus: 'series'
+                },
+                lineStyle: {
+                    color: '#C2E371',
+                },
+                symbol: 'circle',
+                itemStyle: {
+                    borderWidth: 1,
+                    borderColor: '#fff',
+                    color: '#C2E371',
+                    normal: {
+                        label: {
+                            show: true,
+                            position: 'outside',
+                            align: 'center',
+                            //color: '#006991',
+                            textPadding: '12',
+                            fontWeight: '600',
+                            borderRadius: '12',
+                            //fontSize:'14',
+                            //lineHeight: '14',
+                            borderRadius: '10',
+                            border: '20',
+                            formatter: function (params) {
+                                var returnVal = echarts.format.addCommas(params.value);
+
+                                return returnVal;
+                            },
+                            borderRadius: 4,
+                            padding: 4,
+                        }
+                    }
+                },
+
+            }, {
+                name: "화장품업종",
+                color: '#FF8B61',
+                type: 'line',
+                symbolSize: 8,
+                data: [2, 10, 30, 20, 48, 44, 41],
+                emphasis: {
+                    focus: 'series'
+                },
+                lineStyle: {
+                    color: '#FF8B61',
+                },
+                symbol: 'circle',
+                itemStyle: {
+                    borderWidth: 1,
+                    borderColor: '#fff',
+                    color: '#FF8B61',
+                    normal: {
+                        label: {
+                            show: true,
+                            position: 'outside',
+                            align: 'center',
+                            //color: '#006991',
+                            textPadding: '12',
+                            fontWeight: '600',
+                            borderRadius: '12',
+                            //fontSize:'14',
+                            //lineHeight: '14',
+                            borderRadius: '10',
+                            border: '20',
+                            formatter: function (params) {
+                                var returnVal = echarts.format.addCommas(params.value);
+
+                                return returnVal;
+                            },
+                            borderRadius: 4,
+                            padding: 4,
+                        }
+                    }
+                },
+            }, ]
+        };
+
+        function main2() {
+            var show = option.yAxis.show;
+            var left = option.legend.left;
+            var grid_l = option.grid.left;
+            var grid_l = option.grid.left;
+            var grid_r = option.grid.right;
+            var labelSize = option.label.fontSize;
+            var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
+
+            if (window.innerWidth >= 1024) {
+                show = 'true';
+                fontSize = '10';
+                labelSize = '10';
+                left = 'center';
+            } else if (window.innerWidth <= 280) {
+                fontSize = '9';
+                grid_l = '24';
+                grid_r = '24';
+                labelSize = '10';
+            } else if (window.innerWidth <= 360) {
+                fontSize = '11';
+                grid_l = '24';
+                grid_r = '24';
+                labelSize = '10';
+            } else if (window.innerWidth < 1024) {
+                grid_l = '24';
+                grid_r = '24';
+                labelSize = '10';
+                left = 'center';
+            }
+            option.yAxis.show = show;
+
+            option.grid.left = grid_l;
+            option.grid.right = grid_r;
+            option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+            option.label.fontSize = labelSize;
+            option.legend.left = left;
+
+            main_chart2.setOption(option);
+            main_chart2.resize();
+        }
+        main2();
+
+        //main_chart3
+        var chart2_label_array = '2017, 2018, 2019, 2020,2021,2022';
+        chart2_label_array = chart2_label_array.split(',');
+        var main_chart3 = echarts.init(document.getElementById('main_chart3'));
+        option = {
+            grid: {
+                top: '40px',
+                bottom: '80px',
+                left: '30px',
+                right: '30px'
+            },
+            label: {
+                show: true,
+            },
+            title: {
+                text: '올리브영 VS 화장품 업종 전월대비 성장률',
+                show: false
+            },
+            legend: {
+                data: ['올리브영', '화장품업종', '편의점', '커피전문점', '종합생활용품'],
+                bottom: 'bottom',
+            },
+            tooltip: {
+                trigger: 'axis',
+                fontSize: 10,
+                /* axisPointer: {
+                	type: 'cross',
+                	crossStyle: {
+                		color: '#999'
+                	}
+                } */
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: ['22.06', '22.07', '22.08', '22.09', '22.10', '22.11'],
+                axisLabel: {
+                    show: true,
+                    textStyle: {
+                        color: '#000',
+                        //fontSize: 9
+                    }
+                },
+            },
+            yAxis: {
+                type: 'value',
+                splitLine: { // y축 수치선
+                    show: false
+                },
+                axisLabel: {
+                    show: false,
+                },
+                axisLine: {
+                    show: false,
+                    lineStyle: {
+                        //color: '#9e9e9e'
+                    }
+                }
+            },
+            series: [{
+                    name: "올리브영",
+                    color: '#C2E371',
+                    type: 'line',
+                    symbolSize: 8,
+                    data: [20, 20, 60, 50, 70, 80],
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    lineStyle: {
+                        color: '#C2E371',
+                    },
+                    symbol: 'circle',
+                    itemStyle: {
+                        borderWidth: 1,
+                        borderColor: '#fff',
+                        color: '#C2E371',
+                        normal: {
+                            label: {
+                                show: true,
+                                position: 'outside',
+                                align: 'center',
+                                //color: '#006991',
+                                textPadding: '12',
+                                fontWeight: '600',
+                                borderRadius: '12',
+                                //fontSize:'14',
+                                //lineHeight: '14',
+                                borderRadius: '10',
+                                border: '20',
+                                formatter: function (params) {
+                                    var returnVal = echarts.format.addCommas(params.value);
+
+                                    return returnVal;
+                                },
+                                borderRadius: 4,
+                                padding: 4,
+                            }
+                        }
+                    },
+
+                }, {
+                    name: "화장품업종",
+                    color: '#FF8B61',
+                    type: 'line',
+                    symbolSize: 8,
+                    data: [2, 10, 30, 20, 48, 44],
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    lineStyle: {
+                        color: '#FF8B61',
+                    },
+                    symbol: 'circle',
+                    itemStyle: {
+                        borderWidth: 1,
+                        borderColor: '#fff',
+                        color: '#FF8B61',
+                        normal: {
+                            label: {
+                                show: true,
+                                position: 'outside',
+                                align: 'center',
+                                //color: '#006991',
+                                textPadding: '12',
+                                fontWeight: '600',
+                                borderRadius: '12',
+                                //fontSize:'14',
+                                //lineHeight: '14',
+                                borderRadius: '10',
+                                border: '20',
+                                formatter: function (params) {
+                                    var returnVal = echarts.format.addCommas(params.value);
+
+                                    return returnVal;
+                                },
+                                borderRadius: 4,
+                                padding: 4,
+                            }
+                        }
+                    },
+                },
+                {
+                    name: "편의점",
+                    color: '#5F7ECD',
+                    type: 'line',
+                    symbolSize: 8,
+                    data: [2, 10, 12, 7, 16, 12],
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    lineStyle: {
+                        color: '#5F7ECD',
+                    },
+                    symbol: 'circle',
+                    itemStyle: {
+                        borderWidth: 1,
+                        borderColor: '#fff',
+                        color: '#5F7ECD',
+                        normal: {
+                            label: {
+                                show: true,
+                                position: 'outside',
+                                align: 'center',
+                                //color: '#006991',
+                                textPadding: '12',
+                                fontWeight: '600',
+                                borderRadius: '12',
+                                //fontSize:'14',
+                                //lineHeight: '14',
+                                borderRadius: '10',
+                                border: '20',
+                                formatter: function (params) {
+                                    var returnVal = echarts.format.addCommas(params.value);
+
+                                    return returnVal;
+                                },
+                                borderRadius: 4,
+                                padding: 4,
+                            }
+                        }
+                    },
+                },
+                {
+                    name: "커피전문점",
+                    color: '#905F43',
+                    type: 'line',
+                    symbolSize: 8,
+                    data: [2, 2, 4, 6, 8, 12],
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    lineStyle: {
+                        color: '#905F43',
+                    },
+                    symbol: 'circle',
+                    itemStyle: {
+                        borderWidth: 1,
+                        borderColor: '#fff',
+                        color: '#905F43',
+                        normal: {
+                            label: {
+                                show: true,
+                                position: 'outside',
+                                align: 'center',
+                                //color: '#006991',
+                                textPadding: '12',
+                                fontWeight: '600',
+                                borderRadius: '12',
+                                //fontSize:'14',
+                                //lineHeight: '14',
+                                borderRadius: '10',
+                                border: '20',
+                                formatter: function (params) {
+                                    var returnVal = echarts.format.addCommas(params.value);
+
+                                    return returnVal;
+                                },
+                                borderRadius: 4,
+                                padding: 4,
+                            }
+                        }
+                    },
+                },
+                {
+                    name: "종합생활용품",
+                    color: '#39BBC3',
+                    type: 'line',
+                    symbolSize: 8,
+                    data: [4, 4, 2, 4, 8, 12],
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    lineStyle: {
+                        color: '#39BBC3',
+                    },
+                    symbol: 'circle',
+                    itemStyle: {
+                        borderWidth: 1,
+                        borderColor: '#fff',
+                        color: '#39BBC3',
+                        normal: {
+                            label: {
+                                show: true,
+                                position: 'outside',
+                                align: 'center',
+                                //color: '#006991',
+                                textPadding: '12',
+                                fontWeight: '600',
+                                borderRadius: '12',
+                                //fontSize:'14',
+                                //lineHeight: '14',
+                                borderRadius: '10',
+                                border: '20',
+                                formatter: function (params) {
+                                    var returnVal = echarts.format.addCommas(params.value);
+
+                                    return returnVal;
+                                },
+                                borderRadius: 4,
+                                padding: 4,
+                            }
+                        }
+                    },
+                }
+            ]
+        };
+
+        function main3() {
+            var show = option.yAxis.show;
+            var left = option.legend.left;
+            var grid_l = option.grid.left;
+            var grid_l = option.grid.left;
+            var grid_r = option.grid.right;
+            var labelSize = option.label.fontSize;
+            var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
+
+            if (window.innerWidth >= 1024) {
+                show = 'true';
+                fontSize = '10';
+                labelSize = '10';
+                left = 'center';
+                fontSize = '10';
+            } else if (window.innerWidth <= 280) {
+                fontSize = '9';
+                grid_l = '24';
+                grid_r = '24';
+                labelSize = '10';
+            } else if (window.innerWidth <= 360) {
+                fontSize = '11';
+                grid_l = '24';
+                grid_r = '24';
+                labelSize = '10';
+            } else if (window.innerWidth < 1024) {
+                grid_l = '24';
+                grid_r = '24';
+                labelSize = '10';
+                left = 'center';
+                fontSize = '10';
+            }
+            option.yAxis.show = show;
+
+            option.grid.left = grid_l;
+            option.grid.right = grid_r;
+            option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+            option.label.fontSize = labelSize;
+            option.legend.left = left;
+
+            main_chart3.setOption(option);
+            main_chart3.resize();
+        }
+        main3();
+        //main3
+
+        //main_chart4
+        var chart2_label_array = '22.07, 22.08, 22.09, 22.10,22.10,22.11';
+        chart2_label_array = chart2_label_array.split(',');
+        var main_chart4 = echarts.init(document.getElementById('main_chart4'));
+        option = {
+
+            grid: {
+                bottom: '16%',
+                top: '10%',
+                left: '0%',
+                right: '0%',
+                containLabel: true
+            },
+            title: {
+                text: '관심지역 상권 성장률',
+                show: false
+            },
+
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend: {
+                show: true,
+                bottom: 'bottom',
+                left: 'center',
+                data: [{
+                        name: "전체업종",
+                        itemStyle: {
+                            color: '#F9A629'
+                        }
+                    },
+                    {
+                        name: "화장품업종",
+                        itemStyle: {
+                            color: '#C2E371'
+                        }
+                    },
+                ],
+            },
+            label: [],
+            xAxis: {
+                type: 'category',
+                data: chart2_label_array,
+                axisLine: {
+                    lineStyle: {
+                        //color: '#9e9e9e'
+                    }
+                },
+                axisLabel: {
+                    show: true,
+                    textStyle: {
+                        color: '#000',
+                        fontSize: 12,
+                    }
+                },
+                axisTick: {
+                    show: false
+                }
+            },
+            yAxis: {
+                show: false,
+                type: 'value',
+                splitLine: { // y축 수치선
+                    show: false
+                },
+                axisLabel: {
+                    show: false,
+                },
+
+            },
+            series: [{
+                    name: '전체업종',
+                    type: 'bar',
+                    data: [10.2, 20.5,24.5,22.5,12.5,34.5],
+                    barWidth: '30%',
+                    itemStyle: {
+                        color: '#F9A629',
+                        barBorderRadius: [4, 4, 0, 0],
+                    },
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        align: 'center',
+                        color: '#F9A629',
+                        formatter: '{c}',
+                        textPadding: '12',
+                        fontWeight: '600',
+                        borderRadius: '12',
+                        fontSize: '12',
+                        fontFamily: 'Pretendard',
+                    },
+                },
+                {
+                    name: '화장품업종',
+                    type: 'bar',
+                    data: [10.4, 20.4, 40.4, 48.0,24.0,32.0],
+                    barWidth: '30%',
+                    itemStyle: {
+                        color: '#C2E371',
+                        barBorderRadius: [4, 4, 0, 0],
+                    },
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        align: 'center',
+                        color: '#84A92C',
+                        formatter: '{c}',
+                        textPadding: '12',
+                        fontWeight: '600',
+                        borderRadius: '12',
+                        fontSize: '12',
+                        fontFamily: 'Pretendard',
+                    },
+                }
+            ]
+        };
+
+        function main4() {
+            var show = option.yAxis.show;
+            var left = option.legend.left;
+            var labelSize = option.label.fontSize;
+            var grid_l = option.grid.left;
+            var grid_r = option.grid.right;
+            var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
+
+            if (window.innerWidth >= 1024) {
+                show = 'false';
+                fontSize = '12';
+                labelSize = '12';
+            } else if (window.innerWidth <= 280) {
+                fontSize = '9';
+                grid_l = '4';
+                grid_r = '4';
+                labelSize = '10';
+            } else if (window.innerWidth <= 360) {
+                fontSize = '11';
+                grid_l = '0';
+                grid_r = '0';
+                labelSize = '10';
+            } else if (window.innerWidth < 1024) {
+                grid_l = '2';
+                grid_r = '2';
+                labelSize = '12';
+                show = 'false';
+            }
+            option.yAxis.show = show;
+            option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+            option.label.fontSize = labelSize;
+            option.grid.left = grid_l;
+            option.grid.right = grid_r;
+            option.legend.left = left;
+
+            main_chart4.setOption(option);
+            main_chart4.resize();
+        }
+        main4();
+
+        //echart width 오류 해결
+        const container1 = document.querySelector('#main_chart1');
+        const chart1 = echarts.init(container1);
+        new ResizeObserver(() => chart1.resize()).observe(container1);
+
+        const container2 = document.querySelector('#main_chart2');
+        const chart2 = echarts.init(container2);
+        new ResizeObserver(() => chart2.resize()).observe(container2);
+        const container3 = document.querySelector('#main_chart3');
+        const chart3 = echarts.init(container3);
+        new ResizeObserver(() => chart3.resize()).observe(container3);
+        const container4 = document.querySelector('#main_chart4');
+        const chart4 = echarts.init(container4);
+        new ResizeObserver(() => chart4.resize()).observe(container4);
+    </script>
+</body>
+
+</html>

@@ -11,17 +11,27 @@ $(document).ready(function(){
     window.addEventListener('resize', setScreenSize);
     
     //window height 크기
-    function windowHtSize(){
-        var height = $(window).height();
-        $('body').css('height',height);    
-        $('html').css('height',height);    
-    }
-    windowHtSize();
+//    function windowHtSize(){
+//        var height = $(window).height();
+//        $('body').css('height',height);    
+//        $('html').css('height',height);    
+//    }
+//    windowHtSize();
+    
 
+    //--inner 크기 설정
     var tab_inner = $('.pc_tab_right').width();
     var echart_inner = tab_inner - 64;
     document.documentElement.style.setProperty('--inner', `${echart_inner}px`);
 
+    //main page chart
+    $('#main_chart2').css('height','calc((var(--vh, 1vh) * 100 - 604px) / 2 )');
+    $('#main_chart3').css('height','calc((var(--vh, 1vh) * 100 - 604px) / 2 )');
+    $('#main_chart4').css('height','calc((var(--vh, 1vh) * 100 - 604px) / 2 )');
+    $('#main_chart2').css('min-height','300px');
+    $('#main_chart3').css('min-height','300px');
+    $('#main_chart4').css('min-height','300px');
+    
     //클릭시 열기
 
     //지역 | 매장 선택
