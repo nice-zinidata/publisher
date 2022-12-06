@@ -4679,6 +4679,7 @@ main page
     position: relative;
     padding: 16px;
 }
+
 .user_navi_head.login_main .txt p{
     text-align: center;
 }
@@ -4688,6 +4689,14 @@ main page
 }
 .user_navi_head.login_main::before{
     background: url(../images/icons/ico_olive_user.svg) 50% 50%/cover;
+}
+
+.main_section.lft_sec .btn1{
+    box-shadow: 0px 4px 8px rgb(38 51 77 / 24%);
+}
+
+.main_section.lft_sec .btn1:hover{
+    box-shadow: 0px 4px 8px rgb(38 51 77 / 36%);
 }
 
 .user_big_gra{
@@ -4943,11 +4952,12 @@ main page
 
 
 .box_div_section .select_main_box{
-    width: 140px;
+    width: 160px;
 }
 .box_div_section .select_main{
     padding: 10px 40px;
-    height: inherit;
+    height: 40px;
+    line-height: 20px;
     border: none;
 }
 
@@ -5044,6 +5054,54 @@ main page
 
 .card_box_wrap .card_box{
     height: 20%;
+}
+
+.before_login .menu_right .user_navi .btn3::before{
+    width: 16px;
+    height: 16px;
+    background: url(../images/icons/ico_user_line_g.svg) 50% 50%/cover;
+}
+
+.before_login .main_section.lft_sec .btn4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.before_login .user_big{
+    background: #F7F8FA url(../images/icons/ico_shop_full_c.svg) 50%/28px no-repeat;
+}
+
+.before_login .user_big_gra{
+    background:var(--mono6);
+    filter: drop-shadow(0px 8px 4px #eee);
+}
+
+.before_login .user_box_area{
+    text-align: center;
+}
+
+.before_login .minheight{
+    min-height: calc(100vh - 396px);
+    min-height: calc(var(--vh, 1vh) * 100 - 396px);
+}
+
+.do_login_text{
+    padding: 12px;
+    background-color: #F7F8FA;
+    color:var(--mono3);
+    font-size: 13px;
+}
+
+.select_section{
+    display: flex;
+    gap:8px;
+}
+
+.select_section button{
+    display: flex;
+    align-items: center;
+    gap:4px;
 }
 
 /* 필터 ui 세로일때 잘리지 않게 미디어쿼리*/
@@ -5198,6 +5256,10 @@ main page
         min-height: calc(100vh - 413px);
         min-height: calc(var(--vh, 1vh) * 100 - 413px);
     }
+    .before_login .minheight{
+        min-height: calc(100vh - 415px);
+    min-height: calc(var(--vh, 1vh) * 100 - 415px);
+    }
 }
 @media all and (max-width: 1080px){
     /*1080*/
@@ -5206,6 +5268,10 @@ main page
     }
     .main_section.rght_sec{
         display: none;
+    }
+    .before_login .minheight{
+        min-height: calc(100vh - 396px);
+        min-height: calc(var(--vh, 1vh) * 100 - 396px);
     }
 
 }

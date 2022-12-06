@@ -25,12 +25,12 @@ $(document).ready(function(){
     document.documentElement.style.setProperty('--inner', `${echart_inner}px`);
 
     //main page chart
-    $('#main_chart2').css('height','calc((var(--vh, 1vh) * 100 - 604px) / 2 )');
-    $('#main_chart3').css('height','calc((var(--vh, 1vh) * 100 - 604px) / 2 )');
-    $('#main_chart4').css('height','calc((var(--vh, 1vh) * 100 - 604px) / 2 )');
-    $('#main_chart2').css('min-height','300px');
-    $('#main_chart3').css('min-height','300px');
-    $('#main_chart4').css('min-height','300px');
+    $('#main_chart2').css('height','calc((var(--vh, 1vh) * 100 - 610px) / 2 )');
+    $('#main_chart3').css('height','calc((var(--vh, 1vh) * 100 - 610px) / 2 )');
+    $('#main_chart4').css('height','calc((var(--vh, 1vh) * 100 - 610px) / 2 )');
+    $('#main_chart2').css('min-height','280px');
+    $('#main_chart3').css('min-height','280px');
+    $('#main_chart4').css('min-height','280px');
     
     //클릭시 열기
 

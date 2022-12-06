@@ -27,7 +27,7 @@
 </head>
 
 <body>
-    <div class="top_section">
+    <div class="top_section before_login">
         <div class="menu_top pd main_layout">
             <div class="menu_left">
                 <div class="logo_box">
@@ -43,29 +43,15 @@
             <div class="menu_right">
                 <div class="user_navi">
                     <button class="btn3" id="showUserNavi">
-                        김올영님
+                        로그인<span class="reference" style="color:#ccc">&nbsp;|&nbsp;</span>회원가입
                     </button>
-                    <div class="user_navi_ul">
-                        <div class="user_navi_head">
-                            <div class="txt">
-                                <p>김올영님</p>
-                                <p>가맹 영업 2팀</p>
-                            </div>
-                        </div>
-                        <ul>
-                            <li><a class="ico16 ico_gear_line_b" href="#">권한관리</a></li>
-                            <li><a class="ico16 ico_user_line_b" href="#">마이페이지</a></li>
-                            <li><a class="ico16 ico_ask_line_b" href="#">도움말</a></li>
-                            <li><a class="ico16 ico_out_line_b" href="#">로그아웃</a></li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="main_wrap">
         <!--top_section START-->
-        <div class="main_section_wrap pd main_layout">
+        <div class="main_section_wrap pd main_layout before_login">
             <div class="main_section lft_sec">
                 <div class="sec_wrap">
                     <div class="box_div mb12">
@@ -76,15 +62,15 @@
                                     </div>
                                 </div>
                                 <div class="txt">
-                                    <p>김올영님</p>
-                                    <p>가맹 영업 2팀</p>
+                                    <p></p>
+                                    <p>로그인하여 서비스를 이용해주세요</p>
                                 </div>
                             </div>
                             <div class="button_box_area user_box_area">
                                 <div class="button_box full mb12">
-                                    <button class="btn1 ico14 ico_user_line_wh h40">마이페이지</button>
+                                    <button class="btn1 ico14 ico_user_line_wh h40">로그인</button>
                                 </div>
-                                <div class="button_box full_two">
+                                <div class="button_box full_two" style="display: none;">
                                     <button class="btn3 h30 flx aboutmy">
                                         <p class="ico14 ico_document_line_b"><span class="reference">보관된보고서</span></p>
                                         <p><strong>4</strong></p>
@@ -94,6 +80,10 @@
                                         <p><strong>4</strong></p>
                                     </button>
                                 </div>
+                                <div class="button_box full mb12">
+                                    <button class="btn4 ico14 ico_edit_line_b h40">권한신청</button>
+                                </div>
+                                <a class="reference" href="#"> 아이디 | 비밀번호 찾기</a>
                             </div>
                         </div>
                     </div>
@@ -106,58 +96,10 @@
                         </div>
                         <div class="box_div_inner">
                             <div class="box_div_body">
-                                <div class="box_div_title_m mb12">
-                                    <p class="tt_txt">관심지역 상권 성장률</p>
-                                </div>
-                                <div class="select_main_box sub list_select">
-                                    <a class="select_main ">서대문구 신촌로 79</a>
-                                    <div class="select_main_show sub_show sub_show_1">
-                                        <div class="show_header">
-                                            <h5>관심구역 선택</h5>
-                                        </div>
-                                        <div class="show_body">
-                                            <div class="in_box list_box">
-                                                
-                                                <ul class="shop_list">
-                                                    <li>
-                                                        <a class="list_a" href="#">
-                                                            <p>신촌대로점</p>
-                                                            <p>서울특별시 서대문구 신촌로 121 1층</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="list_a" href="#">
-                                                            <p>신촌역점</p>
-                                                            <p>서울특별시 서대문구 신촌로 79</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="list_a" href="#">
-                                                            <p>올리브영 신촌 타운</p>
-                                                            <p>서울특별시 서대문구 신촌로 79</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="list_a" href="#">
-                                                            <p>신촌대로점</p>
-                                                            <p>서울특별시 서대문구 신촌로 121 1층</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="list_a" href="#">
-                                                            <p>신촌대로점</p>
-                                                            <p>서울특별시 서대문구 신촌로 121 1층</p>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="echart_box">
+                                <div class="echart_box" style="display: none;">
                                     <div id="main_chart1" class="chart mb24" style="height: 240px"></div>
                                 </div>
-                                <div class="table_box">
+                                <div class="table_box" style="display: none;">
                                     <table>
                                         <colgroup>
                                             <col style="width:24%">
@@ -187,6 +129,7 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                <p class="do_login_text">* 로그인 하여 관심지역의 성장률을 확인해 보세요</p>
                             </div>
                         </div>
 
@@ -232,48 +175,83 @@
                         <div class="box_div_title_r mb12">
                             <p class="ico20 ico_graph_line_b">성장률 동향</p>
                             <div class="select_section">
-                                <div class="select_main_box sub list_select">
-                                    <a class="select_main ">지역 <span class="reference">:</span> 전국</a>
-                                    <div class="select_main_show sub_show sub_show_1">
-                                        <div class="show_header">
-                                            <h5>시·도 선택</h5>
-                                        </div>
-                                        <div class="show_body">
-                                            <div class="in_box list_box">
-                                                <ul class="shop_list">
-                                                   <li><a class="list_a" href="#"><p>전국</p></a></li> 
-                                                   <li><a class="list_a" href="#"><p>서울특별시</p></a></li> 
-                                                   <li><a class="list_a" href="#"><p>부산광역시</p></a></li> 
-                                                   <li><a class="list_a" href="#"><p>대구광역시</p></a></li> 
-                                                   <li><a class="list_a" href="#"><p>인천광역시</p></a></li> 
-                                                   <li><a class="list_a" href="#"><p>광주광역시</p></a></li> 
-                                                   <li><a class="list_a" href="#"><p>대전광역시</p></a></li> 
-                                                   <li><a class="list_a" href="#"><p>울산광역시</p></a></li> 
-                                                   <li><a class="list_a" href="#"><p>세종특별자치시</p></a></li> 
-                                                   <li><a class="list_a" href="#"><p>경기도</p></a></li> 
-                                                   <li><a class="list_a" href="#"><p>강원도</p></a></li> 
-                                                   <li><a class="list_a" href="#"><p>충청북도</p></a></li> 
-                                                   <li><a class="list_a" href="#"><p>충청남도</p></a></li> 
-                                                   <li><a class="list_a" href="#"><p>전라북도</p></a></li> 
-                                                   <li><a class="list_a" href="#"><p>전라남도</p></a></li> 
-                                                   <li><a class="list_a" href="#"><p>경상북도</p></a></li> 
-                                                   <li><a class="list_a" href="#"><p>경상남도</p></a></li> 
-                                                   <li><a class="list_a" href="#"><p>제주특별자치도</p></a></li> 
-                                                </ul>
-                                            </div>
+                            <div class="select_main_box sub list_select">
+                                <a class="select_main ">지역 <span class="reference">:</span> 전국</a>
+                                <div class="select_main_show sub_show sub_show_1">
+                                    <div class="show_header">
+                                        <h5>시·도 선택</h5>
+                                    </div>
+                                    <div class="show_body">
+                                        <div class="in_box list_box">
+                                            <ul class="shop_list">
+                                                <li><a class="list_a" href="#">
+                                                        <p>전국</p>
+                                                    </a></li>
+                                                <li><a class="list_a" href="#">
+                                                        <p>서울특별시</p>
+                                                    </a></li>
+                                                <li><a class="list_a" href="#">
+                                                        <p>부산광역시</p>
+                                                    </a></li>
+                                                <li><a class="list_a" href="#">
+                                                        <p>대구광역시</p>
+                                                    </a></li>
+                                                <li><a class="list_a" href="#">
+                                                        <p>인천광역시</p>
+                                                    </a></li>
+                                                <li><a class="list_a" href="#">
+                                                        <p>광주광역시</p>
+                                                    </a></li>
+                                                <li><a class="list_a" href="#">
+                                                        <p>대전광역시</p>
+                                                    </a></li>
+                                                <li><a class="list_a" href="#">
+                                                        <p>울산광역시</p>
+                                                    </a></li>
+                                                <li><a class="list_a" href="#">
+                                                        <p>세종특별자치시</p>
+                                                    </a></li>
+                                                <li><a class="list_a" href="#">
+                                                        <p>경기도</p>
+                                                    </a></li>
+                                                <li><a class="list_a" href="#">
+                                                        <p>강원도</p>
+                                                    </a></li>
+                                                <li><a class="list_a" href="#">
+                                                        <p>충청북도</p>
+                                                    </a></li>
+                                                <li><a class="list_a" href="#">
+                                                        <p>충청남도</p>
+                                                    </a></li>
+                                                <li><a class="list_a" href="#">
+                                                        <p>전라북도</p>
+                                                    </a></li>
+                                                <li><a class="list_a" href="#">
+                                                        <p>전라남도</p>
+                                                    </a></li>
+                                                <li><a class="list_a" href="#">
+                                                        <p>경상북도</p>
+                                                    </a></li>
+                                                <li><a class="list_a" href="#">
+                                                        <p>경상남도</p>
+                                                    </a></li>
+                                                <li><a class="list_a" href="#">
+                                                        <p>제주특별자치도</p>
+                                                    </a></li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn4 ico20 ico_board_line_g">표로보기</button>
                             </div>
+                            <button class="btn4 ico20 ico_board_line_g">표로보기</button>
+                        </div>
                         </div>
                         <div class="box_div_wrap has2">
                             <div class="box_div">
                                 <div class="box_div_inner">
                                     <div class="box_div_body">
                                         <div class="box_div_title_m">
-                                            <p class="tt_txt">올리브영 vs 화장품업종 전월대비 성장률
-                                                </p>
+                                            <p class="tt_txt">올리브영 vs 화장품업종 전월대비 성장률</p>
                                             <p class="reference">전국 | 최근 6개월 | 단위:%</p>
                                         </div>
                                         <div class="echart_box">
@@ -317,86 +295,92 @@
                     </div>
                     <div class="box_div_section">
                         <div class="box_div_title_r mb12">
-                            <p class="ico20 ico_gift_line_b">점유율 동향</p>
+                            <p class="ico20 ico_graph_line_b">점유율 동향</p>
                             <div class="select_section">
-                                <div class="select_main_box sub">
-                                    <a class="select_main ">필터 선택</a>
-                                    <div class="select_main_show sub_show sub_show_1">
-                                        <div class="show_header">
-                                            <h5>기준 필터</h5>
-                                            <button class="ico16 ico_again_line_g btn_reset">
-                                                초기화
-                                            </button>
-                                        </div>
-                                        <div class="show_body">
-                                            <div class="show_section mb20">
-                                                <div class="show_body_title_box flx mb8">
-                                                    <p class="show_body_title">분석 기준</p>
-                                                    <p class="show_body_sub">건수 기준</p>
-                                                </div>
-                                                <div class="radio_base has_border cb">
-                                                    <div class="fl">
-                                                        <label for="number_or_percent1">
-                                                            <input type="radio" id="number_or_percent1"
-                                                                name="number_or_percent" checked="">
-                                                            <span>건수</span>
-                                                        </label>
-                                                    </div>
-                                                    <div class="fl">
-                                                        <label for="number_or_percent2">
-                                                            <input type="radio" id="number_or_percent2"
-                                                                name="number_or_percent">
-                                                            <span>점유율</span>
-                                                        </label>
-                                                    </div>
-                                                </div>
+                            <div class="select_main_box sub">
+                                <a class="select_main ">필터 선택</a>
+                                <div class="select_main_show sub_show sub_show_1">
+                                    <div class="show_header">
+                                        <h5>기준 필터</h5>
+                                        <button class="ico16 ico_again_line_g btn_reset">
+                                            초기화
+                                        </button>
+                                    </div>
+                                    <div class="show_body">
+                                        <div class="show_section mb20">
+                                            <div class="show_body_title_box flx mb8">
+                                                <p class="show_body_title">분석 기준</p>
+                                                <p class="show_body_sub">건수 기준</p>
                                             </div>
-                                            <div class="show_section">
-                                                <div class="show_body_title_box flx mb8">
-                                                    <p class="show_body_title">분석 시점</p>
-                                                    <p class="show_body_sub">최신 월 기준</p>
+                                            <div class="radio_base has_border cb">
+                                                <div class="fl">
+                                                    <label for="number_or_percent1">
+                                                        <input type="radio" id="number_or_percent1"
+                                                            name="number_or_percent" checked="">
+                                                        <span>건수</span>
+                                                    </label>
                                                 </div>
-                                                <div class="radio_base has_border cb">
-                                                    <div class="fl">
-                                                        <label for="date_choice1">
-                                                            <input type="radio" id="date_choice1"
-                                                                name="date_choice" checked="">
-                                                            <span>최신 월</span>
-                                                        </label>
-                                                    </div>
-                                                    <div class="fl">
-                                                        <label for="date_choice2">
-                                                            <input type="radio" id="date_choice2"
-                                                                name="date_choice">
-                                                            <span>최신 분기</span>
-                                                        </label>
-                                                    </div>
+                                                <div class="fl">
+                                                    <label for="number_or_percent2">
+                                                        <input type="radio" id="number_or_percent2"
+                                                            name="number_or_percent">
+                                                        <span>점유율</span>
+                                                    </label>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="show_foot">
-                                            <div class="button_box">
-                                                <button class="btn2">취소</button>
-                                                <button class="btn1">필터 적용</button>
+                                        <div class="show_section">
+                                            <div class="show_body_title_box flx mb8">
+                                                <p class="show_body_title">분석 시점</p>
+                                                <p class="show_body_sub">최신 월 기준</p>
+                                            </div>
+                                            <div class="radio_base has_border cb">
+                                                <div class="fl">
+                                                    <label for="date_choice1">
+                                                        <input type="radio" id="date_choice1" name="date_choice"
+                                                            checked="">
+                                                        <span>최신 월</span>
+                                                    </label>
+                                                </div>
+                                                <div class="fl">
+                                                    <label for="date_choice2">
+                                                        <input type="radio" id="date_choice2" name="date_choice">
+                                                        <span>최신 분기</span>
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="show_foot">
+                                        <div class="button_box">
+                                            <button class="btn2">취소</button>
+                                            <button class="btn1">필터 적용</button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <button class="btn4 ico20 ico_board_line_g">
-                                    표로보기
-                                </button>
                             </div>
+                            <button class="btn4 ico20 ico_board_line_g">표로보기</button>
+                        </div>
                         </div>
                         <div class="box_div_wrap">
                             <div class="box_div">
                                 <div class="box_div_inner">
                                     <div class="box_div_body">
                                         <div class="box_div_title_m mb12">
-                                            <p class="tt_txt">오늘드림 점유율 상위 10개지역</p>
-                                            <p class="reference">행정동기준 | 최근 월 | 단위:개</p>
+                                            <p class="tt_txt">올리브영 vs 화장품업종 전월대비 성장률</p>
+                                            <p class="reference">전국 | 최근 6개월 | 단위:%</p>
                                         </div>
                                         <div class="echart_box">
-                                                <div id="main_chart4" class="chart"></div>
+                                            <div id="main_chart4" class="chart"
+                                                style="height: 196px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;"
+                                                _echarts_instance_="ec_1670201044967">
+                                                <div
+                                                    style="position: relative; width: 236px; height: 220px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;">
+                                                    <canvas data-zr-dom-id="zr_0" width="472" height="440"
+                                                        style="position: absolute; left: 0px; top: 0px; width: 236px; height: 220px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas>
+                                                </div>
+                                                <div class=""></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1201,7 +1185,6 @@
                     textStyle: {
                         color: '#666F7E',
                         fontSize: 12,
-                        fontWeight:500,
                         lineHeight: 16,
                     },
 
@@ -1224,7 +1207,7 @@
             series: [{
                     name: '오늘드림',
                     type: 'bar',
-                    data: [10, 20,24,22,12,34,32,30,28,16],
+                    data: [10, 20, 24, 22, 12, 34, 32, 30, 28, 16],
                     //barWidth: '30%',
                     itemStyle: {
                         color: '#F9A629',
