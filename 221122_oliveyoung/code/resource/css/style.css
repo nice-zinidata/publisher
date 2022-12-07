@@ -5045,7 +5045,7 @@ main page
 
 .card_box_wrap{
     height: 100%;
-    min-height: 909px;
+    min-height: 720px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
