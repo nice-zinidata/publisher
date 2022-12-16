@@ -2090,6 +2090,10 @@ a.close_pop{
     .form_box .btn_box .btn_st1{
         width: 100%;
     }
+    .pop_div{
+        width: 90%;
+        left: 5%;
+    }
 }
 @media all and (max-width: 360px){
     .pd{
@@ -2113,8 +2117,7 @@ a.close_pop{
         width: 40px;
         height: 40px;
     }
-}
-@media all and (max-width: 360px){
+
     .ico_text{
         font-size: 13px;
     }
