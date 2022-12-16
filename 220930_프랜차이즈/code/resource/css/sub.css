@@ -255,7 +255,7 @@ section .main_text{
 }
 
 .subpage1 .bg_main{
-    background-color:#E9F9F9;
+    background-color:#e8f5ff;
 }
 
 .bg_dark .b1{
@@ -521,7 +521,7 @@ margin-top: 61px;
     height: 100%;
     width: 540px;
     background:none;
-    /* background:url(../images/contents/main_img.png) 50% 50%/cover ; */
+    background:url(../images/contents/sub1_hero.png) 50% 50%/cover ;
 }
 /* section7 */
 
