@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    //form_group input animation
+    //인풋 폼 css 효과
     $('input').blur(function() {
       var $this = $(this);
       if ($this.val())
@@ -32,11 +32,7 @@ $(document).ready(function() {
         $(this).removeClass('is-active');
     });
 
-
-
-
-
-
+    //캔버스 그리기
 function canvas2() {    
     var baseURL = "resource/images/frame/";
 
