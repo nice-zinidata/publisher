@@ -5347,3 +5347,346 @@ main page
     }
 
 }
+
+
+/*******************
+로그인추가
+css 시작
+20221220
+*******************/
+.login_pop{
+    width: 960px;
+    position: fixed;
+    height: calc(var(--vh, 1vh) * 100 - 240px);
+    left: calc(50% - 480px);
+    top:120px;
+    z-index: 999;
+    border-radius: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+.login_pop_side{
+    width: 40%;
+    position: relative;
+}
+
+.login_pop_section{
+    width: 60%;
+    position: relative;
+}
+
+.login_pop_side .log_inner{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../images/contents/img_box.png) 0 50%/cover no-repeat;
+    padding: 44px 36px;
+}
+
+.login_pop_side p::before{
+    content: "";
+    display: block;
+    width: 184px;
+    height: 30px;
+    background: url(../images/logo/h1_logo_wh.svg) 50% 50%/cover;
+    margin-bottom: 4px;
+}
+
+.login_pop_side p{
+    color: #fff;
+    font-weight: 500;
+}
+
+.login_pop_section .log_inner{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.login_pop_header{
+    margin-bottom: 40px;
+}
+
+.login_pop_header h4{
+    font-weight: 700;
+    font-size: 24px;
+    color:var(--mono1);
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.login_pop_header h4::after{
+    content: "";
+    width: 60px;
+    height: 4px;
+    margin-left: calc(50% - 30px);
+    margin-top: 8px;
+    display: block;
+    clear: both;
+    background:var(--sec4); 
+}
+
+.login_pop_header p{
+    font-weight: 500;
+    font-size: 14px;
+    color:var(--mono3);
+    text-align: center;
+}
+
+
+.login_pop_footer{
+    width: 320px;
+}
+
+.login_pop_footer .button_box.full{
+    flex-direction: column;
+}
+
+
+.login_pop_footer .button_box.full button{
+    height:52px;
+}
+
+.log_pop_scroll{
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    padding: 40px 0;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close_login_pop{
+    position: absolute;
+    top:16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    z-index: 2;
+}
+
+.close_login_pop > a{
+    width: 32px;
+    height: 32px;
+}
+
+/* form --*/
+
+.form_group {
+	width: 320px;
+}
+
+.form_group .input-group { 
+	position: relative; 
+	margin-bottom: 40px; 
+}
+
+.form_group .input-group.width50 { 
+	width:calc(50% - 16px);
+}
+
+.form_group input {
+    box-sizing: border-box;
+	font-size: 16px;
+    font-weight: 500;
+	appearance: none;
+	-webkit-appearance: none;
+	display: block;
+	background: none;
+    color: var(--mono1);
+	width: 100%;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid var(--mono5);
+    height: 44px;
+    font-family: 'Pretendard';
+    padding-left: 32px;
+}
+
+
+.form_group input:focus { outline: none; }
+
+
+/* Label */
+
+.form_group label {
+	color: var(--mono4);
+	font-size: 16px;
+    font-weight: 500;
+	position: absolute;
+	pointer-events: none;
+	left: 32px;
+	top: 14px;
+	transition: all 0.2s ease;
+}
+
+
+/* active */
+
+.form_group input:focus ~ label, input.used ~ label {
+	top: -14px;
+    transform: scale(.8);
+    left: -8px;
+	color: var(--mono3);
+}
+
+
+/* Underline */
+
+.form_group .bar {
+	position: relative;
+	display: block;
+	width: 100%;
+}
+
+.form_group .bar:before, .form_group .bar:after {
+	content: '';
+	height: 1px; 
+	width: 0;
+	bottom: 0; 
+	position: absolute;
+	background:var(--sec4); 
+	transition: all 0.2s ease;
+}
+
+.form_group .bar:before { left: 50%; }
+
+.form_group .bar:after { right: 50%; }
+
+
+/* active */
+
+.form_group input:focus ~ .bar:before, .form_group input:focus ~ .bar:after {
+    width: 50%;
+}
+
+
+/* Highlight */
+
+.form_group .highlight {
+	position: absolute;
+	height: 60%; 
+	width: 100px; 
+	top: 25%; 
+	left: 0;
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+
+/* active */
+
+.form_group input:focus ~ .highlight {
+	animation: inputHighlighter 0.3s ease;
+}
+
+.form_group .ico20::before{
+	position: absolute;
+    top:calc(50% - 10px);
+}
+
+.login_pop_footer a.find{
+    display: block;
+    text-align: center;
+    color: var(--mono3);
+    font-weight: 500;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+@media all and (min-width: 769px) and (max-height: 800px){
+    .login_pop{
+        height: calc(var(--vh, 1vh) * 100 - 120px);
+        top: 60px;
+    }
+    .log_pop_scroll{
+        justify-content: flex-start;
+    }
+}
+
+@media all and (max-width: 1080px){
+    .login_pop{
+        width: 720px;
+        left: calc(50% - 360px);
+    }
+    .login_pop_side{
+        width: 30%;
+    }
+    .login_pop_section{
+        width: 70%;
+    }
+    .login_pop_side p::before{
+        width: 137px;
+        height: 22px;
+    }
+}
+
+
+@media all and (max-width: 768px){
+    .login_pop{
+        width: 720px;
+        left: calc(50% - 360px);
+    }
+    .login_pop_side{
+        width: 30%;
+    }
+    .login_pop_section{
+        width: 70%;
+    }
+    .login_pop_side p::before{
+        width: 137px;
+        height: 22px;
+    }
+}
+
+@media all and (max-width: 720px){
+    .login_pop{
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top:0;
+        border-radius: 0;
+    }
+    .login_pop_side{
+        display: none;
+    }
+    .login_pop_section{
+        width: 100%;
+    }
+}
+@media all and (max-width: 420px){
+    .form_group{
+        width: 100%;
+    }
+    .login_pop_body,
+    .login_pop_header,
+    .login_pop_footer{
+        width: 100%;
+    }
+    .log_inner{
+        padding: 20px;
+    }
+    .log_pop_scroll{
+        overflow: hidden;
+    }
+}
+
+/*******************
+로그인추가
+상세보고서 추가,
+css 끝
+20221220
+*******************/
+
