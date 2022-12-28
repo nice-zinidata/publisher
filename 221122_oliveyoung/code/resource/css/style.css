@@ -3124,9 +3124,9 @@ ul.shop_list li .heart_a.on {
     display: none;
 }
 
-.alrt_pop .table_box{
+/* .alrt_pop .table_box{
     border-top:1px solid var(--mono2) ;
-}
+} */
 .alrt_pop .table_box table th{
     color:var(--mono1);
     font-weight: 700;
@@ -5354,6 +5354,7 @@ main page
 css 시작
 20221220
 *******************/
+
 .login_pop{
     width: 960px;
     position: fixed;
@@ -5694,6 +5695,12 @@ css 끝
 css 시작
 20221222
 *******************/
+
+:root {
+    /*상단 루트에 추가*/
+    --sec7: #f3f6ea;
+}
+
 .font12{
     font-size: 12px;
 }
@@ -5825,7 +5832,42 @@ css 시작
     justify-content: space-between;
     gap:12px;
     align-items: center;
-    padding: 16px;
+   padding: 16px;
+   position: relative;
+}
+
+.rpt_r_top_nav{
+    position: absolute;   
+    width: 100%;
+    left:0;
+    display: none;
+    background-color: #fdfeff;
+    backdrop-filter: blur(6px);
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    bottom: -36px;
+    z-index: 2;
+    transition: 0.4s;
+}
+.rpt_r_top_nav.on{
+    display: block;
+}
+
+.rpt_r_top_nav > ul > li > a{
+    padding: 12px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight:700;
+    color: var(--mono4);
+}
+
+.rpt_r_top_nav > ul > li.sub a{
+    font-size: 12px;
+    padding: 12px 4px;
+}
+
+.rpt_r_top_nav > ul > li.on > a{
+    color: var(--mono1);
 }
 
 .rpt_r_mid{
@@ -5874,6 +5916,7 @@ button.print{
     box-sizing: border-box;
     display: none;
     position: absolute;
+    z-index: 2;
 }
 
 .print_choice:hover ul{
@@ -6008,16 +6051,17 @@ button.print{
     box-shadow: 0px 4px 8px rgb(157 197 57 / 40%);
 }
 
-.storeopen_02 .rpt_r_mid .rpt_hd_tt::before{
+.commercial_02 .rpt_r_mid .rpt_hd_tt::before{
     background:#ffffff85 url(../images/icons/ico_place_line_sec.svg) 50% 50%/20px no-repeat;
 }
-.storeopen_03 .rpt_r_mid .rpt_hd_tt::before{
+.commercial_03 .rpt_r_mid .rpt_hd_tt::before{
     background:#ffffff85 url(../images/icons/ico_number_line_sec.svg) 50% 50%/20px no-repeat;
 }
-.storeopen_04 .rpt_r_mid .rpt_hd_tt::before{
-    background:#ffffff85 url(../images/icons/ico_chart_line_sec.svg) 50% 50%/20px no-repeat;
+.commercial_04 .rpt_r_mid .rpt_hd_tt::before{
+    background:#ffffff85 url(../images/icons/ico_chart_ine_sec.svg) 50% 50%/20px no-repeat;
+    
 }
-.storeopen_05 .rpt_r_mid .rpt_hd_tt::before{
+.commercial_05 .rpt_r_mid .rpt_hd_tt::before{
     background:#ffffff85 url(../images/icons/ico_graph_line_sec.svg) 50% 50%/20px no-repeat;
 }
 
@@ -6111,6 +6155,7 @@ h6 span.light{
 
 .st{
     color: var(--sec1);
+    font-weight: 600;
 }
 
 .desc_ul{
@@ -6129,6 +6174,14 @@ h6 span.light{
 .desc_ul > li > .desc_about{
     width: 76%;
     padding: 20px 12px;
+}
+
+.desc_ul.has_shopname > li > .desc_title{
+    width: 40%;
+}
+
+.desc_ul.has_shopname > li > .desc_about{
+    width: 60%;
 }
 
 .desc_ul > li + li{
@@ -6224,12 +6277,16 @@ h6 span.light{
     padding: 12px;
 }
 
-.storeopen_01,
-.storeopen_02{
+.rpt_inner{
     display: none;
 }
 
-.percent_ul.wide4{
+.rpt_inner.on{
+    display: block;
+}
+
+.percent_ul.wide4,
+.percent_ul.wide3{
     display: flex;
     gap:0;
     box-shadow: 0px 2px 5px rgb(38 51 77 / 8%);
@@ -6237,7 +6294,8 @@ h6 span.light{
     border-radius: 8px;
 }
 
-.percent_ul.wide4 > li{
+.percent_ul.wide4 > li,
+.percent_ul.wide3 > li{
     width: calc(25% - 36px);
     gap:12px;
     padding: 28px 20px;
@@ -6245,11 +6303,17 @@ h6 span.light{
     box-shadow: none;
 }
 
-.percent_ul.wide4>li::after{
+.percent_ul.wide3 > li{
+    width: calc(33.3% - 24px);
+}
+
+.percent_ul.wide4>li::after,
+.percent_ul.wide3>li::after{
     width: 1px;
     background-color:#eee;
 }
-.percent_ul.wide4>li:nth-child(1):after{
+.percent_ul.wide4>li:nth-child(1):after,
+.percent_ul.wide3>li:nth-child(1):after{
     display: none;
 }
 
@@ -6277,11 +6341,135 @@ h6 span.light{
     border-top: 0;
 }
 
-.desc_ul > li.w50 .desc_about p{
+.desc_ul > li.w50 .desc_about p,
+.desc_ul > li.w100 .desc_about p{
     font-weight: 500;
-    line-height: 180%;
+    line-height: 160%;
 }
 
+.standout2{
+    color: var(--pri2);
+    font-weight: 700;
+}
+.standout3{
+    color: #c69801;
+    font-weight: 700;
+}
+
+.standout4{
+    color:var(--sec1);
+    font-weight: 700;
+}
+.standout5{
+    color:#00696e;
+    font-weight: 700;
+}
+
+span.up_p{
+    color:var(--pri1);
+    background-color: var(--pri4);
+    border-radius: 999px;
+    font-size: 12px;
+    padding: 2px 4px;
+}
+
+span.down_p{
+    color:var(--sec1);
+    background-color: var(--sec7);
+    border-radius: 999px;
+    font-size: 12px;
+    padding: 2px 4px;
+}
+
+.table_box.hastwo_table{
+    gap: 12px;
+}
+
+span.light{
+    font-weight: 300;
+}
+
+.x-scroll{
+    overflow-x: auto;
+}
+
+.x-scroll::-webkit-scrollbar-thumb{
+    background-color: #525b6e33;
+}
+.x-scroll::-webkit-scrollbar-track{
+    background-color: rgb(226 226 226 / 30%);
+}
+
+.x-scroll::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+}
+
+.table_pd th,
+.table_pd td{
+    padding:8px !important;
+}
+
+.table_box table.long td, .table_box table.long th{
+    font-size: 12px;
+}
+
+.color_dot::before{
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background-color:#c2e371;
+    display: inline-block;
+    position: absolute;
+    left: 12px;
+    top:calc(50% - 4px);
+}
+
+.color_dot.dot1::before{
+    background-color:#c2e371;
+}
+
+.color_dot.dot2::before{
+    background-color:#69b4bd;
+}
+
+.color_dot.dot3::before{
+    background-color:#f09c89;
+}
+
+.color_dot.dot4::before{
+    background-color:#887eab;
+}
+
+.table_pd th.color_dot, .table_pd td.color_dot,.color_dot{
+    padding-left: 28px !important;
+    position: relative;
+    text-align: left;
+}
+
+.nothere{
+    background-color: rgba(255, 255, 255, 0.651);
+}
+
+.nothere_txt{
+    text-align: center;
+    line-height: 160%;
+    font-size: 14px;
+    color: var(--mono3);
+    font-weight: 600;
+}
+.mark{
+    border-radius: 999px;
+    margin: 0 auto;
+    background-color: #dddddd5e;
+    display: flex;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
 /*******************
 상세보고서 추가
 css 끝
