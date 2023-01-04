@@ -5746,7 +5746,7 @@ css 시작
     box-sizing: border-box;
     border: 1px solid var(--mono7);
     background-color:#F7F8FA;
-    border-radius: 8px;
+    border-radius: 12px;
     border: 1px solid #eeeeeea1;
 }
 .rpt_l_top{
@@ -5846,6 +5846,11 @@ css 시작
 .rpt_navi li.on .ico_loca_line_g::before,
 .rpt_navi li .ico_loca_line_g:hover::before{
     background: url(../images/icons/ico_loca_line_sec.svg) 50% 50%/cover;
+}
+
+.rpt_navi li.on .ico_gift_line_g::before,
+.rpt_navi li .ico_gift_g:hover::before{
+    background: url(../images/icons/ico_gift_line_sec.svg) 50% 50%/cover;
 }
 
 .rpt_r_top.flx{
@@ -6124,6 +6129,9 @@ button.print{
 }
 .store_06 .rpt_r_mid .rpt_hd_tt::before{
     background:#ffffff85 url(../images/icons/ico_loca_line_sec.svg) 50% 50%/20px no-repeat;   
+}
+.store_07 .rpt_r_mid .rpt_hd_tt::before{
+    background:#ffffff85 url(../images/icons/ico_gift_line_sec.svg) 50% 50%/20px no-repeat;   
 }
 
 
@@ -6416,7 +6424,7 @@ h6 span.light{
 .box_p{
     padding: 12px;
     padding-left: 48px;
-    background-color: #ffffff4f;
+    background-color: #ffffff9e;
     border: 1px solid #eee;
     border-radius: 8px;
     position: relative;
@@ -6489,6 +6497,7 @@ span.light{
 
 .x-scroll{
     overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .x-scroll::-webkit-scrollbar-thumb{
@@ -6560,6 +6569,24 @@ span.light{
     background-color:#f1cc6d;
 }
 
+.color_dot.dot10::before{
+    border: 2px solid #ff8b61;
+    background-color:#fff;
+    box-sizing: border-box;
+}
+
+.color_dot.dot11::before{
+    background-color:#905f43;
+}
+
+.color_dot.dot12::before{
+    background-color:#5f7ecd;
+}
+
+.color_dot.dot13::before{
+    background-color:#ff8b61;
+}
+
 .table_pd th.color_dot, .table_pd td.color_dot,.color_dot{
     padding-left: 28px !important;
     position: relative;
@@ -6603,6 +6630,10 @@ br.br720{
 
 .table_box{
     width: 100%;
+}
+
+.no-bor{
+    border: none;
 }
 
 /* rpt 보고서 미디어쿼리*/
@@ -6732,26 +6763,32 @@ br.br720{
 @media all and (max-width: 720px){
 
     .rpt_navi li > a{
-        font-size: 0;
+        font-size: 10px;
         transition: 0;
         padding: 0;
+        text-align: center;
+        word-break: keep-all;
+        line-height: 120%;
+        margin-bottom: 12px;
     }
     .rpt_navi li > a::before,
     .rpt_navi li.on > a::before{
+        display: block !important;
         width: 40px;
         height:40px;
         background-size: 24px !important;
         background-repeat:no-repeat !important;
-        margin: 0 !important;
+        margin: 0 auto !important;
     }
     .rpt_navi li.on > a::after{
         display: none;
     }
     .rpt_pop .rpt_pop_left{
-        width: 48px;
+        width: 60px;
+        padding-right: 4px;
     }
     .rpt_pop .rpt_pop_right {
-        width: calc(100% - 48px );
+        width: calc(100% - 60px );
     }
     .rpt_l_top{
         padding: 0;
@@ -6760,7 +6797,8 @@ br.br720{
         background: url(../images/icons/ico_shop_full_c.svg) 50%/28px no-repeat;
         width: 40px;
         height: 40px;
-        margin-bottom: 20px;
+        margin: 10px auto 20px auto;
+        
     }
     .has_two_con .r_con.has_no_map{
         display: none ;
@@ -6775,6 +6813,12 @@ br.br720{
     .r_section_tt.flx{
         flex-direction: column;
         gap: 8px;
+    }
+    .r_con_tt > p{
+        font-size: 12px;
+    }
+    .r_con_tt > p> span.light{
+        display: none;
     }
 }
 @media all and (max-width: 640px){
