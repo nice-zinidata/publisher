@@ -6134,6 +6134,10 @@ button.print{
     background:#ffffff85 url(../images/icons/ico_gift_line_sec.svg) 50% 50%/20px no-repeat;   
 }
 
+.gift_01 .rpt_r_mid .rpt_hd_tt::before {
+    background: #ffffff85 url(../images/icons/ico_gift_line_sec.svg) 50% 50%/20px no-repeat;
+}
+
 
 .r_section_tt.flx{
     justify-content: space-between;
@@ -6640,6 +6644,10 @@ br.br720{
     text-align: right;
 }
 
+.tb_ht_302{
+    height: 302px;
+}
+
 /* rpt 보고서 미디어쿼리*/
 
 @media all and (max-width: 1320px){
@@ -6672,8 +6680,18 @@ br.br720{
         height:300px;
     }
 }
-@media all and (max-width: 1024px){
-
+@media all and (max-width: 1080px){
+    
+    .table_box table.all_border.full_table th{
+        font-size: 13px;
+    }
+    
+    .table_box table.full_table td, .table_box table.full_table th{
+        padding: 4px 2px;
+    }
+    .tb_ht_302{
+        height: inherit;
+    }
 }
 @media all and (max-width: 960px){
     .rpt_r_top .rpt_hd_tt {
@@ -6721,12 +6739,17 @@ br.br720{
         display: flex;
         gap: 12px;
     }
+    .has_two_con .r_con.has_table_box{
+        width: 100%;
+    }
     .has_two_con .r_con.has_no_map .echart_box{
         width: calc(50% - 12px);
     }
     .echart_box.has_border{
         margin-bottom: 0;
     }
+
+    
 }
 
 @media all and (max-width: 820px){
@@ -6879,11 +6902,80 @@ css 끝
 css 시작
 *******************/
 
-.pop6.alrt_pop .alrt_bdy{
-    top:73px;
+.gift_pop.rpt_pop .rpt_pop_left{
+    width: 60px;
+}
+
+.gift_pop.rpt_pop .rpt_pop_right{
+    width: calc(100% - 60px );
+}
+
+.gift_pop.rpt_pop .rpt_l_tt::before{
+    background: url(../images/icons/ico_shop_full_c.svg) 50%/28px no-repeat;
+    width: 40px;
+    height: 40px;
+    margin: 10px auto 20px auto;
+}
+
+.gift_pop .rpt_l_top {
+    padding: 0;
 }
 
 /*******************
-오늘드림 팝업 추가
-css 시작
+마이페이지
 *******************/
+
+.mt8{
+    margin-top: 8px;
+}
+.mypage_layout .main_section.full_sec {
+    width: calc(100% - 292px);
+    margin-left: 292px;
+    overflow: hidden;
+    height: unset;
+}
+.mypage_layout .main_section.full_sec .sec_wrap{
+    padding: 40px;
+}
+
+body.mypage_layout{
+    overflow-x: auto;
+    overflow-y: overlay;
+    background: var(--mono7);
+}
+
+.mypage_layout .main_section_wrap{
+    height: unset;
+}
+
+.mypage_layout .main_wrap{
+    height: unset;
+}
+
+.mypage_layout .main_section.lft_sec{
+    width: 292px;
+    position: fixed;
+}
+
+.mypage_layout .main_section.lft_sec .sec_wrap{
+    padding-top: 40px;
+}
+
+.title_full_sec{
+font-size: 24px;
+font-weight: 700;
+}
+
+.title_full_sec::before{
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    margin-bottom: -4px;
+    background: url(../images/icons/ico_user_full_c.svg) 50% 50%/cover;
+}
+
+.mypage_layout .tt_txt{
+    font-size: 18px;
+}
