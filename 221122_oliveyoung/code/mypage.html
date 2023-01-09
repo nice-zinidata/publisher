@@ -81,34 +81,85 @@
                                 </div>
                             </div>
                             <div class="button_box_area user_box_area">
-                                <div class="button_box full mb12">
-                                    <button class="btn1 ico14 ico_user_line_wh h40">마이페이지</button>
+                                <div class="select_main_box sub list_select mb12">
+                                    <a class="select_main goto_interest">관심영역 바로가기</a>
+                                    <div class="select_main_show sub_show sub_show_1">
+                                        <div class="show_header">
+                                            <h5>관심영역 리스트</h5>
+                                        </div>
+                                        <div class="show_body">
+                                            <div class="in_box list_box">
+                                                
+                                                <ul class="shop_list">
+                                                    <li>
+                                                        <a class="list_a" href="#">
+                                                            <p>신촌대로점</p>
+                                                            <p>서울특별시 서대문구 신촌로 121 1층</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="list_a" href="#">
+                                                            <p>신촌역점</p>
+                                                            <p>서울특별시 서대문구 신촌로 79</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="list_a" href="#">
+                                                            <p>올리브영 신촌 타운</p>
+                                                            <p>서울특별시 서대문구 신촌로 79</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="list_a" href="#">
+                                                            <p>신촌대로점</p>
+                                                            <p>서울특별시 서대문구 신촌로 121 1층</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="list_a" href="#">
+                                                            <p>신촌대로점</p>
+                                                            <p>서울특별시 서대문구 신촌로 121 1층</p>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="button_box full_two">
-                                    <button class="btn3 h30 flx aboutmy">
-                                        <p class="ico14 ico_document_line_b"><span class="reference">보관된보고서</span></p>
-                                        <p><strong>4</strong></p>
-                                    </button>
-                                    <button class="btn3 h30 flx aboutmy">
-                                        <p class="ico14 ico_heart_line_g"><span class="reference">관심영역</span></p>
-                                        <p><strong>4</strong></p>
-                                    </button>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
-                    <div class="box_div">
+                    <div class="box_div mb12">
                         <div class="box_div_header">
                             <button class="quick_btn">
                                 <p>상권분석</p>
                                 <div class="ico20 ico_arrow_line_b"></div>
                             </button>
                         </div>
-                        <div class="box_div_inner">
-                            <div class="box_div_body">
-                            </div>
+                        <div class="mini_quick_link_box" >
+                            
+                                <ul class="mini_quick_link cb">
+                                    <li class="fl"><a href="#" class=" ico20 ico_chart_full_c">매출</a></li>
+                                    <li class="fl"><a href="#" class=" ico20 ico_customer_full_c">고객</a></li>
+                                    <li class="fl"><a href="#" class=" ico20 ico_finance_full_c">금융</a></li>
+                                    <li class="fl"><a href="#" class=" ico20 ico_map_full_c">지역</a></li>
+                                    <li class="fl "><a href="#"class=" ico20 ico_gift_full_c">오늘드림</a></li>
+                                </ul>
+                            
                         </div>
 
+                    </div>
+                    <div class="box_div mb12">
+                        <div class="box_div_header">
+                            <button class="quick_btn">
+                                <p>상권통계</p>
+                                <div class="ico20 ico_arrow_line_b"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="button_box flx link_howto">
+                        <button class="ico16 ico_ask_line_g" href="#">도움말</button>
                     </div>
                 </div>
             </div>
@@ -123,15 +174,146 @@
                             <div class="box_div">
                                 <div class="box_div_inner">
                                     <div class="box_div_body">
-                                        <div class="box_div_title_m mb4">
-                                            <p class="tt_txt">오늘드림 점유율 상위 10개지역</p>
-                                            
+                                        <div class="mypage_head_box cb mb20">
+                                            <div class="mp_hd_left fl">
+                                                <div class="box_div_title_m mb4">
+                                                    <p class="tt_txt">저장된 보고서 목록</p>
+                                                </div>
+                                                <p class="reference">* 상권분석을 통해 열람한 상세보고서는 3개월동안 저장됩니다.</p>
+                                            </div>
+                                            <div class="mp_hd_right fr">
+                                                <div class="bbs_search">
+                                                    <div class="flx">
+                                                        <div class="search_form_box">
+                                                            <input name="search_word" type="text" id="searchText"
+                                                                value="" title="검색어를 입력하세요" placeholder="검색어를 입력하세요">
+                                                            <button type="button" name="btn_search" id="btnSearch"
+                                                                class="bbs_search_btn" title="검색하기"
+                                                                onclick="list();">검색</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <p class="reference">* 상권분석을 통해 열람한 상세보고서는 3개월동안 저장됩니다.</p>
-                                        <div class="echart_box">
-                                                <div id="main_chart4" class="chart"></div>
+                                        <div class="board_table_box">
+                                            <table class="board_tb mb20">
+                                                <colgroup>
+                                                    <col width="28px">
+                                                    <col width="140px">
+                                                    <col width="110px">
+                                                    <col width="auto">
+                                                    <col width="5%">
+                                                    <col width="120px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th>이용일시</th>
+                                                        <th>보고서종류</th>
+                                                        <th>분석지역<span class="gr light">/</span>상권</th>
+                                                        <th>남은보관일</th>
+                                                        <th>보고서보기</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="tbodyList" class="tbody_list">
+                                                    <tr>
+                                                        <td>
+                                                            <label class="container">
+                                                                <input type="checkbox" >
+                                                                <span class="checkmark"></span>
+                                                            </label>
+                                                        </td>
+                                                        <td><span class="gr">2022-12-22 14:51</span></td>
+                                                        <td class="txtleft"><span class="rp_cate rp_ct_01">매장</span>
+                                                        </td>
+                                                        <td class="txtleft">
+                                                            <ul class="bd_rp_name">
+                                                                <li>올리브영 신촌점</li>
+                                                                <li>서울특별시 서대문구 신촌동</li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>90</td>
+                                                        <td>
+                                                            <button type="button" class="btn6 view_scr">화면보기</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <label class="container">
+                                                                <input type="checkbox" >
+                                                                <span class="checkmark"></span>
+                                                            </label>
+                                                        </td>
+                                                        <td><span class="gr">2022-12-22 14:51</span></td>
+                                                        <td class="txtleft"><span class="rp_cate rp_ct_02">출점후보지</span>
+                                                        </td>
+                                                        <td class="txtleft">
+                                                            <ul class="bd_rp_name">
+                                                                <li>신촌로 127</li>
+                                                                <li>서울특별시 서대문구 신촌로 127</li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>90</td>
+                                                        <td>
+                                                            <button type="button" class="btn6 view_scr">화면보기</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <label class="container">
+                                                                <input type="checkbox" >
+                                                                <span class="checkmark"></span>
+                                                            </label>
+                                                        </td>
+                                                        <td><span class="gr">2022-12-22 14:51</span></td>
+                                                        <td class="txtleft"><span class="rp_cate rp_ct_03">상권</span>
+                                                        </td>
+                                                        <td class="txtleft">
+                                                            <ul class="bd_rp_name">
+                                                                <li>신촌로 127 반경 500m</li>
+                                                                <li>서울특별시 서대문구 신촌로 127</li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>90</td>
+                                                        <td>
+                                                            <button type="button" class="btn6 view_scr">화면보기</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="board_pg_navi cb">
+                                                <div class="dataTables_paginate paging_full_numbers" id="paginate_auth">
+                                                    <ul class="pagination borderless handlebarsPaging justify-content-center flx">
+                                                        <li class="paginate_button first disabled" aria-controls="list_info" tabindex="0" id="list_info_first" data-index="1">
+                                                            <a href="javascript:;">
+                                                                <i class="fas fa-angle-double-left"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li class="paginate_button previous disabled" aria-controls="list_info" tabindex="0" id="list_info_previous">
+                                                            <a href="javascript:;">Prev
+                                                            </a>
+                                                        </li>
+                                                        <li class="paginate_button num active" aria-controls="list_info" tabindex="0" data-index="1">
+                                                            <a href="javascript://">1</a>
+                                                        </li>
+                                                        <li class="paginate_button next disabled" aria-controls="list_info" tabindex="0" id="list_info_next">
+                                                            <a href="javascript:;"> Next </a>
+                                                        </li>
+                                                        <li class="paginate_button last disabled" aria-controls="list_info" tabindex="0" id="list_info_last" data-index="1">
+                                                            <a href="javascirpt:;">
+                                                                <i class="fas fa-angle-double-right"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="button_box fr">
+                                                    <button class="btn2">삭제</button>
+                                                    <button class="btn1">기간연장</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -804,7 +986,8 @@
         //main3
 
         //main_chart4
-        var chart2_label_array = '경기\n시흥시\n정왕4동, 경기\n시흥시\n정왕본동, 서울\n용산구\n이태원1동, 경기\n광명시\n일직동, 경기\n안산시\n원곡동, 경기\n시흥시\n정왕3동, 대구\n달성군\n유가읍, 경기\n안산시\n백운동, 경기\n고양시\n흥도동, 서울\n강동구\n상일1동';
+        var chart2_label_array =
+            '경기\n시흥시\n정왕4동, 경기\n시흥시\n정왕본동, 서울\n용산구\n이태원1동, 경기\n광명시\n일직동, 경기\n안산시\n원곡동, 경기\n시흥시\n정왕3동, 대구\n달성군\n유가읍, 경기\n안산시\n백운동, 경기\n고양시\n흥도동, 서울\n강동구\n상일1동';
         chart2_label_array = chart2_label_array.split(',');
         var main_chart4 = echarts.init(document.getElementById('main_chart4'));
         option = {
@@ -859,7 +1042,7 @@
                     textStyle: {
                         color: '#666F7E',
                         fontSize: 12,
-                        fontWeight:500,
+                        fontWeight: 500,
                         lineHeight: 16,
                     },
 
@@ -882,7 +1065,7 @@
             series: [{
                     name: '오늘드림',
                     type: 'bar',
-                    data: [10, 20,24,22,12,34,32,30,28,16],
+                    data: [10, 20, 24, 22, 12, 34, 32, 30, 28, 16],
                     //barWidth: '30%',
                     itemStyle: {
                         color: '#F9A629',
