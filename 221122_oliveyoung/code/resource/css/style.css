@@ -5812,7 +5812,7 @@ css 끝
 /*******************
 상세보고서 추가
 css 시작
-20221222
+20230110
 *******************/
 
 :root {
@@ -7132,6 +7132,10 @@ font-weight: 700;
     color: var(--mono3);
 }
 
+.mini_quick_link > li > a::before{
+	display:block;
+}
+
 .mini_quick_link > li:hover > a{
  color: var(--pri2);
 }
@@ -7529,5 +7533,5 @@ font-weight: 700;
 /*******************
 상세보고서 추가
 css 끝
-20221222
+20230110
 *******************/
