@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <!-- min js -->
+    <script src="resource/js/jquery.min.js"></script>
+    <!-- 분석화면 js -->
+    <script src="resource/js/analysis.js"></script>
+
+    <!-- font css-->
+    <link rel="stylesheet" type="text/css" href="resource/css/pretendard.css">
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="resource/css/style.css">
+
+
+    <!-- echart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+    <script>
+
+    </script>
+    <title>올리브영 상권분석</title>
+</head>
+
+<body>
+    <!--alrt_pop-->
+    <div class="alrt_pop pop1 help_alrt show">
+        <div class="wrap">
+            <div class="alrt_hd mb20">
+                <div class="hd_wrap">
+                    <h4>도움말</h4>
+                    <div class="close_alert">
+                        <a class="ico32 ico_close_line_g" href="#"></a>
+                    </div>
+                </div>
+                <ul class="pc_body_ul" id="height_help_ul">
+                    <li class="on"><a href="#">데이터출처 및 업데이트</a></li>
+                    <li><a href="#">유형설명</a></li>
+                    <li><a href="#">유형별특징</a></li>
+                    <li><a href="#">우수매장</a></li>
+                    <li><a href="#">상권보고서</a></li>
+                    <li><a href="#">매장보고서</a></li>
+                    <li><a href="#">출점후보지보고서</a></li>
+                </ul>
+            </div>
+            <div class="alrt_bdy help_bdy1 on">
+                <div class="pop_section mb40 pop_sec1">
+                    <h5 class="mb12">데이터 출처 및 업데이트 주기</h5>
+                    <div class="table_box mb12 x-scroll">
+                        <table class="all_border">
+                            <tbody>
+                                <tr>
+                                    <th width="20%">데이터 명</th>
+                                    <th width="20%">데이터 출처</th>
+                                    <th width="20%">데이터 내용</th>
+                                    <th width="20%">업데이트 주기</th>
+                                    <th width="20%">데이터 기준</th>
+                                </tr>
+                                <tr>
+                                    <th colspan="5" class="text-left" style="background: #f7f8fa;">
+                                        <li><strong>올리브영 DATA</strong></li>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>매출/매장이익/LFL 등<br />기본 매출정보</th>
+                                    <td>올리브영</td>
+                                    <td>전체 매장 월별 취급고/일별 매출/매장이익/LFL 집계자료</td>
+                                    <td>월</td>
+                                    <td>2022.11<br />
+                                        <span class="reference">*매월 20~25일 전월 DATA 업데이트 기준</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>카테고리 매출</th>
+                                    <td>올리브영</td>
+                                    <td>대/중/소분류 카테고리 매출</td>
+                                    <td>월</td>
+                                    <td>2022.11<br />
+                                        <span class="reference">*매월 20~25일 전월 DATA 업데이트 기준</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>고객특성</th>
+                                    <td>올리브영<br />
+                                        <span class="reference">*OY회원 데이터</span>
+                                    </td>
+
+                                    <td>매장별 성/연령, 요일, 시간별 비중</td>
+                                    <td>월</td>
+                                    <td>2022.11<br />
+                                        <span class="reference">*매월 20~25일 전월 DATA 업데이트 기준</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>회원중복률</th>
+                                    <td>올리브영</td>
+                                    <td>매장간 회원중복 비중</td>
+                                    <td>반기</td>
+                                    <td>2022.11<br />
+                                        <span class="reference">*6개월 DATA</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>매장정보</th>
+                                    <td>올리브영</td>
+                                    <td>매장 명, 위치, 면적, 매장타입, BAY수, 전면길이, 오픈/리뉴얼 일</td>
+                                    <td>월</td>
+                                    <td>2022.11</td>
+                                </tr>
+                                <tr>
+                                    <th>비용정보</th>
+                                    <td>올리브영</td>
+                                    <td>보증금/월세, 전세환산가, 인건비, 투자비</td>
+                                    <td>월</td>
+                                    <td>2022.11</td>
+                                </tr>
+                                <tr>
+                                    <th>온라인 이용정보</th>
+                                    <td>올리브영</td>
+                                    <td>올리브영 온라인 세부 지역단위 품목 DATA</td>
+                                    <td>월</td>
+                                    <td>2022.11</td>
+                                </tr>
+                                <tr>
+                                    <th colspan="5" class="text-left" style="background: #f7f8fa;">
+                                        <li><strong>유관업종 기본 DATA</strong></li>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>유관업종점 위치정보</th>
+                                    <td>나이스지니데이타</td>
+                                    <td>유관업종점 매장 명, 위치정보</td>
+                                    <td>분기</td>
+                                    <td>2022.11</td>
+                                </tr>
+                                <tr>
+                                    <th>유관업종 매출정보</th>
+                                    <td>카드사/나이스지니데이타</td>
+                                    <td>카드 결제건수 기반 매출 추정 DATA</td>
+                                    <td>월</td>
+                                    <td>2022.11</td>
+                                </tr>
+                                <tr>
+                                    <th>유관업종 고객정보</th>
+                                    <td>카드사/나이스지니데이타</td>
+                                    <td>지역별 성/연령, 요일, 시간별 비중, 사용자 거주/직장지, 유입거리</td>
+                                    <td>월</td>
+                                    <td>2022.11</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        ※ 유관업종점 위치정보 대상 브랜드<br>H&amp;B : 시코르, 랄라블라, 부츠, 롭스<br>
+                                        원브랜드샵 : 러쉬, 아리따움, 이니스프리, 더페이스샵, 에뛰드하우스, 토니모리, 미샤, 네이처리퍼블릭, 더샘, 잇츠스킨, 바닐라코
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th colspan="5" class="text-left" style="background: #f7f8fa;">
+                                        <li><strong>모형/모델링 결과 DATA</strong></li>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>점주권</th>
+                                    <td>나이스지니데이타</td>
+                                    <td>1,128개 전국 주요상권 포함 전국 4,368개 상권영역</td>
+                                    <td>년</td>
+                                    <td>2022.11</td>
+                                </tr>
+                                <tr>
+                                    <th>유관업종</th>
+                                    <td>카드사/나이스지니데이타</td>
+                                    <td>유관업종매장 포함범위(*면적:점주권&gt;유관업종)</td>
+                                    <td>년</td>
+                                    <td>2022.11</td>
+                                </tr>
+                                <tr>
+                                    <th>상권유형</th>
+                                    <td>나이스지니데이타</td>
+                                    <td>상권규모, 토지유형, 업종구성 기준 15개 유형<br>(*유형설명 참조)</td>
+                                    <td>유형:반기<br>포함매장(지역):월</td>
+                                    <td>2022.11</td>
+                                </tr>
+                                <tr>
+                                    <th>고객유형</th>
+                                    <td>나이스지니데이타</td>
+                                    <td>고객 성/연령, 요일/시간 기준 21개 유형<br>(*유형설명 참조)</td>
+                                    <td>유형:반기<br>포함매장(지역):월</td>
+                                    <td>2022.11</td>
+                                </tr>
+                                <tr>
+                                    <th>매출예측(성장성)</th>
+                                    <td>나이스지니데이타</td>
+                                    <td>점주권 단위 전체업종/뷰티업종/매장별 향후 1년 매출예측(*추세모형)</td>
+                                    <td>월</td>
+                                    <td>2022.11</td>
+                                </tr>
+                                <tr>
+                                    <th>출점 예상매출</th>
+                                    <td>나이스지니데이타</td>
+                                    <td>블록별 출점 예상매출(*기존매장 매출-영향변수 관계 분석을 통한 회귀모형)</td>
+                                    <td>월</td>
+                                    <td>2022.11</td>
+                                </tr>
+                                <tr>
+                                    <th colspan="5" class="text-left" style="background: #f7f8fa;">
+                                        <li><strong>지역 DATA</strong></li>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>유동인구</th>
+                                    <td>나이스지니데이타</td>
+                                    <td>전국 760만개 지점별 성/연령, 요일/시간별 유동인구 수</td>
+                                    <td>반기</td>
+                                    <td>2022 상반기</td>
+                                </tr>
+                                <tr>
+                                    <th>주거인구</th>
+                                    <td>행정자치부 주민등록인구 통계 및 주거인구를 활용한 추정치</td>
+                                    <td>가구 수, 성/연령별 인구 수</td>
+                                    <td>반기</td>
+                                    <td>2022 상반기</td>
+                                </tr>
+                                <tr>
+                                    <th>직장인구</th>
+                                    <td>나이스지니데이타</td>
+                                    <td>지역별 성/연령별 직장인구 수, 직장통계</td>
+                                    <td>반기</td>
+                                    <td>2022 상반기</td>
+                                </tr>
+                                <tr>
+                                    <th>임대시세</th>
+                                    <td>나이스지니데이타(추정)</td>
+                                    <td>전국 소지역별 임대시세</td>
+                                    <td>갱신 시</td>
+                                    <td>2017 하반기</td>
+                                </tr>
+                                <tr>
+                                    <th>아파트, 시설정보</th>
+                                    <td>GIS 업체, 각급기관</td>
+                                    <td>공공, 금융, 의료, 교육, 문화, 아파트, 교통시설 위치, 명칭, 시세정보</td>
+                                    <td>반기</td>
+                                    <td>2018 상반기</td>
+                                </tr>
+                                <tr>
+                                    <th>소득/소비 등급</th>
+                                    <td>나이스지니데이타(추정)</td>
+                                    <td>전국 소지역별 추정소득/소비 등급</td>
+                                    <td>갱신 시</td>
+                                    <td>2018 하반기</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="alrt_bdy help_bdy2">
+                <div class="pop_section mb40 pop_sec1">
+                    <h5 class="mb12">상권유형</h5>
+                    <div class="table_box mb12 x-scroll">
+                        <table class="all_border">
+                            <tbody>
+                                <tr>
+                                    <th width="14%">상권규모</th>
+                                    <th width="12%">토지+업종구성</th>
+                                    <th width="46%">특징</th>
+                                    <th width="12%">올리브영<br />매장 수</th>
+                                    <th width="16%">매장 예시</th>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5" class="mint_light">1입지</td>
+                                    <td>상업형</td>
+                                    <td style="text-align: left;">상권규모 상위 0~1%, 상업지 입점업종 (주점,숙박,노래방,영화관 등)이 많은 지역</td>
+                                    <td>34</td>
+                                    <td>종로2가점,가로수길점</td>
+                                </tr>
+                                <tr>
+                                    <td>주거형</td>
+                                    <td style="text-align: left;">상권규모 상위 0~1%, 주거지 입점업종(학원,약국,세탁,식료품 등)이 많은 지역</td>
+                                    <td>19</td>
+                                    <td>한티역점,부천상동점</td>
+                                </tr>
+                                <tr>
+                                    <td>소매형</td>
+                                    <td style="text-align: left;">상권규모 상위 0~1%, 소매업종(의류,패션잡화,가전,가구 등)이 많은 지역</td>
+                                    <td>41</td>
+                                    <td>두타점,타임스퀘어신세계점</td>
+                                </tr>
+                                <tr>
+                                    <td>상업주거형</td>
+                                    <td style="text-align: left;">상권규모 상위 0~1%, 상업지 입점업종과 주거지 입점업종 비중이 5:5 비율로 나타나는 지역
+                                    </td>
+                                    <td>208</td>
+                                    <td>신천점,양재점</td>
+                                </tr>
+                                <tr>
+                                    <td>혼합형</td>
+                                    <td style="text-align: left;">상권규모 상위 0~1%, 상업+주거+소매형 업종이 4:3:3 비율로 나타나는 지역</td>
+                                    <td>75</td>
+                                    <td>서면1번가점,의정부중앙로점</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5" class="mint_light">2입지</td>
+                                    <td>상업형</td>
+                                    <td style="text-align: left;">상권규모 상위 1~3%, 상업지 입점업종(주점,숙박,노래방,영화관 등)이 많은 지역</td>
+                                    <td>18</td>
+                                    <td>중랑점,순천향입구점</td>
+                                </tr>
+                                <tr>
+                                    <td>주거형</td>
+                                    <td style="text-align: left;">상권규모 상위 1~3%, 주거지 입점업종(학원,약국,세탁,식료품 등)이 많은 지역</td>
+                                    <td>14</td>
+                                    <td>둔촌점,수성구청역점</td>
+                                </tr>
+                                <tr>
+                                    <td>소매형</td>
+                                    <td style="text-align: left;">상권규모 상위 1~3%, 소매업종(의류,패션잡화,가전,가구 등)이 많은 지역</td>
+                                    <td>7</td>
+                                    <td>잠실점,장지역점</td>
+                                </tr>
+                                <tr>
+                                    <td>상업주거형</td>
+                                    <td style="text-align: left;">상권규모 상위 1~3%, 상업지 입점업종과 주거지 입점업종 비중이 5:5 비율로 나타나는 지역
+                                    </td>
+                                    <td>78</td>
+                                    <td>안암점,문래점</td>
+                                </tr>
+                                <tr>
+                                    <td>혼합형</td>
+                                    <td style="text-align: left;">상권규모 상위 1~3%, 상업+주거+소매형 업종이 4:3:3 비율로 나타나는 지역</td>
+                                    <td>33</td>
+                                    <td>이대점,미아점</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5" class="mint_light">3입지</td>
+                                    <td>상업형</td>
+                                    <td style="text-align: left;">상권규모 상위 3~5%, 상업지 입점업종(주점,숙박,노래방,영화관 등)이 많은 지역</td>
+                                    <td>15</td>
+                                    <td>대구수성못점,평택신장점</td>
+                                </tr>
+                                <tr>
+                                    <td>주거형</td>
+                                    <td style="text-align: left;">상권규모 상위 3~5%, 주거지 입점업종(학원,약국,세탁,식료품 등)이 많은 지역</td>
+                                    <td>39</td>
+                                    <td>수원천천점,구리수택점</td>
+                                </tr>
+                                <tr>
+                                    <td>소매형</td>
+                                    <td style="text-align: left;">상권규모 상위 3~5%, 소매업종(의류,패션잡화,가전,가구 등)이 많은 지역</td>
+                                    <td>9</td>
+                                    <td>롯데마트잠실점,창원성원점</td>
+                                </tr>
+                                <tr>
+                                    <td>상업주거형</td>
+                                    <td style="text-align: left;">상권규모 상위 3~5%, 상업지 입점업종과 주거지 입점업종 비중이 5:5 비율로 나타나는 지역
+                                    </td>
+                                    <td>171</td>
+                                    <td>중앙대점,길음점</td>
+                                </tr>
+                                <tr>
+                                    <td>혼합형</td>
+                                    <td style="text-align: left;">상권규모 상위 3~5%, 상업+주거+소매형 업종이 4:3:3 비율로 나타나는 지역</td>
+                                    <td>62</td>
+                                    <td>제주이도점,고덕점</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5" class="mint_light">4입지</td>
+                                    <td>상업형</td>
+                                    <td style="text-align: left;">상권규모 상위 5~7%, 상업지 입점업종(주점,숙박,노래방,영화관 등)이 많은 지역</td>
+                                    <td>13</td>
+                                    <td>동대구터미널점,창원역점</td>
+                                </tr>
+                                <tr>
+                                    <td>주거형</td>
+                                    <td style="text-align: left;">상권규모 상위 5~7%, 주거지 입점업종(학원,약국,세탁,식료품 등)이 많은 지역</td>
+                                    <td>34</td>
+                                    <td>일산풍동점,용인구성점</td>
+                                </tr>
+                                <tr>
+                                    <td>소매형</td>
+                                    <td style="text-align: left;">상권규모 상위 5~7%, 소매업종(의류,패션잡화,가전,가구 등)이 많은 지역</td>
+                                    <td>4</td>
+                                    <td>목포역점</td>
+                                </tr>
+                                <tr>
+                                    <td>상업주거형</td>
+                                    <td style="text-align: left;">상권규모 상위 5~7%, 상업지 입점업종과 주거지 입점업종 비중이 5:5 비율로 나타나는 지역
+                                    </td>
+                                    <td>106</td>
+                                    <td>강원대점,외대정문점</td>
+                                </tr>
+                                <tr>
+                                    <td>혼합형</td>
+                                    <td style="text-align: left;">상권규모 상위 5~7%, 상업+주거+소매형 업종이 4:3:3 비율로 나타나는 지역</td>
+                                    <td>48</td>
+                                    <td>파주교하점,김포운양점</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5" class="mint_light">5입지</td>
+                                    <td>상업형</td>
+                                    <td style="text-align: left;">상권규모 상위 7~10%, 상업지 입점업종(주점,숙박,노래방,영화관 등)이 많은 지역</td>
+                                    <td>-</td>
+                                    <td>제주함덕점</td>
+                                </tr>
+                                <tr>
+                                    <td>주거형</td>
+                                    <td style="text-align: left;">상권규모 상위 7~10%, 주거지 입점업종(학원,약국,세탁,식료품 등)이 많은 지역</td>
+                                    <td>20</td>
+                                    <td>파주교하점,김포운양점</td>
+                                </tr>
+                                <tr>
+                                    <td>소매형</td>
+                                    <td style="text-align: left;">상권규모 상위 7~10%, 소매업종(의류,패션잡화,가전,가구 등)이 많은 지역</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>상업주거형</td>
+                                    <td style="text-align: left;">상권규모 상위 7~10%, 상업지 입점업종과 주거지 입점업종 비중이 5:5 비율로 나타나는 지역
+                                    </td>
+                                    <td>35</td>
+                                    <td>대구구암점,서울시립대점</td>
+                                </tr>
+                                <tr>
+                                    <td>혼합형</td>
+                                    <td style="text-align: left;">상권규모 상위 7~10%, 상업+주거+소매형 업종이 4:3:3 비율로 나타나는 지역</td>
+                                    <td>16</td>
+                                    <td>인천스퀘어원점,천안모다아울렛점</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5" class="mint_light">6입지</td>
+                                    <td>상업형</td>
+                                    <td style="text-align: left;">상권규모 상위 10~20%, 상업지 입점업종(주점,숙박,노래방,영화관 등)이 많은 지역</td>
+                                    <td>3</td>
+                                    <td>홈플러스광양점,여수해양공원점</td>
+                                </tr>
+                                <tr>
+                                    <td>주거형</td>
+                                    <td style="text-align: left;">상권규모 상위 10~20%, 주거지 입점업종(학원,약국,세탁,식료품 등)이 많은 지역</td>
+                                    <td>14</td>
+                                    <td>분당미금2호점,오산세교점</td>
+                                </tr>
+                                <tr>
+                                    <td>소매형</td>
+                                    <td style="text-align: left;">상권규모 상위 10~20%, 소매업종(의류,패션잡화,가전,가구 등)이 많은 지역</td>
+                                    <td>1</td>
+                                    <td>창원시티세븐점</td>
+                                </tr>
+                                <tr>
+                                    <td>상업주거형</td>
+                                    <td style="text-align: left;">상권규모 상위 10~20%, 상업지 입점업종과 주거지 입점업종 비중이 5:5 비율로 나타나는 지역
+                                    </td>
+                                    <td>23</td>
+                                    <td>수원대점,덕성여대점</td>
+                                </tr>
+                                <tr>
+                                    <td>혼합형</td>
+                                    <td style="text-align: left;">상권규모 상위 10~20%, 상업+주거+소매형 업종이 4:3:3 비율로 나타나는 지역</td>
+                                    <td>11</td>
+                                    <td>대구세천점,만리동점</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5" class="mint_light">7입지</td>
+                                    <td>상업형</td>
+                                    <td style="text-align: left;">상권규모 상위 20~30%, 상업지 입점업종(주점,숙박,노래방,영화관 등)이 많은 지역</td>
+                                    <td>-</td>
+                                    <td>경남고성점</td>
+                                </tr>
+                                <tr>
+                                    <td>주거형</td>
+                                    <td style="text-align: left;">상권규모 상위 20~30%, 주거지 입점업종(학원,약국,세탁,식료품 등)이 많은 지역</td>
+                                    <td>9</td>
+                                    <td>위례아이파크점,별내북부점</td>
+                                </tr>
+                                <tr>
+                                    <td>소매형</td>
+                                    <td style="text-align: left;">상권규모 상위 20~30%, 소매업종(의류,패션잡화,가전,가구 등)이 많은 지역</td>
+                                    <td>2</td>
+                                    <td>올림픽아파트점</td>
+                                </tr>
+                                <tr>
+                                    <td>상업주거형</td>
+                                    <td style="text-align: left;">상권규모 상위 20~30%, 상업지 입점업종과 주거지 입점업종 비중이 5:5 비율로 나타나는 지역
+                                    </td>
+                                    <td>13</td>
+                                    <td>원주혁신도시점,남양주마석점</td>
+                                </tr>
+                                <tr>
+                                    <td>혼합형</td>
+                                    <td style="text-align: left;">상권규모 상위 20~30%, 상업+주거+소매형 업종이 4:3:3 비율로 나타나는 지역</td>
+                                    <td>4</td>
+                                    <td>구파발역점,홈플러스세종점</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5" class="mint_light">8입지</td>
+                                    <td>상업형</td>
+                                    <td style="text-align: left;">상권규모 상위 30~50%, 상업지 입점업종(주점,숙박,노래방,영화관 등)이 많은 지역</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>주거형</td>
+                                    <td style="text-align: left;">상권규모 상위 30~50%, 주거지 입점업종(학원,약국,세탁,식료품 등)이 많은 지역</td>
+                                    <td>6</td>
+                                    <td>김천혁신도시점,고양원흥점</td>
+                                </tr>
+                                <tr>
+                                    <td>소매형</td>
+                                    <td style="text-align: left;">상권규모 상위 30~50%, 소매업종(의류,패션잡화,가전,가구 등)이 많은 지역</td>
+                                    <td>1</td>
+                                    <td>블라썸파크점,포천중앙점</td>
+                                </tr>
+                                <tr>
+                                    <td>상업주거형</td>
+                                    <td style="text-align: left;">상권규모 상위 30~50%, 상업지 입점업종과 주거지 입점업종 비중이 5:5 비율로 나타나는 지역
+                                    </td>
+                                    <td>2</td>
+                                    <td>여수웅천점</td>
+                                </tr>
+                                <tr>
+                                    <td>혼합형</td>
+                                    <td style="text-align: left;">상권규모 상위 30~50%, 상업+주거+소매형 업종이 4:3:3 비율로 나타나는 지역</td>
+                                    <td>4</td>
+                                    <td>양재하나로클럽점,광명아브뉴프랑점</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5" class="mint_light">9입지</td>
+                                    <td>상업형</td>
+                                    <td style="text-align: left;">상권규모 상위 50~70%, 상업지 입점업종(주점,숙박,노래방,영화관 등)이 많은 지역</td>
+                                    <td>-</td>
+                                    <td>제주국제공항점</td>
+                                </tr>
+                                <tr>
+                                    <td>주거형</td>
+                                    <td style="text-align: left;">상권규모 상위 50~70%, 주거지 입점업종(학원,약국,세탁,식료품 등)이 많은 지역</td>
+                                    <td>1</td>
+                                    <td>몰오브광양점,현대프리미엄아울렛김포점</td>
+                                </tr>
+                                <tr>
+                                    <td>소매형</td>
+                                    <td style="text-align: left;">상권규모 상위 50~70%, 소매업종(의류,패션잡화,가전,가구 등)이 많은 지역</td>
+                                    <td>1</td>
+                                    <td>제주중문점,홈플러스시화점</td>
+                                </tr>
+                                <tr>
+                                    <td>상업주거형</td>
+                                    <td style="text-align: left;">상권규모 상위 50~70%, 상업지 입점업종과 주거지 입점업종 비중이 5:5 비율로 나타나는 지역
+                                    </td>
+                                    <td>-</td>
+                                    <td>대구옥포점,홈플러스월드컵점</td>
+                                </tr>
+                                <tr>
+                                    <td>혼합형</td>
+                                    <td style="text-align: left;">상권규모 상위 50~70%, 상업+주거+소매형 업종이 4:3:3 비율로 나타나는 지역</td>
+                                    <td>2</td>
+                                    <td>서울타워점,김포공항점</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5" class="mint_light">10입지</td>
+                                    <td>상업형</td>
+                                    <td style="text-align: left;">상권규모 상위 70~100%, 상업지 입점업종(주점,숙박,노래방,영화관 등)이 많은 지역</td>
+                                    <td>-</td>
+                                    <td>홈플러스광양점,여수해양공원점</td>
+                                </tr>
+                                <tr>
+                                    <td>주거형</td>
+                                    <td style="text-align: left;">상권규모 상위 70~100%, 주거지 입점업종(학원,약국,세탁,식료품 등)이 많은 지역</td>
+                                    <td>-</td>
+                                    <td>AK기흥점</td>
+                                </tr>
+                                <tr>
+                                    <td>소매형</td>
+                                    <td style="text-align: left;">상권규모 상위 70~100%, 소매업종(의류,패션잡화,가전,가구 등)이 많은 지역</td>
+                                    <td>-</td>
+                                    <td>창원시티세븐점</td>
+                                </tr>
+                                <tr>
+                                    <td>상업주거형</td>
+                                    <td style="text-align: left;">상권규모 상위 70~100%, 상업지 입점업종과 주거지 입점업종 비중이 5:5 비율로 나타나는
+                                        지역</td>
+                                    <td>-</td>
+                                    <td>수원대점,덕성여대점</td>
+                                </tr>
+                                <tr>
+                                    <td>혼합형</td>
+                                    <td style="text-align: left;">상권규모 상위 70~100%, 상업+주거+소매형 업종이 4:3:3 비율로 나타나는 지역</td>
+                                    <td>1</td>
+                                    <td>블로썸캠퍼스진천점</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="pop_section mb40 pop_sec2">
+                    <h5 class="mb12">고객유형</h5>
+                    <div class="table_box mb12 x-scroll">
+                        <table class="all_border">
+                            <tbody>
+                                <tr>
+                                    <th width="20%">고객특성</th>
+                                    <th width="10%">주 이용 요일</th>
+                                    <th width="40%">특징</th>
+                                    <th width="15%">올리브영 매장 수</th>
+                                    <th width="15%">매장 예시</th>
+                                </tr>
+                                <tr>
+                                    <td class="mint_light" rowspan="2">10대 여성</td>
+                                    <td>평일(월~금)</td>
+                                    <td style="text-align: left;">평균고객 구성비 대비 10대 여성, 평일(월~금) 이용비중이 높은 지역</td>
+                                    <td>36</td>
+                                    <td>철산역점,대구상인점</td>
+                                </tr>
+                                <tr>
+
+                                    <td>주말(토~일)</td>
+                                    <td style="text-align: left;">평균고객 구성비 대비 10대 여성, 주말(토~일) 이용비중이 높은 지역</td>
+                                    <td>22</td>
+                                    <td>연신내점,광주첨단점</td>
+                                </tr>
+                                <tr>
+                                    <td class="mint_light" rowspan="4">20대초 여성</td>
+                                    <td>평일(월~목)</td>
+                                    <td style="text-align: left;">평균고객 구성비 대비 20대초반 여성, 평일(월~목) 이용비중이 높은 지역</td>
+                                    <td>91</td>
+                                    <td>이대점,안암점</td>
+                                </tr>
+                                <tr>
+
+                                    <td>금요일형</td>
+                                    <td style="text-align: left;">평균고객 구성비 대비 20대초반 여성, 금요일 이용비중이 높은 지역</td>
+                                    <td>8</td>
+                                    <td>한양대점,부산사상점</td>
+                                </tr>
+                                <tr>
+
+                                    <td>토요일형</td>
+                                    <td style="text-align: left;">평균고객 구성비 대비 20대초반 여성, 토요일 이용비중이 높은 지역</td>
+                                    <td>48</td>
+                                    <td>서면중앙점,수원중앙점</td>
+                                </tr>
+                                <tr>
+
+                                    <td>일요일형</td>
+                                    <td style="text-align: left;">평균고객 구성비 대비 20대초반 여성, 일요일 이용비중이 높은 지역</td>
+                                    <td>43</td>
+                                    <td>대학로점,연대점</td>
+                                </tr>
+                                <tr>
+                                    <td class="mint_light" rowspan="4">20대후 여성</td>
+                                    <td>평일(월~목)</td>
+                                    <td style="text-align: left;">평균고객 구성비 대비 20대후반 여성, 평일(월~목) 이용비중이 높은 지역</td>
+                                    <td>89</td>
+                                    <td>신사점,압구정점</td>
+                                </tr>
+                                <tr>
+
+                                    <td>금요일형</td>
+                                    <td style="text-align: left;">평균고객 구성비 대비 20대후반 여성, 금요일 이용비중이 높은 지역</td>
+                                    <td>27</td>
+                                    <td>종로2가점,산본점</td>
+                                </tr>
+                                <tr>
+
+                                    <td>토요일형</td>
+                                    <td style="text-align: left;">평균고객 구성비 대비 20대후반 여성, 토요일 이용비중이 높은 지역</td>
+                                    <td>52</td>
+                                    <td>역삼점,라페스타점</td>
+                                </tr>
+                                <tr>
+
+                                    <td>일요일형</td>
+                                    <td style="text-align: left;">평균고객 구성비 대비 20대후반 여성, 일요일 이용비중이 높은 지역</td>
+                                    <td>50</td>
+                                    <td>포도몰점,아이파크몰점</td>
+                                </tr>
+                                <tr>
+                                    <td class="mint_light" rowspan="4">30대초 여성</td>
+                                    <td>평일(월~목)</td>
+                                    <td style="text-align: left;">평균고객 구성비 대비 30대초반 여성, 평일(월~목) 이용비중이 높은 지역</td>
+                                    <td>66</td>
+                                    <td>선릉2호점,서여의도점</td>
+                                </tr>
+                                <tr>
+
+                                    <td>금요일형</td>
+                                    <td style="text-align: left;">평균고객 구성비 대비 30대초반 여성, 금요일 이용비중이 높은 지역</td>
+                                    <td>10</td>
+                                    <td>압구정로데오점,코엑스몰점</td>
+                                </tr>
+                                <tr>
+
+                                    <td>토요일형</td>
+                                    <td style="text-align: left;">평균고객 구성비 대비 30대초반 여성, 토요일 이용비중이 높은 지역</td>
+                                    <td>17</td>
+                                    <td>스타시티점,명동중앙점</td>
+                                </tr>
+                                <tr>
+
+                                    <td>일요일형</td>
+                                    <td style="text-align: left;">평균고객 구성비 대비 30대초반 여성, 일요일 이용비중이 높은 지역</td>
+                                    <td>10</td>
+                                    <td>파주금릉역점,인천청라점</td>
+                                </tr>
+                                <tr>
+                                    <td class="mint_light" rowspan="3">30대후 여성</td>
+                                    <td>평일(월~금)</td>
+                                    <td style="text-align: left;">평균고객 구성비 대비 30대후반 여성, 평일(월~금) 이용비중이 높은 지역</td>
+                                    <td>68</td>
+                                    <td>여의도역점,문래점</td>
+                                </tr>
+                                <tr>
+
+                                    <td>토요일형</td>
+                                    <td style="text-align: left;">평균고객 구성비 대비 30대후반 여성, 토요일 이용비중이 높은 지역</td>
+                                    <td>30</td>
+                                    <td>두타점,동탄점</td>
+                                </tr>
+                                <tr>
+
+                                    <td>일요일형</td>
+                                    <td style="text-align: left;">평균고객 구성비 대비 30대후반 여성, 일요일 이용비중이 높은 지역</td>
+                                    <td>31</td>
+                                    <td>군산수송점,씨지브이인천점</td>
+                                </tr>
+                                <tr>
+                                    <td class="mint_light" rowspan="2">40대이상 여성</td>
+                                    <td>평일(월~금)</td>
+                                    <td style="text-align: left;">평균고객 구성비 대비 40대이상 여성, 평일(월~금) 이용비중이 높은 지역</td>
+                                    <td>225</td>
+                                    <td>양재점,일산그랜드점</td>
+                                </tr>
+                                <tr>
+
+                                    <td>주말(토~일)</td>
+                                    <td style="text-align: left;">평균고객 구성비 대비 40대이상 여성, 주말(토~일) 이용비중이 높은 지역</td>
+                                    <td>102</td>
+                                    <td>한티역점,오목교점</td>
+                                </tr>
+                                <tr>
+                                    <td class="mint_light" rowspan="2">남성</td>
+                                    <td>평일(월~금)</td>
+                                    <td style="text-align: left;">평균고객 구성비 대비 남성, 평일(월~금) 이용비중이 높은 지역</td>
+                                    <td>94</td>
+                                    <td>종로YBM점,노량진삼거리점</td>
+                                </tr>
+                                <tr>
+
+                                    <td>주말(토~일)</td>
+                                    <td style="text-align: left;">평균고객 구성비 대비 남성, 주말(토~일) 이용비중이 높은 지역</td>
+                                    <td>78</td>
+                                    <td>서울타워점,종각점</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="reference font12">
+                        1) 10대이하, 40대이상, 남성 유형은 특수 유형으로써, 월~목/금/토/일 요일별 특성이 나뉘지 않으므로 평일/주말로 구분하였음
+                        <br />
+                        2) 20대초반~30대초반유형은 월~목/금/토/일 요일별 특성이 나뉘므로 4가지 요일특성으로 구분하였음
+                        <br />
+                        (※30대후반은 3가지 특성)
+                        <br />
+                        ※ 금요일 소비비중 높은 지역 : 직장가+대학가+상업지 혼합지역
+                        <br />
+                        ※ 토요일 소비비중 높은 지역 : 상업지 특성 강한 지역
+                        <br />
+                        ※ 일요일 소비비중 높은 지역 : 주거지+쇼핑목적 특성 강한 지역
+                        <br />
+                        3) 올리브영 매장은 회원데이터 기준, 올리브영 없는 블록은 뷰티업종의 카드사용 고객데이터 기준으로 고객유형 부여
+                    </p>
+                </div>
+            </div>
+            <div class="alrt_bdy help_bdy3">
+                <div class="pop_section mb40 pop_sec1">
+                    <h5 class="mb4">상권유형 특징</h5>
+                    <p class="reference mb12">상권유형은 상권의 규모와 특성을 규정하므로 매출, 비용(수익), 성장성 등과 관계되어 있음</p>
+                    <div class="table_box mb12 x-scroll">
+                        <table class="all_border">
+                            <tbody>
+                                <tr>
+                                    <th width="15%">구분</th>
+                                    <th width="15%" rowspan="2">입지</th>
+                                    <th width="14%" rowspan="2">1입지</th>
+                                    <th width="14%" rowspan="2">2입지</th>
+                                    <th width="14%" rowspan="2">3입지</th>
+                                    <th width="14%" rowspan="2">4입지</th>
+                                    <th width="14%" rowspan="2">5입지</th>
+                                </tr>
+                                <tr>
+                                    <th>업종-토지용도</th>
+                                </tr>
+                                <tr>
+                                    <th rowspan="4">상업형</th>
+                                    <td>18년 일평균매출</td>
+                                    <td>622만원</td>
+                                    <td>489만원</td>
+                                    <td>403만원</td>
+                                    <td>287만원</td>
+                                    <td>266만원</td>
+                                </tr>
+                                <tr>
+                                    <td>전세환산가</td>
+                                    <td>55억</td>
+                                    <td>33억</td>
+                                    <td>20억</td>
+                                    <td>14억</td>
+                                    <td>14억</td>
+                                </tr>
+                                <tr>
+                                    <td>18년 LFL</td>
+                                    <td>-5.7%</td>
+                                    <td>-4.5%</td>
+                                    <td>-3.5%</td>
+                                    <td>1.5%</td>
+                                    <td>-2.3%</td>
+                                </tr>
+                                <tr>
+                                    <td>포함 매장 수</td>
+                                    <td>85개</td>
+                                    <td>145개</td>
+                                    <td>103개</td>
+                                    <td>22개</td>
+                                    <td>154개</td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="4">소매형</th>
+                                    <td>18년 일평균매출</td>
+                                    <td>840만원</td>
+                                    <td>478만원</td>
+                                    <td rowspan="4" colspan="3">-</td>
+                                </tr>
+                                <tr>
+                                    <td>전세환산가</td>
+                                    <td>69억</td>
+                                    <td>31억</td>
+                                </tr>
+                                <tr>
+                                    <td>18년 LFL</td>
+                                    <td>-2.3%</td>
+                                    <td>-8.0%</td>
+                                </tr>
+                                <tr>
+                                    <td>포함 매장 수</td>
+                                    <td>24개</td>
+                                    <td>23개</td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="4">혼합형</th>
+                                    <td>18년 일평균매출</td>
+                                    <td>1172만원</td>
+                                    <td>543만원</td>
+                                    <td>387만원</td>
+                                    <td>335만원</td>
+                                    <td>248만원</td>
+                                </tr>
+                                <tr>
+                                    <td>전세환산가</td>
+                                    <td>105억</td>
+                                    <td>31억</td>
+                                    <td>22억</td>
+                                    <td>17억</td>
+                                    <td>14억</td>
+                                </tr>
+                                <tr>
+                                    <td>18년 LFL</td>
+                                    <td>-3.3%</td>
+                                    <td>-1.8%</td>
+                                    <td>-4.4%</td>
+                                    <td>-5.0%</td>
+                                    <td>-4.2%</td>
+                                </tr>
+                                <tr>
+                                    <td>포함 매장 수</td>
+                                    <td>26개</td>
+                                    <td>55개</td>
+                                    <td>51개</td>
+                                    <td>87개</td>
+                                    <td>81개</td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="4" style="text-align: center;">상업-주거</th>
+                                    <td>18년 일평균매출</td>
+                                    <td rowspan="4" colspan="3">-</td>
+                                    <td>316만원</td>
+                                    <td rowspan="4" colspan="3">-</td>
+                                </tr>
+                                <tr>
+                                    <td>전세환산가</td>
+                                    <td>17억</td>
+                                </tr>
+                                <tr>
+                                    <td>18년 LFL</td>
+                                    <td>-0.8%</td>
+                                </tr>
+                                <tr>
+                                    <td>포함 매장 수</td>
+                                    <td>203개</td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="4">주거형</th>
+                                    <td>18년 일평균매출</td>
+                                    <td rowspan="4" colspan="3">-</td>
+                                    <td>340만원</td>
+                                    <td>268만원</td>
+                                </tr>
+                                <tr>
+                                    <td>전세환산가</td>
+                                    <td>18억</td>
+                                    <td>16억</td>
+                                </tr>
+                                <tr>
+                                    <td>18년 LFL</td>
+                                    <td>0.5%</td>
+                                    <td>-1.0%</td>
+                                </tr>
+                                <tr>
+                                    <td>포함 매장 수</td>
+                                    <td>47개</td>
+                                    <td>75개</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="pop_section mb40 pop_sec2">
+                    <h5 class="mb4">고객유형 특징</h5>
+                    <p class="reference mb12">고객유형은 고객의 특성과 소비패턴을 규정하므로 구매력(단가, 품목), 소비시간 등과 관계되어 있음</p>
+                    <div class="table_box mb12 x-scroll">
+                        <table class="all_border">
+                            <tbody>
+                                <tr>
+                                    <th width="15%">구분</th>
+                                    <th width="15%" rowspan="2">연령대</th>
+                                    <th width="10%" rowspan="2">10대</th>
+                                    <th width="10%" rowspan="2">20대초 여성</th>
+                                    <th width="10%" rowspan="2">20대후 여성</th>
+                                    <th width="10%" rowspan="2">30대초 여성</th>
+                                    <th width="10%" rowspan="2">30대후 여성</th>
+                                    <th width="10%" rowspan="2">40대이상 여성</th>
+                                    <th width="10%" rowspan="2">남성</th>
+                                </tr>
+                                <tr>
+                                    <th>요일</th>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">평일형</th>
+                                    <td>1인당 추정소득(월)</td>
+                                    <td>309만원</td>
+                                    <td>301만원</td>
+                                    <td>301만원</td>
+                                    <td>346만원</td>
+                                    <td>327만원</td>
+                                    <td>367만원</td>
+                                    <td>329만원</td>
+                                </tr>
+                                <tr>
+                                    <td>점포 수</td>
+                                    <td>39개</td>
+                                    <td>121개</td>
+                                    <td>98개</td>
+                                    <td>124개</td>
+                                    <td>30개</td>
+                                    <td>71개</td>
+                                    <td>20개</td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">주말형</th>
+                                    <td>1인당 추정소득(월)</td>
+                                    <td>316만원</td>
+                                    <td rowspan="2" colspan="4">-</td>
+                                    <td>354만원</td>
+                                    <td>324만원</td>
+                                </tr>
+                                <tr>
+                                    <td>점포 수</td>
+                                    <td>55개</td>
+                                    <td>79개</td>
+                                    <td>22개</td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">금요일형</th>
+                                    <td>1인당 추정소득(월)</td>
+                                    <td rowspan="6">-</td>
+                                    <td>291만원</td>
+                                    <td>301만원</td>
+                                    <td>380만원</td>
+                                    <td rowspan="2">-</td>
+                                    <td rowspan="6" colspan="2">-</td>
+                                </tr>
+                                <tr>
+                                    <td>점포 수</td>
+                                    <td>19개</td>
+                                    <td>26개</td>
+                                    <td>20개</td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">토요일형</th>
+                                    <td>1인당 추정소득(월)</td>
+                                    <td>295만원</td>
+                                    <td>317만원</td>
+                                    <td>309만원</td>
+                                    <td>319만원</td>
+                                </tr>
+                                <tr>
+                                    <td>점포 수</td>
+                                    <td>96개</td>
+                                    <td>65개</td>
+                                    <td>20개</td>
+                                    <td>35개</td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">일요일형</th>
+                                    <td>1인당 추정소득(월)</td>
+                                    <td>298만원</td>
+                                    <td>306만원</td>
+                                    <td>333만원</td>
+                                    <td>340만원</td>
+                                </tr>
+                                <tr>
+                                    <td>점포 수</td>
+                                    <td>57개</td>
+                                    <td>58개</td>
+                                    <td>58개</td>
+                                    <td>68개</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table_box mb20 x-scroll">
+                        <table class="all_border">
+                            <tbody>
+                                <tr>
+                                    <th width="15%">구분</th>
+                                    <th width="15%" rowspan="2">연령대</th>
+                                    <th width="10%" rowspan="2">10대</th>
+                                    <th width="10%" rowspan="2">20대초 여성</th>
+                                    <th width="10%" rowspan="2">20대후 여성</th>
+                                    <th width="10%" rowspan="2">30대초 여성</th>
+                                    <th width="10%" rowspan="2">30대후 여성</th>
+                                    <th width="10%" rowspan="2">40대이상 여성</th>
+                                    <th width="10%" rowspan="2">남성</th>
+                                </tr>
+                                <tr>
+                                    <th>요일</th>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">평일형</th>
+                                    <td>집중시간대1</td>
+                                    <td>21~24시</td>
+                                    <td>21~24시</td>
+                                    <td>21~24시</td>
+                                    <td>15~18시</td>
+                                    <td>12~15시</td>
+                                    <td>15~18시</td>
+                                    <td>12~15시</td>
+                                </tr>
+                                <tr>
+                                    <td>집중시간대2</td>
+                                    <td>12~15시</td>
+                                    <td>12~15시</td>
+                                    <td>12~15시</td>
+                                    <td>12~15시</td>
+                                    <td>15~18시</td>
+                                    <td>12~15시</td>
+                                    <td>15~18시</td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">주말형</th>
+                                    <td>집중시간대1</td>
+                                    <td>21~24시</td>
+                                    <td rowspan="2" colspan="4">-</td>
+                                    <td>18~21시</td>
+                                    <td>18~21시</td>
+                                </tr>
+                                <tr>
+                                    <td>집중시간대2</td>
+                                    <td>18~21시</td>
+                                    <td>12~15시</td>
+                                    <td>15~18시</td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">금요일형</th>
+                                    <td>집중시간대1</td>
+                                    <td rowspan="6">-</td>
+                                    <td>21~24시</td>
+                                    <td>21~24시</td>
+                                    <td>15~18시</td>
+                                    <td rowspan="2">-</td>
+                                    <td rowspan="6" colspan="2">-</td>
+                                </tr>
+                                <tr>
+                                    <td>집중시간대2</td>
+                                    <td>18~21시</td>
+                                    <td>15~18시</td>
+                                    <td>12~15시</td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">토요일형</th>
+                                    <td>집중시간대1</td>
+                                    <td>21~24시</td>
+                                    <td>21~24시</td>
+                                    <td>18~21시</td>
+                                    <td>18~21시</td>
+                                </tr>
+                                <tr>
+                                    <td>집중시간대2</td>
+                                    <td>18~21시</td>
+                                    <td>18~21시</td>
+                                    <td>21~24시</td>
+                                    <td>15~18시</td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">일요일형</th>
+                                    <td>집중시간대1</td>
+                                    <td>21~24시</td>
+                                    <td>21~24시</td>
+                                    <td>21~24시</td>
+                                    <td>18~21시</td>
+                                </tr>
+                                <tr>
+                                    <td>집중시간대2</td>
+                                    <td>12~15시</td>
+                                    <td>18~21시</td>
+                                    <td>12~15시</td>
+                                    <td>12~15시</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="alrt_bdy help_bdy4">
+                <div class="pop_section mb40 pop_sec1">
+                    <h5 class="mb4">우수매장 개념</h5>
+                    <p class="reference mb12">분석대상 매장과 매장타입이 같고, 유사한 외부 상권환경, 고객구성이나 소비특성을 보이는 매장(동일유형 매장) 중에서 매출 또는
+                        수익성이 분석대상 매장보다 높은 매장 (동일유형-매장타입을 가지는 매장 수에 따라 매출/수익성을 기준으로 5~10등급 구분)
+                    </p>
+                </div>
+                <div class="pop_section mb40 pop_sec2">
+                    <h5 class="mb4">수익성 우수매장 벤치마킹</h5>
+                    <p class="reference mb12">1) 등급부여 : 상권유형과 고객유형을 구성하는 변수 중 판매 카테고리가 유사할 것으로 예상되는 ‘토지용도-업종구성’ 변수와
+                        ‘성/연령별 주 고객층’ 변수를 결합하고 매장타입이 동일한 매장끼리 유형화하여(MD 전략수립 용도 유형 97개) 2018년도 월별 평균매출이 높을수록 1등급을
+                        부여함(1~7등급 체계)<br />
+                        2) 벤치마킹 대상 우수매장 : 상권규모 입지와 매장타입이 동일한 매장 중 판관비 등급이 1단계 높은 매장을 매칭함
+                    </p>
+                </div>
+                <div class="pop_section mb40 pop_sec3">
+                    <h5 class="mb4">MD 우수매장 벤치마킹</h5>
+                    <p class="reference mb12">1) 등급부여 : 상권유형과 고객유형을 구성하는 변수 중 판매 카테고리가 유사할 것으로 예상되는 ‘토지용도-업종구성’ 변수와
+                        ‘성/연령별 주 고객층’ 변수를 결합하고 매장타입이 동일한 매장끼리 유형화하여(MD 전략수립 용도 유형 97개) 2018년도 월별 평균매출이 높을수록 1등급을
+                        부여함(1~7등급 체계)<br />
+                        2) 벤치마킹 대상 우수매장 : MD전략 수립을 위한 ‘상권+고객유형’이 동일한 매장 중 매출등급이 1단계 높은 매장을 매칭함
+                    </p>
+                </div>
+            </div>
+            <div class="alrt_bdy help_bdy5">
+                <div class="pop_section mb40 pop_sec1">
+                    <h5 class="mb4">상권보고서 설명</h5>
+                    <p class="reference mb12">
+                        전국 4,368개 상권영역별로 보고서를 생성하며, 매장보다 한 단계 큰 영역단위로 보고서 생성<br /> → 상권 최적화 전략수립 목적
+                    </p>
+                </div>
+                <div class="pop_section mb40 pop_sec2">
+                    <h5 class="mb4">주요 분석내용</h5>
+                    <p class="reference mb12">1) 등급부여 : 상권유형과 고객유형을 구성하는 변수 중 판매 카테고리가 유사할 것으로 예상되는 ‘토지용도-업종구성’ 변수와
+                        ‘성/연령별 주 고객층’ 변수를 결합하고 매장타입이 동일한 매장끼리 유형화하여(MD 전략수립 용도 유형 97개) 2018년도 월별 평균매출이 높을수록 1등급을
+                        부여함(1~7등급 체계)<br />
+                        2) 벤치마킹 대상 우수매장 : 상권규모 입지와 매장타입이 동일한 매장 중 판관비 등급이 1단계 높은 매장을 매칭함
+                    </p>
+                </div>
+                <div class="pop_section mb40 pop_sec3">
+                    <h5 class="mb4">전략제시 방법론</h5>
+                    <p class="reference mb12">
+                        1) 신규출점 전략 : 기존매장과 상권특성이 유사한 지역을 유형화하여 유사점 매출을 부여 + 기존매장의 영업지 외 공백지역 반영
+                        <br />2) 매장 재배치 전략 : 상권 성장성과 매장이익을 매트릭스로 구성하여 4가지 매장전략 제시(1년 이내 출점매장 제외)
+                    </p>
+                    <div class="mb12 table_box x-scroll">
+                        <table class="all_border mb12">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2" colspan="2" width="10%">구분</th>
+                                    <th colspan="7">매장이익률(1년 평균)</th>
+                                </tr>
+                                <tr>
+                                    <th width="18%">10% 이상</th>
+                                    <th width="18%" colspan="2">6% 이상</th>
+                                    <th width="18%" colspan="2">0~6%</th>
+                                    <th width="18%" colspan="2">0% 미만</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th rowspan="7">매장별 예상매출 성장률
+                                    </th>
+                                    <th rowspan="2">10% 이상</th>
+                                    <td rowspan="2">동입지 확장</td>
+                                    <td width="9%">뷰티업종 성장</td>
+                                    <td>동입지 확장</td>
+                                    <td rowspan="2" colspan="2">유지</td>
+                                    <td rowspan="2" colspan="2">유지</td>
+                                </tr>
+                                <tr>
+                                    <td>뷰티업종 하락</td>
+                                    <td>유지</td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">0~10%</th>
+                                    <td rowspan="2">유지</td>
+                                    <td rowspan="2" colspan="2">유지</td>
+                                    <td rowspan="2" colspan="2">유지</td>
+                                    <td width="9%">기존점보다 예상매출 높은 대체입지 有</td>
+                                    <td>이전</td>
+                                </tr>
+                                <tr>
+                                    <td>無</td>
+                                    <td>폐점검토</td>
+                                </tr>
+                                <tr>
+                                    <th>-10~0%</th>
+                                    <td>유지</td>
+                                    <td colspan="2">유지</td>
+                                    <td colspan="2">유지</td>
+                                    <td colspan="2">폐점검토</td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">-10% 미만</th>
+                                    <td rowspan="2">유지</td>
+                                    <td rowspan="2" colspan="2">유지</td>
+                                    <td width="9%">기존점보다 예상매출 높은 대체입지 有</td>
+                                    <td>이전</td>
+                                    <td rowspan="2" colspan="2">폐점</td>
+                                </tr>
+                                <tr>
+                                    <td width="9%">無</td>
+                                    <td>폐점검토</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="reference mb12">
+                        3) MD 최적화 전략 : 매장의 고객 이용속성이 유사한 매장을 유형화하여 동일 고객유형을 가진 매장 중 매출이 우수한 매장의 MD 전략을 해당매장에 대/중분류 카테고리별
+                        제시 + 최근 3개월 판매증가 소분류 카테고리/브랜드 정보 제시
+                        <br />4) 운영효율화 전략 : 상권규모나 용도가 유사한 매장을 유형화하여 수익성이 우수한 매장의 임차료/인건비 비중, 금액을 해당매장에 제시
+
+                    </p>
+                </div>
+                <div class="pop_section mb40 pop_sec1">
+                    <h5 class="mb4">전략제시 방법론</h5>
+                    <p class="reference mb12">
+                        1) 신규출점 전략 : 기존매장과 상권특성이 유사한 지역을 유형화하여 유사점 매출을 부여 + 기존매장의 영업지 외 공백지역 반영
+                        <br />2) 매장 재배치 전략 : 상권 성장성과 매장이익을 매트릭스로 구성하여 4가지 매장전략 제시(1년 이내 출점매장 제외)
+                    </p>
+                    <div class="mb12 table_box x-scroll">
+                        <table class="all_border mb12">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2" colspan="2" width="10%">구분</th>
+                                    <th colspan="7">매장이익률(1년 평균)</th>
+                                </tr>
+                                <tr>
+                                    <th width="18%">10% 이상</th>
+                                    <th width="18%" colspan="2">6% 이상</th>
+                                    <th width="18%" colspan="2">0~6%</th>
+                                    <th width="18%" colspan="2">0% 미만</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th rowspan="7">매장별 예상매출 성장률
+                                    </th>
+                                    <th rowspan="2">10% 이상</th>
+                                    <td rowspan="2">동입지 확장</td>
+                                    <td width="9%">뷰티업종 성장</td>
+                                    <td>동입지 확장</td>
+                                    <td rowspan="2" colspan="2">유지</td>
+                                    <td rowspan="2" colspan="2">유지</td>
+                                </tr>
+                                <tr>
+                                    <td>뷰티업종 하락</td>
+                                    <td>유지</td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">0~10%</th>
+                                    <td rowspan="2">유지</td>
+                                    <td rowspan="2" colspan="2">유지</td>
+                                    <td rowspan="2" colspan="2">유지</td>
+                                    <td width="9%">기존점보다 예상매출 높은 대체입지 有</td>
+                                    <td>이전</td>
+                                </tr>
+                                <tr>
+                                    <td>無</td>
+                                    <td>폐점검토</td>
+                                </tr>
+                                <tr>
+                                    <th>-10~0%</th>
+                                    <td>유지</td>
+                                    <td colspan="2">유지</td>
+                                    <td colspan="2">유지</td>
+                                    <td colspan="2">폐점검토</td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">-10% 미만</th>
+                                    <td rowspan="2">유지</td>
+                                    <td rowspan="2" colspan="2">유지</td>
+                                    <td width="9%">기존점보다 예상매출 높은 대체입지 有</td>
+                                    <td>이전</td>
+                                    <td rowspan="2" colspan="2">폐점</td>
+                                </tr>
+                                <tr>
+                                    <td width="9%">無</td>
+                                    <td>폐점검토</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="reference mb12">
+                        3) MD 최적화 전략 : 매장의 고객 이용속성이 유사한 매장을 유형화하여 동일 고객유형을 가진 매장 중 매출이 우수한 매장의 MD 전략을 해당매장에 대/중분류 카테고리별
+                        제시 + 최근 3개월 판매증가 소분류 카테고리/브랜드 정보 제시
+                        <br />4) 운영효율화 전략 : 상권규모나 용도가 유사한 매장을 유형화하여 수익성이 우수한 매장의 임차료/인건비 비중, 금액을 해당매장에 제시
+                    </p>
+                </div>
+                <div class="pop_section mb40 pop_sec2">
+                    <h5 class="mb4">용어설명</h5>
+                    <p class="reference mb12">
+                        - 점주권 : 중심가와 소비 배후지역을 포함한 상권 영역, 전국 주요상권을 포함하여 4천 여개로 정의(→강남상권, 교대상권, 동성로 상권 등)
+                        <br />- 뷰티업종 : H&B + 원브랜드샵
+                        <br />- 경쟁영향도 : 점주권 내 뷰티업종 밀집도
+                        <br />- 유관업종 경기동향 : 유관업종 점포당 매출 전국 분위
+                    </p>
+                </div>
+            </div>
+            <div class="alrt_bdy help_bdy6">
+                <div class="pop_section mb40 pop_sec1">
+                    <h5 class="mb4">매장 보고서 설명</h5>
+                    <p class="reference mb12">
+                        전국 1,200여개 매장별로 보고서를 생성하며, 매장의 현황진단, 향후 매출예측, 수익성 강화, 경쟁점 현황, 고객구성 및 MD 분석자료를 제공
+                        <br /> → 매장별 전략수립 목적
+                    </p>
+                </div>
+                <div class="pop_section mb40 pop_sec2">
+                    <h5 class="mb4">주요 분석내용</h5>
+                    <p class="reference mb12">
+                        1) 매출분석 : 매장의 상권유형 부여(상권규모, 토지용도, 업종구성), 과거 매출/매장이익 및 향후 매출예측
+                        <br />2) 수익분석 : 매장 인건비/임차료 수준 진단 + 우수매장 수익모델 제시
+                        <br />3) 경쟁분석 : 경쟁점 수, 매출현황 분석 및 시장점유율, 자사매장 간 중복률 분석
+                        <br />4) 고객분석 : 성/연령, 주거/직장/유입, 소득/소비, 요일/시간 등 고객 및 소비특성 분석
+                        <br />5) MD 분석 : 동일 고객유형+매장타입 매장 중 매출 우수매장의 MD 전략 벤치마킹 + 판매증가 카테고리/브랜드 분석
+                        <br />6) 지역분석 : 유동인구, 주거/직장인구, 집객/교통시설, 아파트 정보 등 기본 지역분석
+                    </p>
+                </div>
+                <div class="pop_section mb40 pop_sec2">
+                    <h5 class="mb4">용어설명</h5>
+                    <p class="reference mb12">
+                        - Full Potential : 매장이 포함된 상권의 향후 1년 뷰티업종 예측 성장률(금액 기준)
+                        <br>- 시장점유율 : [뷰티업종(H&B경쟁사+원브랜드샵) + 올리브영] 매출 대비 올리브영 매출 비중
+                        <br>- 경쟁업종 : H&B, 원브랜드샵 2개 업종
+                        <br>- 유관업종 : 편의점, 종합생활용품, 커피, 패스트푸드 4개 업종
+                        <br>- 배후 주거인구 : 매장주변 반경 1,500M 주거인구 수 합(주거인구의 평균 소비거리 반영)
+                        <br>- 배후 직장인구 : 매장주변 반경 500M 직장인구 수 합(직장인구의 평균 소비거리 반영)
+                        <br>- 성장성 : 전년대비 성장률(YoY)
+                        <br>- 시설 유발인구 : 공공/문화/금융/유통/영화관/교육시설 등 집객시설의 추정 유발인구 수
+                        <br>- 상권비중 : 상권 내 전체업종 매출 대비 뷰티업종 매출비중을 등급화(1등급일수록 뷰티업종 매출비중 높음)
+                        <br>- 안정성 : 점포 운영연수와 월별 매출 편차를 등급화(1등급일수록 평균 운영연수가 길고, 월별 매출편차가 작음)
+                        <br>- 변동성 : 경쟁점포 입점/폐점 비율을 등급화(1등급일수록 입/폐점 변동이 적음)
+                        <br>- 구매력 : 소득수준과 건당 결제금액을 등급화(1등급일수록 소득수준이 높고, 1회 결제금액이 큼)
+                        <br>- 점포 밀집지수 : 포함 시/도 전체 점포 수 대비 해당지역 점포 수를 지수화(평균 값은 일반적인 상권에서의 점포 수 구성비 지수 → EX) 100개 점포 중
+                        편의점 점포가 평균적으로 4개 정도 있으면 4% 의 평균 구성비를 가짐)
+                        <br>- 매출지수 : 포함 시/도 전체 매출액 대비 해당지역 매출을 지수화(평균 값은 일반적인 상권에서의 매출 구성비 지수 → EX) 100억 매출 중 편의점 매출이
+                        평균적으로 13억 정도 차지하면 13%의 매출 구성비를 가짐)
+                        <br>- 경쟁권 : 매장 1개가 가지는 직접 경쟁대상 매장을 묶는 영역(→ 경쟁권이 겹치는 경우 카니발 효과 큼)
+                        <br>- 1/2차 소비영향권 : 매장을 찾는 고객의 매출비중 30%(1차)/50%(2차) 고객이 분포하는 범위(주거/직장 주소지와 매장 간 거리 기준)
+                    </p>
+                </div>
+            </div>
+            <div class="alrt_bdy help_bdy7">
+                <div class="pop_section mb40 pop_sec1">
+                    <h5 class="mb4">출점후보지보고서 설명</h5>
+                    <p class="reference mb12">
+                        상업시설 입점 가능한 전국 전 지역별 올리브영 입점 시 예상매출 산정, <br />매장타입/면적 별 매출 영향분석, 후보지 주변 고객특성 분석+동일유형 적합 MD전략
+                        제시<br /> → 후보입지 가능성 판단+매장 전략수립 목적
+                    </p>
+                </div>
+                <div class="pop_section mb40 pop_sec2">
+                    <h5 class="mb4">주요 분석내용</h5>
+                    <p class="reference mb12">
+                        1) 매출분석 : 후보입지의 상권유형 부여(상권규모, 토지용도, 업종구성), 유사점 매칭, 출점 시 예상매출 산정
+                        <br>2) 수익분석 : 상권유형에 따른 적정 인건비/임차료 제시
+                        <br>3) 경쟁분석 : 후보지 주변 경쟁점 수/경쟁현황, 자사매장 간 (예상)중복률 분석
+                        <br>4) 고객분석 : 성/연령, 주거/직장/유입, 소득/소비, 요일/시간 등 후보지 주변 고객 및 소비특성 분석
+                        <br>5) MD 분석 : 동일 고객유형 매장 중 매출 우수매장의 MD 전략 벤치마킹 + 뜨는 브랜드 분석
+                        <br>6) 지역분석 : 유동인구, 주거/직장인구, 집객/교통시설, 아파트 정보 등 기본 지역분석
+                    </p>
+                </div>
+                <div class="pop_section mb40 pop_sec2">
+                    <h5 class="mb4">용어설명</h5>
+                    <p class="reference mb12">
+                        - 출점 예상매출 : 동일 상권유형 내 매출 영향변수의 규모가 비슷한 올리브영 매장(유사점) 매출
+                        <br/>- 예상 시장점유율 : [뷰티업종(H&B경쟁사+원브랜드샵+ 올리브영)] 매출 대비 후보지 예상매출 비중
+                        <br/>- 예상 회원중복률 : 후보지와 기존 매장과의 거리에 따른 예상 회원중복률 계산
+                        <br/>- 경쟁업종 : H&B, 원브랜드샵 2개 업종
+                        <br/>- 유관업종 : 편의점, 종합생활용품, 커피, 패스트푸드 4개 업종
+                        <br/>- 배후 주거인구 : 매장주변 반경 1,500M 주거인구 수 합(주거인구의 평균 소비거리 반영)
+                        <br/>- 배후 직장인구 : 매장주변 반경 500M 직장인구 수 합(직장인구의 평균 소비거리 반영)
+                        <br/>- 성장성 : 전년대비 성장률(YoY)
+                        <br/>- 시설 유발인구 : 공공/문화/금융/유통/영화관/교육시설 등 집객시설의 추정 유발인구 수
+                        <br/>- 상권비중 : 상권 내 전체업종 매출 대비 뷰티업종 매출비중을 등급화(1등급일수록 뷰티업종 매출비중 높음)
+                        <br/>- 안정성 : 점포 운영연수와 월별 매출 편차를 등급화(1등급일수록 평균 운영연수가 길고, 월별 매출편차가 작음)
+                        <br/>- 변동성 : 경쟁점포 입점/폐점 비율을 등급화(1등급일수록 입/폐점 변동이 적음)
+                        <br/>- 구매력 : 소득수준과 건당 결제금액을 등급화(1등급일수록 소득수준이 높고, 1회 결제금액이 큼)
+                        <br/>- 점포 밀집지수 : 포함 시/도 전체 점포 수 대비 해당지역 점포 수를 지수화(평균 값은 일반적인 상권에서의 점포 수 구성비 지수 → EX) 100개 점포 중 편의점 점포가 평균적으로 4개 정도 있으면 4% 의 평균 구성비를 가짐)
+                        <br/>- 매출지수 : 포함 시/도 전체 매출액 대비 해당지역 매출을 지수화(평균 값은 일반적인 상권에서의 매출 구성비 지수 → EX) 100억 매출 중 편의점 매출이 평균적으로 13억 정도 차지하면 13%의 매출 구성비를 가짐)
+                        <br/>- 경쟁권 : 매장 1개가 가지는 직접 경쟁대상 매장을 묶는 영역(→ 경쟁권이 겹치는 경우 카니발 효과 큼)
+                        <br/>- 1/2차 소비영향권 : 매장을 찾는 고객의 매출비중 30%(1차)/50%(2차) 고객이 분포하는 범위(주거/직장 주소지와 매장 간 거리 기준)
+                    </p>
+                </div>
+            </div>
+            <div class="alrt_ft">
+                <div class="button_box">
+                    <button class="btn2" id="close_alrt_pop">취소</button>
+                    <button class="btn1">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--alrt_pop-->
+    <!--modal-->
+    <div class="modal modal2" style="display: block;"></div>
+    <!--modal-->
+
+</body>
+<script>
+    //도움말 창 사이즈
+    function help_body_height() {
+        var help_height = $('#height_help_ul').height();
+        $('.help_alrt .alrt_bdy').css({
+            'top': help_height + 70,
+            'height': 'calc(100% - 73px - 80px - ' + help_height + 'px)'
+        });
+    };
+    help_body_height();
+    $(window).resize(function () {
+        help_body_height();
+    });
+
+    //도움말 카테고리 이동
+    $(".help_alrt .pc_body_ul li a").on("click", function () {
+        var re_num = $(".help_alrt .pc_body_ul li a").index($(this));
+        var re_num_tab = re_num + 1;
+
+        //탭 이동시 스크롤 다시 상단으로
+        $('.help_alrt .alrt_bdy').scrollTop(0);
+
+        //li에 on스타일 빼고 넣기
+        $(".help_alrt .pc_body_ul li").removeClass('on');
+        $(this).parent('li').addClass('on');
+
+        //on의 인덱스와 같은 탭 열기
+        $(".help_alrt .alrt_bdy").removeClass('on');
+        $(".help_bdy" + re_num_tab + "").addClass('on');
+
+    });
+</script>
+
+</html>

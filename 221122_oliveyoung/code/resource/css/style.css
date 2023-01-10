@@ -5132,8 +5132,19 @@ main page
         max-height: calc(var(--vh, 1vh) * 100 - 340px);
     }
 }
+/* 로그인 세로 조정*/
 
-/* media query */
+@media all and (min-width: 769px) and (max-height: 800px){
+    .login_pop{
+        height: calc(var(--vh, 1vh) * 100 - 80px);
+        top: 40px;
+    }
+    .log_pop_scroll{
+        justify-content: flex-start;
+    }
+}
+
+/* 가로 media query */
 @media all and (max-width: 1680px){
     /*1680*/
     .main_layout{
@@ -5166,8 +5177,8 @@ main page
         width: 100%;
     }
     .main_layout.pd{
-        padding-left: 36px;
-        padding-right: 36px;
+        padding-left: 24px;
+        padding-right: 24px;
     }
     .main_section.mid_sec{
         width: calc(100% - 560px - 32px);
@@ -5192,6 +5203,13 @@ main page
     .quick_btn p{
         font-size: 14px;
     }
+}
+@media all and (max-width: 1280px){
+	.box_div_title_m{
+	    display: flex;
+    	flex-direction: column;
+    	gap:12px;
+	}
 }
 @media all and (max-width: 1260px){
     .main_goto_box{
@@ -5223,13 +5241,16 @@ main page
         gap: 8px;
     }
 }
+@media all and (max-width: 1180px){
+        .main_section.mid_sec{
+        width: calc(100% - 290px);
+    }
+    .main_section.rght_sec{
+        display: none;
+    }
+}    
 @media all and (max-width: 1140px){
-    .main_section.mid_sec{
-        width: calc(100% - 520px - 40px);
-    }
-    .main_section.lft_sec, .main_section.rght_sec{
-        width: 260px;
-    }
+
     .user_box_area button{
         width: 100%;
     }
@@ -5260,18 +5281,29 @@ main page
         min-height: calc(100vh - 415px);
     min-height: calc(var(--vh, 1vh) * 100 - 415px);
     }
+
 }
 @media all and (max-width: 1080px){
     /*1080*/
-    .main_section.mid_sec{
-        width: calc(100% - 280px);
-    }
-    .main_section.rght_sec{
-        display: none;
-    }
+
     .before_login .minheight{
         min-height: calc(100vh - 396px);
         min-height: calc(var(--vh, 1vh) * 100 - 396px);
+    }
+    
+    .login_pop{
+        width: 720px;
+        left: calc(50% - 360px);
+    }
+    .login_pop_side{
+        width: 30%;
+    }
+    .login_pop_section{
+        width: 70%;
+    }
+    .login_pop_side p::before{
+        width: 137px;
+        height: 22px;
     }
 
 }
@@ -5324,6 +5356,77 @@ main page
     .user_navi_head.login_main{
         padding: 40px 16px;
     }
+    
+    .alrt_pop{
+    	width:calc(100% - 80px);
+    	height:calc(100% - 80px);
+    }
+    
+    .alrt_pop .table_box{
+    	overflow-x: auto;
+    }
+    
+    .alrt_pop .hastwo_table.table_box{
+    	flex-direction: column;
+    }
+    
+    .alrt_pop .table_box > table{
+    	min-width:640px;
+    }
+}
+@media all and (max-width: 768px){
+	.login_pop{
+        width: 720px;
+        left: calc(50% - 360px);
+    }
+    .login_pop_side{
+        width: 30%;
+    }
+    .login_pop_section{
+        width: 70%;
+    }
+    .login_pop_side p::before{
+        width: 137px;
+        height: 22px;
+    }
+    
+    .alrt_pop h4{
+    	font-size: 18px;
+    }
+    
+    .alrt_pop h5{
+    	font-size: 16px;
+    }
+    
+    .close_alert .ico32{
+    	width:24px;
+    	height:24px;
+    }
+    
+    .alrt_pop .table_box table td, .alrt_pop .table_box table th{
+    	font-size:13px;
+    }
+    
+    .alrt_pop .reference, .map_pop .reference{
+    		font-size:12px;
+    }
+}
+@media all and (max-width: 720px){
+	.login_pop,
+	.login_pop.register_pop{
+        width: 100%;
+        height: calc(var(--vh, 1vh) * 100);
+        left: 0;
+        top:0;
+        border-radius: 0;
+    }
+    
+    .login_pop_side{
+        display: none;
+    }
+    .login_pop_section{
+        width: 100%;
+    }
 }
 @media all and (max-width: 640px){
     .menu_middle{
@@ -5346,6 +5449,22 @@ main page
         padding-right: 16px;
     }
 
+}
+@media all and (max-width: 420px){
+    .form_group{
+        width: 100%;
+    }
+    .login_pop_body,
+    .login_pop_header,
+    .login_pop_footer{
+        width: 100%;
+    }
+    .log_inner{
+        padding: 20px;
+    }
+    .log_pop_scroll{
+        overflow: hidden;
+    }
 }
 
 
@@ -6675,7 +6794,9 @@ css 시작
 /*******************
 마이페이지
 *******************/
-
+.admin .user_big{
+    background: #fff url(../images/icons/ico_olive_admin.svg) 50% 50%/cover;
+}
 .mt8{
     margin-top: 8px;
 }
@@ -6733,7 +6854,14 @@ font-weight: 700;
     height: 24px;
     margin-right: 12px;
     margin-bottom: -4px;
+}
+
+.title_full_sec.mypage::before{
     background: url(../images/icons/ico_user_full_c.svg) 50% 50%/cover;
+}
+
+.title_full_sec.admin::before{
+    background: url(../images/icons/ico_gear_full_c.svg) 50% 50%/cover;
 }
 
 .mypage_layout .tt_txt{
@@ -6779,6 +6907,10 @@ font-weight: 700;
     font-size: 14px;
     padding: 0px 4px;
     color: #fff;
+}
+
+.board_table_box table{
+    width: 100%;
 }
 
 .board_table_box .board_tb th,
@@ -6881,13 +7013,13 @@ font-weight: 700;
     text-align: left;
 }
 
-.board_table_box .board_tb tr.txtleft,
-.board_table_box .board_tb tr{
+.board_table_box .board_tb th.txtleft{
     text-align: left;
 }
 
 .board_table_box .btn6{
     height: 32px;
+    width: 87px;
 }
 
 .dataTables_paginate ul.flx{
@@ -6905,9 +7037,6 @@ font-weight: 700;
     font-weight: 600;
 }
 
-.board_table_box .button_box{
-    width: 140px;
-}
 .board_table_box .button_box button{
     font-size: 14px;
     height: 36px;
@@ -7010,6 +7139,95 @@ font-weight: 700;
     margin: 8px auto;
 }
 
+.auth_check .container input:checked~.checkmark{
+    width: 16px;
+    height: 16px;
+}
+.auth_check .container input:checked~.checkmark::after{
+    top: calc(50% - 9px);
+    left: calc(50% - 6px);
+    padding: 0;
+}
+.auth_check .checkmark{
+    width: 16px;
+    height: 16px;
+}
+
+.board_tb .button_box{
+    justify-content: center;
+    gap: 8px;
+}
+
+.board_tb .button_box button{
+    height: 32px;
+    font-size: 13px;
+    width: 60px;
+    font-weight: 600;
+}
+
+.board_tb .button_box .btn3{
+    color: var(--pri1);
+    box-shadow: none;
+    border: 1px solid var(--pri2);
+    width: 66px;
+}
+
+.table_btn.button_box{
+    gap: 8px;
+}
+
+.table_btn.button_box button{
+    height: 40px;
+    font-size: 13px;
+    width: 60px;
+    font-weight: 600;
+}
+
+.alrt_pop .pc_body_ul{
+    flex-wrap: wrap;
+}
+
+.help_alrt .pc_body_ul{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.help_alrt .pc_body_ul li.on a{
+    background-color: var(--mono1);
+    color: #fff;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: none;
+}
+
+.help_alrt .pc_body_ul li a{
+    font-size: 14px;
+    padding: 8px 12px;
+}
+
+.help_alrt .pc_body_ul li a:hover{
+    background-color: var(--mono7);
+    border-radius: 999px;
+}
+
+.help_alrt .alrt_bdy{
+    padding-top: 28px;
+}
+
+.help_alrt .table_box table th,
+.help_alrt .table_box table td{
+    font-size: 13px;
+}
+
+.help_alrt .alrt_bdy{
+    display: none;
+}
+
+.on.alrt_bdy{
+    display: flex;
+}
+
 /* rpt 보고서 미디어쿼리*/
 
 @media all and (max-width: 1320px){
@@ -7041,6 +7259,28 @@ font-weight: 700;
     .dom_chart{
         height:300px;
     }
+    .admin_table_box th:nth-child(1),
+    .admin_table_box td:nth-child(1){
+        display: none;
+    }
+}
+@media all and (max-width: 1280px){
+    .mypage_layout .main_section.lft_sec{
+        width: 240px;
+    }
+    .mypage_layout .main_section.full_sec .sec_wrap{
+        margin-left: 20px; 
+    }
+    .mypage_layout .main_section.full_sec{
+        width: calc(100% - 240px);
+        margin-left: 240px;
+    }
+}
+@media all and (max-width: 1240px){
+    .board_tb .button_box{
+        flex-direction: column;
+        width: inherit;
+    }
 }
 @media all and (max-width: 1080px){
     
@@ -7053,6 +7293,36 @@ font-weight: 700;
     }
     .tb_ht_302{
         height: inherit;
+    }
+    .mypage_layout .main_section.lft_sec .sec_wrap{
+        display: none;
+    }
+    .mypage_layout .main_section.full_sec{
+        width: 100%;
+        margin: 0;
+    }
+    .mypage_layout .main_section.full_sec .sec_wrap{
+        margin-left: 0;
+    }
+
+    .mypage_head_box >div{
+        float: unset;
+    }
+    
+    .mypage_head_box > .mp_hd_left{
+        margin-bottom: 20px;
+    }
+    
+    .mp_hd_right{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .mypage_table_box > table{
+        min-width: 720px;
+    }
+    .admin_table_box  > table{
+        min-width: 720px;
     }
 }
 @media all and (max-width: 960px){
@@ -7208,6 +7478,9 @@ font-weight: 700;
     }
     .r_con_tt > p> span.light{
         display: none;
+    }
+    .bbs_search{
+        width: 100%;
     }
 }
 @media all and (max-width: 640px){

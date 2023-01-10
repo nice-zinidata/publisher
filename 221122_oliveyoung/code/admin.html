@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <!-- min js -->
+    <script src="resource/js/jquery.min.js"></script>
+    <!-- 분석화면 js -->
+    <script src="resource/js/analysis.js"></script>
+
+    <!-- font css-->
+    <link rel="stylesheet" type="text/css" href="resource/css/pretendard.css">
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="resource/css/style.css">
+
+
+    <!-- echart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+    <script>
+
+    </script>
+    <title>올리브영 어드민</title>
+</head>
+
+<body class=" mypage_layout">
+    <div class="top_section">
+        <div class="menu_top pd main_layout">
+            <div class="menu_left">
+                <div class="logo_box">
+                    <a href="index.html"></a>
+                </div>
+            </div>
+            <div class="menu_middle">
+                <ul class="top_gnb">
+                    <li><a href="index1.html">상권분석</a></li>
+                    <li><a href="index.html">상권통계</a></li>
+                </ul>
+            </div>
+            <div class="menu_right">
+                <div class="user_navi admin">
+                    <button class="btn3" id="showUserNavi">
+                        김올영님
+                    </button>
+                    <div class="user_navi_ul">
+                        <div class="user_navi_head">
+                            <div class="txt">
+                                <p>김올영님</p>
+                                <p>나이스지니데이타</p>
+                            </div>
+                        </div>
+                        <ul>
+                            <li><a class="ico16 ico_gear_line_b" href="#">권한관리</a></li>
+                            <li><a class="ico16 ico_user_line_b" href="#">마이페이지</a></li>
+                            <li><a class="ico16 ico_ask_line_b" href="#">도움말</a></li>
+                            <li><a class="ico16 ico_out_line_b" href="#">로그아웃</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main_wrap">
+        <!--top_section START-->
+        <div class="main_section_wrap pd main_layout">
+            <div class="main_section lft_sec">
+                <div class="sec_wrap">
+                    <div class="box_div mb12">
+                        <div class="box_div_inner">
+                            <div class="user_navi_head login_main admin">
+                                <div class="user_big_gra mb12">
+                                    <div class="user_big">
+                                    </div>
+                                </div>
+                                <div class="txt">
+                                    <p>김올영님</p>
+                                    <p>가맹 영업 2팀</p>
+                                </div>
+                            </div>
+                            <div class="button_box_area user_box_area">
+                                <div class="select_main_box sub list_select mb12">
+                                    <a class="select_main goto_interest">관심영역 바로가기</a>
+                                    <div class="select_main_show sub_show sub_show_1">
+                                        <div class="show_header">
+                                            <h5>관심영역 리스트</h5>
+                                        </div>
+                                        <div class="show_body">
+                                            <div class="in_box list_box">
+
+                                                <ul class="shop_list">
+                                                    <li>
+                                                        <a class="list_a" href="#">
+                                                            <p>신촌대로점</p>
+                                                            <p>서울특별시 서대문구 신촌로 121 1층</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="list_a" href="#">
+                                                            <p>신촌역점</p>
+                                                            <p>서울특별시 서대문구 신촌로 79</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="list_a" href="#">
+                                                            <p>올리브영 신촌 타운</p>
+                                                            <p>서울특별시 서대문구 신촌로 79</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="list_a" href="#">
+                                                            <p>신촌대로점</p>
+                                                            <p>서울특별시 서대문구 신촌로 121 1층</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="list_a" href="#">
+                                                            <p>신촌대로점</p>
+                                                            <p>서울특별시 서대문구 신촌로 121 1층</p>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box_div mb12">
+                        <div class="box_div_header">
+                            <button class="quick_btn">
+                                <p>상권분석</p>
+                                <div class="ico20 ico_arrow_line_b"></div>
+                            </button>
+                        </div>
+                        <div class="mini_quick_link_box">
+
+                            <ul class="mini_quick_link cb">
+                                <li class="fl"><a href="#" class=" ico20 ico_chart_full_c">매출</a></li>
+                                <li class="fl"><a href="#" class=" ico20 ico_customer_full_c">고객</a></li>
+                                <li class="fl"><a href="#" class=" ico20 ico_finance_full_c">금융</a></li>
+                                <li class="fl"><a href="#" class=" ico20 ico_map_full_c">지역</a></li>
+                                <li class="fl "><a href="#" class=" ico20 ico_gift_full_c">오늘드림</a></li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                    <div class="box_div mb12">
+                        <div class="box_div_header">
+                            <button class="quick_btn">
+                                <p>상권통계</p>
+                                <div class="ico20 ico_arrow_line_b"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="button_box flx link_howto">
+                        <button class="ico16 ico_ask_line_g" href="#">도움말</button>
+                    </div>
+                </div>
+            </div>
+            <!--main_section full_sec END-->
+            <div class="main_section full_sec">
+                <div class="sec_wrap">
+                    <div class="box_div_section">
+                        <div class="box_div_title_r mb12">
+                            <h3 class="title_full_sec admin">관리자페이지</h3>
+                        </div>
+                        <div class="box_div_wrap">
+                            <div class="box_div">
+                                <div class="box_div_inner">
+                                    <div class="box_div_body">
+                                        <div class="mypage_head_box cb mb20">
+                                            <div class="mp_hd_left fl">
+                                                <div class="box_div_title_m mb4">
+                                                    <p class="tt_txt">사용자 목록</p>
+                                                </div>
+                                            </div>
+                                            <div class="mp_hd_right fr">
+                                                <div class="bbs_search">
+                                                    <div class="flx">
+                                                        <div class="search_form_box">
+                                                            <input name="search_word" type="text" id="searchText"
+                                                                value="" title="검색어를 입력하세요" placeholder="검색어를 입력하세요">
+                                                            <button type="button" name="btn_search" id="btnSearch"
+                                                                class="bbs_search_btn" title="검색하기"
+                                                                onclick="list();">검색</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="board_table_box admin_table_box x-scroll mb20">
+                                            <table class="board_tb">
+                                                <!-- <colgroup>
+                                                    <col width="5%">
+                                                    <col width="5%">
+                                                    <col width="10%">
+                                                    <col width="auto">
+                                                    <col width="10%">
+                                                    <col width="auto">
+                                                    <col width="5%">
+                                                    <col width="5%">
+                                                    <col width="5%">
+                                                    
+                                                </colgroup> -->
+                                                <thead>
+                                                    <tr>
+                                                        <th>NO</th>
+                                                        <th>신청일자</th>
+                                                        <th>소속부서</th>
+                                                        <th>로그인ID</th>
+                                                        <th>담당자</th>
+                                                        <th>email</th>
+                                                        <th>신청 권한</th>
+                                                        <th>승인 권한</th>
+                                                        <th>승인 확인</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="tbodyList">
+
+                                                    <tr>
+                                                        <td>7</td>
+                                                        <td><span class="reference">2022-12-22 14:51:52</span></td>
+                                                        <td>3</td>
+                                                        <td>3</td>
+                                                        <td>3</td>
+                                                        <td>3</td>
+                                                        <td>AUTH110</td>
+                                                        <td>
+                                                            <ul class="auth_check">
+                                                                <li>
+                                                                    <label class="container">상권분석
+                                                                        <input type="checkbox" checked="checked"
+                                                                            class="disabled" disabled="">
+                                                                        <span class="checkmark"></span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="container">상권통계
+                                                                        <input type="checkbox" checked="checked"
+                                                                            class="disabled" disabled="">
+                                                                        <span class="checkmark"></span>
+                                                                    </label>
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <div class="button_box">
+                                                                <button type="button" class="authProc btn3" data-memno="12323"
+                                                                data-gubun="Y">승인</button>
+                                                            </div>
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6</td>
+                                                        <td><span class="reference">2022-12-22 14:51:45</span></td>
+                                                        <td>2</td>
+                                                        <td>2</td>
+                                                        <td>2</td>
+                                                        <td>2</td>
+                                                        <td>AUTH010</td>
+                                                        <td>
+                                                            <ul class="auth_check">
+                                                                <li>
+                                                                    <label class="container">상권분석
+                                                                        <input type="checkbox" class="disabled"
+                                                                            disabled="">
+                                                                        <span class="checkmark"></span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="container">상권통계
+                                                                        <input type="checkbox" checked="checked"
+                                                                            class="disabled" disabled="">
+                                                                        <span class="checkmark"></span>
+                                                                    </label>
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <div class="button_box">
+                                                                <button type="button" class="authProc btn3" data-memno="12323"
+                                                                data-gubun="Y">승인</button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>5</td>
+                                                        <td><span class="reference">2022-12-22 14:51:33</span></td>
+                                                        <td>1</td>
+                                                        <td>1</td>
+                                                        <td>1</td>
+                                                        <td>1</td>
+                                                        <td>AUTH110</td>
+                                                        <td>
+                                                            <ul class="auth_check">
+                                                                <li>
+                                                                    <label class="container">상권분석
+                                                                        <input type="checkbox" checked="checked"
+                                                                            class="disabled" disabled="">
+                                                                        <span class="checkmark"></span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="container">상권통계
+                                                                        <input type="checkbox" checked="checked"
+                                                                            class="disabled" disabled="">
+                                                                        <span class="checkmark"></span>
+                                                                    </label>
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <div class="button_box">
+                                                                <button type="button" class="authProc btn3" data-memno="12323"
+                                                                data-gubun="Y">승인</button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td><span class="reference">2022-12-22 13:46:01</span></td>
+                                                        <td>나이스지니</td>
+                                                        <td>bgko1</td>
+                                                        <td>고병권</td>
+                                                        <td>bgko1@nice.co.kr</td>
+                                                        <td>AUTH010</td>
+                                                        <td>
+                                                            <ul class="auth_check">
+                                                                <li>
+                                                                    <label class="container">상권분석
+                                                                        <input type="checkbox">
+                                                                        <span class="checkmark"></span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="container">상권통계
+                                                                        <input type="checkbox" checked="checked">
+                                                                        <span class="checkmark"></span>
+                                                                    </label>
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <div class="button_box">
+                                                                <button type="button" class="authProc btn2" data-memno="12320"
+                                                                data-gubun="N">승인취소</button>
+                                                                <button type="button" class="authProc btn1" data-memno="12320"
+                                                                data-gubun="M">권한변경</button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td><span class="reference">2022-06-16 16:35:26</span></td>
+                                                        <td>나이스지니</td>
+                                                        <td>b141020</td>
+                                                        <td>박예성</td>
+                                                        <td>b141020@nice.co.kr</td>
+                                                        <td>AUTH110</td>
+                                                        <td>
+                                                            <ul class="auth_check">
+                                                                <li>
+                                                                    <label class="container">상권분석
+                                                                        <input type="checkbox" checked="checked">
+                                                                        <span class="checkmark"></span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="container">상권통계
+                                                                        <input type="checkbox" checked="checked">
+                                                                        <span class="checkmark"></span>
+                                                                    </label>
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <div class="button_box">
+                                                                <button type="button" class="authProc btn2" data-memno="12320"
+                                                                data-gubun="N">승인취소</button>
+                                                                <button type="button" class="authProc btn1" data-memno="12320"
+                                                                data-gubun="M">권한변경</button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td><span class="reference">2022-06-16 16:35:26</span></td>
+                                                        <td>나이스지니</td>
+                                                        <td>bgko</td>
+                                                        <td>고병권</td>
+                                                        <td>bgko@nice.co.kr</td>
+                                                        <td>AUTH110</td>
+                                                        <td>
+                                                            <ul class="auth_check">
+                                                                <li>
+                                                                    <label class="container">상권분석
+                                                                        <input type="checkbox" checked="checked">
+                                                                        <span class="checkmark"></span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="container">상권통계
+                                                                        <input type="checkbox" checked="checked">
+                                                                        <span class="checkmark"></span>
+                                                                    </label>
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <div class="button_box">
+                                                                <button type="button" class="authProc btn2" data-memno="12320"
+                                                                data-gubun="N">승인취소</button>
+                                                                <button type="button" class="authProc btn1" data-memno="12320"
+                                                                data-gubun="M">권한변경</button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td><span class="reference">2022-06-15 15:11:17</span></td>
+                                                        <td>나이스지니</td>
+                                                        <td>gslee</td>
+                                                        <td>이건수</td>
+                                                        <td>gslee@nice.co.kr</td>
+                                                        <td>AUTH110</td>
+                                                        <td>
+                                                            <ul class="auth_check">
+                                                                <li>
+                                                                    <label class="container">상권분석
+                                                                        <input type="checkbox" checked="checked">
+                                                                        <span class="checkmark"></span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label class="container">상권통계
+                                                                        <input type="checkbox" checked="checked">
+                                                                        <span class="checkmark"></span>
+                                                                    </label>
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <div class="button_box">
+                                                                <button type="button" class="authProc btn2" data-memno="12320"
+                                                                data-gubun="N">승인취소</button>
+                                                                <button type="button" class="authProc btn1" data-memno="12320"
+                                                                data-gubun="M">권한변경</button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="board_pg_navi cb">
+                                            <div class="dataTables_paginate paging_full_numbers" id="paginate_auth">
+                                                <ul
+                                                    class="pagination borderless handlebarsPaging justify-content-center flx">
+                                                    <li class="paginate_button first disabled"
+                                                        aria-controls="list_info" tabindex="0" id="list_info_first"
+                                                        data-index="1">
+                                                        <a href="javascript:;">
+                                                            <i class="fas fa-angle-double-left"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="paginate_button previous disabled"
+                                                        aria-controls="list_info" tabindex="0"
+                                                        id="list_info_previous">
+                                                        <a href="javascript:;">Prev
+                                                        </a>
+                                                    </li>
+                                                    <li class="paginate_button num active" aria-controls="list_info"
+                                                        tabindex="0" data-index="1">
+                                                        <a href="javascript://">1</a>
+                                                    </li>
+                                                    <li class="paginate_button next disabled"
+                                                        aria-controls="list_info" tabindex="0" id="list_info_next">
+                                                        <a href="javascript:;"> Next </a>
+                                                    </li>
+                                                    <li class="paginate_button last disabled"
+                                                        aria-controls="list_info" tabindex="0" id="list_info_last"
+                                                        data-index="1">
+                                                        <a href="javascirpt:;">
+                                                            <i class="fas fa-angle-double-right"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--main_section full_sec END-->
+        </div>
+        <!--main_section_wrap END-->
+    </div>
+
+ 
+</body>
+
+</html>

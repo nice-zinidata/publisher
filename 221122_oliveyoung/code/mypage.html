@@ -89,7 +89,7 @@
                                         </div>
                                         <div class="show_body">
                                             <div class="in_box list_box">
-                                                
+
                                                 <ul class="shop_list">
                                                     <li>
                                                         <a class="list_a" href="#">
@@ -126,7 +126,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -137,16 +137,16 @@
                                 <div class="ico20 ico_arrow_line_b"></div>
                             </button>
                         </div>
-                        <div class="mini_quick_link_box" >
-                            
-                                <ul class="mini_quick_link cb">
-                                    <li class="fl"><a href="#" class=" ico20 ico_chart_full_c">매출</a></li>
-                                    <li class="fl"><a href="#" class=" ico20 ico_customer_full_c">고객</a></li>
-                                    <li class="fl"><a href="#" class=" ico20 ico_finance_full_c">금융</a></li>
-                                    <li class="fl"><a href="#" class=" ico20 ico_map_full_c">지역</a></li>
-                                    <li class="fl "><a href="#"class=" ico20 ico_gift_full_c">오늘드림</a></li>
-                                </ul>
-                            
+                        <div class="mini_quick_link_box">
+
+                            <ul class="mini_quick_link cb">
+                                <li class="fl"><a href="#" class=" ico20 ico_chart_full_c">매출</a></li>
+                                <li class="fl"><a href="#" class=" ico20 ico_customer_full_c">고객</a></li>
+                                <li class="fl"><a href="#" class=" ico20 ico_finance_full_c">금융</a></li>
+                                <li class="fl"><a href="#" class=" ico20 ico_map_full_c">지역</a></li>
+                                <li class="fl "><a href="#" class=" ico20 ico_gift_full_c">오늘드림</a></li>
+                            </ul>
+
                         </div>
 
                     </div>
@@ -195,22 +195,22 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="board_table_box">
-                                            <table class="board_tb mb20">
-                                                <colgroup>
+                                        <div class="board_table_box mypage_table_box x-scroll mb20">
+                                            <table class="board_tb">
+                                                <!-- <colgroup>
                                                     <col width="28px">
                                                     <col width="140px">
                                                     <col width="110px">
                                                     <col width="auto">
                                                     <col width="5%">
                                                     <col width="120px">
-                                                </colgroup>
+                                                </colgroup> -->
                                                 <thead>
                                                     <tr>
                                                         <th></th>
                                                         <th>이용일시</th>
-                                                        <th>보고서종류</th>
-                                                        <th>분석지역<span class="gr light">/</span>상권</th>
+                                                        <th class="txtleft">보고서종류</th>
+                                                        <th class="txtleft">분석지역<span class="gr light">/</span>상권</th>
                                                         <th>남은보관일</th>
                                                         <th>보고서보기</th>
                                                     </tr>
@@ -219,7 +219,7 @@
                                                     <tr>
                                                         <td>
                                                             <label class="container">
-                                                                <input type="checkbox" >
+                                                                <input type="checkbox">
                                                                 <span class="checkmark"></span>
                                                             </label>
                                                         </td>
@@ -240,7 +240,7 @@
                                                     <tr>
                                                         <td>
                                                             <label class="container">
-                                                                <input type="checkbox" >
+                                                                <input type="checkbox">
                                                                 <span class="checkmark"></span>
                                                             </label>
                                                         </td>
@@ -261,7 +261,7 @@
                                                     <tr>
                                                         <td>
                                                             <label class="container">
-                                                                <input type="checkbox" >
+                                                                <input type="checkbox">
                                                                 <span class="checkmark"></span>
                                                             </label>
                                                         </td>
@@ -281,35 +281,41 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
-                                            <div class="board_pg_navi cb">
-                                                <div class="dataTables_paginate paging_full_numbers" id="paginate_auth">
-                                                    <ul class="pagination borderless handlebarsPaging justify-content-center flx">
-                                                        <li class="paginate_button first disabled" aria-controls="list_info" tabindex="0" id="list_info_first" data-index="1">
-                                                            <a href="javascript:;">
-                                                                <i class="fas fa-angle-double-left"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li class="paginate_button previous disabled" aria-controls="list_info" tabindex="0" id="list_info_previous">
-                                                            <a href="javascript:;">Prev
-                                                            </a>
-                                                        </li>
-                                                        <li class="paginate_button num active" aria-controls="list_info" tabindex="0" data-index="1">
-                                                            <a href="javascript://">1</a>
-                                                        </li>
-                                                        <li class="paginate_button next disabled" aria-controls="list_info" tabindex="0" id="list_info_next">
-                                                            <a href="javascript:;"> Next </a>
-                                                        </li>
-                                                        <li class="paginate_button last disabled" aria-controls="list_info" tabindex="0" id="list_info_last" data-index="1">
-                                                            <a href="javascirpt:;">
-                                                                <i class="fas fa-angle-double-right"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="button_box fr">
-                                                    <button class="btn2">삭제</button>
-                                                    <button class="btn1">기간연장</button>
-                                                </div>
+                                        </div>
+                                        <div class="board_pg_navi cb">
+                                            <div class="dataTables_paginate paging_full_numbers" id="paginate_auth">
+                                                <ul
+                                                    class="pagination borderless handlebarsPaging justify-content-center flx">
+                                                    <li class="paginate_button first disabled" aria-controls="list_info"
+                                                        tabindex="0" id="list_info_first" data-index="1">
+                                                        <a href="javascript:;">
+                                                            <i class="fas fa-angle-double-left"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="paginate_button previous disabled"
+                                                        aria-controls="list_info" tabindex="0" id="list_info_previous">
+                                                        <a href="javascript:;">Prev
+                                                        </a>
+                                                    </li>
+                                                    <li class="paginate_button num active" aria-controls="list_info"
+                                                        tabindex="0" data-index="1">
+                                                        <a href="javascript://">1</a>
+                                                    </li>
+                                                    <li class="paginate_button next disabled" aria-controls="list_info"
+                                                        tabindex="0" id="list_info_next">
+                                                        <a href="javascript:;"> Next </a>
+                                                    </li>
+                                                    <li class="paginate_button last disabled" aria-controls="list_info"
+                                                        tabindex="0" id="list_info_last" data-index="1">
+                                                        <a href="javascirpt:;">
+                                                            <i class="fas fa-angle-double-right"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="button_box fr table_btn ">
+                                                <button class="btn2">삭제</button>
+                                                <button class="btn1">기간연장</button>
                                             </div>
                                         </div>
                                     </div>
@@ -325,842 +331,6 @@
         <!--main_section_wrap END-->
     </div>
 
-    <script>
-        //main_chart1
-        var chart2_label_array = '향후 6개월, 향후 1년';
-        chart2_label_array = chart2_label_array.split(',');
-        var main_chart1 = echarts.init(document.getElementById('main_chart1'));
-        option = {
 
-            grid: {
-                bottom: '16%',
-                top: '10%',
-                left: '0%',
-                right: '0%',
-                containLabel: true
-            },
-            title: {
-                text: '관심지역 상권 성장률',
-                show: false
-            },
-
-            tooltip: {
-                trigger: 'axis',
-                axisPointer: {
-                    type: 'shadow'
-                }
-            },
-            legend: {
-                show: true,
-                bottom: 'bottom',
-                left: 'center',
-                data: [{
-                        name: "전체업종",
-                        itemStyle: {
-                            color: '#F9A629'
-                        }
-                    },
-                    {
-                        name: "화장품업종",
-                        itemStyle: {
-                            color: '#C2E371'
-                        }
-                    },
-                ],
-            },
-            label: [],
-            xAxis: {
-                type: 'category',
-                data: chart2_label_array,
-                axisLine: {
-                    lineStyle: {
-                        //color: '#9e9e9e'
-                    }
-                },
-                axisLabel: {
-                    show: true,
-                    textStyle: {
-                        color: '#000',
-                        fontSize: 12,
-                    }
-                },
-                axisTick: {
-                    show: false
-                }
-            },
-            yAxis: {
-                show: false,
-                type: 'value',
-                splitLine: { // y축 수치선
-                    show: false
-                },
-                axisLabel: {
-                    show: false,
-                },
-
-            },
-            series: [{
-                    name: '전체업종',
-                    type: 'bar',
-                    data: [10.2, 20.5],
-                    barWidth: '24%',
-                    itemStyle: {
-                        color: '#F9A629',
-                        barBorderRadius: [4, 4, 0, 0],
-                    },
-                    label: {
-                        show: true,
-                        position: 'outside',
-                        align: 'center',
-                        color: '#F9A629',
-                        formatter: '{c}',
-                        textPadding: '12',
-                        fontWeight: '600',
-                        borderRadius: '12',
-                        fontSize: '12',
-                        fontFamily: 'Pretendard',
-                    },
-                },
-                {
-                    name: '화장품업종',
-                    type: 'bar',
-                    data: [10.4, 20.4],
-                    barWidth: '24%',
-                    itemStyle: {
-                        color: '#C2E371',
-                        barBorderRadius: [4, 4, 0, 0],
-                    },
-                    label: {
-                        show: true,
-                        position: 'outside',
-                        align: 'center',
-                        color: '#84A92C',
-                        formatter: '{c}',
-                        textPadding: '12',
-                        fontWeight: '600',
-                        borderRadius: '12',
-                        fontSize: '12',
-                        fontFamily: 'Pretendard',
-                    },
-                }
-            ]
-        };
-
-        function main1() {
-            var show = option.yAxis.show;
-            var left = option.legend.left;
-            var labelSize = option.label.fontSize;
-            var grid_l = option.grid.left;
-            var grid_r = option.grid.right;
-            var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
-
-            if (window.innerWidth >= 1024) {
-                show = 'false';
-                fontSize = '12';
-                labelSize = '12';
-            } else if (window.innerWidth <= 280) {
-                fontSize = '9';
-                grid_l = '4';
-                grid_r = '4';
-                labelSize = '10';
-            } else if (window.innerWidth <= 360) {
-                fontSize = '11';
-                grid_l = '0';
-                grid_r = '0';
-                labelSize = '10';
-            } else if (window.innerWidth < 1024) {
-                grid_l = '2';
-                grid_r = '2';
-                labelSize = '12';
-                show = 'false';
-            }
-            option.yAxis.show = show;
-            option.xAxis.axisLabel.textStyle.fontSize = fontSize;
-            option.label.fontSize = labelSize;
-            option.grid.left = grid_l;
-            option.grid.right = grid_r;
-            option.legend.left = left;
-
-            main_chart1.setOption(option);
-            main_chart1.resize();
-        }
-        main1();
-
-        //main_chart2
-        var chart2_label_array = '2017, 2018, 2019, 2020,2021,2022';
-        chart2_label_array = chart2_label_array.split(',');
-        var main_chart2 = echarts.init(document.getElementById('main_chart2'));
-        option = {
-            grid: {
-                top: '40px',
-                bottom: '80px',
-                left: '30px',
-                right: '30px'
-            },
-            label: {
-                show: true,
-            },
-            title: {
-                text: '올리브영 VS 화장품 업종 전월대비 성장률',
-                show: false
-            },
-            legend: {
-                data: ['올리브영', '화장품업종'],
-                bottom: 'bottom',
-            },
-            tooltip: {
-                trigger: 'axis',
-                fontSize: 10,
-                /* axisPointer: {
-                	type: 'cross',
-                	crossStyle: {
-                		color: '#999'
-                	}
-                } */
-            },
-            xAxis: {
-                type: 'category',
-                boundaryGap: false,
-                data: ['22.06', '22.07', '22.08', '22.09', '22.10', '22.11'],
-                axisLabel: {
-                    show: true,
-                    textStyle: {
-                        color: '#000',
-                        //fontSize: 9
-                    }
-                },
-            },
-            yAxis: {
-                type: 'value',
-                splitLine: { // y축 수치선
-                    show: false
-                },
-                axisLabel: {
-                    show: false,
-                },
-                axisLine: {
-                    show: false,
-                    lineStyle: {
-                        //color: '#9e9e9e'
-                    }
-                }
-            },
-            series: [{
-                name: "올리브영",
-                color: '#C2E371',
-                type: 'line',
-                symbolSize: 8,
-                data: [20, 20, 60, 50, 70, 80, 90],
-                emphasis: {
-                    focus: 'series'
-                },
-                lineStyle: {
-                    color: '#C2E371',
-                },
-                symbol: 'circle',
-                itemStyle: {
-                    borderWidth: 1,
-                    borderColor: '#fff',
-                    color: '#C2E371',
-                    normal: {
-                        label: {
-                            show: true,
-                            position: 'outside',
-                            align: 'center',
-                            //color: '#006991',
-                            textPadding: '12',
-                            fontWeight: '600',
-                            borderRadius: '12',
-                            //fontSize:'14',
-                            //lineHeight: '14',
-                            borderRadius: '10',
-                            border: '20',
-                            formatter: function (params) {
-                                var returnVal = echarts.format.addCommas(params.value);
-
-                                return returnVal;
-                            },
-                            borderRadius: 4,
-                            padding: 4,
-                        }
-                    }
-                },
-
-            }, {
-                name: "화장품업종",
-                color: '#FF8B61',
-                type: 'line',
-                symbolSize: 8,
-                data: [2, 10, 30, 20, 48, 44, 41],
-                emphasis: {
-                    focus: 'series'
-                },
-                lineStyle: {
-                    color: '#FF8B61',
-                },
-                symbol: 'circle',
-                itemStyle: {
-                    borderWidth: 1,
-                    borderColor: '#fff',
-                    color: '#FF8B61',
-                    normal: {
-                        label: {
-                            show: true,
-                            position: 'outside',
-                            align: 'center',
-                            //color: '#006991',
-                            textPadding: '12',
-                            fontWeight: '600',
-                            borderRadius: '12',
-                            //fontSize:'14',
-                            //lineHeight: '14',
-                            borderRadius: '10',
-                            border: '20',
-                            formatter: function (params) {
-                                var returnVal = echarts.format.addCommas(params.value);
-
-                                return returnVal;
-                            },
-                            borderRadius: 4,
-                            padding: 4,
-                        }
-                    }
-                },
-            }, ]
-        };
-
-        function main2() {
-            var show = option.yAxis.show;
-            var left = option.legend.left;
-            var grid_l = option.grid.left;
-            var grid_l = option.grid.left;
-            var grid_r = option.grid.right;
-            var labelSize = option.label.fontSize;
-            var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
-
-            if (window.innerWidth >= 1024) {
-                show = 'true';
-                fontSize = '10';
-                labelSize = '10';
-                left = 'center';
-            } else if (window.innerWidth <= 280) {
-                fontSize = '9';
-                grid_l = '24';
-                grid_r = '24';
-                labelSize = '10';
-            } else if (window.innerWidth <= 360) {
-                fontSize = '11';
-                grid_l = '24';
-                grid_r = '24';
-                labelSize = '10';
-            } else if (window.innerWidth < 1024) {
-                grid_l = '24';
-                grid_r = '24';
-                labelSize = '10';
-                left = 'center';
-            }
-            option.yAxis.show = show;
-
-            option.grid.left = grid_l;
-            option.grid.right = grid_r;
-            option.xAxis.axisLabel.textStyle.fontSize = fontSize;
-            option.label.fontSize = labelSize;
-            option.legend.left = left;
-
-            main_chart2.setOption(option);
-            main_chart2.resize();
-        }
-        main2();
-
-        //main_chart3
-        var chart2_label_array = '2017, 2018, 2019, 2020,2021,2022';
-        chart2_label_array = chart2_label_array.split(',');
-        var main_chart3 = echarts.init(document.getElementById('main_chart3'));
-        option = {
-            grid: {
-                top: '40px',
-                bottom: '80px',
-                left: '30px',
-                right: '30px'
-            },
-            label: {
-                show: true,
-            },
-            title: {
-                text: '올리브영 VS 화장품 업종 전월대비 성장률',
-                show: false
-            },
-            legend: {
-                data: ['올리브영', '화장품업종', '편의점', '커피전문점', '종합생활용품'],
-                bottom: 'bottom',
-            },
-            tooltip: {
-                trigger: 'axis',
-                fontSize: 10,
-                /* axisPointer: {
-                	type: 'cross',
-                	crossStyle: {
-                		color: '#999'
-                	}
-                } */
-            },
-            xAxis: {
-                type: 'category',
-                boundaryGap: false,
-                data: ['22.06', '22.07', '22.08', '22.09', '22.10', '22.11'],
-                axisLabel: {
-                    show: true,
-                    textStyle: {
-                        color: '#000',
-                        //fontSize: 9
-                    }
-                },
-            },
-            yAxis: {
-                type: 'value',
-                splitLine: { // y축 수치선
-                    show: false
-                },
-                axisLabel: {
-                    show: false,
-                },
-                axisLine: {
-                    show: false,
-                    lineStyle: {
-                        //color: '#9e9e9e'
-                    }
-                }
-            },
-            series: [{
-                    name: "올리브영",
-                    color: '#C2E371',
-                    type: 'line',
-                    symbolSize: 8,
-                    data: [20, 20, 60, 50, 70, 80],
-                    emphasis: {
-                        focus: 'series'
-                    },
-                    lineStyle: {
-                        color: '#C2E371',
-                    },
-                    symbol: 'circle',
-                    itemStyle: {
-                        borderWidth: 1,
-                        borderColor: '#fff',
-                        color: '#C2E371',
-                        normal: {
-                            label: {
-                                show: true,
-                                position: 'outside',
-                                align: 'center',
-                                //color: '#006991',
-                                textPadding: '12',
-                                fontWeight: '600',
-                                borderRadius: '12',
-                                //fontSize:'14',
-                                //lineHeight: '14',
-                                borderRadius: '10',
-                                border: '20',
-                                formatter: function (params) {
-                                    var returnVal = echarts.format.addCommas(params.value);
-
-                                    return returnVal;
-                                },
-                                borderRadius: 4,
-                                padding: 4,
-                            }
-                        }
-                    },
-
-                }, {
-                    name: "화장품업종",
-                    color: '#FF8B61',
-                    type: 'line',
-                    symbolSize: 8,
-                    data: [2, 10, 30, 20, 48, 44],
-                    emphasis: {
-                        focus: 'series'
-                    },
-                    lineStyle: {
-                        color: '#FF8B61',
-                    },
-                    symbol: 'circle',
-                    itemStyle: {
-                        borderWidth: 1,
-                        borderColor: '#fff',
-                        color: '#FF8B61',
-                        normal: {
-                            label: {
-                                show: true,
-                                position: 'outside',
-                                align: 'center',
-                                //color: '#006991',
-                                textPadding: '12',
-                                fontWeight: '600',
-                                borderRadius: '12',
-                                //fontSize:'14',
-                                //lineHeight: '14',
-                                borderRadius: '10',
-                                border: '20',
-                                formatter: function (params) {
-                                    var returnVal = echarts.format.addCommas(params.value);
-
-                                    return returnVal;
-                                },
-                                borderRadius: 4,
-                                padding: 4,
-                            }
-                        }
-                    },
-                },
-                {
-                    name: "편의점",
-                    color: '#5F7ECD',
-                    type: 'line',
-                    symbolSize: 8,
-                    data: [2, 10, 12, 7, 16, 12],
-                    emphasis: {
-                        focus: 'series'
-                    },
-                    lineStyle: {
-                        color: '#5F7ECD',
-                    },
-                    symbol: 'circle',
-                    itemStyle: {
-                        borderWidth: 1,
-                        borderColor: '#fff',
-                        color: '#5F7ECD',
-                        normal: {
-                            label: {
-                                show: true,
-                                position: 'outside',
-                                align: 'center',
-                                //color: '#006991',
-                                textPadding: '12',
-                                fontWeight: '600',
-                                borderRadius: '12',
-                                //fontSize:'14',
-                                //lineHeight: '14',
-                                borderRadius: '10',
-                                border: '20',
-                                formatter: function (params) {
-                                    var returnVal = echarts.format.addCommas(params.value);
-
-                                    return returnVal;
-                                },
-                                borderRadius: 4,
-                                padding: 4,
-                            }
-                        }
-                    },
-                },
-                {
-                    name: "커피전문점",
-                    color: '#905F43',
-                    type: 'line',
-                    symbolSize: 8,
-                    data: [2, 2, 4, 6, 8, 12],
-                    emphasis: {
-                        focus: 'series'
-                    },
-                    lineStyle: {
-                        color: '#905F43',
-                    },
-                    symbol: 'circle',
-                    itemStyle: {
-                        borderWidth: 1,
-                        borderColor: '#fff',
-                        color: '#905F43',
-                        normal: {
-                            label: {
-                                show: true,
-                                position: 'outside',
-                                align: 'center',
-                                //color: '#006991',
-                                textPadding: '12',
-                                fontWeight: '600',
-                                borderRadius: '12',
-                                //fontSize:'14',
-                                //lineHeight: '14',
-                                borderRadius: '10',
-                                border: '20',
-                                formatter: function (params) {
-                                    var returnVal = echarts.format.addCommas(params.value);
-
-                                    return returnVal;
-                                },
-                                borderRadius: 4,
-                                padding: 4,
-                            }
-                        }
-                    },
-                },
-                {
-                    name: "종합생활용품",
-                    color: '#39BBC3',
-                    type: 'line',
-                    symbolSize: 8,
-                    data: [4, 4, 2, 4, 8, 12],
-                    emphasis: {
-                        focus: 'series'
-                    },
-                    lineStyle: {
-                        color: '#39BBC3',
-                    },
-                    symbol: 'circle',
-                    itemStyle: {
-                        borderWidth: 1,
-                        borderColor: '#fff',
-                        color: '#39BBC3',
-                        normal: {
-                            label: {
-                                show: true,
-                                position: 'outside',
-                                align: 'center',
-                                //color: '#006991',
-                                textPadding: '12',
-                                fontWeight: '600',
-                                borderRadius: '12',
-                                //fontSize:'14',
-                                //lineHeight: '14',
-                                borderRadius: '10',
-                                border: '20',
-                                formatter: function (params) {
-                                    var returnVal = echarts.format.addCommas(params.value);
-
-                                    return returnVal;
-                                },
-                                borderRadius: 4,
-                                padding: 4,
-                            }
-                        }
-                    },
-                }
-            ]
-        };
-
-        function main3() {
-            var show = option.yAxis.show;
-            var left = option.legend.left;
-            var grid_l = option.grid.left;
-            var grid_l = option.grid.left;
-            var grid_r = option.grid.right;
-            var labelSize = option.label.fontSize;
-            var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
-
-            if (window.innerWidth >= 1024) {
-                show = 'true';
-                fontSize = '10';
-                labelSize = '10';
-                left = 'center';
-                fontSize = '10';
-            } else if (window.innerWidth <= 280) {
-                fontSize = '9';
-                grid_l = '24';
-                grid_r = '24';
-                labelSize = '10';
-            } else if (window.innerWidth <= 360) {
-                fontSize = '11';
-                grid_l = '24';
-                grid_r = '24';
-                labelSize = '10';
-            } else if (window.innerWidth < 1024) {
-                grid_l = '24';
-                grid_r = '24';
-                labelSize = '10';
-                left = 'center';
-                fontSize = '10';
-            }
-            option.yAxis.show = show;
-
-            option.grid.left = grid_l;
-            option.grid.right = grid_r;
-            option.xAxis.axisLabel.textStyle.fontSize = fontSize;
-            option.label.fontSize = labelSize;
-            option.legend.left = left;
-
-            main_chart3.setOption(option);
-            main_chart3.resize();
-        }
-        main3();
-        //main3
-
-        //main_chart4
-        var chart2_label_array =
-            '경기\n시흥시\n정왕4동, 경기\n시흥시\n정왕본동, 서울\n용산구\n이태원1동, 경기\n광명시\n일직동, 경기\n안산시\n원곡동, 경기\n시흥시\n정왕3동, 대구\n달성군\n유가읍, 경기\n안산시\n백운동, 경기\n고양시\n흥도동, 서울\n강동구\n상일1동';
-        chart2_label_array = chart2_label_array.split(',');
-        var main_chart4 = echarts.init(document.getElementById('main_chart4'));
-        option = {
-
-            grid: {
-                bottom: '12%',
-                top: '10%',
-                left: '0%',
-                right: '0%',
-                containLabel: true
-            },
-            title: {
-                text: '오늘드림 점유율 상위 10개지역',
-                show: false
-            },
-
-            tooltip: {
-                trigger: 'axis',
-                axisPointer: {
-                    type: 'shadow'
-                }
-            },
-            legend: {
-                show: true,
-                bottom: 'bottom',
-                left: 'center',
-                data: [{
-                        name: "오늘드림",
-                        itemStyle: {
-                            color: '#F9A629'
-                        }
-                    },
-                    {
-                        name: "온라인몰",
-                        itemStyle: {
-                            color: '#C2E371'
-                        }
-                    },
-                ],
-            },
-            label: [],
-            xAxis: {
-                type: 'category',
-                data: chart2_label_array,
-                axisLine: {
-                    lineStyle: {
-                        //color: '#9e9e9e'
-                    }
-                },
-                axisLabel: {
-                    show: true,
-                    textStyle: {
-                        color: '#666F7E',
-                        fontSize: 12,
-                        fontWeight: 500,
-                        lineHeight: 16,
-                    },
-
-                },
-                axisTick: {
-                    show: false
-                }
-            },
-            yAxis: {
-                show: false,
-                type: 'value',
-                splitLine: { // y축 수치선
-                    show: false
-                },
-                axisLabel: {
-                    show: false,
-                },
-
-            },
-            series: [{
-                    name: '오늘드림',
-                    type: 'bar',
-                    data: [10, 20, 24, 22, 12, 34, 32, 30, 28, 16],
-                    //barWidth: '30%',
-                    itemStyle: {
-                        color: '#F9A629',
-                        barBorderRadius: [4, 4, 0, 0],
-                    },
-                    label: {
-                        show: true,
-                        position: 'outside',
-                        align: 'center',
-                        color: '#F9A629',
-                        formatter: '{c}',
-                        textPadding: '12',
-                        fontWeight: '600',
-                        borderRadius: '12',
-                        fontSize: '12',
-                        fontFamily: 'Pretendard',
-                    },
-                },
-                {
-                    name: '온라인몰',
-                    type: 'bar',
-                    data: [10, 20, 40, 48, 24, 32, 10, 20, 40, 48],
-                    //barWidth: '30%',
-                    itemStyle: {
-                        color: '#C2E371',
-                        barBorderRadius: [4, 4, 0, 0],
-                    },
-                    label: {
-                        show: true,
-                        position: 'outside',
-                        align: 'center',
-                        color: '#84A92C',
-                        formatter: '{c}',
-                        textPadding: '12',
-                        fontWeight: '600',
-                        borderRadius: '12',
-                        fontSize: '12',
-                        fontFamily: 'Pretendard',
-                    },
-                }
-            ]
-        };
-
-        function main4() {
-            var show = option.yAxis.show;
-            var left = option.legend.left;
-            var labelSize = option.label.fontSize;
-            var grid_l = option.grid.left;
-            var grid_r = option.grid.right;
-            var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
-
-            if (window.innerWidth >= 1380) {
-                show = 'false';
-                fontSize = '11';
-            } else if (window.innerWidth <= 280) {
-                fontSize = '9';
-                grid_l = '4';
-                grid_r = '4';
-                labelSize = '10';
-            } else if (window.innerWidth <= 360) {
-                fontSize = '11';
-                grid_l = '0';
-                grid_r = '0';
-                labelSize = '10';
-            } else if (window.innerWidth < 1380) {
-                fontSize = '10';
-                show = 'false';
-            }
-            option.yAxis.show = show;
-            option.xAxis.axisLabel.textStyle.fontSize = fontSize;
-            option.label.fontSize = labelSize;
-            option.grid.left = grid_l;
-            option.grid.right = grid_r;
-            option.legend.left = left;
-
-            main_chart4.setOption(option);
-            main_chart4.resize();
-        }
-        main4();
-
-        //echart width 오류 해결
-        const container1 = document.querySelector('#main_chart1');
-        const chart1 = echarts.init(container1);
-        new ResizeObserver(() => chart1.resize()).observe(container1);
-
-        const container2 = document.querySelector('#main_chart2');
-        const chart2 = echarts.init(container2);
-        new ResizeObserver(() => chart2.resize()).observe(container2);
-        const container3 = document.querySelector('#main_chart3');
-        const chart3 = echarts.init(container3);
-        new ResizeObserver(() => chart3.resize()).observe(container3);
-        const container4 = document.querySelector('#main_chart4');
-        const chart4 = echarts.init(container4);
-        new ResizeObserver(() => chart4.resize()).observe(container4);
-    </script>
 </body>
-
 </html>
