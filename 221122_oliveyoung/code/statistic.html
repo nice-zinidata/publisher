@@ -26,7 +26,7 @@
     <title>올리브영 상권분석</title>
 </head>
 
-<body class=" mypage_layout">
+<body class=" mypage_layout statistic">
     <div class="top_section">
         <div class="menu_top pd main_layout">
             <div class="menu_left">
@@ -37,7 +37,7 @@
             <div class="menu_middle">
                 <ul class="top_gnb">
                     <li><a href="index1.html">상권분석</a></li>
-                    <li><a href="index.html">상권통계</a></li>
+                    <li class="on"><a href="index.html">상권통계</a></li>
                 </ul>
             </div>
             <div class="menu_right">
@@ -64,102 +64,97 @@
         </div>
     </div>
     <div class="main_wrap">
-        <!--top_section START-->
+
+        <!--main_section full_sec START-->
         <div class="main_section_wrap pd main_layout">
             <div class="main_section lft_sec">
-                <div class="sec_wrap">
+                <div class="sec_wrap" style="margin-bottom: 40px;">
                     <div class="box_div mb12">
                         <div class="box_div_inner">
-                            <div class="user_navi_head login_main">
-                                <div class="user_big_gra mb12">
-                                    <div class="user_big">
+                            <div class="show_body side_filter">
+                                <div class="show_section mb20">
+                                    <div class="show_body_title_box flx mb8">
+                                        <p class="show_body_title">분류선택</p>
+                                    </div>
+                                    <div class="radio_base has_border choice_box">
+                                        <label for="select_cate1" class="on">
+                                            <input type="radio" id="select_cate1" name="select_cate" checked=""
+                                                value="1">
+                                            <span>올리브영 매출</span>
+                                        </label>
+
+                                        <label for="select_cate2">
+                                            <input type="radio" id="select_cate2" name="select_cate" value="2">
+                                            <span>유관업종</span>
+                                        </label>
+
+                                        <label for="select_cate3">
+                                            <input type="radio" id="select_cate3" name="select_cate" value="3">
+                                            <span>소득/소비</span>
+                                        </label>
+
                                     </div>
                                 </div>
-                                <div class="txt">
-                                    <p>김올영님</p>
-                                    <p>가맹 영업 2팀</p>
-                                </div>
-                            </div>
-                            <div class="button_box_area user_box_area">
-                                <div class="select_main_box sub list_select mb12">
-                                    <a class="select_main goto_interest">관심영역 바로가기</a>
-                                    <div class="select_main_show sub_show sub_show_1">
-                                        <div class="show_header">
-                                            <h5>관심영역 리스트</h5>
-                                        </div>
-                                        <div class="show_body">
-                                            <div class="in_box list_box">
-
-                                                <ul class="shop_list">
-                                                    <li>
-                                                        <a class="list_a" href="#">
-                                                            <p>신촌대로점</p>
-                                                            <p>서울특별시 서대문구 신촌로 121 1층</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="list_a" href="#">
-                                                            <p>신촌역점</p>
-                                                            <p>서울특별시 서대문구 신촌로 79</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="list_a" href="#">
-                                                            <p>올리브영 신촌 타운</p>
-                                                            <p>서울특별시 서대문구 신촌로 79</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="list_a" href="#">
-                                                            <p>신촌대로점</p>
-                                                            <p>서울특별시 서대문구 신촌로 121 1층</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="list_a" href="#">
-                                                            <p>신촌대로점</p>
-                                                            <p>서울특별시 서대문구 신촌로 121 1층</p>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                <div class="show_section">
+                                    <div class="show_body_title_box flx mb8">
+                                        <p class="show_body_title">지역선택</p>
+                                    </div>
+                                    <div class="in_box mb20 choice_box">
+                                        <select class="select mb4" name="" id="">
+                                            <option value="">시/도</option>
+                                            <option value="">서울시</option>
+                                        </select>
+                                        <select class="select mb4" name="" id="">
+                                            <option value="">시/군/구</option>
+                                            <option value="">서대문구</option>
+                                        </select>
+                                        <select class="select" name="" id="">
+                                            <option value="">읍/면/동</option>
+                                            <option value="">신촌동</option>
+                                        </select>
                                     </div>
                                 </div>
-
+                                <div class="show_section date_range_select">
+                                    <div class="show_body_title_box flx mb8">
+                                        <p class="show_body_title">기간선택</p>
+                                    </div>
+                                    <div class="in_box flx has_number_input mb4 choice_box">
+                                        <input type="month" id="name" name="name" required minlength="7" maxlength="7"
+                                            placeholder="시작일" value="2021-01" min="2021-01" max="2024-01">
+                                        <span class="hypn">-</span>
+                                        <input type="month" id="name" name="name" required placeholder="종료일"
+                                            value="2024-01" min="2021-01" max="2024-01">
+                                    </div>
+                                    <div class="in_box flx mb20">
+                                        <p class="reference font12">
+                                            ※ 과거매출 3년 ~ 향후매출 1년까지 추출 가능
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="show_section business_kind_select">
+                                    <div class="show_body_title_box flx mb8">
+                                        <p class="show_body_title">업종선택</p>
+                                    </div>
+                                    <div class="in_box flx mb20">
+                                        <select class="select" name="" id="">
+                                            <option value="">업종선택</option>
+                                            <option value="">화장품</option>
+                                            <option value="">편의점</option>
+                                            <option value="">커피전문점</option>
+                                            <option value="">한식</option>
+                                            <option value="">별식/퓨전요리</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="show_section mb8">
+                                    <div class="button_box">
+                                        <button class="btn1 w100 statistic_btn">
+                                            데이터 검색
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="box_div mb12">
-                        <div class="box_div_header">
-                            <button class="quick_btn">
-                                <p>상권분석</p>
-                                <div class="ico20 ico_arrow_line_b"></div>
-                            </button>
-                        </div>
-                        <div class="mini_quick_link_box">
-
-                            <ul class="mini_quick_link cb">
-                                <li class="fl"><a href="#" class=" ico20 ico_chart_full_c">매출</a></li>
-                                <li class="fl"><a href="#" class=" ico20 ico_customer_full_c">고객</a></li>
-                                <li class="fl"><a href="#" class=" ico20 ico_finance_full_c">금융</a></li>
-                                <li class="fl"><a href="#" class=" ico20 ico_map_full_c">지역</a></li>
-                                <li class="fl "><a href="#" class=" ico20 ico_gift_full_c">오늘드림</a></li>
-                            </ul>
-
-                        </div>
-
-                    </div>
-                    <div class="box_div mb12">
-                        <div class="box_div_header">
-                            <button class="quick_btn">
-                                <p>상권통계</p>
-                                <div class="ico20 ico_arrow_line_b"></div>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="button_box flx link_howto">
-                        <button class="ico16 ico_ask_line_g" href="#">도움말</button>
                     </div>
                 </div>
             </div>
@@ -168,154 +163,477 @@
                 <div class="sec_wrap">
                     <div class="box_div_section">
                         <div class="box_div_title_r mb12">
-                            <h3 class="title_full_sec mypage">마이페이지</h3>
+                            <h3 class="title_full_sec statistic_title">상권통계
+                                &nbsp;<span class="sub_tt_statistic"> </span>
+                            </h3>
+                            <div class="about_detail flx">
+                                <p class="reference where_show">서울시 서대문구 신촌동</p>
+                                <p class="reference date_range_show">&nbsp;|&nbsp;데이터 기간 : <span
+                                        class="start_date">2021.01</span>-<span class="end_date">2024.01</span></p>
+                                <p class="reference business_kind_show">&nbsp;|&nbsp;업종 :
+                                    화장품</p>
+                            </div>
                         </div>
-                        <div class="box_div_wrap">
-                            <div class="box_div">
+                        <div class="none_box">
+                            분류/지역/기간 필터를 선택하시고 <span class="button_span">데이터 검색</span> 버튼을 클릭하시면<br />
+                            올리브영 상권통계 데이터를 확인할 수 있습니다.
+                        </div>
+
+                        <!-- statistic_wrap_01 -->
+                        <div class="box_div_wrap statistic_wrap statistic_wrap_01">
+                            <div class="box_div mb40">
                                 <div class="box_div_inner">
                                     <div class="box_div_body">
-                                        <div class="mypage_head_box cb mb20">
-                                            <div class="mp_hd_left fl">
-                                                <div class="box_div_title_m mb4">
-                                                    <p class="tt_txt">저장된 보고서 목록</p>
-                                                </div>
-                                                <p class="reference">* 상권분석을 통해 열람한 상세보고서는 3개월동안 저장됩니다.</p>
-                                            </div>
-                                            <div class="mp_hd_right fr">
-                                                <div class="bbs_search">
-                                                    <div class="flx">
-                                                        <div class="search_form_box">
-                                                            <input name="search_word" type="text" id="searchText"
-                                                                value="" title="검색어를 입력하세요" placeholder="검색어를 입력하세요">
-                                                            <button type="button" name="btn_search" id="btnSearch"
-                                                                class="bbs_search_btn" title="검색하기"
-                                                                onclick="list();">검색</button>
-                                                        </div>
+                                        <div class="mypage_head_box mb24">
+                                            <div class="mp_hd_left">
+                                                <div class="box_div_title_m">
+                                                    <p class="tt_txt">올리브영 기본매출통계</p>
+                                                    <div class="tt_bt_box">
+                                                        <button class="btn4 ico20 ico_board_line_g">Excel</button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="board_table_box mypage_table_box x-scroll mb20">
-                                            <table class="board_tb">
-                                                <!-- <colgroup>
-                                                    <col width="28px">
-                                                    <col width="140px">
-                                                    <col width="110px">
-                                                    <col width="auto">
-                                                    <col width="5%">
-                                                    <col width="120px">
-                                                </colgroup> -->
-                                                <thead>
-                                                    <tr>
-                                                        <th></th>
-                                                        <th>이용일시</th>
-                                                        <th class="txtleft">보고서종류</th>
-                                                        <th class="txtleft">분석지역<span class="gr light">/</span>상권</th>
-                                                        <th>남은보관일</th>
-                                                        <th>보고서보기</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="tbodyList" class="tbody_list">
-                                                    <tr>
-                                                        <td>
-                                                            <label class="container">
-                                                                <input type="checkbox">
-                                                                <span class="checkmark"></span>
-                                                            </label>
-                                                        </td>
-                                                        <td><span class="gr">2022-12-22 14:51</span></td>
-                                                        <td class="txtleft"><span class="rp_cate rp_ct_01">매장</span>
-                                                        </td>
-                                                        <td class="txtleft">
-                                                            <ul class="bd_rp_name">
-                                                                <li>올리브영 신촌점</li>
-                                                                <li>서울특별시 서대문구 신촌동</li>
-                                                            </ul>
-                                                        </td>
-                                                        <td>90</td>
-                                                        <td>
-                                                            <button type="button" class="btn6 view_scr">화면보기</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <label class="container">
-                                                                <input type="checkbox">
-                                                                <span class="checkmark"></span>
-                                                            </label>
-                                                        </td>
-                                                        <td><span class="gr">2022-12-22 14:51</span></td>
-                                                        <td class="txtleft"><span class="rp_cate rp_ct_02">출점후보지</span>
-                                                        </td>
-                                                        <td class="txtleft">
-                                                            <ul class="bd_rp_name">
-                                                                <li>신촌로 127</li>
-                                                                <li>서울특별시 서대문구 신촌로 127</li>
-                                                            </ul>
-                                                        </td>
-                                                        <td>90</td>
-                                                        <td>
-                                                            <button type="button" class="btn6 view_scr">화면보기</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <label class="container">
-                                                                <input type="checkbox">
-                                                                <span class="checkmark"></span>
-                                                            </label>
-                                                        </td>
-                                                        <td><span class="gr">2022-12-22 14:51</span></td>
-                                                        <td class="txtleft"><span class="rp_cate rp_ct_03">상권</span>
-                                                        </td>
-                                                        <td class="txtleft">
-                                                            <ul class="bd_rp_name">
-                                                                <li>신촌로 127 반경 500m</li>
-                                                                <li>서울특별시 서대문구 신촌로 127</li>
-                                                            </ul>
-                                                        </td>
-                                                        <td>90</td>
-                                                        <td>
-                                                            <button type="button" class="btn6 view_scr">화면보기</button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="board_pg_navi cb">
-                                            <div class="dataTables_paginate paging_full_numbers" id="paginate_auth">
-                                                <ul
-                                                    class="pagination borderless handlebarsPaging justify-content-center flx">
-                                                    <li class="paginate_button first disabled" aria-controls="list_info"
-                                                        tabindex="0" id="list_info_first" data-index="1">
-                                                        <a href="javascript:;">
-                                                            <i class="fas fa-angle-double-left"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li class="paginate_button previous disabled"
-                                                        aria-controls="list_info" tabindex="0" id="list_info_previous">
-                                                        <a href="javascript:;">Prev
-                                                        </a>
-                                                    </li>
-                                                    <li class="paginate_button num active" aria-controls="list_info"
-                                                        tabindex="0" data-index="1">
-                                                        <a href="javascript://">1</a>
-                                                    </li>
-                                                    <li class="paginate_button next disabled" aria-controls="list_info"
-                                                        tabindex="0" id="list_info_next">
-                                                        <a href="javascript:;"> Next </a>
-                                                    </li>
-                                                    <li class="paginate_button last disabled" aria-controls="list_info"
-                                                        tabindex="0" id="list_info_last" data-index="1">
-                                                        <a href="javascirpt:;">
-                                                            <i class="fas fa-angle-double-right"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
+                                        <div class="mypage_body">
+                                            <div class="mp_section mb60">
+                                                <p class="min_title font16">올리브영 총 매출금액</p>
+                                                <p class="reference txtright font12 mb8">[ 단위 : 억원/월 ]</p>
+                                                <div class="echart_box mb20 x-scroll">
+                                                    <div id="rpt_chart1" style="min-width: 780px;" class="chart"></div>
+                                                </div>
+                                                <div class="table_box x-scroll">
+                                                    <table class="all_border long table_pd mb4">
+                                                        <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th>19.11</th>
+                                                                <th>19.12</th>
+                                                                <th>20.01</th>
+                                                                <th>20.02</th>
+                                                                <th>20.03</th>
+                                                                <th>20.04</th>
+                                                                <th>20.05</th>
+                                                                <th>20.06</th>
+                                                                <th>20.07</th>
+                                                                <th>20.08</th>
+                                                                <th>20.09</th>
+                                                                <th>20.10</th>
+                                                                <th>20.11</th>
+                                                                <th>20.12</th>
+                                                                <th>21.01</th>
+                                                                <th>21.02</th>
+                                                                <th>21.03</th>
+                                                                <th>21.04</th>
+                                                                <th>21.05</th>
+                                                                <th>21.06</th>
+                                                                <th>21.07</th>
+                                                                <th>21.08</th>
+                                                                <th>21.09</th>
+                                                                <th>21.10</th>
+                                                                <th>21.11</th>
+                                                                <th>21.12</th>
+                                                                <th>22.01</th>
+                                                                <th>22.02</th>
+                                                                <th>22.03</th>
+                                                                <th>22.04</th>
+                                                                <th>22.05</th>
+                                                                <th>22.06</th>
+                                                                <th>22.07</th>
+                                                                <th>22.08</th>
+                                                                <th>22.09</th>
+                                                                <th>22.10</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="mint_light color_dot dot1">총매출</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
-                                            <div class="button_box fr table_btn ">
-                                                <button class="btn2">삭제</button>
-                                                <button class="btn1">기간연장</button>
+                                            <div class="mp_section">
+                                                <p class="min_title font16">올리브영 점포당 매출</p>
+                                                <p class="reference txtright font12">[ 단위 : 만원/월 ]</p>
+                                                <div class="echart_box mb20 x-scroll">
+                                                    <div id="rpt_chart2" class="chart" style="min-width: 980px;"></div>
+                                                </div>
+                                                <div class="table_box x-scroll">
+                                                    <table class="all_border long table_pd mb4">
+                                                        <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th>19.11</th>
+                                                                <th>19.12</th>
+                                                                <th>20.01</th>
+                                                                <th>20.02</th>
+                                                                <th>20.03</th>
+                                                                <th>20.04</th>
+                                                                <th>20.05</th>
+                                                                <th>20.06</th>
+                                                                <th>20.07</th>
+                                                                <th>20.08</th>
+                                                                <th>20.09</th>
+                                                                <th>20.10</th>
+                                                                <th>20.11</th>
+                                                                <th>20.12</th>
+                                                                <th>21.01</th>
+                                                                <th>21.02</th>
+                                                                <th>21.03</th>
+                                                                <th>21.04</th>
+                                                                <th>21.05</th>
+                                                                <th>21.06</th>
+                                                                <th>21.07</th>
+                                                                <th>21.08</th>
+                                                                <th>21.09</th>
+                                                                <th>21.10</th>
+                                                                <th>21.11</th>
+                                                                <th>21.12</th>
+                                                                <th>22.01</th>
+                                                                <th>22.02</th>
+                                                                <th>22.03</th>
+                                                                <th>22.04</th>
+                                                                <th>22.05</th>
+                                                                <th>22.06</th>
+                                                                <th>22.07</th>
+                                                                <th>22.08</th>
+                                                                <th>22.09</th>
+                                                                <th>22.10</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="mint_light color_dot dot1">총매출</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="box_div mb40">
+                                <div class="box_div_inner">
+                                    <div class="box_div_body">
+                                        <div class="mypage_head_box mb24">
+                                            <div class="mp_hd_left">
+                                                <div class="box_div_title_m">
+                                                    <p class="tt_txt">올리브영 객수<span class="gr light">/</span>객 단가 통계</p>
+                                                    <div class="tt_bt_box">
+                                                        <button class="btn4 ico20 ico_board_line_g">Excel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mypage_body">
+                                            <div class="mp_section mb60">
+                                                <p class="min_title font16">올리브영 객수</p>
+                                                <p class="reference txtright font12">[ 단위 : 명/월 ]</p>
+                                                <div class="echart_box x-scroll mb20">
+                                                    <div id="rpt_chart3" style="min-width: 980px;" class="chart"></div>
+                                                </div>
+                                                <div class="table_box x-scroll">
+                                                    <table class="all_border long table_pd mb4">
+                                                        <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th>19.11</th>
+                                                                <th>19.12</th>
+                                                                <th>20.01</th>
+                                                                <th>20.02</th>
+                                                                <th>20.03</th>
+                                                                <th>20.04</th>
+                                                                <th>20.05</th>
+                                                                <th>20.06</th>
+                                                                <th>20.07</th>
+                                                                <th>20.08</th>
+                                                                <th>20.09</th>
+                                                                <th>20.10</th>
+                                                                <th>20.11</th>
+                                                                <th>20.12</th>
+                                                                <th>21.01</th>
+                                                                <th>21.02</th>
+                                                                <th>21.03</th>
+                                                                <th>21.04</th>
+                                                                <th>21.05</th>
+                                                                <th>21.06</th>
+                                                                <th>21.07</th>
+                                                                <th>21.08</th>
+                                                                <th>21.09</th>
+                                                                <th>21.10</th>
+                                                                <th>21.11</th>
+                                                                <th>21.12</th>
+                                                                <th>22.01</th>
+                                                                <th>22.02</th>
+                                                                <th>22.03</th>
+                                                                <th>22.04</th>
+                                                                <th>22.05</th>
+                                                                <th>22.06</th>
+                                                                <th>22.07</th>
+                                                                <th>22.08</th>
+                                                                <th>22.09</th>
+                                                                <th>22.10</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="mint_light color_dot dot5">객수</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="mp_section">
+                                                <p class="min_title font16">올리브영객 단가</p>
+                                                <p class="reference txtright font12">[ 단위 : 원/월 ]</p>
+                                                <div class="echart_box x-scroll mb20">
+                                                    <div id="rpt_chart4" class="chart" style="min-width: 980px;"></div>
+                                                </div>
+                                                <div class="table_box x-scroll">
+                                                    <table class="all_border long table_pd mb4">
+                                                        <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th>19.11</th>
+                                                                <th>19.12</th>
+                                                                <th>20.01</th>
+                                                                <th>20.02</th>
+                                                                <th>20.03</th>
+                                                                <th>20.04</th>
+                                                                <th>20.05</th>
+                                                                <th>20.06</th>
+                                                                <th>20.07</th>
+                                                                <th>20.08</th>
+                                                                <th>20.09</th>
+                                                                <th>20.10</th>
+                                                                <th>20.11</th>
+                                                                <th>20.12</th>
+                                                                <th>21.01</th>
+                                                                <th>21.02</th>
+                                                                <th>21.03</th>
+                                                                <th>21.04</th>
+                                                                <th>21.05</th>
+                                                                <th>21.06</th>
+                                                                <th>21.07</th>
+                                                                <th>21.08</th>
+                                                                <th>21.09</th>
+                                                                <th>21.10</th>
+                                                                <th>21.11</th>
+                                                                <th>21.12</th>
+                                                                <th>22.01</th>
+                                                                <th>22.02</th>
+                                                                <th>22.03</th>
+                                                                <th>22.04</th>
+                                                                <th>22.05</th>
+                                                                <th>22.06</th>
+                                                                <th>22.07</th>
+                                                                <th>22.08</th>
+                                                                <th>22.09</th>
+                                                                <th>22.10</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="mint_light color_dot dot5">객수</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="box_div">
+                                <div class="box_div_inner">
+                                    <div class="box_div_body">
+                                        <div class="mypage_head_box mb24">
+                                            <div class="mp_hd_left">
+                                                <div class="box_div_title_m">
+                                                    <p class="tt_txt">올리브영<span class="gr light">/</span>화장품 업종 성장률</p>
+                                                    <div class="tt_bt_box">
+                                                        <button class="btn4 ico20 ico_board_line_g">Excel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mypage_body">
+                                            <div class="mp_section">
+                                                <p class="min_title font16">성장률 비교</p>
+                                                <p class="reference txtright font12">[ 단위 : % ]</p>
+                                                <div class="echart_box mb20">
+                                                    <div id="rpt_chart5" class="chart"></div>
+                                                </div>
+                                                <div class="table_box x-scroll">
+                                                    <table class="all_border long table_pd mb4">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>올리브영 성장률</th>
+                                                                <th>화장품업종 성장률</th>
+                                                                <th>성장률 비교<br />
+                                                                    <span class="reference">
+                                                                        *올리브영 기준
+                                                                    </span>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>20.4%</td>
+                                                                <td>12.4%</td>
+                                                                <td><span class="up_p">+ 12.4%</span></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -323,6 +641,491 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- statistic_wrap_01 -->
+                        <!-- statistic_wrap_02 -->
+                        <div class="box_div_wrap statistic_wrap statistic_wrap_02">
+                            <div class="box_div mb40">
+                                <div class="box_div_inner">
+                                    <div class="box_div_body">
+                                        <div class="mypage_head_box mb24">
+                                            <div class="mp_hd_left">
+                                                <div class="box_div_title_m">
+                                                    <p class="tt_txt">화장품업종 매출<span class="gr light">/</span>건수 통계</p>
+                                                    <div class="tt_bt_box">
+                                                        <button class="btn4 ico20 ico_board_line_g">Excel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mypage_body">
+                                            <div class="mp_section mb60">
+                                                <p class="min_title font16">화장품업종 총 매출 금액</p>
+                                                <p class="reference txtright font12 mb8">[ 단위 : 억원/월 ]</p>
+                                                <div class="echart_box mb20 x-scroll">
+                                                    <div id="rpt_chart6" style="min-width: 580px;" class="chart"></div>
+                                                </div>
+                                                <div class="table_box x-scroll">
+                                                    <table class="all_border long table_pd mb4">
+                                                        <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th>21.11</th>
+                                                                <th>21.12</th>
+                                                                <th>22.01</th>
+                                                                <th>22.02</th>
+                                                                <th>22.03</th>
+                                                                <th>22.04</th>
+                                                                <th>22.05</th>
+                                                                <th>22.06</th>
+                                                                <th>22.07</th>
+                                                                <th>22.08</th>
+                                                                <th>22.09</th>
+                                                                <th>22.10</th>
+                                                                <th>22.10</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="mint_light color_dot dot1">총매출</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="mp_section">
+                                                <p class="min_title font16">화장품 업종 총 결제 건수</p>
+                                                <p class="reference txtright font12">[ 단위 : 건수 ]</p>
+                                                <div class="echart_box mb20 x-scroll">
+                                                    <div id="rpt_chart7" class="chart" style="min-width: 580px;"></div>
+                                                </div>
+                                                <div class="table_box x-scroll">
+                                                    <table class="all_border long table_pd mb4">
+                                                        <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th>19.11</th>
+                                                                <th>19.12</th>
+                                                                <th>20.01</th>
+                                                                <th>20.02</th>
+                                                                <th>20.03</th>
+                                                                <th>20.04</th>
+                                                                <th>20.05</th>
+                                                                <th>20.06</th>
+                                                                <th>20.07</th>
+                                                                <th>20.08</th>
+                                                                <th>20.09</th>
+                                                                <th>20.10</th>
+                                                                <th>20.11</th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="mint_light color_dot dot1">총결제건수</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="box_div mb40">
+                                <div class="box_div_inner">
+                                    <div class="box_div_body">
+                                        <div class="mypage_head_box mb24">
+                                            <div class="mp_hd_left">
+                                                <div class="box_div_title_m">
+                                                    <p class="tt_txt">화장품업종 객수<span class="gr light">/</span>객 단가 통계</p>
+                                                    <div class="tt_bt_box">
+                                                        <button class="btn4 ico20 ico_board_line_g">Excel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mypage_body">
+                                            <div class="mp_section mb60">
+                                                <p class="min_title font16">화장품 업종 객수</p>
+                                                <p class="reference txtright font12">[ 단위 : 명/월 ]</p>
+                                                <div class="echart_box x-scroll mb20">
+                                                    <div id="rpt_chart8" style="min-width: 580px;" class="chart"></div>
+                                                </div>
+                                                <div class="table_box x-scroll">
+                                                    <table class="all_border long table_pd mb4">
+                                                        <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th>19.11</th>
+                                                                <th>19.12</th>
+                                                                <th>20.01</th>
+                                                                <th>20.02</th>
+                                                                <th>20.03</th>
+                                                                <th>20.04</th>
+                                                                <th>20.05</th>
+                                                                <th>20.06</th>
+                                                                <th>20.07</th>
+                                                                <th>20.08</th>
+                                                                <th>20.09</th>
+                                                                <th>20.10</th>
+                                                                <th>20.11</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="mint_light color_dot dot5">객수</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="mp_section">
+                                                <p class="min_title font16">화장품 업종 객 단가</p>
+                                                <p class="reference txtright font12">[ 단위 : 원/월 ]</p>
+                                                <div class="echart_box x-scroll mb20">
+                                                    <div id="rpt_chart9" class="chart" style="min-width: 580px;"></div>
+                                                </div>
+                                                <div class="table_box x-scroll">
+                                                    <table class="all_border long table_pd mb4">
+                                                        <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th>19.11</th>
+                                                                <th>19.12</th>
+                                                                <th>20.01</th>
+                                                                <th>20.02</th>
+                                                                <th>20.03</th>
+                                                                <th>20.04</th>
+                                                                <th>20.05</th>
+                                                                <th>20.06</th>
+                                                                <th>20.07</th>
+                                                                <th>20.08</th>
+                                                                <th>20.09</th>
+                                                                <th>20.10</th>
+                                                                <th>20.11</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="mint_light color_dot dot5">객 단가</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                                <td>1240</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- statistic_wrap_02 -->
+                        <!-- statistic_wrap_03 -->
+                        <div class="box_div_wrap statistic_wrap statistic_wrap_03">
+                            <div class="box_div mb40">
+                                <div class="box_div_inner">
+                                    <div class="box_div_body">
+                                        <div class="mypage_head_box mb24">
+                                            <div class="mp_hd_left">
+                                                <div class="box_div_title_m">
+                                                    <p class="tt_txt">평균 연소득 금액</p>
+                                                    <div class="flx tt_bt_box">
+                                                        <select class="select mb4" name="" id="">
+                                                            <option value="">주거인구</option>
+                                                            <option value="">직장인구</option>
+                                                        </select>
+                                                        <select class="select mb4" name="" id="">
+                                                            <option value="">직업 전체</option>
+                                                            <option value="">자영업자</option>
+                                                            <option value="">공공,언론,교육</option>
+                                                            <option value="">전문직</option>
+                                                            <option value="">상장,외감,금융기업</option>
+                                                            <option value="">일반기업</option>
+                                                            <option value="">직업 기타</option>
+                                                        </select>
+                                                        <button class="btn4 ico20 ico_board_line_g">Excel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mypage_body">
+                                            <div class="mp_section">
+                                                <p class="min_title font16">주거인구 <span class="gr light">|</span> 직업 전체
+                                                    평균 연소득 금액</p>
+                                                <p class="reference txtright font12 mb8">[ 단위 : 만원 ]</p>
+
+                                                <div class="echart_box mb20">
+                                                    <div id="rpt_chart10" class="chart"></div>
+                                                </div>
+
+                                                <div class="table_box x-scroll">
+                                                    <table class="all_border table_pd mb4">
+                                                        <thead>
+                                                            <tr>
+                                                                <th width="20%">지역</th>
+                                                                <th width="20%">신촌동</th>
+                                                                <th width="20%">전국</th>
+                                                                <th width="20%">서울특별시</th>
+                                                                <th width="20%">서대문구</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="mint_light">평균 연소득 금액</td>
+                                                                <td>4440</td>
+                                                                <td>4440</td>
+                                                                <td>4440</td>
+                                                                <td>4440</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="box_div mb40">
+                                <div class="box_div_inner">
+                                    <div class="box_div_body">
+                                        <div class="mypage_head_box mb24">
+                                            <div class="mp_hd_left">
+                                                <div class="box_div_title_m">
+                                                    <p class="tt_txt">평균 월 카드 소비 금액</p>
+                                                    <div class="flx tt_bt_box">
+                                                        <select class="select mb4" name="" id="">
+                                                            <option value="">주거인구</option>
+                                                            <option value="">직장인구</option>
+                                                        </select>
+                                                        <select class="select mb4" name="" id="">
+                                                            <option value="">직업 전체</option>
+                                                            <option value="">자영업자</option>
+                                                            <option value="">공공,언론,교육</option>
+                                                            <option value="">전문직</option>
+                                                            <option value="">상장,외감,금융기업</option>
+                                                            <option value="">일반기업</option>
+                                                            <option value="">직업 기타</option>
+                                                        </select>
+                                                        <button class="btn4 ico20 ico_board_line_g">Excel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mypage_body">
+                                            <div class="mp_section">
+                                                <p class="min_title font16">주거인구<span
+                                                        class="gr light">&nbsp;|&nbsp;</span>직업 전체 평균 월 카드 소비 금액</p>
+                                                <p class="reference txtright font12 mb8">[ 단위 : 만원 ]</p>
+                                                <div class="echart_box mb20">
+                                                    <div id="rpt_chart11" class="chart"></div>
+                                                </div>
+
+                                                <div class="table_box x-scroll">
+                                                    <table class="all_border table_pd mb4">
+                                                        <thead>
+                                                            <tr>
+                                                                <th width="20%">지역</th>
+                                                                <th width="20%">신촌동</th>
+                                                                <th width="20%">전국</th>
+                                                                <th width="20%">서울특별시</th>
+                                                                <th width="20%">서대문구</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="mint_light">평균 월 카드 소비금액</td>
+                                                                <td>4440</td>
+                                                                <td>4440</td>
+                                                                <td>4440</td>
+                                                                <td>4440</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="box_div mb40">
+                                <div class="box_div_inner">
+                                    <div class="box_div_body">
+                                        <div class="mypage_head_box mb24">
+                                            <div class="mp_hd_left">
+                                                <div class="box_div_title_m">
+                                                    <p class="tt_txt">업종별 종사자 비율</p>
+                                                    <div class="flx tt_bt_box">
+                                                        
+                                                        
+                                                            <select class="select mb4" name="" id="">
+                                                                <option value="">주거인구</option>
+                                                                <option value="">직장인구</option>
+                                                            </select>
+                                                            <button class="btn4 ico20 ico_board_line_g">Excel</button>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mypage_body">
+                                            <div class="mp_section">
+                                                <p class="min_title font16 mb12">주거인구 업종별 종사자 비율</p>
+                                                <div class="has_two_con">
+                                                    <div class="echart_box has_border">
+                                                        <p class="reference txtright font12">[ 단위 : % ]</p>
+                                                        <div id="rpt_chart12" class="chart"></div>
+                                                    </div>
+                                                    <div class="r_con">
+                                                        <div class="table_box x-scroll">
+                                                            <table class="all_border table_pd tb_ht_322 mb4">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th width="auto"></th>
+                                                                        <th width="14%">자영업자</th>
+                                                                        <th width="14%">공공, 언론, 교육</th>
+                                                                        <th width="14%">전문직</th>
+                                                                        <th width="14%">상장, 외감, 금융</th>
+                                                                        <th width="14%">일반기업</th>
+                                                                        <th width="14%">기타</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="mint_light">업종별 종사자 비율 [주거인구]</td>
+                                                                        <td>20%</td>
+                                                                        <td>20%</td>
+                                                                        <td>20%</td>
+                                                                        <td>20%</td>
+                                                                        <td>20%</td>
+                                                                        <td>20%</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="box_div mb40">
+                                <div class="box_div_inner">
+                                    <div class="box_div_body">
+                                        <div class="mypage_head_box mb24">
+                                            <div class="mp_hd_left">
+                                                <div class="box_div_title_m">
+                                                    <p class="tt_txt">다가구 보유자수 비율 </p>
+                                                    
+                                                        <div class="tt_bt_box flx">
+                                                            <select class="select mb4" name="" id="">
+                                                                <option value="">주거인구</option>
+                                                                <option value="">직장인구</option>
+                                                            </select>
+                                                            <button class="btn4 ico20 ico_board_line_g">Excel</button>
+                                                        </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mypage_body">
+                                            <div class="mp_section">
+                                                <p class="min_title font16 mb12">다가구 보유자수 비율 주거<span class="gr light"> / </span>직장인구 비교</p>
+                                                <div class="has_two_con">
+                                                    <div class="echart_box has_border">
+                                                        <p class="reference txtright font12">[ 단위 : % ]</p>
+                                                        <div id="rpt_chart13" class="chart"></div>
+                                                    </div>
+                                                    <div class="r_con">
+                                                        <div class="table_box x-scroll">
+                                                            <table class="all_border table_pd tb_ht_322">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th width="auto"></th>
+                                                                        <th width="40%">주거인구</th>
+                                                                        <th width="40%">직장인구</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="mint_light">다가구 보유자수 비율</td>
+                                                                        <td>20%</td>
+                                                                        <td>20%</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- statistic_wrap_03 -->
                     </div>
                 </div>
             </div>
@@ -334,4 +1137,2068 @@
 
 
 </body>
+<script>
+    //상품통계 라디오버튼 컨트롤
+    $("input:radio[name=select_cate]").click(function () {
+        var listVar = $('input:radio[name=select_cate]:checked').val();
+
+        if (listVar == 1) {
+
+            //올영매출 선택시
+
+            //날짜선택, 날짜표시 숨기기
+            $('.date_range_select').css('display', 'block');
+            //업종선택 숨기기
+            $('.business_kind_select').css('display', 'none');
+
+        } else if (listVar == 2) {
+
+            //유관업종 선택시
+
+            //날짜선택, 날짜표시 숨기기
+            $('.date_range_select').css('display', 'none');
+            //업종선택 보이기
+            $('.business_kind_select').css('display', 'block');
+        } else if (listVar == 3) {
+
+            //소득/소비 선택시
+
+            //날짜선택, 날짜표시 숨기기
+            $('.date_range_select').css('display', 'none');
+            //업종선택 숨기기
+            $('.business_kind_select').css('display', 'none');
+        }
+    });
+
+    $('.statistic_btn').click(function () {
+        //'데이터 검색' 버튼 클릭시
+
+        //시작시(검색 이전) 안내문구
+        $('.none_box').css('display', 'none');
+
+        //분류 선택에 따라 내용 보이기 이전에 클릭시 겹치지 않게 지움
+        $('.statistic_wrap').css('display', 'none');
+
+        //타이틀 오른쪽 선택동, 데이터기간 표시
+        $('.about_detail').css('display', 'flex');
+
+        //스크롤 제일 위로
+        $(this).parents('body.mypage_layout').scrollTop(0);
+
+        var listVar = $('input:radio[name=select_cate]:checked').val();
+
+        if (listVar == 1) {
+
+            //올리브영 매출 선택시
+
+            //상품통계 타이틀 옆 서브타이틀명 '올리브영 매출'로 변경
+            $('.sub_tt_statistic').text('올리브영 매출');
+
+            //날짜선택, 날짜표시 숨기기
+            $('.date_range_select').css('display', 'block');
+            $('.date_range_show').css('display', 'block');
+
+            //업종표시 보이기
+            $('.business_kind_show').css('display', 'none');
+
+            //분류 선택에 따라 내용 보이기 - 올영매출
+            $('.statistic_wrap_01').css('display', 'block');
+        } else if (listVar == 2) {
+
+            //유관업종 선택시
+
+            //상품통계 타이틀 옆 서브타이틀명 '유관업종'로 변경
+            $('.sub_tt_statistic').text('유관업종');
+
+            //날짜선택 숨기기, 날짜표시 보이기 - 13개월 기준으로 변경해 주세요
+            $('.date_range_select').css('display', 'none');
+            $('.date_range_show').css('display', 'block');
+
+            //업종표시 보이기
+            $('.business_kind_show').css('display', 'block');
+
+            //분류 선택에 따라 내용 보이기 - 유관업종
+            $('.statistic_wrap_02').css('display', 'block');
+        } else if (listVar == 3) {
+
+            //소득/소비 선택시
+
+            //상품통계 타이틀 옆 서브타이틀명 '소득/소비'로 변경
+            $('.sub_tt_statistic').text('소득/소비');
+
+            //날짜선택, 날짜표시 숨기기
+            $('.date_range_select').css('display', 'none');
+            $('.date_range_show').css('display', 'none');
+
+            //업종표시 보이기
+            $('.business_kind_show').css('display', 'none');
+
+            //분류 선택에 따라 내용 보이기 - 소득/소비
+            $('.statistic_wrap_03').css('display', 'block');
+        }
+    })
+
+
+    //리포트
+    //rpt_chart1
+    var chart1_label_array =
+        '21.01,21.02,21.03,21.04,21.05,21.06,21.07,21.08,21.09,21.10,21.11,21.12,22.01,22.02,22.01,22.02,22.03,22.04,22.05,22.06,22.07,22.08,22.09,22.10,22.11,22.12,23.01';
+    chart1_label_array = chart1_label_array.split(',');
+    var rpt_chart1 = echarts.init(document.getElementById('rpt_chart1'));
+    option = {
+
+        grid: {
+            bottom: '12%',
+            top: '10%',
+            left: '0%',
+            right: '0%',
+            containLabel: true
+        },
+        title: {
+            text: '화장품업종 상권 성장성 분석',
+            show: false
+        },
+
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            show: true,
+            bottom: 'bottom',
+            left: 'center',
+        },
+        label: [],
+        xAxis: {
+            type: 'category',
+            data: chart1_label_array,
+            axisLine: {
+                lineStyle: {
+                    color: '#9e9e9e'
+                }
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#666F7E',
+                    fontSize: 12,
+                    fontWeight: 500,
+                    lineHeight: 16,
+                },
+                interval: 0,
+            },
+            axisTick: {
+                show: false
+            }
+        },
+        yAxis: {
+            show: true,
+            type: 'value',
+            splitLine: { // y축 수치선
+                show: true,
+                lineStyle: {
+                    color: '#F7F8FA'
+                }
+            },
+            axisLabel: {
+                show: true,
+                fontSize: 11,
+            },
+
+        },
+        series: [{
+            name: '올리브영 총매출',
+            type: 'bar',
+            data: [40, 20, 40, 48, 24, 32, 10, 20, 40, 48, 10, 20, 40, 48, 24, 32, 10, 20, 40, 48, 32,
+                30, 28, 16, 40, 40, 34
+            ],
+            barWidth: '30%',
+            itemStyle: {
+                color: '#C2E371',
+                barBorderRadius: [4, 4, 0, 0],
+            },
+            label: {
+                show: true,
+                position: 'outside',
+                align: 'center',
+                color: '#84A92C',
+                formatter: '{c}',
+                textPadding: '12',
+                fontWeight: '600',
+                borderRadius: '12',
+                fontSize: '10',
+                fontFamily: 'Pretendard',
+            },
+        }, ]
+    };
+
+    function start_rpt_chart1() {
+        var show = option.yAxis.show;
+        var left = option.legend.left;
+        var labelSize = option.label.fontSize;
+        var grid_l = option.grid.left;
+        var grid_r = option.grid.right;
+        var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
+
+        if (window.innerWidth >= 1380) {
+            show = 'false';
+            fontSize = '11';
+            labelSize = '12';
+        } else if (window.innerWidth <= 280) {
+            fontSize = '9';
+            grid_l = '4';
+            grid_r = '4';
+            labelSize = '10';
+        } else if (window.innerWidth <= 360) {
+            fontSize = '11';
+            grid_l = '0';
+            grid_r = '0';
+            labelSize = '10';
+        } else if (window.innerWidth <= 1024) {
+            //left='left';
+            labelSize = '10';
+            fontSize = '10';
+        } else if (window.innerWidth < 1380) {
+            fontSize = '10';
+            labelSize = '12';
+            show = 'false';
+        }
+        option.yAxis.show = show;
+        option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+        option.label.fontSize = labelSize;
+        option.grid.left = grid_l;
+        option.grid.right = grid_r;
+        option.legend.left = left;
+
+        rpt_chart1.setOption(option);
+        rpt_chart1.resize();
+    }
+    start_rpt_chart1();
+
+    //리포트
+    //rpt_chart2
+    var chart2_label_array =
+        '21.01,21.02,21.03,21.04,21.05,21.06,21.07,21.08,21.09,21.10,21.11,21.12,22.01,22.02,22.01,22.02,22.03,22.04,22.05,22.06,22.07,22.08,22.09,22.10,22.11,22.12,23.01';
+    chart2_label_array = chart2_label_array.split(',');
+    var rpt_chart2 = echarts.init(document.getElementById('rpt_chart2'));
+    option = {
+
+        grid: {
+            bottom: '12%',
+            top: '10%',
+            left: '0%',
+            right: '0%',
+            containLabel: true
+        },
+        title: {
+            text: '화장품업종 상권 성장성 분석',
+            show: false
+        },
+
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            show: true,
+            bottom: 'bottom',
+            left: 'center',
+        },
+        label: [],
+        xAxis: {
+            type: 'category',
+            data: chart2_label_array,
+            axisLine: {
+                lineStyle: {
+                    color: '#9e9e9e'
+                }
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#666F7E',
+                    fontSize: 12,
+                    fontWeight: 500,
+                    lineHeight: 16,
+                },
+                interval: 0,
+            },
+            axisTick: {
+                show: false
+            }
+        },
+        yAxis: {
+            show: true,
+            type: 'value',
+            splitLine: { // y축 수치선
+                show: true,
+                lineStyle: {
+                    color: '#F7F8FA'
+                }
+            },
+            axisLabel: {
+                show: true,
+                fontSize: 11,
+            },
+
+        },
+        series: [{
+            name: '점포당 매출',
+            type: 'bar',
+            data: [23424, 23231, 23922, 23993, 23921, 23930, 13940, 22940, 23930, 23948, 23949, 23940,
+                23940, 23940, 23940, 23940, 23940, 23940, 23940, 23940, 23940,
+                23940, 23940, 23940, 23940, 23940, 23940
+            ],
+            barWidth: '30%',
+            itemStyle: {
+                color: '#C2E371',
+                barBorderRadius: [4, 4, 0, 0],
+            },
+            label: {
+                show: true,
+                position: 'outside',
+                align: 'center',
+                color: '#84A92C',
+                formatter: '{c}',
+                textPadding: '12',
+                fontWeight: '600',
+                borderRadius: '12',
+                fontSize: '11',
+                fontFamily: 'Pretendard',
+            },
+        }, ]
+    };
+
+    function start_rpt_chart2() {
+        var show = option.yAxis.show;
+        var left = option.legend.left;
+        var labelSize = option.label.fontSize;
+        var grid_l = option.grid.left;
+        var grid_r = option.grid.right;
+        var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
+
+        if (window.innerWidth >= 1380) {
+            show = 'false';
+            fontSize = '11';
+            labelSize = '12';
+        } else if (window.innerWidth <= 280) {
+            fontSize = '9';
+            grid_l = '4';
+            grid_r = '4';
+            labelSize = '10';
+        } else if (window.innerWidth <= 360) {
+            fontSize = '11';
+            grid_l = '0';
+            grid_r = '0';
+            labelSize = '10';
+        } else if (window.innerWidth <= 1024) {
+            //left='left';
+            labelSize = '10';
+            fontSize = '10';
+        } else if (window.innerWidth < 1380) {
+            fontSize = '11';
+            show = 'false';
+            labelSize = '12';
+        }
+        option.yAxis.show = show;
+        option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+        option.label.fontSize = labelSize;
+        option.grid.left = grid_l;
+        option.grid.right = grid_r;
+        option.legend.left = left;
+
+        rpt_chart2.setOption(option);
+        rpt_chart2.resize();
+    }
+    start_rpt_chart2();
+
+
+    //리포트
+    //rpt_chart3
+    var chart3_label_array =
+        '21.01,21.02,21.03,21.04,21.05,21.06,21.07,21.08,21.09,21.10,21.11,21.12,22.01,22.02,22.01,22.02,22.03,22.04,22.05,22.06,22.07,22.08,22.09,22.10,22.11,22.12,23.01';
+    chart3_label_array = chart3_label_array.split(',');
+    var rpt_chart3 = echarts.init(document.getElementById('rpt_chart3'));
+    option = {
+
+        grid: {
+            bottom: '12%',
+            top: '10%',
+            left: '0%',
+            right: '0%',
+            containLabel: true
+        },
+
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            show: true,
+            bottom: 'bottom',
+            left: 'center',
+        },
+        label: [],
+        xAxis: {
+            type: 'category',
+            data: chart3_label_array,
+            axisLine: {
+                lineStyle: {
+                    color: '#9e9e9e'
+                }
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#666F7E',
+                    fontSize: 12,
+                    fontWeight: 500,
+                    lineHeight: 16,
+                },
+                interval: 0,
+            },
+            axisTick: {
+                show: false
+            }
+        },
+        yAxis: {
+            show: true,
+            type: 'value',
+            splitLine: { // y축 수치선
+                show: true,
+                lineStyle: {
+                    color: '#F7F8FA'
+                }
+            },
+            axisLabel: {
+                show: true,
+                fontSize: 11,
+            },
+
+        },
+        series: [{
+            name: '객수',
+            type: 'bar',
+            data: [23424, 23231, 23922, 23993, 23921, 23930, 13940, 22940, 23930, 23948, 23949, 23940,
+                23940, 23940, 23940, 23940, 23940, 23940, 23940, 23940, 23940,
+                23940, 23940, 23940, 23940, 23940, 23940
+            ],
+            barWidth: '30%',
+            itemStyle: {
+                color: '#efb300',
+                barBorderRadius: [4, 4, 0, 0],
+            },
+            label: {
+                show: true,
+                position: 'outside',
+                align: 'center',
+                color: '#dca400',
+                formatter: '{c}',
+                textPadding: '12',
+                fontWeight: '600',
+                borderRadius: '12',
+                fontSize: '11',
+                fontFamily: 'Pretendard',
+            },
+        }, ]
+    };
+
+    function start_rpt_chart3() {
+        var show = option.yAxis.show;
+        var left = option.legend.left;
+        var labelSize = option.label.fontSize;
+        var grid_l = option.grid.left;
+        var grid_r = option.grid.right;
+        var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
+
+        if (window.innerWidth >= 1380) {
+            show = 'false';
+            fontSize = '11';
+            labelSize = '12';
+        } else if (window.innerWidth <= 280) {
+            fontSize = '9';
+            grid_l = '4';
+            grid_r = '4';
+            labelSize = '10';
+        } else if (window.innerWidth <= 360) {
+            fontSize = '11';
+            grid_l = '0';
+            grid_r = '0';
+            labelSize = '10';
+        } else if (window.innerWidth <= 1024) {
+            //left='left';
+            labelSize = '10';
+            fontSize = '10';
+        } else if (window.innerWidth < 1380) {
+            fontSize = '11';
+            show = 'false';
+            labelSize = '12';
+        }
+        option.yAxis.show = show;
+        option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+        option.label.fontSize = labelSize;
+        option.grid.left = grid_l;
+        option.grid.right = grid_r;
+        option.legend.left = left;
+
+        rpt_chart3.setOption(option);
+        rpt_chart3.resize();
+    }
+    start_rpt_chart3();
+
+    //리포트
+    //rpt_chart4
+    var chart4_label_array =
+        '21.01,21.02,21.03,21.04,21.05,21.06,21.07,21.08,21.09,21.10,21.11,21.12,22.01,22.02,22.01,22.02,22.03,22.04,22.05,22.06,22.07,22.08,22.09,22.10,22.11,22.12,23.01';
+    chart4_label_array = chart4_label_array.split(',');
+    var rpt_chart4 = echarts.init(document.getElementById('rpt_chart4'));
+    option = {
+
+        grid: {
+            bottom: '12%',
+            top: '10%',
+            left: '0%',
+            right: '0%',
+            containLabel: true
+        },
+
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            show: true,
+            bottom: 'bottom',
+            left: 'center',
+        },
+        label: [],
+        xAxis: {
+            type: 'category',
+            data: chart4_label_array,
+            axisLine: {
+                lineStyle: {
+                    color: '#9e9e9e'
+                }
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#666F7E',
+                    fontSize: 12,
+                    fontWeight: 500,
+                    lineHeight: 16,
+                },
+                interval: 0,
+            },
+            axisTick: {
+                show: false
+            }
+        },
+        yAxis: {
+            show: true,
+            type: 'value',
+            splitLine: { // y축 수치선
+                show: true,
+                lineStyle: {
+                    color: '#F7F8FA'
+                }
+            },
+            axisLabel: {
+                show: true,
+                fontSize: 11,
+            },
+
+        },
+        series: [{
+            name: '객단가',
+            type: 'bar',
+            data: [23424, 23231, 23922, 23993, 23921, 23930, 13940, 22940, 23930, 23948, 23949, 23940,
+                23940, 23940, 23940, 23940, 23940, 23940, 23940, 23940, 23940,
+                23940, 23940, 23940, 23940, 23940, 23940
+            ],
+            barWidth: '30%',
+            itemStyle: {
+                color: '#efb300',
+
+                barBorderRadius: [4, 4, 0, 0],
+            },
+            label: {
+                show: true,
+                position: 'outside',
+                align: 'center',
+                color: '#dca400',
+                formatter: '{c}',
+                textPadding: '12',
+                fontWeight: '600',
+                borderRadius: '12',
+                fontSize: '11',
+                fontFamily: 'Pretendard',
+            },
+        }, ]
+    };
+
+    function start_rpt_chart4() {
+        var show = option.yAxis.show;
+        var left = option.legend.left;
+        var labelSize = option.label.fontSize;
+        var grid_l = option.grid.left;
+        var grid_r = option.grid.right;
+        var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
+
+        if (window.innerWidth >= 1380) {
+            show = 'false';
+            fontSize = '11';
+            labelSize = '12';
+        } else if (window.innerWidth <= 280) {
+            fontSize = '9';
+            grid_l = '4';
+            grid_r = '4';
+            labelSize = '10';
+        } else if (window.innerWidth <= 360) {
+            fontSize = '11';
+            grid_l = '0';
+            grid_r = '0';
+            labelSize = '10';
+        } else if (window.innerWidth <= 1024) {
+            //left='left';
+            labelSize = '10';
+            fontSize = '10';
+        } else if (window.innerWidth < 1380) {
+            fontSize = '11';
+            show = 'false';
+            labelSize = '12';
+        }
+        option.yAxis.show = show;
+        option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+        option.label.fontSize = labelSize;
+        option.grid.left = grid_l;
+        option.grid.right = grid_r;
+        option.legend.left = left;
+
+        rpt_chart4.setOption(option);
+        rpt_chart4.resize();
+    }
+    start_rpt_chart4();
+
+    //rpt_chart5
+    var chart2_label_array = '';
+    chart2_label_array = chart2_label_array.split(',');
+    var rpt_chart5 = echarts.init(document.getElementById('rpt_chart5'));
+    option = {
+
+        grid: {
+            bottom: '12%',
+            top: '10%',
+            left: '0%',
+            right: '0%',
+            containLabel: true
+        },
+        title: {
+            text: '오늘드림 점유율 상위 10개지역',
+            show: false
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            show: true,
+            bottom: 'bottom',
+            left: 'center',
+        },
+        label: [],
+        xAxis: {
+            type: 'category',
+            data: ['올리브영 성장률', '화장품 성장률'],
+            axisLine: {
+                lineStyle: {
+                    color: '#9e9e9e'
+                }
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#666F7E',
+                    fontSize: 12,
+                    fontWeight: 500,
+                    lineHeight: 16,
+                },
+                interval: 0,
+            },
+            axisTick: {
+                show: false
+            }
+        },
+        yAxis: {
+            show: true,
+            type: 'value',
+            splitLine: { // y축 수치선
+                show: true,
+                lineStyle: {
+                    color: '#F7F8FA'
+                }
+            },
+            axisLabel: {
+                show: true,
+                fontSize: 11,
+            },
+
+        },
+        series: [{
+            barWidth: '10%',
+            data: [
+
+                {
+                    value: '24.8',
+                    itemStyle: {
+                        color: '#C2E371',
+                        barBorderRadius: [4, 4, 0, 0],
+                    },
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        align: 'center',
+                        color: '#84a92c',
+                        formatter: '{c}',
+                        textPadding: '12',
+                        fontWeight: '600',
+                        borderRadius: '12',
+                        fontSize: '12',
+                        fontFamily: 'Pretendard',
+                    },
+
+                },
+                {
+                    value: '20.0',
+                    itemStyle: {
+                        color: '#f9a629',
+                        barBorderRadius: [4, 4, 0, 0],
+                    },
+
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        align: 'center',
+                        color: '#f9a629',
+                        formatter: '{c}',
+                        textPadding: '12',
+                        fontWeight: '600',
+                        borderRadius: '12',
+                        fontSize: '12',
+                        fontFamily: 'Pretendard',
+                    },
+                }
+
+            ],
+            type: 'bar'
+        }]
+    }
+
+    function start_rpt_chart5() {
+        var show = option.yAxis.show;
+        var left = option.legend.left;
+        var labelSize = option.label.fontSize;
+        var grid_l = option.grid.left;
+        var grid_r = option.grid.right;
+        var fontSize = option.xAxis.axisLabel.textStyle.fontSize
+        if (window.innerWidth >= 1380) {
+            show = 'false';
+            fontSize = '12';
+        } else if (window.innerWidth <= 280) {
+            fontSize = '9';
+            grid_l = '4';
+            grid_r = '4';
+            labelSize = '10';
+        } else if (window.innerWidth <= 360) {
+            fontSize = '11';
+            grid_l = '0';
+            grid_r = '0';
+            labelSize = '10';
+        } else if (window.innerWidth < 1380) {
+            fontSize = '12';
+            show = 'false';
+        }
+        option.yAxis.show = show;
+        option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+        option.label.fontSize = labelSize;
+        option.grid.left = grid_l;
+        option.grid.right = grid_r;
+        option.legend.left = left
+        rpt_chart5.setOption(option);
+        rpt_chart5.resize();
+    }
+    start_rpt_chart5();
+
+    //rpt_chart6
+    var chart6_label_array =
+        '22.01,22.02,22.03,22.04,22.05,22.06,22.07,22.08,22.09,22.10,22.11,22.12,23.01';
+    chart6_label_array = chart6_label_array.split(',');
+    var rpt_chart6 = echarts.init(document.getElementById('rpt_chart6'));
+    option = {
+
+        grid: {
+            bottom: '12%',
+            top: '10%',
+            left: '0%',
+            right: '0%',
+            containLabel: true
+        },
+
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            show: true,
+            bottom: 'bottom',
+            left: 'center',
+        },
+        label: [],
+        xAxis: {
+            type: 'category',
+            data: chart6_label_array,
+            axisLine: {
+                lineStyle: {
+                    color: '#9e9e9e'
+                }
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#666F7E',
+                    fontSize: 12,
+                    fontWeight: 500,
+                    lineHeight: 16,
+                },
+                interval: 0,
+            },
+            axisTick: {
+                show: false
+            }
+        },
+        yAxis: {
+            show: true,
+            type: 'value',
+            splitLine: { // y축 수치선
+                show: true,
+                lineStyle: {
+                    color: '#F7F8FA'
+                }
+            },
+            axisLabel: {
+                show: true,
+                fontSize: 11,
+            },
+
+        },
+        series: [{
+            name: '총 매출금액',
+            type: 'bar',
+            data: [23424, 23231, 23922, 23993, 23921, 23930, 13940, 22940, 23930, 23948, 23949, 23940,
+                23940, 23940, 23940, 23940, 23940, 23940, 23940, 23940, 23940,
+                23940, 23940, 23940, 23940, 23940, 23940
+            ],
+            barWidth: '24%',
+            itemStyle: {
+                color: '#c2e371',
+
+                barBorderRadius: [4, 4, 0, 0],
+            },
+            label: {
+                show: true,
+                position: 'outside',
+                align: 'center',
+                color: '#84a92c',
+                formatter: '{c}',
+                textPadding: '12',
+                fontWeight: '600',
+                borderRadius: '12',
+                fontSize: '11',
+                fontFamily: 'Pretendard',
+            },
+        }, ]
+    };
+
+    function start_rpt_chart6() {
+        var show = option.yAxis.show;
+        var left = option.legend.left;
+        var labelSize = option.label.fontSize;
+        var grid_l = option.grid.left;
+        var grid_r = option.grid.right;
+        var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
+
+        if (window.innerWidth >= 1380) {
+            show = 'false';
+            fontSize = '11';
+            labelSize = '12';
+        } else if (window.innerWidth <= 280) {
+            fontSize = '9';
+            grid_l = '4';
+            grid_r = '4';
+            labelSize = '10';
+        } else if (window.innerWidth <= 360) {
+            fontSize = '11';
+            grid_l = '0';
+            grid_r = '0';
+            labelSize = '10';
+        } else if (window.innerWidth <= 1024) {
+            //left='left';
+            labelSize = '10';
+            fontSize = '10';
+        } else if (window.innerWidth < 1380) {
+            fontSize = '11';
+            show = 'false';
+            labelSize = '12';
+        }
+        option.yAxis.show = show;
+        option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+        option.label.fontSize = labelSize;
+        option.grid.left = grid_l;
+        option.grid.right = grid_r;
+        option.legend.left = left;
+
+        rpt_chart6.setOption(option);
+        rpt_chart6.resize();
+    }
+    start_rpt_chart6();
+
+    //rpt_chart7
+    var chart7_label_array =
+        '22.01,22.02,22.03,22.04,22.05,22.06,22.07,22.08,22.09,22.10,22.11,22.12,23.01';
+    chart7_label_array = chart7_label_array.split(',');
+    var rpt_chart7 = echarts.init(document.getElementById('rpt_chart7'));
+    option = {
+
+        grid: {
+            bottom: '12%',
+            top: '10%',
+            left: '0%',
+            right: '0%',
+            containLabel: true
+        },
+
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            show: true,
+            bottom: 'bottom',
+            left: 'center',
+        },
+        label: [],
+        xAxis: {
+            type: 'category',
+            data: chart6_label_array,
+            axisLine: {
+                lineStyle: {
+                    color: '#9e9e9e'
+                }
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#666F7E',
+                    fontSize: 12,
+                    fontWeight: 500,
+                    lineHeight: 16,
+                },
+                interval: 0,
+            },
+            axisTick: {
+                show: false
+            }
+        },
+        yAxis: {
+            show: true,
+            type: 'value',
+            splitLine: { // y축 수치선
+                show: true,
+                lineStyle: {
+                    color: '#F7F8FA'
+                }
+            },
+            axisLabel: {
+                show: true,
+                fontSize: 11,
+            },
+
+        },
+        series: [{
+            name: '총 결제건수',
+            type: 'bar',
+            data: [23424, 23231, 23922, 23993, 23921, 23930, 13940, 22940, 23930, 23948, 23949, 23940,
+                23940, 23940, 23940, 23940, 23940, 23940, 23940, 23940, 23940,
+                23940, 23940, 23940, 23940, 23940, 23940
+            ],
+            barWidth: '24%',
+            itemStyle: {
+                color: '#c2e371',
+
+                barBorderRadius: [4, 4, 0, 0],
+            },
+            label: {
+                show: true,
+                position: 'outside',
+                align: 'center',
+                color: '#84a92c',
+                formatter: '{c}',
+                textPadding: '12',
+                fontWeight: '600',
+                borderRadius: '12',
+                fontSize: '11',
+                fontFamily: 'Pretendard',
+            },
+        }, ]
+    };
+
+    function start_rpt_chart7() {
+        var show = option.yAxis.show;
+        var left = option.legend.left;
+        var labelSize = option.label.fontSize;
+        var grid_l = option.grid.left;
+        var grid_r = option.grid.right;
+        var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
+
+        if (window.innerWidth >= 1380) {
+            show = 'false';
+            fontSize = '11';
+            labelSize = '12';
+        } else if (window.innerWidth <= 280) {
+            fontSize = '9';
+            grid_l = '4';
+            grid_r = '4';
+            labelSize = '10';
+        } else if (window.innerWidth <= 360) {
+            fontSize = '11';
+            grid_l = '0';
+            grid_r = '0';
+            labelSize = '10';
+        } else if (window.innerWidth <= 1024) {
+            //left='left';
+            labelSize = '10';
+            fontSize = '10';
+        } else if (window.innerWidth < 1380) {
+            fontSize = '11';
+            show = 'false';
+            labelSize = '12';
+        }
+        option.yAxis.show = show;
+        option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+        option.label.fontSize = labelSize;
+        option.grid.left = grid_l;
+        option.grid.right = grid_r;
+        option.legend.left = left;
+
+        rpt_chart7.setOption(option);
+        rpt_chart7.resize();
+    }
+    start_rpt_chart7();
+
+
+    //rpt_chart8
+    var chart3_label_array =
+        '22.01,22.02,22.03,22.04,22.05,22.06,22.07,22.08,22.09,22.10,22.11,22.12,23.01';
+    chart3_label_array = chart3_label_array.split(',');
+    var rpt_chart8 = echarts.init(document.getElementById('rpt_chart8'));
+    option = {
+
+        grid: {
+            bottom: '12%',
+            top: '10%',
+            left: '0%',
+            right: '0%',
+            containLabel: true
+        },
+
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            show: true,
+            bottom: 'bottom',
+            left: 'center',
+        },
+        label: [],
+        xAxis: {
+            type: 'category',
+            data: chart3_label_array,
+            axisLine: {
+                lineStyle: {
+                    color: '#9e9e9e'
+                }
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#666F7E',
+                    fontSize: 12,
+                    fontWeight: 500,
+                    lineHeight: 16,
+                },
+                interval: 0,
+            },
+            axisTick: {
+                show: false
+            }
+        },
+        yAxis: {
+            show: true,
+            type: 'value',
+            splitLine: { // y축 수치선
+                show: true,
+                lineStyle: {
+                    color: '#F7F8FA'
+                }
+            },
+            axisLabel: {
+                show: true,
+                fontSize: 11,
+            },
+
+        },
+        series: [{
+            name: '객수',
+            type: 'bar',
+            data: [23424, 23231, 23922, 23993, 23921, 23930, 13940, 22940, 23930, 23948, 23949, 23940,
+                23940, 23940, 23940, 23940, 23940, 23940, 23940, 23940, 23940,
+                23940, 23940, 23940, 23940, 23940, 23940
+            ],
+            barWidth: '24%',
+            itemStyle: {
+                color: '#efb300',
+                barBorderRadius: [4, 4, 0, 0],
+            },
+            label: {
+                show: true,
+                position: 'outside',
+                align: 'center',
+                color: '#dca400',
+                formatter: '{c}',
+                textPadding: '12',
+                fontWeight: '600',
+                borderRadius: '12',
+                fontSize: '11',
+                fontFamily: 'Pretendard',
+            },
+        }, ]
+    };
+
+    function start_rpt_chart8() {
+        var show = option.yAxis.show;
+        var left = option.legend.left;
+        var labelSize = option.label.fontSize;
+        var grid_l = option.grid.left;
+        var grid_r = option.grid.right;
+        var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
+
+        if (window.innerWidth >= 1380) {
+            show = 'false';
+            fontSize = '11';
+            labelSize = '12';
+        } else if (window.innerWidth <= 280) {
+            fontSize = '9';
+            grid_l = '4';
+            grid_r = '4';
+            labelSize = '10';
+        } else if (window.innerWidth <= 360) {
+            fontSize = '11';
+            grid_l = '0';
+            grid_r = '0';
+            labelSize = '10';
+        } else if (window.innerWidth <= 1024) {
+            //left='left';
+            labelSize = '10';
+            fontSize = '10';
+        } else if (window.innerWidth < 1380) {
+            fontSize = '11';
+            show = 'false';
+            labelSize = '12';
+        }
+        option.yAxis.show = show;
+        option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+        option.label.fontSize = labelSize;
+        option.grid.left = grid_l;
+        option.grid.right = grid_r;
+        option.legend.left = left;
+
+        rpt_chart8.setOption(option);
+        rpt_chart8.resize();
+    }
+    start_rpt_chart8();
+
+
+    //rpt_chart9
+    var chart3_label_array =
+        '22.01,22.02,22.03,22.04,22.05,22.06,22.07,22.08,22.09,22.10,22.11,22.12,23.01';
+    chart3_label_array = chart3_label_array.split(',');
+    var rpt_chart9 = echarts.init(document.getElementById('rpt_chart9'));
+    option = {
+
+        grid: {
+            bottom: '12%',
+            top: '10%',
+            left: '0%',
+            right: '0%',
+            containLabel: true
+        },
+
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            show: true,
+            bottom: 'bottom',
+            left: 'center',
+        },
+        label: [],
+        xAxis: {
+            type: 'category',
+            data: chart3_label_array,
+            axisLine: {
+                lineStyle: {
+                    color: '#9e9e9e'
+                }
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#666F7E',
+                    fontSize: 12,
+                    fontWeight: 500,
+                    lineHeight: 16,
+                },
+                interval: 0,
+            },
+            axisTick: {
+                show: false
+            }
+        },
+        yAxis: {
+            show: true,
+            type: 'value',
+            splitLine: { // y축 수치선
+                show: true,
+                lineStyle: {
+                    color: '#F7F8FA'
+                }
+            },
+            axisLabel: {
+                show: true,
+                fontSize: 11,
+            },
+
+        },
+        series: [{
+            name: '객 단가',
+            type: 'bar',
+            data: [23424, 23231, 23922, 23993, 23921, 23930, 13940, 22940, 23930, 23948, 23949, 23940,
+                23940, 23940, 23940, 23940, 23940, 23940, 23940, 23940, 23940,
+                23940, 23940, 23940, 23940, 23940, 23940
+            ],
+            barWidth: '24%',
+            itemStyle: {
+                color: '#efb300',
+                barBorderRadius: [4, 4, 0, 0],
+            },
+            label: {
+                show: true,
+                position: 'outside',
+                align: 'center',
+                color: '#dca400',
+                formatter: '{c}',
+                textPadding: '12',
+                fontWeight: '600',
+                borderRadius: '12',
+                fontSize: '11',
+                fontFamily: 'Pretendard',
+            },
+        }, ]
+    };
+
+    function start_rpt_chart9() {
+        var show = option.yAxis.show;
+        var left = option.legend.left;
+        var labelSize = option.label.fontSize;
+        var grid_l = option.grid.left;
+        var grid_r = option.grid.right;
+        var fontSize = option.xAxis.axisLabel.textStyle.fontSize;
+
+        if (window.innerWidth >= 1380) {
+            show = 'false';
+            fontSize = '11';
+            labelSize = '12';
+        } else if (window.innerWidth <= 280) {
+            fontSize = '9';
+            grid_l = '4';
+            grid_r = '4';
+            labelSize = '10';
+        } else if (window.innerWidth <= 360) {
+            fontSize = '11';
+            grid_l = '0';
+            grid_r = '0';
+            labelSize = '10';
+        } else if (window.innerWidth <= 1024) {
+            //left='left';
+            labelSize = '10';
+            fontSize = '10';
+        } else if (window.innerWidth < 1380) {
+            fontSize = '11';
+            show = 'false';
+            labelSize = '12';
+        }
+        option.yAxis.show = show;
+        option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+        option.label.fontSize = labelSize;
+        option.grid.left = grid_l;
+        option.grid.right = grid_r;
+        option.legend.left = left;
+
+        rpt_chart9.setOption(option);
+        rpt_chart9.resize();
+    }
+    start_rpt_chart9();
+
+
+    //rpt_chart10
+    var chart2_label_array = '';
+    chart2_label_array = chart2_label_array.split(',');
+    var rpt_chart10 = echarts.init(document.getElementById('rpt_chart10'));
+    option = {
+
+        grid: {
+            bottom: '0',
+            top: '10%',
+            left: '0%',
+            right: '0%',
+            containLabel: true
+        },
+        title: {
+            text: '오늘드림 점유율 상위 10개지역',
+            show: false
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            show: true,
+            bottom: 'bottom',
+            left: 'center',
+        },
+        label: [],
+        xAxis: {
+            type: 'category',
+            data: ['신촌동', '전국', '서울특별시', '서대문구'],
+            axisLine: {
+                lineStyle: {
+                    color: '#9e9e9e'
+                }
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#666F7E',
+                    fontSize: 12,
+                    fontWeight: 500,
+                    lineHeight: 16,
+                },
+                interval: 0,
+            },
+            axisTick: {
+                show: false
+            }
+        },
+        yAxis: {
+            show: true,
+            type: 'value',
+            splitLine: { // y축 수치선
+                show: true,
+                lineStyle: {
+                    color: '#F7F8FA'
+                }
+            },
+            axisLabel: {
+                show: true,
+                fontSize: 11,
+            },
+
+        },
+        series: [{
+            barWidth: '20%',
+            data: [
+
+                {
+                    value: '24.8',
+                    itemStyle: {
+                        color: '#f9a629',
+                        barBorderRadius: [4, 4, 0, 0],
+                    },
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        align: 'center',
+                        color: '#f9a629',
+                        formatter: '{c}',
+                        textPadding: '12',
+                        fontWeight: '600',
+                        borderRadius: '12',
+                        fontSize: '12',
+                        fontFamily: 'Pretendard',
+                    },
+
+                },
+                {
+                    value: '20.0',
+                    itemStyle: {
+                        color: '#ffd15c',
+                        barBorderRadius: [4, 4, 0, 0],
+                    },
+
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        align: 'center',
+                        color: '#f9a629',
+                        formatter: '{c}',
+                        textPadding: '12',
+                        fontWeight: '600',
+                        borderRadius: '12',
+                        fontSize: '12',
+                        fontFamily: 'Pretendard',
+                    },
+                },
+                {
+                    value: '20.0',
+                    itemStyle: {
+                        color: '#ffd15c',
+                        barBorderRadius: [4, 4, 0, 0],
+                    },
+
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        align: 'center',
+                        color: '#f9a629',
+                        formatter: '{c}',
+                        textPadding: '12',
+                        fontWeight: '600',
+                        borderRadius: '12',
+                        fontSize: '12',
+                        fontFamily: 'Pretendard',
+                    },
+                },
+                {
+                    value: '20.0',
+                    itemStyle: {
+                        color: '#ffd15c',
+                        barBorderRadius: [4, 4, 0, 0],
+                    },
+
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        align: 'center',
+                        color: '#f9a629',
+                        formatter: '{c}',
+                        textPadding: '12',
+                        fontWeight: '600',
+                        borderRadius: '12',
+                        fontSize: '12',
+                        fontFamily: 'Pretendard',
+                    },
+                },
+
+            ],
+            type: 'bar'
+        }]
+    }
+
+    function start_rpt_chart10() {
+        var show = option.yAxis.show;
+        var left = option.legend.left;
+        var labelSize = option.label.fontSize;
+        var grid_l = option.grid.left;
+        var grid_r = option.grid.right;
+        var fontSize = option.xAxis.axisLabel.textStyle.fontSize
+        if (window.innerWidth >= 1380) {
+            show = 'false';
+            fontSize = '12';
+        } else if (window.innerWidth <= 280) {
+            fontSize = '9';
+            grid_l = '4';
+            grid_r = '4';
+            labelSize = '10';
+        } else if (window.innerWidth <= 360) {
+            fontSize = '11';
+            grid_l = '0';
+            grid_r = '0';
+            labelSize = '10';
+        } else if (window.innerWidth < 1380) {
+            fontSize = '12';
+            show = 'false';
+        }
+        option.yAxis.show = show;
+        option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+        option.label.fontSize = labelSize;
+        option.grid.left = grid_l;
+        option.grid.right = grid_r;
+        option.legend.left = left
+        rpt_chart10.setOption(option);
+        rpt_chart10.resize();
+    }
+    start_rpt_chart10();
+
+
+    //rpt_chart11
+    var chart2_label_array = '';
+    chart2_label_array = chart2_label_array.split(',');
+    var rpt_chart11 = echarts.init(document.getElementById('rpt_chart11'));
+    option = {
+
+        grid: {
+            bottom: '0',
+            top: '10%',
+            left: '0%',
+            right: '0%',
+            containLabel: true
+        },
+        title: {
+            text: '오늘드림 점유율 상위 10개지역',
+            show: false
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            show: true,
+            bottom: 'bottom',
+            left: 'center',
+        },
+        label: [],
+        xAxis: {
+            type: 'category',
+            data: ['신촌동', '전국', '서울특별시', '서대문구'],
+            axisLine: {
+                lineStyle: {
+                    color: '#9e9e9e'
+                }
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#666F7E',
+                    fontSize: 12,
+                    fontWeight: 500,
+                    lineHeight: 16,
+                },
+                interval: 0,
+            },
+            axisTick: {
+                show: false
+            }
+        },
+        yAxis: {
+            show: true,
+            type: 'value',
+            splitLine: { // y축 수치선
+                show: true,
+                lineStyle: {
+                    color: '#F7F8FA'
+                }
+            },
+            axisLabel: {
+                show: true,
+                fontSize: 11,
+            },
+
+        },
+        series: [{
+            barWidth: '20%',
+            data: [
+
+                {
+                    value: '2000',
+                    itemStyle: {
+                        color: '#f9a629',
+                        barBorderRadius: [4, 4, 0, 0],
+                    },
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        align: 'center',
+                        color: '#f9a629',
+                        formatter: '{c}',
+                        textPadding: '12',
+                        fontWeight: '600',
+                        borderRadius: '12',
+                        fontSize: '12',
+                        fontFamily: 'Pretendard',
+                    },
+
+                },
+                {
+                    value: '3000',
+                    itemStyle: {
+                        color: '#ffd15c',
+                        barBorderRadius: [4, 4, 0, 0],
+                    },
+
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        align: 'center',
+                        color: '#f9a629',
+                        formatter: '{c}',
+                        textPadding: '12',
+                        fontWeight: '600',
+                        borderRadius: '12',
+                        fontSize: '12',
+                        fontFamily: 'Pretendard',
+                    },
+                },
+                {
+                    value: '5400',
+                    itemStyle: {
+                        color: '#ffd15c',
+                        barBorderRadius: [4, 4, 0, 0],
+                    },
+
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        align: 'center',
+                        color: '#f9a629',
+                        formatter: '{c}',
+                        textPadding: '12',
+                        fontWeight: '600',
+                        borderRadius: '12',
+                        fontSize: '12',
+                        fontFamily: 'Pretendard',
+                    },
+                },
+                {
+                    value: '4400',
+                    itemStyle: {
+                        color: '#ffd15c',
+                        barBorderRadius: [4, 4, 0, 0],
+                    },
+
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        align: 'center',
+                        color: '#f9a629',
+                        formatter: '{c}',
+                        textPadding: '12',
+                        fontWeight: '600',
+                        borderRadius: '12',
+                        fontSize: '12',
+                        fontFamily: 'Pretendard',
+                    },
+                },
+
+            ],
+            type: 'bar'
+        }]
+    }
+
+    function start_rpt_chart11() {
+        var show = option.yAxis.show;
+        var left = option.legend.left;
+        var labelSize = option.label.fontSize;
+        var grid_l = option.grid.left;
+        var grid_r = option.grid.right;
+        var fontSize = option.xAxis.axisLabel.textStyle.fontSize
+        if (window.innerWidth >= 1380) {
+            show = 'false';
+            fontSize = '12';
+        } else if (window.innerWidth <= 280) {
+            fontSize = '9';
+            grid_l = '4';
+            grid_r = '4';
+            labelSize = '10';
+        } else if (window.innerWidth <= 360) {
+            fontSize = '11';
+            grid_l = '0';
+            grid_r = '0';
+            labelSize = '10';
+        } else if (window.innerWidth < 1380) {
+            fontSize = '12';
+            show = 'false';
+        }
+        option.yAxis.show = show;
+        option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+        option.label.fontSize = labelSize;
+        option.grid.left = grid_l;
+        option.grid.right = grid_r;
+        option.legend.left = left
+        rpt_chart11.setOption(option);
+        rpt_chart11.resize();
+    }
+    start_rpt_chart11();
+
+    //rpt_chart12
+    var chartDom = document.getElementById('rpt_chart12');
+    var rpt_chart12 = echarts.init(chartDom);
+    var option;
+
+    var option = {
+        grid: {
+            containLabel: true,
+        },
+        emphasis: {
+            focus: 'self',
+        },
+        series: [{
+            name: '주변 고객 유입',
+            type: 'pie',
+            radius: ['44%', '70%'],
+            center: 'center',
+            fontFamily: 'Pretendard',
+            data: [{
+                    name: '자영업자',
+                    value: 25,
+                    itemStyle: {
+                        color: '#F1CC6D',
+                    }
+                },
+                {
+                    name: '공공,언론,교육',
+                    value: 35,
+                    itemStyle: {
+
+                        color: '#F9A629',
+                    }
+                },
+                {
+                    name: '전문직',
+                    value: 20,
+                    itemStyle: {
+
+                        color: '#C2E371',
+                    }
+                },
+                {
+                    name: '상장,외감,금융',
+                    value: 15,
+                    itemStyle: {
+                        color: '#91d3b0',
+                    }
+                },
+                {
+                    name: '일반기업',
+                    value: 13,
+                    itemStyle: {
+                        color: '#80AD9A',
+                    }
+                },
+                {
+                    name: '기타',
+                    value: 7,
+                    itemStyle: {
+                        color: '#93a19b',
+                    }
+                },
+
+
+            ],
+            itemStyle: {
+                normal: {
+                    labelLine: {
+                        show: true
+                    },
+                    label: {
+                        show: true,
+                        position: 'center',
+                        formatter: '{b|{b}}' + '\n' + '{d|{d}}' + '{per|%}',
+                        backgroundColor: '#FFF',
+                        fontFamily: 'Pretendard',
+                        width: '74',
+                        rich: {
+                            b: {
+                                color: '#4C5058',
+                                fontSize: 11,
+                                fontWeight: '700',
+                                lineHeight: 18,
+                                fontFamily: 'Pretendard',
+                            },
+                            d: {
+                                color: '#191F28',
+                                fontSize: 16,
+                                fontWeight: '800',
+                                lineHeight: 20,
+                                fontFamily: 'Pretendard',
+                            },
+                            per: {
+                                color: '#191F28',
+                                fontSize: 14,
+                                fontWeight: '600',
+                                lineHeight: 20,
+                                fontFamily: 'Pretendard',
+                            },
+                        },
+                    },
+                }
+            },
+            center: ['50%', '45%'],
+            animationDuration: 1000,
+            animationEasing: "sinusoidalOut",
+        }],
+        title: {
+            text: '1상권의 특성',
+            show: false,
+        },
+        tooltip: {
+            show: false,
+            //trigger: 'item',
+            //formatter: function(params) {
+            //	return params.name + '<br/>'
+            //		+ params.marker + ' <b>' + params.value + '</b> %';
+            //},
+            //fontSize: 10
+        },
+        legend: {
+            show: true,
+            data: ['자영업자', '공공,언론,교육', '전문직', '상장,외감,금융', '일반기업', '기타'],
+            //orient: 'vartical',
+            //right: '0',
+            top: 'bottom',
+            fontFamily: 'Pretendard',
+        },
+    }
+
+    rpt_chart12.setOption(option);
+    rpt_chart12.resize();
+
+
+    //rpt_chart13
+    var chart2_label_array = '';
+    chart2_label_array = chart2_label_array.split(',');
+    var rpt_chart13 = echarts.init(document.getElementById('rpt_chart13'));
+    option = {
+
+        grid: {
+            bottom: '0',
+            top: '10%',
+            left: '0%',
+            right: '0%',
+            containLabel: true
+        },
+        title: {
+            text: '오늘드림 점유율 상위 10개지역',
+            show: false
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            show: true,
+            bottom: 'bottom',
+            left: 'center',
+        },
+        label: [],
+        xAxis: {
+            type: 'category',
+            data: ['주거인구','직장인구'],
+            axisLine: {
+                lineStyle: {
+                    color: '#9e9e9e'
+                }
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#666F7E',
+                    fontSize: 12,
+                    fontWeight: 500,
+                    lineHeight: 16,
+                },
+                interval: 0,
+            },
+            axisTick: {
+                show: false
+            }
+        },
+        yAxis: {
+            show: true,
+            type: 'value',
+            splitLine: { // y축 수치선
+                show: true,
+                lineStyle: {
+                    color: '#F7F8FA'
+                }
+            },
+            axisLabel: {
+                show: true,
+                fontSize: 11,
+            },
+
+        },
+        series: [{
+            barWidth: '20%',
+            data: [
+
+                {
+                    value: '20',
+                    itemStyle: {
+                        color: '#c2e371',
+                        barBorderRadius: [4, 4, 0, 0],
+                    },
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        align: 'center',
+                        color: '#89a22a',
+                        formatter: '{c}',
+                        textPadding: '12',
+                        fontWeight: '600',
+                        borderRadius: '12',
+                        fontSize: '12',
+                        fontFamily: 'Pretendard',
+                    },
+
+                },
+                {
+                    value: '54',
+                    itemStyle: {
+                        color: '#ffd15c',
+                        barBorderRadius: [4, 4, 0, 0],
+                    },
+
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        align: 'center',
+                        color: '#f9a629',
+                        formatter: '{c}',
+                        textPadding: '12',
+                        fontWeight: '600',
+                        borderRadius: '12',
+                        fontSize: '12',
+                        fontFamily: 'Pretendard',
+                    },
+                },
+
+            ],
+            type: 'bar'
+        }]
+    }
+
+    function start_rpt_chart13() {
+        var show = option.yAxis.show;
+        var left = option.legend.left;
+        var labelSize = option.label.fontSize;
+        var grid_l = option.grid.left;
+        var grid_r = option.grid.right;
+        var fontSize = option.xAxis.axisLabel.textStyle.fontSize
+        if (window.innerWidth >= 1380) {
+            show = 'false';
+            fontSize = '12';
+        } else if (window.innerWidth <= 280) {
+            fontSize = '9';
+            grid_l = '4';
+            grid_r = '4';
+            labelSize = '10';
+        } else if (window.innerWidth <= 360) {
+            fontSize = '11';
+            grid_l = '0';
+            grid_r = '0';
+            labelSize = '10';
+        } else if (window.innerWidth < 1380) {
+            fontSize = '12';
+            show = 'false';
+        }
+        option.yAxis.show = show;
+        option.xAxis.axisLabel.textStyle.fontSize = fontSize;
+        option.label.fontSize = labelSize;
+        option.grid.left = grid_l;
+        option.grid.right = grid_r;
+        option.legend.left = left
+        rpt_chart13.setOption(option);
+        rpt_chart13.resize();
+    }
+    start_rpt_chart13();
+
+    const rp_container1 = document.querySelector('#rpt_chart1');
+    const rp_chart1 = echarts.init(rp_container1);
+    new ResizeObserver(() => rp_chart1.resize()).observe(rp_container1);
+
+    const rp_container2 = document.querySelector('#rpt_chart2');
+    const rp_chart2 = echarts.init(rp_container2);
+    new ResizeObserver(() => rp_chart2.resize()).observe(rp_container2);
+
+    const rp_container3 = document.querySelector('#rpt_chart3');
+    const rp_chart3 = echarts.init(rp_container3);
+    new ResizeObserver(() => rp_chart3.resize()).observe(rp_container3);
+
+    const rp_container4 = document.querySelector('#rpt_chart4');
+    const rp_chart4 = echarts.init(rp_container4);
+    new ResizeObserver(() => rp_chart4.resize()).observe(rp_container4);
+
+    const rp_container5 = document.querySelector('#rpt_chart5');
+    const rp_chart5 = echarts.init(rp_container5);
+    new ResizeObserver(() => rp_chart5.resize()).observe(rp_container5);
+
+    const rp_container6 = document.querySelector('#rpt_chart6');
+    const rp_chart6 = echarts.init(rp_container6);
+    new ResizeObserver(() => rp_chart6.resize()).observe(rp_container6);
+
+    const rp_container7 = document.querySelector('#rpt_chart7');
+    const rp_chart7 = echarts.init(rp_container7);
+    new ResizeObserver(() => rp_chart7.resize()).observe(rp_container7);
+
+    const rp_container8 = document.querySelector('#rpt_chart8');
+    const rp_chart8 = echarts.init(rp_container8);
+    new ResizeObserver(() => rp_chart8.resize()).observe(rp_container8);
+
+    const rp_container9 = document.querySelector('#rpt_chart9');
+    const rp_chart9 = echarts.init(rp_container9);
+    new ResizeObserver(() => rp_chart9.resize()).observe(rp_container9);
+
+    const rp_container10 = document.querySelector('#rpt_chart10');
+    const rp_chart10 = echarts.init(rp_container10);
+    new ResizeObserver(() => rp_chart10.resize()).observe(rp_container10);
+
+    const rp_container11 = document.querySelector('#rpt_chart11');
+    const rp_chart11 = echarts.init(rp_container11);
+    new ResizeObserver(() => rp_chart11.resize()).observe(rp_container11);
+
+    const rp_container12 = document.querySelector('#rpt_chart12');
+    const rp_chart12 = echarts.init(rp_container12);
+    new ResizeObserver(() => rp_chart12.resize()).observe(rp_container12);
+
+    const rp_container13 = document.querySelector('#rpt_chart13');
+    const rp_chart13 = echarts.init(rp_container13);
+    new ResizeObserver(() => rp_chart13.resize()).observe(rp_container13);
+</script>
+
 </html>
