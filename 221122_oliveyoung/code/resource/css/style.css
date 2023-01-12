@@ -7635,6 +7635,12 @@ button.statistic_btn{
     .in_box.has_number_input .hypn {
         display: block;
     }
+    .statistic_title{
+        font-size: 20px;
+    }
+    .box_div.mb40{
+        margin-bottom: 30px;
+    }
 }
 
 @media all and (max-width: 820px){
@@ -7674,6 +7680,10 @@ button.statistic_btn{
     .statistic .box_div_title_m{
         flex-direction: column;
         align-items: flex-start;
+        gap: 0;
+    }
+    .statistic .full_sec .box_div_inner{
+        padding: 20px;
     }
     .statistic .box_div_title_r{
         flex-direction: column;
@@ -7690,6 +7700,13 @@ button.statistic_btn{
         display: flex;
         justify-content: flex-end;
     }
+    .about_detail{
+        background: #dce1ea40;
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+    }
+
 }
 @media all and (max-width: 720px){
 
